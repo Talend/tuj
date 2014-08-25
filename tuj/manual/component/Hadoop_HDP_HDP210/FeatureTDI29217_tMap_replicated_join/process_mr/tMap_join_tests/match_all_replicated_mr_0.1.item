@@ -1,0 +1,1745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_CK7j8BzCEeSxmKrKKcrnew" defaultContext="Default">
+  <context xmi:id="_CK7j8RzCEeSxmKrKKcrnew" confirmationNeeded="false" name="Default">
+    <contextParameter xmi:id="_CK7j8hzCEeSxmKrKKcrnew" comment="" name="hdfs_basedir" prompt="hdfs_basedir?" promptNeeded="false" repositoryContextId="_ZTgZABlUEeSEF61__c3W0A" type="id_String" value="/user/tMap_join_tests"/>
+    <contextParameter xmi:id="_CK7j8xzCEeSxmKrKKcrnew" comment="" name="namenode" prompt="namenode?" promptNeeded="false" repositoryContextId="_ZTgZABlUEeSEF61__c3W0A" type="id_String" value="hdfs://sandbox:8020"/>
+    <contextParameter xmi:id="_CK7j9BzCEeSxmKrKKcrnew" comment="" name="resourcemanager" prompt="resourcemanager?" promptNeeded="false" repositoryContextId="_ZTgZABlUEeSEF61__c3W0A" type="id_String" value="sandbox:8050"/>
+    <contextParameter xmi:id="_CK7j9RzCEeSxmKrKKcrnew" comment="" name="tmp_dir" prompt="tmp_dir?" promptNeeded="false" repositoryContextId="_ZTgZABlUEeSEF61__c3W0A" type="id_String" value="/tmp"/>
+    <contextParameter xmi:id="_CK7j9hzCEeSxmKrKKcrnew" comment="" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_ZTgZABlUEeSEF61__c3W0A" type="id_String" value="rskraba"/>
+  </context>
+  <parameters xmi:id="_CK7j9xzCEeSxmKrKKcrnew">
+    <elementParameter xmi:id="_CK7j-BzCEeSxmKrKKcrnew" field="TEXT" name="JOB_RUN_VM_ARGUMENTS" value=" -Xms256M -Xmx1024M"/>
+    <elementParameter xmi:id="_CK7j-RzCEeSxmKrKKcrnew" field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" value="false"/>
+    <elementParameter xmi:id="_CK7j-hzCEeSxmKrKKcrnew" field="TEXT" name="SCREEN_OFFSET_X" value="0"/>
+    <elementParameter xmi:id="_CK7j-xzCEeSxmKrKKcrnew" field="TEXT" name="SCREEN_OFFSET_Y" value="0"/>
+    <elementParameter xmi:id="_CK7j_BzCEeSxmKrKKcrnew" field="TEXT" name="SCHEMA_OPTIONS" value="none"/>
+    <elementParameter xmi:id="_CK7j_RzCEeSxmKrKKcrnew" field="TEXT" name="OEM_CUSTOM_ATTRIBUTE" value=""/>
+    <elementParameter xmi:id="_CK7j_hzCEeSxmKrKKcrnew" field="TEXT" name="HADOOP_APP_PATH" value=""/>
+    <elementParameter xmi:id="_CK7j_xzCEeSxmKrKKcrnew" field="TEXT" name="JOBID_FOR_OOZIE" value=""/>
+    <elementParameter xmi:id="_CK7kABzCEeSxmKrKKcrnew" field="TEXT" name="REPOSITORY_CONNECTION_ID" value=""/>
+    <elementParameter xmi:id="_CK7kARzCEeSxmKrKKcrnew" field="TABLE" name="HADOOP_ADVANCED_PROPERTIES"/>
+    <elementParameter xmi:id="_CK7kAhzCEeSxmKrKKcrnew" field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="true"/>
+    <elementParameter xmi:id="_CK7kAxzCEeSxmKrKKcrnew" field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="true"/>
+    <elementParameter xmi:id="_CK7kBBzCEeSxmKrKKcrnew" field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter xmi:id="_CK7kBRzCEeSxmKrKKcrnew" field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK7kBhzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK7kBxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value=""/>
+    <elementParameter xmi:id="_CK7kCBzCEeSxmKrKKcrnew" field="CHECK" name="DISABLE_WARNINGS" value="false"/>
+    <elementParameter xmi:id="_CK7kCRzCEeSxmKrKKcrnew" field="CHECK" name="DISABLE_INFO" value="false"/>
+    <elementParameter xmi:id="_CK7kChzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter xmi:id="_CK7kCxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11"/>
+    <elementParameter xmi:id="_CK7kDBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="DISTRIBUTION" value="HORTONWORKS"/>
+    <elementParameter xmi:id="_CK7kDRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="MR_VERSION" value="HDP_2_1"/>
+    <elementParameter xmi:id="_CK7kDhzCEeSxmKrKKcrnew" field="HADOOP_JARS_DIALOG" name="HADOOP_CUSTOM_JARS" value=""/>
+    <elementParameter xmi:id="_CK7kDxzCEeSxmKrKKcrnew" field="CHECK" name="USE_YARN" value="false"/>
+    <elementParameter xmi:id="_CK7kEBzCEeSxmKrKKcrnew" field="CHECK" name="CROSS_PLATFORM_SUBMISSION" value="false"/>
+    <elementParameter xmi:id="_CK7kERzCEeSxmKrKKcrnew" field="TEXT" name="NAMENODE" value="context.namenode"/>
+    <elementParameter xmi:id="_CK7kEhzCEeSxmKrKKcrnew" field="TEXT" name="JOBTRACKER" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK7kExzCEeSxmKrKKcrnew" field="TEXT" name="RESOURCE_MANAGER" value="context.resourcemanager"/>
+    <elementParameter xmi:id="_CK7kFBzCEeSxmKrKKcrnew" field="CHECK" name="SET_SCHEDULER_ADDRESS" value="false"/>
+    <elementParameter xmi:id="_CK7kFRzCEeSxmKrKKcrnew" field="TEXT" name="RESOURCEMANAGER_SCHEDULER_ADDRESS" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK7kFhzCEeSxmKrKKcrnew" field="CHECK" name="SET_JOBHISTORY_ADDRESS" value="false"/>
+    <elementParameter xmi:id="_CK7kFxzCEeSxmKrKKcrnew" field="TEXT" name="JOBHISTORY_ADDRESS" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK7kGBzCEeSxmKrKKcrnew" field="CHECK" name="SET_STAGING_DIRECTORY" value="false"/>
+    <elementParameter xmi:id="_CK7kGRzCEeSxmKrKKcrnew" field="TEXT" name="STAGING_DIRECTORY" value="&quot;/user&quot;"/>
+    <elementParameter xmi:id="_CK7kGhzCEeSxmKrKKcrnew" field="CHECK" name="USE_KRB" value="false"/>
+    <elementParameter xmi:id="_CK7kGxzCEeSxmKrKKcrnew" field="TEXT" name="NAMENODE_PRINCIPAL" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
+    <elementParameter xmi:id="_CK7kHBzCEeSxmKrKKcrnew" field="TEXT" name="JOBTRACKER_PRINCIPAL" value="&quot;jt/_HOST@EXAMPLE.COM&quot;"/>
+    <elementParameter xmi:id="_CK7kHRzCEeSxmKrKKcrnew" field="TEXT" name="RESOURCEMANAGER_PRINCIPAL" value="&quot;yarn/_HOST@EXAMPLE.COM&quot;"/>
+    <elementParameter xmi:id="_CK7kHhzCEeSxmKrKKcrnew" field="TEXT" name="JOBHISTORY_PRINCIPAL" value="&quot;mapred/_HOST@EXAMPLE.COM&quot;"/>
+    <elementParameter xmi:id="_CK7kHxzCEeSxmKrKKcrnew" field="CHECK" name="USE_KEYTAB" value="false"/>
+    <elementParameter xmi:id="_CK7kIBzCEeSxmKrKKcrnew" field="TEXT" name="PRINCIPAL" value="&quot;hdfs&quot;"/>
+    <elementParameter xmi:id="_CK7kIRzCEeSxmKrKKcrnew" field="TEXT" name="KEYTAB_PATH" value="&quot;/tmp/hdfs.headless.keytab&quot;"/>
+    <elementParameter xmi:id="_CK7kIhzCEeSxmKrKKcrnew" field="TEXT" name="USERNAME" value="context.user"/>
+    <elementParameter xmi:id="_CK7kIxzCEeSxmKrKKcrnew" field="TEXT" name="SERVER_PATH_SEPARATOR" value="&quot;:&quot;"/>
+    <elementParameter xmi:id="_CK7kJBzCEeSxmKrKKcrnew" field="TEXT" name="TEMP_FOLDER" value="&quot;/tmp&quot;"/>
+    <elementParameter xmi:id="_CK7kJRzCEeSxmKrKKcrnew" field="CHECK" name="RM_TEMP_FOLDER" value="true"/>
+    <elementParameter xmi:id="_CK7kJhzCEeSxmKrKKcrnew" field="CHECK" name="MAPRED_JOB_COMPRESS_MAP_IO" value="true"/>
+    <elementParameter xmi:id="_CK7kJxzCEeSxmKrKKcrnew" field="TABLE" name="HADOOP_ADVANCED_PROPERTIES"/>
+    <elementParameter xmi:id="_CK7kKBzCEeSxmKrKKcrnew" field="TEXT" name="MAPRED_JOB_MAP_MEMORY_MB" value="&quot;1000&quot;"/>
+    <elementParameter xmi:id="_CK7kKRzCEeSxmKrKKcrnew" field="TEXT" name="MAPRED_JOB_REDUCE_MEMORY_MB" value="&quot;1000&quot;"/>
+    <elementParameter xmi:id="_CK7kKhzCEeSxmKrKKcrnew" field="CHECK" name="SET_MEMORY" value="false"/>
+    <elementParameter xmi:id="_CK7kKxzCEeSxmKrKKcrnew" field="TEXT" name="MAPREDUCE_MAP_MEMORY_MB" value="&quot;1024&quot;"/>
+    <elementParameter xmi:id="_CK7kLBzCEeSxmKrKKcrnew" field="TEXT" name="MAPREDUCE_REDUCE_MEMORY_MB" value="&quot;1024&quot;"/>
+    <elementParameter xmi:id="_CK7kLRzCEeSxmKrKKcrnew" field="TEXT" name="YARN_APP_MAPREDUCE_AM_RESOURCE_MB" value="&quot;1024&quot;"/>
+    <routinesParameter xmi:id="_ZrLTpRjPEeScGPilTIyOfA" id="_NEolYAELEeS414gORP3cDA" name="DQTechnical"/>
+    <routinesParameter xmi:id="_ZrLTphjPEeScGPilTIyOfA" id="_NEiewAELEeS414gORP3cDA" name="DataOperation"/>
+    <routinesParameter xmi:id="_ZrLTpxjPEeScGPilTIyOfA" id="_NEpzgAELEeS414gORP3cDA" name="DataQuality"/>
+    <routinesParameter xmi:id="_ZrLTqBjPEeScGPilTIyOfA" id="_NErosAELEeS414gORP3cDA" name="DqStringHandling"/>
+    <routinesParameter xmi:id="_ZrLTqRjPEeScGPilTIyOfA" id="_NDnRsAELEeS414gORP3cDA" name="Mathematical"/>
+    <routinesParameter xmi:id="_ZrLTqhjPEeScGPilTIyOfA" id="_NEkT8AELEeS414gORP3cDA" name="Numeric"/>
+    <routinesParameter xmi:id="_ZrLTqxjPEeScGPilTIyOfA" id="_NEmwMAELEeS414gORP3cDA" name="Relational"/>
+    <routinesParameter xmi:id="_ZrLTrBjPEeScGPilTIyOfA" id="_NEs20AELEeS414gORP3cDA" name="SQLike"/>
+    <routinesParameter xmi:id="_ZrLTrRjPEeScGPilTIyOfA" id="_NEhQoAELEeS414gORP3cDA" name="StringHandling"/>
+    <routinesParameter xmi:id="_ZrLTrhjPEeScGPilTIyOfA" id="_NEn-UAELEeS414gORP3cDA" name="TalendDataGenerator"/>
+    <routinesParameter xmi:id="_ZrLTrxjPEeScGPilTIyOfA" id="_NEliEAELEeS414gORP3cDA" name="TalendDate"/>
+    <routinesParameter xmi:id="_ZrLTsBjPEeScGPilTIyOfA" id="_NEjF0AELEeS414gORP3cDA" name="TalendString"/>
+  </parameters>
+  <node xmi:id="_CK7kLhzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="288">
+    <elementParameter xmi:id="_CK7kLxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_1"/>
+    <elementParameter xmi:id="_CK7kMBzCEeSxmKrKKcrnew" field="CHECK" name="START" value="true"/>
+    <elementParameter xmi:id="_CK7kMRzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK7kMhzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/a.csv&quot;"/>
+    <elementParameter xmi:id="_CK7kMxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK7kNBzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK7kNRzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK7kNhzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK7kNxzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK7kOBzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK7kORzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK7kOhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK7kOxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK7kPBzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK7kPRzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK7kPhzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK7kPxzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK7kQBzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK7kQRzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK7kQhzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK7kQxzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK7kRBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK7kRRzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK7kRhzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK7kRxzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK7kSBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK7kSRzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK7kShzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="a"/>
+    <elementParameter xmi:id="_CK7kSxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK7kTBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK7kTRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK7kThzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK7kTxzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_1">
+      <column xmi:id="_CK7kUBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK7kURzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK7kUhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b2_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK7kUxzCEeSxmKrKKcrnew" comment="" key="false" name="a_c_joinkey" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK7kVBzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="192">
+    <elementParameter xmi:id="_CK7kVRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_2"/>
+    <elementParameter xmi:id="_CK7kVhzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK7kVxzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK7kWBzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/b.csv&quot;"/>
+    <elementParameter xmi:id="_CK7kWRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK7kWhzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK7kWxzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK7kXBzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK7kXRzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK7kXhzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK7kXxzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK7kYBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK7kYRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK7kYhzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK7kYxzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK7kZBzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK7kZRzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK7kZhzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK7kZxzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK7kaBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK7kaRzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK7kahzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK7kaxzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK7kbBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK7kbRzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK7kbhzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="b"/>
+    <elementParameter xmi:id="_CK7kbxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK7kcBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK7kcRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK7kchzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK7kcxzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_2">
+      <column xmi:id="_CK7kdBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK7kdRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8LABzCEeSxmKrKKcrnew" comment="" key="false" name="b_parent" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8LARzCEeSxmKrKKcrnew" componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="288">
+    <elementParameter xmi:id="_CK8LAhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tMap_1"/>
+    <elementParameter xmi:id="_CK8LAxzCEeSxmKrKKcrnew" field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter xmi:id="_CK8LBBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter xmi:id="_CK8LBRzCEeSxmKrKKcrnew" field="CHECK" name="REPLICATED_JOIN" value="true"/>
+    <elementParameter xmi:id="_CK8LBhzCEeSxmKrKKcrnew" field="IMAGE" name="PREVIEW" value="_NpGPMByoEeSxmKrKKcrnew-tMap_1-PREVIEW.bmp"/>
+    <elementParameter xmi:id="_CK8LBxzCEeSxmKrKKcrnew" field="CHECK" name="LKUP_PARALLELIZE" value="false"/>
+    <elementParameter xmi:id="_CK8LCBzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="map"/>
+    <elementParameter xmi:id="_CK8LCRzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8LChzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8LCxzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8LDBzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8LDRzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="out_join_basic">
+      <column xmi:id="_CK8LDhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8LDxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="MapperData" xmi:id="_CK8LEBzCEeSxmKrKKcrnew">
+      <uiProperties xmi:id="_CK8LERzCEeSxmKrKKcrnew"/>
+      <varTables xmi:id="_CK8LEhzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables xmi:id="_CK8LExzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="out_join_basic">
+        <mapperTableEntries xmi:id="_CK8LFBzCEeSxmKrKKcrnew" name="a_name" expression="row1.a_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LFRzCEeSxmKrKKcrnew" name="b_name" expression="row2.b_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables xmi:id="_CK8LFhzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8LFxzCEeSxmKrKKcrnew" name="a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LGBzCEeSxmKrKKcrnew" name="a_b_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LGRzCEeSxmKrKKcrnew" name="a_b2_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LGhzCEeSxmKrKKcrnew" name="a_c_joinkey" type="id_String" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8LGxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row2" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8LHBzCEeSxmKrKKcrnew" name="b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LHRzCEeSxmKrKKcrnew" name="b_joinkey" expression="row1.a_b_joinkey " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries xmi:id="_CK8LHhzCEeSxmKrKKcrnew" name="b_parent" type="id_Integer" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node xmi:id="_CK8LHxzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="288">
+    <elementParameter xmi:id="_CK8LIBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_1"/>
+    <elementParameter xmi:id="_CK8LIRzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8LIhzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/basic_la&quot;"/>
+    <elementParameter xmi:id="_CK8LIxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8LJBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8LJRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8LJhzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8LJxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8LKBzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8LKRzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LKhzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8LKxzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8LLBzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8LLRzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8LLhzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8LLxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8LMBzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8LMRzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8LMhzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8LMxzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8LNBzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8LNRzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LNhzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8LNxzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="output"/>
+    <elementParameter xmi:id="_CK8LOBzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8LORzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8LOhzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8LOxzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8LPBzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="tHDFSOutput_1">
+      <column xmi:id="_CK8LPRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8LPhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8LPxzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="288">
+    <elementParameter xmi:id="_CK8LQBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_3"/>
+    <elementParameter xmi:id="_CK8LQRzCEeSxmKrKKcrnew" field="CHECK" name="START" value="true"/>
+    <elementParameter xmi:id="_CK8LQhzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8LQxzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/a.csv&quot;"/>
+    <elementParameter xmi:id="_CK8LRBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8LRRzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8LRhzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LRxzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8LSBzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8LSRzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8LShzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8LSxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8LTBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8LTRzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8LThzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8LTxzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LUBzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8LURzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8LUhzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8LUxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8LVBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8LVRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8LVhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8LVxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8LWBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8LWRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8LWhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8LWxzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="a"/>
+    <elementParameter xmi:id="_CK8LXBzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8LXRzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8LXhzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8LXxzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8LYBzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_3">
+      <column xmi:id="_CK8LYRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8LYhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8LYxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b2_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8LZBzCEeSxmKrKKcrnew" comment="" key="false" name="a_c_joinkey" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8LZRzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="192">
+    <elementParameter xmi:id="_CK8LZhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_4"/>
+    <elementParameter xmi:id="_CK8LZxzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8LaBzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8LaRzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/b.csv&quot;"/>
+    <elementParameter xmi:id="_CK8LahzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8LaxzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8LbBzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LbRzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8LbhzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8LbxzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8LcBzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8LcRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8LchzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8LcxzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8LdBzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8LdRzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LdhzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8LdxzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8LeBzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8LeRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8LehzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8LexzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8LfBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8LfRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8LfhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8LfxzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="b"/>
+    <elementParameter xmi:id="_CK8LgBzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8LgRzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8LghzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8LgxzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8LhBzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_4">
+      <column xmi:id="_CK8LhRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8LhhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8LhxzCEeSxmKrKKcrnew" comment="" key="false" name="b_parent" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8LiBzCEeSxmKrKKcrnew" componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="992" posY="288">
+    <elementParameter xmi:id="_CK8LiRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tMap_2"/>
+    <elementParameter xmi:id="_CK8LihzCEeSxmKrKKcrnew" field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter xmi:id="_CK8LixzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter xmi:id="_CK8LjBzCEeSxmKrKKcrnew" field="CHECK" name="REPLICATED_JOIN" value="true"/>
+    <elementParameter xmi:id="_CK8LjRzCEeSxmKrKKcrnew" field="IMAGE" name="PREVIEW" value="_NpGPMByoEeSxmKrKKcrnew-tMap_2-PREVIEW.bmp"/>
+    <elementParameter xmi:id="_CK8LjhzCEeSxmKrKKcrnew" field="CHECK" name="LKUP_PARALLELIZE" value="false"/>
+    <elementParameter xmi:id="_CK8LjxzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="map"/>
+    <elementParameter xmi:id="_CK8LkBzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8LkRzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8LkhzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8LkxzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8LlBzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="copyOfout_join_basic">
+      <column xmi:id="_CK8LlRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8LlhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="MapperData" xmi:id="_CK8LlxzCEeSxmKrKKcrnew">
+      <uiProperties xmi:id="_CK8LmBzCEeSxmKrKKcrnew"/>
+      <varTables xmi:id="_CK8LmRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables xmi:id="_CK8LmhzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="copyOfout_join_basic">
+        <mapperTableEntries xmi:id="_CK8LmxzCEeSxmKrKKcrnew" name="a_name" expression="row3.a_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LnBzCEeSxmKrKKcrnew" name="b_name" expression="row4.b_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables xmi:id="_CK8LnRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row3" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8LnhzCEeSxmKrKKcrnew" name="a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LnxzCEeSxmKrKKcrnew" name="a_b_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LoBzCEeSxmKrKKcrnew" name="a_b2_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LoRzCEeSxmKrKKcrnew" name="a_c_joinkey" type="id_String" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8LohzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row4" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8LoxzCEeSxmKrKKcrnew" name="b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8LpBzCEeSxmKrKKcrnew" name="b_joinkey" expression="row3.a_b_joinkey " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries xmi:id="_CK8LpRzCEeSxmKrKKcrnew" name="b_parent" type="id_Integer" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node xmi:id="_CK8LphzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1184" posY="288">
+    <elementParameter xmi:id="_CK8LpxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_2"/>
+    <elementParameter xmi:id="_CK8LqBzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8LqRzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/basic_lu&quot;"/>
+    <elementParameter xmi:id="_CK8LqhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8LqxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8LrBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8LrRzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8LrhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8LrxzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8LsBzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LsRzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8LshzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8LsxzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8LtBzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8LtRzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8LthzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8LtxzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8LuBzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8LuRzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8LuhzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8LuxzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8LvBzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LvRzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8LvhzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="output"/>
+    <elementParameter xmi:id="_CK8LvxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8LwBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8LwRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8LwhzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8LwxzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="tHDFSOutput_2">
+      <column xmi:id="_CK8LxBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8LxRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8LxhzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1312" posY="288">
+    <elementParameter xmi:id="_CK8LxxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_5"/>
+    <elementParameter xmi:id="_CK8LyBzCEeSxmKrKKcrnew" field="CHECK" name="START" value="true"/>
+    <elementParameter xmi:id="_CK8LyRzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8LyhzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/a.csv&quot;"/>
+    <elementParameter xmi:id="_CK8LyxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8LzBzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8LzRzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8LzhzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8LzxzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8L0BzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8L0RzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8L0hzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8L0xzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8L1BzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8L1RzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8L1hzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8L1xzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8L2BzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8L2RzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8L2hzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8L2xzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8L3BzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8L3RzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8L3hzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8L3xzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8L4BzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8L4RzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8L4hzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="a"/>
+    <elementParameter xmi:id="_CK8L4xzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8L5BzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8L5RzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8L5hzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8L5xzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_5">
+      <column xmi:id="_CK8L6BzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8L6RzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8L6hzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b2_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8L6xzCEeSxmKrKKcrnew" comment="" key="false" name="a_c_joinkey" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8L7BzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1504" posY="192">
+    <elementParameter xmi:id="_CK8L7RzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_6"/>
+    <elementParameter xmi:id="_CK8L7hzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8L7xzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8L8BzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/b.csv&quot;"/>
+    <elementParameter xmi:id="_CK8L8RzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8L8hzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8L8xzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8L9BzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8L9RzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8L9hzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8L9xzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8L-BzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8L-RzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8L-hzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8L-xzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8L_BzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8L_RzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8L_hzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8L_xzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8MABzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8MARzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MAhzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8MAxzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MBBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8MBRzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8MBhzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="b"/>
+    <elementParameter xmi:id="_CK8MBxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MCBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MCRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8MChzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8MCxzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_6">
+      <column xmi:id="_CK8MDBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8MDRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8MDhzCEeSxmKrKKcrnew" comment="" key="false" name="b_parent" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8MDxzCEeSxmKrKKcrnew" componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1504" posY="288">
+    <elementParameter xmi:id="_CK8MEBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tMap_3"/>
+    <elementParameter xmi:id="_CK8MERzCEeSxmKrKKcrnew" field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter xmi:id="_CK8MEhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter xmi:id="_CK8MExzCEeSxmKrKKcrnew" field="CHECK" name="REPLICATED_JOIN" value="true"/>
+    <elementParameter xmi:id="_CK8MFBzCEeSxmKrKKcrnew" field="IMAGE" name="PREVIEW" value="_NpGPMByoEeSxmKrKKcrnew-tMap_3-PREVIEW.bmp"/>
+    <elementParameter xmi:id="_CK8MFRzCEeSxmKrKKcrnew" field="CHECK" name="LKUP_PARALLELIZE" value="false"/>
+    <elementParameter xmi:id="_CK8MFhzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="map"/>
+    <elementParameter xmi:id="_CK8MFxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MGBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MGRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8MGhzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8MGxzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="copyOfout_join_basic_0">
+      <column xmi:id="_CK8MHBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8MHRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="MapperData" xmi:id="_CK8MHhzCEeSxmKrKKcrnew">
+      <uiProperties xmi:id="_CK8MHxzCEeSxmKrKKcrnew"/>
+      <varTables xmi:id="_CK8MIBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables xmi:id="_CK8MIRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="copyOfout_join_basic_0">
+        <mapperTableEntries xmi:id="_CK8MIhzCEeSxmKrKKcrnew" name="a_name" expression="row7.a_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MIxzCEeSxmKrKKcrnew" name="b_name" expression="row5.b_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables xmi:id="_CK8MJBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row7" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8MJRzCEeSxmKrKKcrnew" name="a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MJhzCEeSxmKrKKcrnew" name="a_b_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MJxzCEeSxmKrKKcrnew" name="a_b2_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MKBzCEeSxmKrKKcrnew" name="a_c_joinkey" type="id_String" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8MKRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row5" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
+        <mapperTableEntries xmi:id="_CK8MKhzCEeSxmKrKKcrnew" name="b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MKxzCEeSxmKrKKcrnew" name="b_joinkey" expression="row7.a_b_joinkey " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries xmi:id="_CK8MLBzCEeSxmKrKKcrnew" name="b_parent" type="id_Integer" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node xmi:id="_CK8MLRzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1696" posY="288">
+    <elementParameter xmi:id="_CK8MLhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_3"/>
+    <elementParameter xmi:id="_CK8MLxzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8MMBzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/basic_ia&quot;"/>
+    <elementParameter xmi:id="_CK8MMRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8MMhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8MMxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8MNBzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8MNRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8MNhzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8MNxzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MOBzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8MORzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8MOhzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8MOxzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8MPBzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8MPRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8MPhzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8MPxzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8MQBzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8MQRzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8MQhzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8MQxzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MRBzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8MRRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="output"/>
+    <elementParameter xmi:id="_CK8MRhzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MRxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MSBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8MSRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8MShzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="tHDFSOutput_3">
+      <column xmi:id="_CK8MSxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8MTBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8MTRzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1824" posY="288">
+    <elementParameter xmi:id="_CK8MThzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_7"/>
+    <elementParameter xmi:id="_CK8MTxzCEeSxmKrKKcrnew" field="CHECK" name="START" value="true"/>
+    <elementParameter xmi:id="_CK8MUBzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8MURzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/a.csv&quot;"/>
+    <elementParameter xmi:id="_CK8MUhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8MUxzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8MVBzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MVRzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8MVhzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8MVxzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8MWBzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8MWRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8MWhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8MWxzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8MXBzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8MXRzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MXhzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8MXxzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8MYBzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8MYRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8MYhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MYxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8MZBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MZRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8MZhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MZxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8MaBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8MaRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="a"/>
+    <elementParameter xmi:id="_CK8MahzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MaxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MbBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8MbRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8MbhzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_7">
+      <column xmi:id="_CK8MbxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8McBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8McRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b2_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8MchzCEeSxmKrKKcrnew" comment="" key="false" name="a_c_joinkey" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8McxzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2016" posY="192">
+    <elementParameter xmi:id="_CK8MdBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_8"/>
+    <elementParameter xmi:id="_CK8MdRzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8MdhzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8MdxzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/b.csv&quot;"/>
+    <elementParameter xmi:id="_CK8MeBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8MeRzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8MehzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MexzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8MfBzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8MfRzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8MfhzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8MfxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8MgBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8MgRzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8MghzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8MgxzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MhBzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8MhRzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8MhhzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8MhxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8MiBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MiRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8MihzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8MixzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8MjBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8MjRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="b"/>
+    <elementParameter xmi:id="_CK8MjhzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MjxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MkBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8MkRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8MkhzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_8">
+      <column xmi:id="_CK8MkxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8MlBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8MlRzCEeSxmKrKKcrnew" comment="" key="false" name="b_parent" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8MlhzCEeSxmKrKKcrnew" componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="2016" posY="288">
+    <elementParameter xmi:id="_CK8MlxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tMap_4"/>
+    <elementParameter xmi:id="_CK8MmBzCEeSxmKrKKcrnew" field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter xmi:id="_CK8MmRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter xmi:id="_CK8MmhzCEeSxmKrKKcrnew" field="CHECK" name="REPLICATED_JOIN" value="true"/>
+    <elementParameter xmi:id="_CK8MmxzCEeSxmKrKKcrnew" field="IMAGE" name="PREVIEW" value="_NpGPMByoEeSxmKrKKcrnew-tMap_4-PREVIEW.bmp"/>
+    <elementParameter xmi:id="_CK8MnBzCEeSxmKrKKcrnew" field="CHECK" name="LKUP_PARALLELIZE" value="false"/>
+    <elementParameter xmi:id="_CK8MnRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="map"/>
+    <elementParameter xmi:id="_CK8MnhzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MnxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MoBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8MoRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8MohzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="copyOfcopyOfout_join_basic">
+      <column xmi:id="_CK8MoxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8MpBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="MapperData" xmi:id="_CK8MpRzCEeSxmKrKKcrnew">
+      <uiProperties xmi:id="_CK8MphzCEeSxmKrKKcrnew" shellMaximized="true"/>
+      <varTables xmi:id="_CK8MpxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables xmi:id="_CK8MqBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="copyOfcopyOfout_join_basic">
+        <mapperTableEntries xmi:id="_CK8MqRzCEeSxmKrKKcrnew" name="a_name" expression="row8.a_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MqhzCEeSxmKrKKcrnew" name="b_name" expression="row6.b_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables xmi:id="_CK8MqxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row8" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8MrBzCEeSxmKrKKcrnew" name="a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MrRzCEeSxmKrKKcrnew" name="a_b_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MrhzCEeSxmKrKKcrnew" name="a_b2_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MrxzCEeSxmKrKKcrnew" name="a_c_joinkey" type="id_String" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8MsBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row6" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE" innerJoin="true">
+        <mapperTableEntries xmi:id="_CK8MsRzCEeSxmKrKKcrnew" name="b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8MshzCEeSxmKrKKcrnew" name="b_joinkey" expression="row8.a_b_joinkey " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries xmi:id="_CK8MsxzCEeSxmKrKKcrnew" name="b_parent" type="id_Integer" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node xmi:id="_CK8MtBzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2208" posY="288">
+    <elementParameter xmi:id="_CK8MtRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_4"/>
+    <elementParameter xmi:id="_CK8MthzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8MtxzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/basic_iu&quot;"/>
+    <elementParameter xmi:id="_CK8MuBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8MuRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8MuhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8MuxzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8MvBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8MvRzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8MvhzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MvxzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8MwBzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8MwRzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8MwhzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8MwxzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8MxBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8MxRzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8MxhzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8MxxzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8MyBzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8MyRzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8MyhzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8MyxzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8MzBzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="output"/>
+    <elementParameter xmi:id="_CK8MzRzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8MzhzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8MzxzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8M0BzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8M0RzCEeSxmKrKKcrnew" connector="FLOW" label="out1" name="tHDFSOutput_4">
+      <column xmi:id="_CK8M0hzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8M0xzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8M1BzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="480">
+    <elementParameter xmi:id="_CK8M1RzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_9"/>
+    <elementParameter xmi:id="_CK8M1hzCEeSxmKrKKcrnew" field="CHECK" name="START" value="true"/>
+    <elementParameter xmi:id="_CK8M1xzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8M2BzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/b.csv&quot;"/>
+    <elementParameter xmi:id="_CK8M2RzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8M2hzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8M2xzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8M3BzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8M3RzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8M3hzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8M3xzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8M4BzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8M4RzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8M4hzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8M4xzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8M5BzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8M5RzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8M5hzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8M5xzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8M6BzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8M6RzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8M6hzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8M6xzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8M7BzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8M7RzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8M7hzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="b"/>
+    <elementParameter xmi:id="_CK8M7xzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8M8BzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8M8RzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8M8hzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8M8xzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_9">
+      <column xmi:id="_CK8M9BzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8M9RzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8M9hzCEeSxmKrKKcrnew" comment="" key="false" name="b_parent" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8M9xzCEeSxmKrKKcrnew" componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="480">
+    <elementParameter xmi:id="_CK8M-BzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tMap_5"/>
+    <elementParameter xmi:id="_CK8M-RzCEeSxmKrKKcrnew" field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter xmi:id="_CK8M-hzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter xmi:id="_CK8M-xzCEeSxmKrKKcrnew" field="CHECK" name="REPLICATED_JOIN" value="true"/>
+    <elementParameter xmi:id="_CK8M_BzCEeSxmKrKKcrnew" field="IMAGE" name="PREVIEW" value="_NpGPMByoEeSxmKrKKcrnew-tMap_5-PREVIEW.bmp"/>
+    <elementParameter xmi:id="_CK8M_RzCEeSxmKrKKcrnew" field="CHECK" name="LKUP_PARALLELIZE" value="false"/>
+    <elementParameter xmi:id="_CK8M_hzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="map"/>
+    <elementParameter xmi:id="_CK8M_xzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8NABzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8NARzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8NAhzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8NAxzCEeSxmKrKKcrnew" connector="FLOW" label="out" name="out">
+      <column xmi:id="_CK8NBBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_main" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NBRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NBhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NBxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NCBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a2_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata xmi:id="_CK8NCRzCEeSxmKrKKcrnew" connector="FLOW" name="extra">
+      <column xmi:id="_CK8NChzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_main" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NCxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NDBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NDRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NDhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a2_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata xmi:id="_CK8NDxzCEeSxmKrKKcrnew" connector="FLOW" name="ref">
+      <column xmi:id="_CK8NEBzCEeSxmKrKKcrnew" comment="" key="false" name="b_main" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NERzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NEhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NExzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NFBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a2_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata xmi:id="_CK8NFRzCEeSxmKrKKcrnew" connector="FLOW" name="rej_inner">
+      <column xmi:id="_CK8NFhzCEeSxmKrKKcrnew" comment="" key="false" name="b_main" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="MapperData" xmi:id="_CK8NFxzCEeSxmKrKKcrnew">
+      <uiProperties xmi:id="_CK8NGBzCEeSxmKrKKcrnew"/>
+      <varTables xmi:id="_CK8NGRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="Var" minimized="true">
+        <mapperTableEntries xmi:id="_CK8NGhzCEeSxmKrKKcrnew" name="blank" expression="&quot;blank&quot;" type="id_String"/>
+      </varTables>
+      <outputTables xmi:id="_CK8NGxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="out" expressionFilter="row13.a_name == null || row13.a_name.endsWith(&quot;&quot; + row9.b_joinkey)" activateExpressionFilter="true">
+        <mapperTableEntries xmi:id="_CK8NHBzCEeSxmKrKKcrnew" name="b_main" expression="row9.b_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NHRzCEeSxmKrKKcrnew" name="a_name" expression="row10.a_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NHhzCEeSxmKrKKcrnew" name="b_name" expression="row11.b_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NHxzCEeSxmKrKKcrnew" name="c_name" expression="row12.c_joinkey " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NIBzCEeSxmKrKKcrnew" name="a2_name" expression="row13.a_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <outputTables xmi:id="_CK8NIRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="extra" expressionFilter="row13.a_name == null || row13.a_name.endsWith(&quot;&quot; + (row9.b_joinkey + 1))" activateExpressionFilter="true" activateCondensedTool="true">
+        <mapperTableEntries xmi:id="_CK8NIhzCEeSxmKrKKcrnew" name="b_main" expression="row11.b_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NIxzCEeSxmKrKKcrnew" name="a_name" expression="Var.blank " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NJBzCEeSxmKrKKcrnew" name="b_name" expression="Var.blank " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NJRzCEeSxmKrKKcrnew" name="c_name" expression="Var.blank " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NJhzCEeSxmKrKKcrnew" name="a2_name" expression="row13.a_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <outputTables xmi:id="_CK8NJxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="ref" activateCondensedTool="true" reject="true">
+        <mapperTableEntries xmi:id="_CK8NKBzCEeSxmKrKKcrnew" name="b_main" expression="row9.b_name " type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NKRzCEeSxmKrKKcrnew" name="a_name" expression="row10.a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NKhzCEeSxmKrKKcrnew" name="b_name" expression="row11.b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NKxzCEeSxmKrKKcrnew" name="c_name" expression="row12.c_joinkey" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NLBzCEeSxmKrKKcrnew" name="a2_name" expression="row13.a_name" type="id_String" nullable="true"/>
+      </outputTables>
+      <outputTables xmi:id="_CK8NLRzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="rej_inner" activateCondensedTool="true" rejectInnerJoin="true">
+        <mapperTableEntries xmi:id="_CK8NLhzCEeSxmKrKKcrnew" name="b_main" expression="row9.b_name " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables xmi:id="_CK8NLxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row9" expressionFilter="row9.b_joinkey != 3" activateExpressionFilter="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8NMBzCEeSxmKrKKcrnew" name="b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NMRzCEeSxmKrKKcrnew" name="b_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NMhzCEeSxmKrKKcrnew" name="b_parent" type="id_Integer" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8NMxzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row10" expressionFilter="!&quot;a10&quot;.equals(row10.a_name)" activateExpressionFilter="true" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8NNBzCEeSxmKrKKcrnew" name="a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NNRzCEeSxmKrKKcrnew" name="a_b_joinkey" expression="row9.b_joinkey " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries xmi:id="_CK8NNhzCEeSxmKrKKcrnew" name="a_b2_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NNxzCEeSxmKrKKcrnew" name="a_c_joinkey" type="id_String" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8NOBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row11" activateExpressionFilter="true" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8NORzCEeSxmKrKKcrnew" name="b_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NOhzCEeSxmKrKKcrnew" name="b_joinkey" expression="" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NOxzCEeSxmKrKKcrnew" name="b_parent" expression="row9.b_joinkey " type="id_Integer" nullable="true"/>
+      </inputTables>
+      <inputTables xmi:id="_CK8NPBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row12" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8NPRzCEeSxmKrKKcrnew" name="c_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NPhzCEeSxmKrKKcrnew" name="c_joinkey" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NPxzCEeSxmKrKKcrnew" name="c_b_joinkey" expression="row9.b_joinkey " type="id_Integer" nullable="true" operator="="/>
+      </inputTables>
+      <inputTables xmi:id="_CK8NQBzCEeSxmKrKKcrnew" sizeState="INTERMEDIATE" name="row13" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries xmi:id="_CK8NQRzCEeSxmKrKKcrnew" name="a_name" type="id_String" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NQhzCEeSxmKrKKcrnew" name="a_b_joinkey" type="id_Integer" nullable="true"/>
+        <mapperTableEntries xmi:id="_CK8NQxzCEeSxmKrKKcrnew" name="a_b2_joinkey" expression="row9.b_joinkey " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries xmi:id="_CK8NRBzCEeSxmKrKKcrnew" name="a_c_joinkey" type="id_String" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node xmi:id="_CK8NRRzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="544">
+    <elementParameter xmi:id="_CK8NRhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_10"/>
+    <elementParameter xmi:id="_CK8NRxzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8NSBzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8NSRzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/a.csv&quot;"/>
+    <elementParameter xmi:id="_CK8NShzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8NSxzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8NTBzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8NTRzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8NThzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8NTxzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8NUBzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8NURzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8NUhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8NUxzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8NVBzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8NVRzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8NVhzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8NVxzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8NWBzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8NWRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8NWhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8NWxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8NXBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8NXRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8NXhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8NXxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8NYBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8NYRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="a"/>
+    <elementParameter xmi:id="_CK8NYhzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8NYxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8NZBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8NZRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8NZhzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_10">
+      <column xmi:id="_CK8NZxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8NaBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8NaRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b2_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8NahzCEeSxmKrKKcrnew" comment="" key="false" name="a_c_joinkey" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8NaxzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="608">
+    <elementParameter xmi:id="_CK8NbBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_11"/>
+    <elementParameter xmi:id="_CK8NbRzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8NbhzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8NbxzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/b.csv&quot;"/>
+    <elementParameter xmi:id="_CK8NcBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8NcRzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8NchzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8NcxzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8NdBzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8NdRzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8NdhzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8NdxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8NeBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_name"/>
+    <elementParameter xmi:id="_CK8NeRzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8NehzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8NexzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8NfBzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8NfRzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8NfhzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8NfxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8NgBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8NgRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8NghzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8NgxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8NhBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8NhRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="b"/>
+    <elementParameter xmi:id="_CK8NhhzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8NhxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8NiBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8NiRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8NihzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_11">
+      <column xmi:id="_CK8yEBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yERzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8yEhzCEeSxmKrKKcrnew" comment="" key="false" name="b_parent" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8yExzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="672">
+    <elementParameter xmi:id="_CK8yFBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_12"/>
+    <elementParameter xmi:id="_CK8yFRzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8yFhzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8yFxzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/c.csv&quot;"/>
+    <elementParameter xmi:id="_CK8yGBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8yGRzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8yGhzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yGxzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8yHBzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8yHRzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8yHhzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8yHxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="c_name"/>
+    <elementParameter xmi:id="_CK8yIBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="c_name"/>
+    <elementParameter xmi:id="_CK8yIRzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8yIhzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8yIxzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yJBzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8yJRzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8yJhzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8yJxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="c_name"/>
+      <elementValue xmi:id="_CK8yKBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8yKRzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="c_joinkey"/>
+      <elementValue xmi:id="_CK8yKhzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8yKxzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="c_b_joinkey"/>
+      <elementValue xmi:id="_CK8yLBzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8yLRzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="c"/>
+    <elementParameter xmi:id="_CK8yLhzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8yLxzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8yMBzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8yMRzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8yMhzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_12">
+      <column xmi:id="_CK8yMxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yNBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_joinkey" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yNRzCEeSxmKrKKcrnew" comment="" key="false" name="c_b_joinkey" nullable="true" pattern="" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8yNhzCEeSxmKrKKcrnew" componentName="tHDFSInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="736">
+    <elementParameter xmi:id="_CK8yNxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_13"/>
+    <elementParameter xmi:id="_CK8yOBzCEeSxmKrKKcrnew" field="CHECK" name="SUBTREE_START" value="false"/>
+    <elementParameter xmi:id="_CK8yORzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="false"/>
+    <elementParameter xmi:id="_CK8yOhzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FILENAME" value="context.hdfs_basedir+&quot;/in/a.csv&quot;"/>
+    <elementParameter xmi:id="_CK8yOxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8yPBzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8yPRzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yPhzCEeSxmKrKKcrnew" field="TEXT" name="HEADER" value="0"/>
+    <elementParameter xmi:id="_CK8yPxzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8yQBzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8yQRzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8yQhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8yQxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="a_name"/>
+    <elementParameter xmi:id="_CK8yRBzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8yRRzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8yRhzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yRxzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8ySBzCEeSxmKrKKcrnew" field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter xmi:id="_CK8ySRzCEeSxmKrKKcrnew" field="TABLE" name="TRIMSELECT">
+      <elementValue xmi:id="_CK8yShzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8ySxzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8yTBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8yTRzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8yThzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8yTxzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+      <elementValue xmi:id="_CK8yUBzCEeSxmKrKKcrnew" elementRef="SCHEMA_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8yURzCEeSxmKrKKcrnew" elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8yUhzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="a"/>
+    <elementParameter xmi:id="_CK8yUxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8yVBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8yVRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8yVhzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8yVxzCEeSxmKrKKcrnew" connector="FLOW" label="nation" name="tHDFSInput_13">
+      <column xmi:id="_CK8yWBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yWRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8yWhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_b2_joinkey" nullable="true" pattern="" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column xmi:id="_CK8yWxzCEeSxmKrKKcrnew" comment="" key="false" name="a_c_joinkey" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8yXBzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="480">
+    <elementParameter xmi:id="_CK8yXRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_5"/>
+    <elementParameter xmi:id="_CK8yXhzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8yXxzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/complex_output_la&quot;"/>
+    <elementParameter xmi:id="_CK8yYBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8yYRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yYhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yYxzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8yZBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8yZRzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8yZhzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yZxzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8yaBzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8yaRzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8yahzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8yaxzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8ybBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8ybRzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8ybhzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8ybxzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8ycBzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8ycRzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8ychzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8ycxzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8ydBzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="output"/>
+    <elementParameter xmi:id="_CK8ydRzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8ydhzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8ydxzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8yeBzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8yeRzCEeSxmKrKKcrnew" connector="FLOW" label="out" name="tHDFSOutput_5">
+      <column xmi:id="_CK8yehzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_main" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yexzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yfBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yfRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yfhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a2_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8yfxzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="576">
+    <elementParameter xmi:id="_CK8ygBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_6"/>
+    <elementParameter xmi:id="_CK8ygRzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8yghzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/complex_extra_la&quot;"/>
+    <elementParameter xmi:id="_CK8ygxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8yhBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yhRzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yhhzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8yhxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8yiBzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8yiRzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yihzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8yixzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8yjBzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8yjRzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8yjhzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8yjxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8ykBzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8ykRzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8ykhzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8ykxzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8ylBzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8ylRzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8ylhzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8ylxzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="extra"/>
+    <elementParameter xmi:id="_CK8ymBzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8ymRzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8ymhzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8ymxzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8ynBzCEeSxmKrKKcrnew" connector="FLOW" name="tHDFSOutput_6">
+      <column xmi:id="_CK8ynRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_main" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8ynhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8ynxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yoBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yoRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a2_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8yohzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="672">
+    <elementParameter xmi:id="_CK8yoxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_7"/>
+    <elementParameter xmi:id="_CK8ypBzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8ypRzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/complex_ref_la&quot;"/>
+    <elementParameter xmi:id="_CK8yphzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8ypxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yqBzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yqRzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8yqhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8yqxzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8yrBzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yrRzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8yrhzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8yrxzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8ysBzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8ysRzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8yshzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8ysxzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8ytBzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8ytRzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8ythzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8ytxzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8yuBzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8yuRzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8yuhzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="rej"/>
+    <elementParameter xmi:id="_CK8yuxzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8yvBzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8yvRzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8yvhzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8yvxzCEeSxmKrKKcrnew" connector="FLOW" name="tHDFSOutput_7">
+      <column xmi:id="_CK8ywBzCEeSxmKrKKcrnew" comment="" key="false" name="b_main" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8ywRzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8ywhzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="b_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8ywxzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="c_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column xmi:id="_CK8yxBzCEeSxmKrKKcrnew" comment="" key="false" length="0" name="a2_name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node xmi:id="_CK8yxRzCEeSxmKrKKcrnew" componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="736">
+    <elementParameter xmi:id="_CK8yxhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSOutput_8"/>
+    <elementParameter xmi:id="_CK8yxxzCEeSxmKrKKcrnew" field="CHECK" name="END_OF_FLOW" value="true"/>
+    <elementParameter xmi:id="_CK8yyBzCEeSxmKrKKcrnew" field="BOTH_HADOOP" name="FOLDER" value="context.hdfs_basedir+&quot;/out_&quot; + jobName + &quot;/complex_rej_inner_la&quot;"/>
+    <elementParameter xmi:id="_CK8yyRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
+    <elementParameter xmi:id="_CK8yyhzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="KEYCOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yyxzCEeSxmKrKKcrnew" field="COLUMN_LIST" name="VALUECOLUMN" value="b_main"/>
+    <elementParameter xmi:id="_CK8yzBzCEeSxmKrKKcrnew" field="LABEL" name="NOTE" value="NOTE : Only boolean, byte, byte[], double, float, integer, long, short, string are currently supported for key class and value columns fields"/>
+    <elementParameter xmi:id="_CK8yzRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="FILE_ACTION" value="OVERWRITE"/>
+    <elementParameter xmi:id="_CK8yzhzCEeSxmKrKKcrnew" field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter xmi:id="_CK8yzxzCEeSxmKrKKcrnew" field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8y0BzCEeSxmKrKKcrnew" field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter xmi:id="_CK8y0RzCEeSxmKrKKcrnew" field="CHECK" name="CUSTOM_ENCODING" value="false"/>
+    <elementParameter xmi:id="_CK8y0hzCEeSxmKrKKcrnew" field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter xmi:id="_CK8y0xzCEeSxmKrKKcrnew" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter xmi:id="_CK8y1BzCEeSxmKrKKcrnew" field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter xmi:id="_CK8y1RzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="COMPRESSION" value="GZIP"/>
+    <elementParameter xmi:id="_CK8y1hzCEeSxmKrKKcrnew" field="CHECK" name="MERGE_RESULT" value="false"/>
+    <elementParameter xmi:id="_CK8y1xzCEeSxmKrKKcrnew" field="FILE_HADOOP" name="MERGE_PATH" value="&quot;&quot;"/>
+    <elementParameter xmi:id="_CK8y2BzCEeSxmKrKKcrnew" field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter xmi:id="_CK8y2RzCEeSxmKrKKcrnew" field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter xmi:id="_CK8y2hzCEeSxmKrKKcrnew" field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter xmi:id="_CK8y2xzCEeSxmKrKKcrnew" field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter xmi:id="_CK8y3BzCEeSxmKrKKcrnew" field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;"/>
+    <elementParameter xmi:id="_CK8y3RzCEeSxmKrKKcrnew" field="TEXT" name="LABEL" value="rej_inner"/>
+    <elementParameter xmi:id="_CK8y3hzCEeSxmKrKKcrnew" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_CK8y3xzCEeSxmKrKKcrnew" field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter xmi:id="_CK8y4BzCEeSxmKrKKcrnew" field="MEMO" name="COMMENT" value=""/>
+    <elementParameter xmi:id="_CK8y4RzCEeSxmKrKKcrnew" field="CHECK" name="VALIDATION_RULES" value="false"/>
+    <metadata xmi:id="_CK8y4hzCEeSxmKrKKcrnew" connector="FLOW" name="tHDFSOutput_8">
+      <column xmi:id="_CK8y4xzCEeSxmKrKKcrnew" comment="" key="false" name="b_main" nullable="true" pattern="" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection xmi:id="_CK8y5BzCEeSxmKrKKcrnew" connectorName="FLOW" label="row1" lineStyle="0" metaname="tHDFSInput_1" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_1" target="tMap_1">
+    <elementParameter xmi:id="_CK8y5RzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8y5hzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8y5xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8y6BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8y6RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8y6hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8y6xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8y7BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8y7RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8y7hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8y7xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8y8BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8y8RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8y8hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8y8xzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8y9BzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row1"/>
+    <elementParameter xmi:id="_CK8y9RzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8y9hzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8y9xzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8y-BzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8y-RzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8y-hzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8y-xzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8y_BzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8y_RzCEeSxmKrKKcrnew" connectorName="FLOW" label="row2" lineStyle="8" metaname="tHDFSInput_2" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_2" target="tMap_1">
+    <elementParameter xmi:id="_CK8y_hzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8y_xzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zABzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8zARzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zAhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zAxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8zBBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zBRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zBhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8zBxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zCBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zCRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zChzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row2"/>
+    <elementParameter xmi:id="_CK8zCxzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zDBzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zDRzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zDhzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zDxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zEBzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zERzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zEhzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zExzCEeSxmKrKKcrnew" connectorName="FLOW" label="out_join_basic" lineStyle="0" metaname="out_join_basic" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tHDFSOutput_1">
+    <elementParameter xmi:id="_CK8zFBzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8zFRzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zFhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="r_name"/>
+      <elementValue xmi:id="_CK8zFxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zGBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zGRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8zGhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zGxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zHBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8zHRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zHhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zHxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zIBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="out_join_basic"/>
+    <elementParameter xmi:id="_CK8zIRzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zIhzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zIxzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zJBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zJRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zJhzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zJxzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zKBzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zKRzCEeSxmKrKKcrnew" connectorName="FLOW" label="row3" lineStyle="0" metaname="tHDFSInput_3" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_3" target="tMap_2">
+    <elementParameter xmi:id="_CK8zKhzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8zKxzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zLBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8zLRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zLhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zLxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8zMBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zMRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zMhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8zMxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zNBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zNRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8zNhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zNxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zOBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zORzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row3"/>
+    <elementParameter xmi:id="_CK8zOhzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zOxzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zPBzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zPRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zPhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zPxzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zQBzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zQRzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zQhzCEeSxmKrKKcrnew" connectorName="FLOW" label="row4" lineStyle="8" metaname="tHDFSInput_4" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_4" target="tMap_2">
+    <elementParameter xmi:id="_CK8zQxzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8zRBzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zRRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8zRhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zRxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zSBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8zSRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zShzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zSxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8zTBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zTRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zThzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zTxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row4"/>
+    <elementParameter xmi:id="_CK8zUBzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zURzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zUhzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zUxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zVBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zVRzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zVhzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zVxzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zWBzCEeSxmKrKKcrnew" connectorName="FLOW" label="copyOfout_join_basic" lineStyle="0" metaname="copyOfout_join_basic" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tHDFSOutput_2">
+    <elementParameter xmi:id="_CK8zWRzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8zWhzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zWxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="r_name"/>
+      <elementValue xmi:id="_CK8zXBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zXRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zXhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8zXxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zYBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zYRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8zYhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zYxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zZBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zZRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="copyOfout_join_basic"/>
+    <elementParameter xmi:id="_CK8zZhzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zZxzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zaBzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zaRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zahzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zaxzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zbBzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zbRzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zbhzCEeSxmKrKKcrnew" connectorName="FLOW" label="row7" lineStyle="0" metaname="tHDFSInput_5" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_5" target="tMap_3">
+    <elementParameter xmi:id="_CK8zbxzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8zcBzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zcRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8zchzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zcxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zdBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8zdRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zdhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zdxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8zeBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zeRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zehzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8zexzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zfBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zfRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zfhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row7"/>
+    <elementParameter xmi:id="_CK8zfxzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zgBzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zgRzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zghzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zgxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zhBzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zhRzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zhhzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zhxzCEeSxmKrKKcrnew" connectorName="FLOW" label="row5" lineStyle="8" metaname="tHDFSInput_6" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_6" target="tMap_3">
+    <elementParameter xmi:id="_CK8ziBzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8ziRzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zihzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8zixzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zjBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zjRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8zjhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zjxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zkBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8zkRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zkhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zkxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zlBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row5"/>
+    <elementParameter xmi:id="_CK8zlRzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zlhzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zlxzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zmBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zmRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zmhzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zmxzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8znBzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8znRzCEeSxmKrKKcrnew" connectorName="FLOW" label="copyOfout_join_basic_0" lineStyle="0" metaname="copyOfout_join_basic_0" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tHDFSOutput_3">
+    <elementParameter xmi:id="_CK8znhzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8znxzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zoBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="r_name"/>
+      <elementValue xmi:id="_CK8zoRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zohzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zoxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8zpBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zpRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zphzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8zpxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zqBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zqRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zqhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="copyOfout_join_basic_0"/>
+    <elementParameter xmi:id="_CK8zqxzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zrBzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zrRzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zrhzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zrxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zsBzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zsRzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zshzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zsxzCEeSxmKrKKcrnew" connectorName="FLOW" label="row8" lineStyle="0" metaname="tHDFSInput_7" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_7" target="tMap_4">
+    <elementParameter xmi:id="_CK8ztBzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8ztRzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zthzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8ztxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zuBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zuRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK8zuhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zuxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zvBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK8zvRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zvhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8zvxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK8zwBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8zwRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8zwhzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8zwxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row8"/>
+    <elementParameter xmi:id="_CK8zxBzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zxRzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8zxhzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8zxxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8zyBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8zyRzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8zyhzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8zyxzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8zzBzCEeSxmKrKKcrnew" connectorName="FLOW" label="row6" lineStyle="8" metaname="tHDFSInput_8" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_8" target="tMap_4">
+    <elementParameter xmi:id="_CK8zzRzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8zzhzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8zzxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8z0BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z0RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8z0hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8z0xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z1BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8z1RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK8z1hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z1xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8z2BzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8z2RzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row6"/>
+    <elementParameter xmi:id="_CK8z2hzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8z2xzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8z3BzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8z3RzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8z3hzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8z3xzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8z4BzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8z4RzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8z4hzCEeSxmKrKKcrnew" connectorName="FLOW" label="copyOfcopyOfout_join_basic" lineStyle="0" metaname="copyOfcopyOfout_join_basic" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tHDFSOutput_4">
+    <elementParameter xmi:id="_CK8z4xzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8z5BzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8z5RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="r_name"/>
+      <elementValue xmi:id="_CK8z5hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z5xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8z6BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8z6RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z6hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8z6xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK8z7BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z7RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK8z7hzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK8z7xzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="copyOfcopyOfout_join_basic"/>
+    <elementParameter xmi:id="_CK8z8BzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8z8RzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK8z8hzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK8z8xzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK8z9BzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK8z9RzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK8z9hzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK8z9xzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK8z-BzCEeSxmKrKKcrnew" connectorName="FLOW" label="row9" lineStyle="0" metaname="tHDFSInput_9" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_9" target="tMap_5">
+    <elementParameter xmi:id="_CK8z-RzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK8z-hzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK8z-xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK8z_BzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK8z_RzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK8z_hzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK8z_xzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80ABzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80ARzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK80AhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80AxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80BBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80BRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row9"/>
+    <elementParameter xmi:id="_CK80BhzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80BxzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80CBzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80CRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80ChzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK80CxzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK80DBzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK80DRzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK80DhzCEeSxmKrKKcrnew" connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_5" target="tHDFSOutput_5">
+    <elementParameter xmi:id="_CK80DxzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK80EBzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK80ERzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_main"/>
+      <elementValue xmi:id="_CK80EhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80ExzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80FBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK80FRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80FhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80FxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK80GBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80GRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80GhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="c_name"/>
+      <elementValue xmi:id="_CK80GxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80HBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80HRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a2_name"/>
+      <elementValue xmi:id="_CK80HhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80HxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80IBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80IRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="out"/>
+    <elementParameter xmi:id="_CK80IhzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80IxzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80JBzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80JRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80JhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK80JxzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK80KBzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK80KRzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK80KhzCEeSxmKrKKcrnew" connectorName="FLOW" label="extra" lineStyle="0" metaname="extra" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_5" target="tHDFSOutput_6">
+    <elementParameter xmi:id="_CK80KxzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK80LBzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK80LRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK80LhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80LxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80MBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK80MRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80MhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80MxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name_1"/>
+      <elementValue xmi:id="_CK80NBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80NRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80NhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="c_name"/>
+      <elementValue xmi:id="_CK80NxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80OBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80ORzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a2_name"/>
+      <elementValue xmi:id="_CK80OhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80OxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80PBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_main"/>
+      <elementValue xmi:id="_CK80PRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80PhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80PxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80QBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="extra"/>
+    <elementParameter xmi:id="_CK80QRzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80QhzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80QxzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80RBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80RRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK80RhzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK80RxzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK80SBzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK80SRzCEeSxmKrKKcrnew" connectorName="FLOW" label="ref" lineStyle="0" metaname="ref" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_5" target="tHDFSOutput_7">
+    <elementParameter xmi:id="_CK80ShzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK80SxzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK80TBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_main"/>
+      <elementValue xmi:id="_CK80TRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80ThzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80TxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK80UBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80URzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80UhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK80UxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80VBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80VRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a2_name"/>
+      <elementValue xmi:id="_CK80VhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80VxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80WBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="c_name"/>
+      <elementValue xmi:id="_CK80WRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80WhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80WxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80XBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="ref"/>
+    <elementParameter xmi:id="_CK80XRzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80XhzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80XxzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80YBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80YRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK80YhzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK80YxzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK80ZBzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK80ZRzCEeSxmKrKKcrnew" connectorName="FLOW" label="rej_inner" lineStyle="0" metaname="rej_inner" offsetLabelX="0" offsetLabelY="0" outputId="4" source="tMap_5" target="tHDFSOutput_8">
+    <elementParameter xmi:id="_CK80ZhzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK80ZxzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK80aBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_main"/>
+      <elementValue xmi:id="_CK80aRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80ahzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80axzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80bBzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="rej_inner"/>
+    <elementParameter xmi:id="_CK80bRzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80bhzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80bxzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80cBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80cRzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK80chzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK80cxzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK80dBzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK80dRzCEeSxmKrKKcrnew" connectorName="FLOW" label="row10" lineStyle="8" metaname="tHDFSInput_10" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_10" target="tMap_5">
+    <elementParameter xmi:id="_CK80dhzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK80dxzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK80eBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK80eRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80ehzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80exzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK80fBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80fRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80fhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK80fxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80gBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80gRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK80ghzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80gxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80hBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80hRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row10"/>
+    <elementParameter xmi:id="_CK80hhzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80hxzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80iBzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80iRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80ihzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK80ixzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK80jBzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK80jRzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK80jhzCEeSxmKrKKcrnew" connectorName="FLOW" label="row11" lineStyle="8" metaname="tHDFSInput_11" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_11" target="tMap_5">
+    <elementParameter xmi:id="_CK80jxzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK80kBzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK80kRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_name"/>
+      <elementValue xmi:id="_CK80khzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80kxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80lBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_joinkey"/>
+      <elementValue xmi:id="_CK80lRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80lhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK80lxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="b_parent"/>
+      <elementValue xmi:id="_CK80mBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK80mRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK80mhzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK80mxzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row11"/>
+    <elementParameter xmi:id="_CK80nBzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK80nRzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK80nhzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK80nxzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK9ZIBzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK9ZIRzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK9ZIhzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK9ZIxzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK9ZJBzCEeSxmKrKKcrnew" connectorName="FLOW" label="row12" lineStyle="8" metaname="tHDFSInput_12" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_12" target="tMap_5">
+    <elementParameter xmi:id="_CK9ZJRzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK9ZJhzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK9ZJxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="c_name"/>
+      <elementValue xmi:id="_CK9ZKBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZKRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK9ZKhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="c_joinkey"/>
+      <elementValue xmi:id="_CK9ZKxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZLBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK9ZLRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="c_b_joinkey"/>
+      <elementValue xmi:id="_CK9ZLhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZLxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK9ZMBzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK9ZMRzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row12"/>
+    <elementParameter xmi:id="_CK9ZMhzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK9ZMxzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK9ZNBzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK9ZNRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK9ZNhzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK9ZNxzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK9ZOBzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK9ZORzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <connection xmi:id="_CK9ZOhzCEeSxmKrKKcrnew" connectorName="FLOW" label="row13" lineStyle="8" metaname="tHDFSInput_13" offsetLabelX="0" offsetLabelY="0" source="tHDFSInput_13" target="tMap_5">
+    <elementParameter xmi:id="_CK9ZOxzCEeSxmKrKKcrnew" field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true"/>
+    <elementParameter xmi:id="_CK9ZPBzCEeSxmKrKKcrnew" field="TABLE" name="TRACES_CONNECTION_FILTER">
+      <elementValue xmi:id="_CK9ZPRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_name"/>
+      <elementValue xmi:id="_CK9ZPhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZPxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK9ZQBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b_joinkey"/>
+      <elementValue xmi:id="_CK9ZQRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZQhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK9ZQxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_b2_joinkey"/>
+      <elementValue xmi:id="_CK9ZRBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZRRzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue xmi:id="_CK9ZRhzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN" value="a_c_joinkey"/>
+      <elementValue xmi:id="_CK9ZRxzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue xmi:id="_CK9ZSBzCEeSxmKrKKcrnew" elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter xmi:id="_CK9ZSRzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter xmi:id="_CK9ZShzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="row13"/>
+    <elementParameter xmi:id="_CK9ZSxzCEeSxmKrKKcrnew" field="CHECK" name="RESUMING_CHECKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK9ZTBzCEeSxmKrKKcrnew" field="TEXT" name="RESUMLABEL" value=""/>
+    <elementParameter xmi:id="_CK9ZTRzCEeSxmKrKKcrnew" field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+    <elementParameter xmi:id="_CK9ZThzCEeSxmKrKKcrnew" field="CHECK" name="ACTIVEBREAKPOINT" value="false"/>
+    <elementParameter xmi:id="_CK9ZTxzCEeSxmKrKKcrnew" field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter xmi:id="_CK9ZUBzCEeSxmKrKKcrnew" field="TABLE" name="CONDITIONS"/>
+    <elementParameter xmi:id="_CK9ZURzCEeSxmKrKKcrnew" field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter xmi:id="_CK9ZUhzCEeSxmKrKKcrnew" field="MEMO_JAVA" name="ADVANCED_COND" value="// code sample : use input_row to define the condition.&#xA;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#xA;// replace the following expression by your own filter condition &#xA;input_row.columnName1.equals(input_row.columnName2)&#xA;&#x9;&#x9;&#x9;"/>
+  </connection>
+  <note xmi:id="_CK9ZUxzCEeSxmKrKKcrnew" opaque="true" posX="128" posY="128" sizeHeight="64" sizeWidth="96" text="basic">
+    <elementParameter xmi:id="_CK9ZVBzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_COLOR" value="255;255;203"/>
+    <elementParameter xmi:id="_CK9ZVRzCEeSxmKrKKcrnew" field="COLOR" name="NOTETXT_COLOR" value="0;0;0"/>
+    <elementParameter xmi:id="_CK9ZVhzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_LEFT" value="false"/>
+    <elementParameter xmi:id="_CK9ZVxzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_RIGHT" value="false"/>
+    <elementParameter xmi:id="_CK9ZWBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZWRzCEeSxmKrKKcrnew" field="RADIO" name="NOTELABEL_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZWhzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_TOP" value="false"/>
+    <elementParameter xmi:id="_CK9ZWxzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_BOTTOM" value="false"/>
+    <elementParameter xmi:id="_CK9ZXBzCEeSxmKrKKcrnew" field="TEXT" name="NOTE_FONT" value="Time New Roman"/>
+    <elementParameter xmi:id="_CK9ZXRzCEeSxmKrKKcrnew" field="TEXT" name="FONT_SIZE" value="10"/>
+    <elementParameter xmi:id="_CK9ZXhzCEeSxmKrKKcrnew" field="CHECK" name="FONT_BOLD" value="false"/>
+    <elementParameter xmi:id="_CK9ZXxzCEeSxmKrKKcrnew" field="CHECK" name="FONT_ITALIC" value="false"/>
+    <elementParameter xmi:id="_CK9ZYBzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_LINECOLOR" value="237;201;122"/>
+  </note>
+  <note xmi:id="_CK9ZYRzCEeSxmKrKKcrnew" opaque="true" posX="448" posY="32" sizeHeight="64" sizeWidth="96" text="left join&#xA;(all)">
+    <elementParameter xmi:id="_CK9ZYhzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_COLOR" value="255;255;203"/>
+    <elementParameter xmi:id="_CK9ZYxzCEeSxmKrKKcrnew" field="COLOR" name="NOTETXT_COLOR" value="0;0;0"/>
+    <elementParameter xmi:id="_CK9ZZBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_LEFT" value="false"/>
+    <elementParameter xmi:id="_CK9ZZRzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_RIGHT" value="false"/>
+    <elementParameter xmi:id="_CK9ZZhzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZZxzCEeSxmKrKKcrnew" field="RADIO" name="NOTELABEL_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZaBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_TOP" value="false"/>
+    <elementParameter xmi:id="_CK9ZaRzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_BOTTOM" value="false"/>
+    <elementParameter xmi:id="_CK9ZahzCEeSxmKrKKcrnew" field="TEXT" name="NOTE_FONT" value="Time New Roman"/>
+    <elementParameter xmi:id="_CK9ZaxzCEeSxmKrKKcrnew" field="TEXT" name="FONT_SIZE" value="10"/>
+    <elementParameter xmi:id="_CK9ZbBzCEeSxmKrKKcrnew" field="CHECK" name="FONT_BOLD" value="false"/>
+    <elementParameter xmi:id="_CK9ZbRzCEeSxmKrKKcrnew" field="CHECK" name="FONT_ITALIC" value="false"/>
+    <elementParameter xmi:id="_CK9ZbhzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_LINECOLOR" value="237;201;122"/>
+  </note>
+  <note xmi:id="_CK9ZbxzCEeSxmKrKKcrnew" opaque="true" posX="992" posY="32" sizeHeight="64" sizeWidth="96" text="left join&#xA;(unique)">
+    <elementParameter xmi:id="_CK9ZcBzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_COLOR" value="255;255;203"/>
+    <elementParameter xmi:id="_CK9ZcRzCEeSxmKrKKcrnew" field="COLOR" name="NOTETXT_COLOR" value="0;0;0"/>
+    <elementParameter xmi:id="_CK9ZchzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_LEFT" value="false"/>
+    <elementParameter xmi:id="_CK9ZcxzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_RIGHT" value="false"/>
+    <elementParameter xmi:id="_CK9ZdBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZdRzCEeSxmKrKKcrnew" field="RADIO" name="NOTELABEL_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZdhzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_TOP" value="false"/>
+    <elementParameter xmi:id="_CK9ZdxzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_BOTTOM" value="false"/>
+    <elementParameter xmi:id="_CK9ZeBzCEeSxmKrKKcrnew" field="TEXT" name="NOTE_FONT" value="Time New Roman"/>
+    <elementParameter xmi:id="_CK9ZeRzCEeSxmKrKKcrnew" field="TEXT" name="FONT_SIZE" value="10"/>
+    <elementParameter xmi:id="_CK9ZehzCEeSxmKrKKcrnew" field="CHECK" name="FONT_BOLD" value="false"/>
+    <elementParameter xmi:id="_CK9ZexzCEeSxmKrKKcrnew" field="CHECK" name="FONT_ITALIC" value="false"/>
+    <elementParameter xmi:id="_CK9ZfBzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_LINECOLOR" value="237;201;122"/>
+  </note>
+  <note xmi:id="_CK9ZfRzCEeSxmKrKKcrnew" opaque="true" posX="1472" posY="32" sizeHeight="64" sizeWidth="96" text="inner join&#xA;(all)">
+    <elementParameter xmi:id="_CK9ZfhzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_COLOR" value="255;255;203"/>
+    <elementParameter xmi:id="_CK9ZfxzCEeSxmKrKKcrnew" field="COLOR" name="NOTETXT_COLOR" value="0;0;0"/>
+    <elementParameter xmi:id="_CK9ZgBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_LEFT" value="false"/>
+    <elementParameter xmi:id="_CK9ZgRzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_RIGHT" value="false"/>
+    <elementParameter xmi:id="_CK9ZghzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZgxzCEeSxmKrKKcrnew" field="RADIO" name="NOTELABEL_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZhBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_TOP" value="false"/>
+    <elementParameter xmi:id="_CK9ZhRzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_BOTTOM" value="false"/>
+    <elementParameter xmi:id="_CK9ZhhzCEeSxmKrKKcrnew" field="TEXT" name="NOTE_FONT" value="Time New Roman"/>
+    <elementParameter xmi:id="_CK9ZhxzCEeSxmKrKKcrnew" field="TEXT" name="FONT_SIZE" value="10"/>
+    <elementParameter xmi:id="_CK9ZiBzCEeSxmKrKKcrnew" field="CHECK" name="FONT_BOLD" value="false"/>
+    <elementParameter xmi:id="_CK9ZiRzCEeSxmKrKKcrnew" field="CHECK" name="FONT_ITALIC" value="false"/>
+    <elementParameter xmi:id="_CK9ZihzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_LINECOLOR" value="237;201;122"/>
+  </note>
+  <note xmi:id="_CK9ZixzCEeSxmKrKKcrnew" opaque="true" posX="1984" posY="32" sizeHeight="64" sizeWidth="96" text="inner join&#xA;(unique)">
+    <elementParameter xmi:id="_CK9ZjBzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_COLOR" value="255;255;203"/>
+    <elementParameter xmi:id="_CK9ZjRzCEeSxmKrKKcrnew" field="COLOR" name="NOTETXT_COLOR" value="0;0;0"/>
+    <elementParameter xmi:id="_CK9ZjhzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_LEFT" value="false"/>
+    <elementParameter xmi:id="_CK9ZjxzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_RIGHT" value="false"/>
+    <elementParameter xmi:id="_CK9ZkBzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZkRzCEeSxmKrKKcrnew" field="RADIO" name="NOTELABEL_CENTER" value="true"/>
+    <elementParameter xmi:id="_CK9ZkhzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_TOP" value="false"/>
+    <elementParameter xmi:id="_CK9ZkxzCEeSxmKrKKcrnew" field="RADIO" name="NOTETXT_BOTTOM" value="false"/>
+    <elementParameter xmi:id="_CK9ZlBzCEeSxmKrKKcrnew" field="TEXT" name="NOTE_FONT" value="Time New Roman"/>
+    <elementParameter xmi:id="_CK9ZlRzCEeSxmKrKKcrnew" field="TEXT" name="FONT_SIZE" value="10"/>
+    <elementParameter xmi:id="_CK9ZlhzCEeSxmKrKKcrnew" field="CHECK" name="FONT_BOLD" value="false"/>
+    <elementParameter xmi:id="_CK9ZlxzCEeSxmKrKKcrnew" field="CHECK" name="FONT_ITALIC" value="false"/>
+    <elementParameter xmi:id="_CK9ZmBzCEeSxmKrKKcrnew" field="COLOR" name="NOTE_LINECOLOR" value="237;201;122"/>
+  </note>
+  <subjob xmi:id="_CK9ZmRzCEeSxmKrKKcrnew">
+    <elementParameter xmi:id="_CK9ZmhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_1"/>
+    <elementParameter xmi:id="_CK9ZmxzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter xmi:id="_CK9ZnBzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob xmi:id="_CK9ZnRzCEeSxmKrKKcrnew">
+    <elementParameter xmi:id="_CK9ZnhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_3"/>
+    <elementParameter xmi:id="_CK9ZnxzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter xmi:id="_CK9ZoBzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob xmi:id="_CK9ZoRzCEeSxmKrKKcrnew">
+    <elementParameter xmi:id="_CK9ZohzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_5"/>
+    <elementParameter xmi:id="_CK9ZoxzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter xmi:id="_CK9ZpBzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob xmi:id="_CK9ZpRzCEeSxmKrKKcrnew">
+    <elementParameter xmi:id="_CK9ZphzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_7"/>
+    <elementParameter xmi:id="_CK9ZpxzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter xmi:id="_CK9ZqBzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob xmi:id="_CK9ZqRzCEeSxmKrKKcrnew">
+    <elementParameter xmi:id="_CK9ZqhzCEeSxmKrKKcrnew" field="TEXT" name="UNIQUE_NAME" value="tHDFSInput_9"/>
+    <elementParameter xmi:id="_CK9ZqxzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter xmi:id="_CK9ZrBzCEeSxmKrKKcrnew" field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+</talendfile:ProcessType>
