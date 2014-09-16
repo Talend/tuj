@@ -1,0 +1,3061 @@
+package routines;
+
+import org.antlr.runtime.*;
+import org.talend.dataquality.parser.util.GrammarEngine;
+
+public class Tstandardizerow_jsonoutput_tdq9010Tstandardizerow_2 extends GrammarEngine {
+
+    @Override
+    protected void executeParserRule(TokenStream tokenStream) throws RecognitionException {
+        CombinedParser parser = new CombinedParser(tokenStream, matcher.getInterpreter());
+        parser.text();
+    }
+   
+    @Override
+    protected Lexer getUserLexer(ANTLRStringStream antlrStringStream) {
+        return new CombinedLexer(antlrStringStream);
+    }
+
+static class Combined_BasicLexer extends Lexer {
+    public static final int EOF=-1;
+    public static final int WHITESPACE=4;
+    public static final int CHAR_IGNORED=5;
+    public static final int CURRENCY=6;
+    public static final int ROMAN_NUMERAL=7;
+    public static final int DECIMAL=8;
+    public static final int FRACTION=9;
+    public static final int CJK=10;
+    public static final int EMAIL=11;
+    public static final int INT=12;
+    public static final int CAPWORD=13;
+    public static final int WORD=14;
+    public static final int ALPHANUM=15;
+    public static final int UNDEFINED=16;
+    public static final int DIGIT=17;
+    public static final int UpperCasedLetter=18;
+    public static final int LETTER_ASCII=19;
+    public static final int LETTER=20;
+    public static final int SYMBOL_ASCII=21;
+    public static final int SpecialStreetNumber=22;
+    public static final int City=23;
+    public static final int Tokens=24;
+
+    // delegates
+    // delegators
+    public CombinedLexer gCombined;
+    public CombinedLexer gParent;
+
+    public Combined_BasicLexer() {;} 
+    public Combined_BasicLexer(CharStream input, CombinedLexer gCombined) {
+        this(input, new RecognizerSharedState(), gCombined);
+    }
+    public Combined_BasicLexer(CharStream input, RecognizerSharedState state, CombinedLexer gCombined) {
+        super(input,state);
+
+        this.gCombined = gCombined;
+        gParent = gCombined;
+    }
+    public String getGrammarFileName() { return "BasicLexer.g"; }
+
+    // $ANTLR start "DIGIT"
+    public final void mDIGIT() throws RecognitionException {
+        try {
+            // BasicLexer.g:5:3: ( '0' .. '9' )
+            // BasicLexer.g:6:3: '0' .. '9'
+            {
+            matchRange('0','9'); 
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "DIGIT"
+
+    // $ANTLR start "UpperCasedLetter"
+    public final void mUpperCasedLetter() throws RecognitionException {
+        try {
+            // BasicLexer.g:11:3: ( 'A' .. 'Z' )
+            // BasicLexer.g:12:3: 'A' .. 'Z'
+            {
+            matchRange('A','Z'); 
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "UpperCasedLetter"
+
+    // $ANTLR start "LETTER_ASCII"
+    public final void mLETTER_ASCII() throws RecognitionException {
+        try {
+            // BasicLexer.g:17:3: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // BasicLexer.g:
+            {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "LETTER_ASCII"
+
+    // $ANTLR start "LETTER"
+    public final void mLETTER() throws RecognitionException {
+        try {
+            // BasicLexer.g:24:3: ( LETTER_ASCII | '\\u00a0' .. '\\u00ff' )
+            // BasicLexer.g:
+            {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00A0' && input.LA(1)<='\u00FF') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "LETTER"
+
+    // $ANTLR start "SYMBOL_ASCII"
+    public final void mSYMBOL_ASCII() throws RecognitionException {
+        try {
+            // BasicLexer.g:31:3: ( '#' .. '&' | '*' | '+' | '-' | '/' | '<' .. '>' | '@' | '\\u005b' .. '\\u0060' | '\\u007b' .. '\\u007e' )
+            // BasicLexer.g:
+            {
+            if ( (input.LA(1)>='#' && input.LA(1)<='&')||(input.LA(1)>='*' && input.LA(1)<='+')||input.LA(1)=='-'||input.LA(1)=='/'||(input.LA(1)>='<' && input.LA(1)<='>')||input.LA(1)=='@'||(input.LA(1)>='[' && input.LA(1)<='`')||(input.LA(1)>='{' && input.LA(1)<='~') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SYMBOL_ASCII"
+
+    // $ANTLR start "CJK"
+    public final void mCJK() throws RecognitionException {
+        try {
+            int _type = CJK;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:39:3: ( ( '\\u4e00' .. '\\u9faf' )+ )
+            // BasicLexer.g:40:3: ( '\\u4e00' .. '\\u9faf' )+
+            {
+            // BasicLexer.g:40:3: ( '\\u4e00' .. '\\u9faf' )+
+            int cnt1=0;
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( ((LA1_0>='\u4E00' && LA1_0<='\u9FAF')) ) {
+                    alt1=1;
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // BasicLexer.g:40:4: '\\u4e00' .. '\\u9faf'
+            	    {
+            	    matchRange('\u4E00','\u9FAF'); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt1 >= 1 ) break loop1;
+                        EarlyExitException eee =
+                            new EarlyExitException(1, input);
+                        throw eee;
+                }
+                cnt1++;
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "CJK"
+
+    // $ANTLR start "INT"
+    public final void mINT() throws RecognitionException {
+        try {
+            int _type = INT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:44:3: ( DIGIT ( DIGIT )* )
+            // BasicLexer.g:45:3: DIGIT ( DIGIT )*
+            {
+            mDIGIT(); 
+            // BasicLexer.g:45:9: ( DIGIT )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
+
+                if ( ((LA2_0>='0' && LA2_0<='9')) ) {
+                    alt2=1;
+                }
+
+
+                switch (alt2) {
+            	case 1 :
+            	    // BasicLexer.g:45:9: DIGIT
+            	    {
+            	    mDIGIT(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT"
+
+    // $ANTLR start "ALPHANUM"
+    public final void mALPHANUM() throws RecognitionException {
+        try {
+            int _type = ALPHANUM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:49:3: ( LETTER_ASCII ( LETTER_ASCII | '-' | '+' )* DIGIT ( DIGIT | LETTER_ASCII | '-' | '+' )* | DIGIT ( DIGIT | '-' | '+' )* LETTER_ASCII ( DIGIT | LETTER_ASCII | '-' | '+' )* )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( ((LA7_0>='A' && LA7_0<='Z')||(LA7_0>='a' && LA7_0<='z')) ) {
+                alt7=1;
+            }
+            else if ( ((LA7_0>='0' && LA7_0<='9')) ) {
+                alt7=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // BasicLexer.g:50:3: LETTER_ASCII ( LETTER_ASCII | '-' | '+' )* DIGIT ( DIGIT | LETTER_ASCII | '-' | '+' )*
+                    {
+                    mLETTER_ASCII(); 
+                    // BasicLexer.g:50:16: ( LETTER_ASCII | '-' | '+' )*
+                    loop3:
+                    do {
+                        int alt3=2;
+                        int LA3_0 = input.LA(1);
+
+                        if ( (LA3_0=='+'||LA3_0=='-'||(LA3_0>='A' && LA3_0<='Z')||(LA3_0>='a' && LA3_0<='z')) ) {
+                            alt3=1;
+                        }
+
+
+                        switch (alt3) {
+                    	case 1 :
+                    	    // BasicLexer.g:
+                    	    {
+                    	    if ( input.LA(1)=='+'||input.LA(1)=='-'||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                    	        input.consume();
+
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop3;
+                        }
+                    } while (true);
+
+                    mDIGIT(); 
+                    // BasicLexer.g:50:50: ( DIGIT | LETTER_ASCII | '-' | '+' )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0=='+'||LA4_0=='-'||(LA4_0>='0' && LA4_0<='9')||(LA4_0>='A' && LA4_0<='Z')||(LA4_0>='a' && LA4_0<='z')) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // BasicLexer.g:
+                    	    {
+                    	    if ( input.LA(1)=='+'||input.LA(1)=='-'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                    	        input.consume();
+
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop4;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+                case 2 :
+                    // BasicLexer.g:51:5: DIGIT ( DIGIT | '-' | '+' )* LETTER_ASCII ( DIGIT | LETTER_ASCII | '-' | '+' )*
+                    {
+                    mDIGIT(); 
+                    // BasicLexer.g:51:11: ( DIGIT | '-' | '+' )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( (LA5_0=='+'||LA5_0=='-'||(LA5_0>='0' && LA5_0<='9')) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // BasicLexer.g:
+                    	    {
+                    	    if ( input.LA(1)=='+'||input.LA(1)=='-'||(input.LA(1)>='0' && input.LA(1)<='9') ) {
+                    	        input.consume();
+
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+                    mLETTER_ASCII(); 
+                    // BasicLexer.g:51:45: ( DIGIT | LETTER_ASCII | '-' | '+' )*
+                    loop6:
+                    do {
+                        int alt6=2;
+                        int LA6_0 = input.LA(1);
+
+                        if ( (LA6_0=='+'||LA6_0=='-'||(LA6_0>='0' && LA6_0<='9')||(LA6_0>='A' && LA6_0<='Z')||(LA6_0>='a' && LA6_0<='z')) ) {
+                            alt6=1;
+                        }
+
+
+                        switch (alt6) {
+                    	case 1 :
+                    	    // BasicLexer.g:
+                    	    {
+                    	    if ( input.LA(1)=='+'||input.LA(1)=='-'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                    	        input.consume();
+
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop6;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ALPHANUM"
+
+    // $ANTLR start "CAPWORD"
+    public final void mCAPWORD() throws RecognitionException {
+        try {
+            int _type = CAPWORD;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:55:3: ( UpperCasedLetter ( UpperCasedLetter )* )
+            // BasicLexer.g:56:3: UpperCasedLetter ( UpperCasedLetter )*
+            {
+            mUpperCasedLetter(); 
+            // BasicLexer.g:56:20: ( UpperCasedLetter )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( ((LA8_0>='A' && LA8_0<='Z')) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // BasicLexer.g:56:20: UpperCasedLetter
+            	    {
+            	    mUpperCasedLetter(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "CAPWORD"
+
+    // $ANTLR start "WORD"
+    public final void mWORD() throws RecognitionException {
+        try {
+            int _type = WORD;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:60:3: ( LETTER ( ( '-' | '\\'' | '.' )? LETTER )* ( '\\'' | '.' )? )
+            // BasicLexer.g:61:3: LETTER ( ( '-' | '\\'' | '.' )? LETTER )* ( '\\'' | '.' )?
+            {
+            mLETTER(); 
+            // BasicLexer.g:61:10: ( ( '-' | '\\'' | '.' )? LETTER )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0=='\''||LA10_0=='.') ) {
+                    int LA10_1 = input.LA(2);
+
+                    if ( ((LA10_1>='A' && LA10_1<='Z')||(LA10_1>='a' && LA10_1<='z')||(LA10_1>='\u00A0' && LA10_1<='\u00FF')) ) {
+                        alt10=1;
+                    }
+
+
+                }
+                else if ( (LA10_0=='-'||(LA10_0>='A' && LA10_0<='Z')||(LA10_0>='a' && LA10_0<='z')||(LA10_0>='\u00A0' && LA10_0<='\u00FF')) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // BasicLexer.g:61:11: ( '-' | '\\'' | '.' )? LETTER
+            	    {
+            	    // BasicLexer.g:61:11: ( '-' | '\\'' | '.' )?
+            	    int alt9=2;
+            	    int LA9_0 = input.LA(1);
+
+            	    if ( (LA9_0=='\''||(LA9_0>='-' && LA9_0<='.')) ) {
+            	        alt9=1;
+            	    }
+            	    switch (alt9) {
+            	        case 1 :
+            	            // BasicLexer.g:
+            	            {
+            	            if ( input.LA(1)=='\''||(input.LA(1)>='-' && input.LA(1)<='.') ) {
+            	                input.consume();
+
+            	            }
+            	            else {
+            	                MismatchedSetException mse = new MismatchedSetException(null,input);
+            	                recover(mse);
+            	                throw mse;}
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    mLETTER(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+            // BasicLexer.g:61:36: ( '\\'' | '.' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0=='\''||LA11_0=='.') ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // BasicLexer.g:
+                    {
+                    if ( input.LA(1)=='\''||input.LA(1)=='.' ) {
+                        input.consume();
+
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "WORD"
+
+    // $ANTLR start "DECIMAL"
+    public final void mDECIMAL() throws RecognitionException {
+        try {
+            int _type = DECIMAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:65:3: ( ( DIGIT )* '.' ( DIGIT )+ )
+            // BasicLexer.g:66:3: ( DIGIT )* '.' ( DIGIT )+
+            {
+            // BasicLexer.g:66:3: ( DIGIT )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( ((LA12_0>='0' && LA12_0<='9')) ) {
+                    alt12=1;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // BasicLexer.g:66:3: DIGIT
+            	    {
+            	    mDIGIT(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop12;
+                }
+            } while (true);
+
+            match('.'); 
+            // BasicLexer.g:66:14: ( DIGIT )+
+            int cnt13=0;
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( ((LA13_0>='0' && LA13_0<='9')) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // BasicLexer.g:66:14: DIGIT
+            	    {
+            	    mDIGIT(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt13 >= 1 ) break loop13;
+                        EarlyExitException eee =
+                            new EarlyExitException(13, input);
+                        throw eee;
+                }
+                cnt13++;
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "DECIMAL"
+
+    // $ANTLR start "FRACTION"
+    public final void mFRACTION() throws RecognitionException {
+        try {
+            int _type = FRACTION;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:70:3: ( ( DIGIT )+ '/' ( DIGIT )+ | '\\u2153' .. '\\u215f' )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( ((LA16_0>='0' && LA16_0<='9')) ) {
+                alt16=1;
+            }
+            else if ( ((LA16_0>='\u2153' && LA16_0<='\u215F')) ) {
+                alt16=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 16, 0, input);
+
+                throw nvae;
+            }
+            switch (alt16) {
+                case 1 :
+                    // BasicLexer.g:71:3: ( DIGIT )+ '/' ( DIGIT )+
+                    {
+                    // BasicLexer.g:71:3: ( DIGIT )+
+                    int cnt14=0;
+                    loop14:
+                    do {
+                        int alt14=2;
+                        int LA14_0 = input.LA(1);
+
+                        if ( ((LA14_0>='0' && LA14_0<='9')) ) {
+                            alt14=1;
+                        }
+
+
+                        switch (alt14) {
+                    	case 1 :
+                    	    // BasicLexer.g:71:3: DIGIT
+                    	    {
+                    	    mDIGIT(); 
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt14 >= 1 ) break loop14;
+                                EarlyExitException eee =
+                                    new EarlyExitException(14, input);
+                                throw eee;
+                        }
+                        cnt14++;
+                    } while (true);
+
+                    match('/'); 
+                    // BasicLexer.g:71:14: ( DIGIT )+
+                    int cnt15=0;
+                    loop15:
+                    do {
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
+
+                        if ( ((LA15_0>='0' && LA15_0<='9')) ) {
+                            alt15=1;
+                        }
+
+
+                        switch (alt15) {
+                    	case 1 :
+                    	    // BasicLexer.g:71:14: DIGIT
+                    	    {
+                    	    mDIGIT(); 
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt15 >= 1 ) break loop15;
+                                EarlyExitException eee =
+                                    new EarlyExitException(15, input);
+                                throw eee;
+                        }
+                        cnt15++;
+                    } while (true);
+
+
+                    }
+                    break;
+                case 2 :
+                    // BasicLexer.g:72:5: '\\u2153' .. '\\u215f'
+                    {
+                    matchRange('\u2153','\u215F'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FRACTION"
+
+    // $ANTLR start "EMAIL"
+    public final void mEMAIL() throws RecognitionException {
+        try {
+            int _type = EMAIL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:76:3: ( ( LETTER_ASCII | DIGIT ) ( ( '_' | '.' | '-' | '%' )? ( LETTER_ASCII | DIGIT ) )+ '@' ( LETTER_ASCII | DIGIT ) ( ( '-' | '.' )? ( LETTER_ASCII | DIGIT ) )* '.' LETTER_ASCII LETTER_ASCII ( LETTER_ASCII ( LETTER_ASCII )? )? )
+            // BasicLexer.g:77:3: ( LETTER_ASCII | DIGIT ) ( ( '_' | '.' | '-' | '%' )? ( LETTER_ASCII | DIGIT ) )+ '@' ( LETTER_ASCII | DIGIT ) ( ( '-' | '.' )? ( LETTER_ASCII | DIGIT ) )* '.' LETTER_ASCII LETTER_ASCII ( LETTER_ASCII ( LETTER_ASCII )? )?
+            {
+            if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+            // BasicLexer.g:77:26: ( ( '_' | '.' | '-' | '%' )? ( LETTER_ASCII | DIGIT ) )+
+            int cnt18=0;
+            loop18:
+            do {
+                int alt18=2;
+                int LA18_0 = input.LA(1);
+
+                if ( (LA18_0=='%'||(LA18_0>='-' && LA18_0<='.')||(LA18_0>='0' && LA18_0<='9')||(LA18_0>='A' && LA18_0<='Z')||LA18_0=='_'||(LA18_0>='a' && LA18_0<='z')) ) {
+                    alt18=1;
+                }
+
+
+                switch (alt18) {
+            	case 1 :
+            	    // BasicLexer.g:77:27: ( '_' | '.' | '-' | '%' )? ( LETTER_ASCII | DIGIT )
+            	    {
+            	    // BasicLexer.g:77:27: ( '_' | '.' | '-' | '%' )?
+            	    int alt17=2;
+            	    int LA17_0 = input.LA(1);
+
+            	    if ( (LA17_0=='%'||(LA17_0>='-' && LA17_0<='.')||LA17_0=='_') ) {
+            	        alt17=1;
+            	    }
+            	    switch (alt17) {
+            	        case 1 :
+            	            // BasicLexer.g:
+            	            {
+            	            if ( input.LA(1)=='%'||(input.LA(1)>='-' && input.LA(1)<='.')||input.LA(1)=='_' ) {
+            	                input.consume();
+
+            	            }
+            	            else {
+            	                MismatchedSetException mse = new MismatchedSetException(null,input);
+            	                recover(mse);
+            	                throw mse;}
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt18 >= 1 ) break loop18;
+                        EarlyExitException eee =
+                            new EarlyExitException(18, input);
+                        throw eee;
+                }
+                cnt18++;
+            } while (true);
+
+            match('@'); 
+            if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+            // BasicLexer.g:77:105: ( ( '-' | '.' )? ( LETTER_ASCII | DIGIT ) )*
+            loop20:
+            do {
+                int alt20=2;
+                int LA20_0 = input.LA(1);
+
+                if ( (LA20_0=='.') ) {
+                    int LA20_1 = input.LA(2);
+
+                    if ( ((LA20_1>='A' && LA20_1<='Z')||(LA20_1>='a' && LA20_1<='z')) ) {
+                        int LA20_3 = input.LA(3);
+
+                        if ( ((LA20_3>='A' && LA20_3<='Z')||(LA20_3>='a' && LA20_3<='z')) ) {
+                            int LA20_4 = input.LA(4);
+
+                            if ( ((LA20_4>='A' && LA20_4<='Z')||(LA20_4>='a' && LA20_4<='z')) ) {
+                                int LA20_6 = input.LA(5);
+
+                                if ( ((LA20_6>='A' && LA20_6<='Z')||(LA20_6>='a' && LA20_6<='z')) ) {
+                                    int LA20_7 = input.LA(6);
+
+                                    if ( ((LA20_7>='-' && LA20_7<='.')||(LA20_7>='0' && LA20_7<='9')||(LA20_7>='A' && LA20_7<='Z')||(LA20_7>='a' && LA20_7<='z')) ) {
+                                        alt20=1;
+                                    }
+
+
+                                }
+                                else if ( ((LA20_6>='-' && LA20_6<='.')||(LA20_6>='0' && LA20_6<='9')) ) {
+                                    alt20=1;
+                                }
+
+
+                            }
+                            else if ( ((LA20_4>='-' && LA20_4<='.')||(LA20_4>='0' && LA20_4<='9')) ) {
+                                alt20=1;
+                            }
+
+
+                        }
+                        else if ( ((LA20_3>='-' && LA20_3<='.')||(LA20_3>='0' && LA20_3<='9')) ) {
+                            alt20=1;
+                        }
+
+
+                    }
+                    else if ( ((LA20_1>='0' && LA20_1<='9')) ) {
+                        alt20=1;
+                    }
+
+
+                }
+                else if ( (LA20_0=='-'||(LA20_0>='0' && LA20_0<='9')||(LA20_0>='A' && LA20_0<='Z')||(LA20_0>='a' && LA20_0<='z')) ) {
+                    alt20=1;
+                }
+
+
+                switch (alt20) {
+            	case 1 :
+            	    // BasicLexer.g:77:106: ( '-' | '.' )? ( LETTER_ASCII | DIGIT )
+            	    {
+            	    // BasicLexer.g:77:106: ( '-' | '.' )?
+            	    int alt19=2;
+            	    int LA19_0 = input.LA(1);
+
+            	    if ( ((LA19_0>='-' && LA19_0<='.')) ) {
+            	        alt19=1;
+            	    }
+            	    switch (alt19) {
+            	        case 1 :
+            	            // BasicLexer.g:
+            	            {
+            	            if ( (input.LA(1)>='-' && input.LA(1)<='.') ) {
+            	                input.consume();
+
+            	            }
+            	            else {
+            	                MismatchedSetException mse = new MismatchedSetException(null,input);
+            	                recover(mse);
+            	                throw mse;}
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop20;
+                }
+            } while (true);
+
+            match('.'); 
+            mLETTER_ASCII(); 
+            mLETTER_ASCII(); 
+            // BasicLexer.g:77:177: ( LETTER_ASCII ( LETTER_ASCII )? )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
+
+            if ( ((LA22_0>='A' && LA22_0<='Z')||(LA22_0>='a' && LA22_0<='z')) ) {
+                alt22=1;
+            }
+            switch (alt22) {
+                case 1 :
+                    // BasicLexer.g:77:178: LETTER_ASCII ( LETTER_ASCII )?
+                    {
+                    mLETTER_ASCII(); 
+                    // BasicLexer.g:77:191: ( LETTER_ASCII )?
+                    int alt21=2;
+                    int LA21_0 = input.LA(1);
+
+                    if ( ((LA21_0>='A' && LA21_0<='Z')||(LA21_0>='a' && LA21_0<='z')) ) {
+                        alt21=1;
+                    }
+                    switch (alt21) {
+                        case 1 :
+                            // BasicLexer.g:77:191: LETTER_ASCII
+                            {
+                            mLETTER_ASCII(); 
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "EMAIL"
+
+    // $ANTLR start "CURRENCY"
+    public final void mCURRENCY() throws RecognitionException {
+        try {
+            int _type = CURRENCY;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:81:3: ( '\\u0024' | '\\u00a2' .. '\\u00a5' | '\\u20a0' .. '\\u20cf' )
+            // BasicLexer.g:
+            {
+            if ( input.LA(1)=='$'||(input.LA(1)>='\u00A2' && input.LA(1)<='\u00A5')||(input.LA(1)>='\u20A0' && input.LA(1)<='\u20CF') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "CURRENCY"
+
+    // $ANTLR start "ROMAN_NUMERAL"
+    public final void mROMAN_NUMERAL() throws RecognitionException {
+        try {
+            int _type = ROMAN_NUMERAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:88:3: ( '\\u2160' .. '\\u2182' )
+            // BasicLexer.g:89:3: '\\u2160' .. '\\u2182'
+            {
+            matchRange('\u2160','\u2182'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ROMAN_NUMERAL"
+
+    // $ANTLR start "UNDEFINED"
+    public final void mUNDEFINED() throws RecognitionException {
+        try {
+            int _type = UNDEFINED;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // BasicLexer.g:93:3: ( SYMBOL_ASCII ( SYMBOL_ASCII | CHAR_IGNORED )* | ( LETTER_ASCII | DIGIT ) ( LETTER_ASCII | DIGIT | '_' | '.' | '-' | '+' | '/' | ':' | '@' )+ )
+            int alt25=2;
+            int LA25_0 = input.LA(1);
+
+            if ( ((LA25_0>='#' && LA25_0<='&')||(LA25_0>='*' && LA25_0<='+')||LA25_0=='-'||LA25_0=='/'||(LA25_0>='<' && LA25_0<='>')||LA25_0=='@'||(LA25_0>='[' && LA25_0<='`')||(LA25_0>='{' && LA25_0<='~')) ) {
+                alt25=1;
+            }
+            else if ( ((LA25_0>='0' && LA25_0<='9')||(LA25_0>='A' && LA25_0<='Z')||(LA25_0>='a' && LA25_0<='z')) ) {
+                alt25=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 25, 0, input);
+
+                throw nvae;
+            }
+            switch (alt25) {
+                case 1 :
+                    // BasicLexer.g:94:3: SYMBOL_ASCII ( SYMBOL_ASCII | CHAR_IGNORED )*
+                    {
+                    mSYMBOL_ASCII(); 
+                    // BasicLexer.g:94:16: ( SYMBOL_ASCII | CHAR_IGNORED )*
+                    loop23:
+                    do {
+                        int alt23=3;
+                        int LA23_0 = input.LA(1);
+
+                        if ( ((LA23_0>='#' && LA23_0<='&')||(LA23_0>='*' && LA23_0<='+')||LA23_0=='-'||LA23_0=='/'||(LA23_0>='<' && LA23_0<='>')||LA23_0=='@'||(LA23_0>='[' && LA23_0<='`')||(LA23_0>='{' && LA23_0<='~')) ) {
+                            alt23=1;
+                        }
+                        else if ( ((LA23_0>='!' && LA23_0<='\"')||(LA23_0>='\'' && LA23_0<=')')||LA23_0==','||LA23_0=='.'||(LA23_0>=':' && LA23_0<=';')||LA23_0=='?') ) {
+                            alt23=2;
+                        }
+
+
+                        switch (alt23) {
+                    	case 1 :
+                    	    // BasicLexer.g:94:17: SYMBOL_ASCII
+                    	    {
+                    	    mSYMBOL_ASCII(); 
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // BasicLexer.g:94:30: CHAR_IGNORED
+                    	    {
+                    	    gCombined.mCHAR_IGNORED(); 
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop23;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+                case 2 :
+                    // BasicLexer.g:95:5: ( LETTER_ASCII | DIGIT ) ( LETTER_ASCII | DIGIT | '_' | '.' | '-' | '+' | '/' | ':' | '@' )+
+                    {
+                    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                        input.consume();
+
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
+
+                    // BasicLexer.g:95:28: ( LETTER_ASCII | DIGIT | '_' | '.' | '-' | '+' | '/' | ':' | '@' )+
+                    int cnt24=0;
+                    loop24:
+                    do {
+                        int alt24=2;
+                        int LA24_0 = input.LA(1);
+
+                        if ( (LA24_0=='+'||(LA24_0>='-' && LA24_0<=':')||(LA24_0>='@' && LA24_0<='Z')||LA24_0=='_'||(LA24_0>='a' && LA24_0<='z')) ) {
+                            alt24=1;
+                        }
+
+
+                        switch (alt24) {
+                    	case 1 :
+                    	    // BasicLexer.g:
+                    	    {
+                    	    if ( input.LA(1)=='+'||(input.LA(1)>='-' && input.LA(1)<=':')||(input.LA(1)>='@' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                    	        input.consume();
+
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt24 >= 1 ) break loop24;
+                                EarlyExitException eee =
+                                    new EarlyExitException(24, input);
+                                throw eee;
+                        }
+                        cnt24++;
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "UNDEFINED"
+
+    public void mTokens() throws RecognitionException {
+        // BasicLexer.g:1:8: ( CJK | INT | ALPHANUM | CAPWORD | WORD | DECIMAL | FRACTION | EMAIL | CURRENCY | ROMAN_NUMERAL | UNDEFINED )
+        int alt26=11;
+        alt26 = dfa26.predict(input);
+        switch (alt26) {
+            case 1 :
+                // BasicLexer.g:1:10: CJK
+                {
+                mCJK(); 
+
+                }
+                break;
+            case 2 :
+                // BasicLexer.g:1:14: INT
+                {
+                mINT(); 
+
+                }
+                break;
+            case 3 :
+                // BasicLexer.g:1:18: ALPHANUM
+                {
+                mALPHANUM(); 
+
+                }
+                break;
+            case 4 :
+                // BasicLexer.g:1:27: CAPWORD
+                {
+                mCAPWORD(); 
+
+                }
+                break;
+            case 5 :
+                // BasicLexer.g:1:35: WORD
+                {
+                mWORD(); 
+
+                }
+                break;
+            case 6 :
+                // BasicLexer.g:1:40: DECIMAL
+                {
+                mDECIMAL(); 
+
+                }
+                break;
+            case 7 :
+                // BasicLexer.g:1:48: FRACTION
+                {
+                mFRACTION(); 
+
+                }
+                break;
+            case 8 :
+                // BasicLexer.g:1:57: EMAIL
+                {
+                mEMAIL(); 
+
+                }
+                break;
+            case 9 :
+                // BasicLexer.g:1:63: CURRENCY
+                {
+                mCURRENCY(); 
+
+                }
+                break;
+            case 10 :
+                // BasicLexer.g:1:72: ROMAN_NUMERAL
+                {
+                mROMAN_NUMERAL(); 
+
+                }
+                break;
+            case 11 :
+                // BasicLexer.g:1:86: UNDEFINED
+                {
+                mUNDEFINED(); 
+
+                }
+                break;
+
+        }
+
+    }
+
+
+    protected DFA26 dfa26 = new DFA26(this);
+    static final String DFA26_eotS =
+        "\2\uffff\1\15\1\26\1\10\4\uffff\1\13\4\uffff\1\15\1\14\1\37\4\14"+
+        "\2\uffff\1\26\1\37\1\14\2\10\3\14\1\uffff\3\37\1\6\1\14\1\7\4\37"+
+        "\1\10\1\37\6\14\3\25";
+    static final String DFA26_eofS =
+        "\65\uffff";
+    static final String DFA26_minS =
+        "\1\43\1\uffff\3\45\4\uffff\1\41\4\uffff\1\45\1\53\1\45\2\60\1\53"+
+        "\1\60\2\uffff\2\45\1\53\1\45\2\53\1\60\1\45\1\uffff\1\53\1\45\1"+
+        "\53\2\45\3\53\1\45\1\53\1\45\1\53\1\55\2\60\1\55\1\60\1\55\3\53";
+    static final String DFA26_maxS =
+        "\1\u9faf\1\uffff\1\172\1\u00ff\1\172\4\uffff\1\176\4\uffff\4\172"+
+        "\1\71\2\172\2\uffff\1\u00ff\1\172\1\u00ff\5\172\1\uffff\15\172\1"+
+        "\u00ff\7\172";
+    static final String DFA26_acceptS =
+        "\1\uffff\1\1\3\uffff\1\5\1\6\1\7\1\5\1\uffff\1\12\1\11\1\13\1\2"+
+        "\7\uffff\1\10\1\4\10\uffff\1\3\25\uffff";
+    static final String DFA26_specialS =
+        "\65\uffff}>";
+    static final String[] DFA26_transitionS = {
+            "\1\14\1\11\2\14\3\uffff\2\14\1\uffff\1\14\1\6\1\14\12\2\2\uffff"+
+            "\3\14\1\uffff\1\14\32\3\6\14\32\4\4\14\41\uffff\2\10\4\5\132"+
+            "\10\u1fa0\uffff\60\13\u0083\uffff\15\7\43\12\u2c7d\uffff\u51b0"+
+            "\1",
+            "",
+            "\1\25\5\uffff\1\23\1\uffff\1\17\1\21\1\22\12\16\1\14\5\uffff"+
+            "\1\14\32\20\4\uffff\1\24\1\uffff\32\20",
+            "\1\25\1\uffff\1\10\3\uffff\1\34\1\uffff\1\31\1\33\1\14\12\30"+
+            "\1\14\5\uffff\1\14\32\27\4\uffff\1\24\1\uffff\32\32\45\uffff"+
+            "\140\10",
+            "\1\25\5\uffff\1\34\1\uffff\1\31\1\33\1\14\12\30\1\14\5\uffff"+
+            "\1\14\32\32\4\uffff\1\24\1\uffff\32\32",
+            "",
+            "",
+            "",
+            "",
+            "\17\14\12\uffff\7\14\32\uffff\6\14\32\uffff\4\14",
+            "",
+            "",
+            "",
+            "",
+            "\1\25\5\uffff\1\23\1\uffff\1\17\1\21\1\22\12\16\1\14\5\uffff"+
+            "\1\35\32\20\4\uffff\1\24\1\uffff\32\20",
+            "\1\23\1\uffff\1\23\2\uffff\12\36\7\uffff\32\20\6\uffff\32\20",
+            "\1\25\5\uffff\1\42\1\uffff\1\40\1\24\1\14\12\41\1\14\5\uffff"+
+            "\1\35\32\41\4\uffff\1\24\1\uffff\32\41",
+            "\12\43\7\uffff\32\44\6\uffff\32\44",
+            "\12\45",
+            "\1\23\1\uffff\1\23\2\uffff\12\23\7\uffff\32\46\6\uffff\32\46",
+            "\12\44\7\uffff\32\44\6\uffff\32\44",
+            "",
+            "",
+            "\1\25\1\uffff\1\10\3\uffff\1\34\1\uffff\1\31\1\33\1\14\12\30"+
+            "\1\14\5\uffff\1\35\32\27\4\uffff\1\24\1\uffff\32\32\45\uffff"+
+            "\140\10",
+            "\1\25\5\uffff\1\51\1\uffff\1\47\1\24\1\14\12\50\1\14\5\uffff"+
+            "\1\35\32\50\4\uffff\1\24\1\uffff\32\50",
+            "\1\34\1\uffff\1\34\2\uffff\12\30\7\uffff\32\32\6\uffff\32\32"+
+            "\45\uffff\140\10",
+            "\1\25\5\uffff\1\34\1\uffff\1\31\1\33\1\14\12\30\1\14\5\uffff"+
+            "\1\35\32\32\4\uffff\1\24\1\uffff\32\32",
+            "\1\14\1\uffff\3\14\12\44\1\14\5\uffff\1\14\32\52\4\uffff\1"+
+            "\14\1\uffff\32\52",
+            "\1\34\1\uffff\1\34\2\uffff\12\53\7\uffff\32\34\6\uffff\32\34",
+            "\12\54\7\uffff\32\54\6\uffff\32\54",
+            "\1\25\5\uffff\1\23\1\uffff\1\17\1\24\1\uffff\12\36\6\uffff"+
+            "\1\35\32\20\4\uffff\1\24\1\uffff\32\20",
+            "",
+            "\1\42\1\uffff\1\42\2\14\12\41\1\14\5\uffff\1\14\32\41\4\uffff"+
+            "\1\14\1\uffff\32\41",
+            "\1\25\5\uffff\1\42\1\uffff\1\40\1\24\1\14\12\41\1\14\5\uffff"+
+            "\1\35\32\41\4\uffff\1\24\1\uffff\32\41",
+            "\1\42\1\uffff\1\42\2\14\12\42\1\14\5\uffff\1\14\32\42\4\uffff"+
+            "\1\14\1\uffff\32\42",
+            "\1\25\5\uffff\1\14\1\uffff\2\24\1\14\12\43\1\14\5\uffff\1\35"+
+            "\32\44\4\uffff\1\24\1\uffff\32\44",
+            "\1\25\7\uffff\2\24\1\uffff\12\44\6\uffff\1\35\32\44\4\uffff"+
+            "\1\24\1\uffff\32\44",
+            "\1\14\1\uffff\3\14\12\45\1\14\5\uffff\33\14\4\uffff\1\14\1"+
+            "\uffff\32\14",
+            "\1\42\1\uffff\1\42\2\14\12\42\1\14\5\uffff\1\14\32\42\4\uffff"+
+            "\1\14\1\uffff\32\42",
+            "\1\51\1\uffff\1\51\2\14\12\50\1\14\5\uffff\1\14\32\50\4\uffff"+
+            "\1\14\1\uffff\32\50",
+            "\1\25\5\uffff\1\51\1\uffff\1\47\1\24\1\14\12\50\1\14\5\uffff"+
+            "\1\35\32\50\4\uffff\1\24\1\uffff\32\50",
+            "\1\51\1\uffff\1\51\2\14\12\51\1\14\5\uffff\1\14\32\51\4\uffff"+
+            "\1\14\1\uffff\32\51",
+            "\1\25\5\uffff\1\14\1\uffff\1\55\1\33\1\14\12\44\1\14\5\uffff"+
+            "\1\35\32\52\4\uffff\1\24\1\uffff\32\52",
+            "\1\51\1\uffff\1\51\2\14\12\51\1\14\5\uffff\1\14\32\51\4\uffff"+
+            "\1\14\1\uffff\32\51",
+            "\1\60\1\56\1\uffff\12\57\7\uffff\32\57\6\uffff\32\57",
+            "\12\44\7\uffff\32\52\6\uffff\32\52\45\uffff\140\10",
+            "\12\57\7\uffff\32\61\6\uffff\32\61",
+            "\1\60\1\56\1\uffff\12\57\7\uffff\32\57\6\uffff\32\57",
+            "\12\57\7\uffff\32\57\6\uffff\32\57",
+            "\1\60\1\56\1\uffff\12\57\7\uffff\32\62\6\uffff\32\62",
+            "\1\14\1\uffff\1\60\1\56\1\14\12\57\1\14\5\uffff\1\14\32\63"+
+            "\4\uffff\1\14\1\uffff\32\63",
+            "\1\14\1\uffff\1\60\1\56\1\14\12\57\1\14\5\uffff\1\14\32\64"+
+            "\4\uffff\1\14\1\uffff\32\64",
+            "\1\14\1\uffff\1\60\1\56\1\14\12\57\1\14\5\uffff\1\14\32\57"+
+            "\4\uffff\1\14\1\uffff\32\57"
+    };
+
+    static final short[] DFA26_eot = DFA.unpackEncodedString(DFA26_eotS);
+    static final short[] DFA26_eof = DFA.unpackEncodedString(DFA26_eofS);
+    static final char[] DFA26_min = DFA.unpackEncodedStringToUnsignedChars(DFA26_minS);
+    static final char[] DFA26_max = DFA.unpackEncodedStringToUnsignedChars(DFA26_maxS);
+    static final short[] DFA26_accept = DFA.unpackEncodedString(DFA26_acceptS);
+    static final short[] DFA26_special = DFA.unpackEncodedString(DFA26_specialS);
+    static final short[][] DFA26_transition;
+
+    static {
+        int numStates = DFA26_transitionS.length;
+        DFA26_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA26_transition[i] = DFA.unpackEncodedString(DFA26_transitionS[i]);
+        }
+    }
+
+    class DFA26 extends DFA {
+
+        public DFA26(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 26;
+            this.eot = DFA26_eot;
+            this.eof = DFA26_eof;
+            this.min = DFA26_min;
+            this.max = DFA26_max;
+            this.accept = DFA26_accept;
+            this.special = DFA26_special;
+            this.transition = DFA26_transition;
+        }
+        public String getDescription() {
+            return "1:1: Tokens : ( CJK | INT | ALPHANUM | CAPWORD | WORD | DECIMAL | FRACTION | EMAIL | CURRENCY | ROMAN_NUMERAL | UNDEFINED );";
+        }
+    }
+ 
+
+}
+
+static class CombinedLexer extends Lexer {
+    public static final int EOF=-1;
+    public static final int WHITESPACE=4;
+    public static final int CHAR_IGNORED=5;
+    public static final int CURRENCY=6;
+    public static final int ROMAN_NUMERAL=7;
+    public static final int DECIMAL=8;
+    public static final int FRACTION=9;
+    public static final int CJK=10;
+    public static final int EMAIL=11;
+    public static final int INT=12;
+    public static final int CAPWORD=13;
+    public static final int WORD=14;
+    public static final int ALPHANUM=15;
+    public static final int UNDEFINED=16;
+    public static final int DIGIT=17;
+    public static final int UpperCasedLetter=18;
+    public static final int LETTER_ASCII=19;
+    public static final int LETTER=20;
+    public static final int SYMBOL_ASCII=21;
+    public static final int SpecialStreetNumber=22;
+    public static final int City=23;
+    public static final int Tokens=24;
+
+    /** Override this method to change where error messages go */
+    public void emitErrorMessage(String msg) {
+        org.talend.dataquality.parser.util.RecognitionError.set(false, msg);
+        // System.err.println(msg);
+    }
+
+
+    // delegates
+    public Combined_BasicLexer gBasicLexer;
+    // delegators
+
+    public CombinedLexer() {;} 
+    public CombinedLexer(CharStream input) {
+        this(input, new RecognizerSharedState());
+    }
+    public CombinedLexer(CharStream input, RecognizerSharedState state) {
+        super(input,state);
+        gBasicLexer = new Combined_BasicLexer(input, state, this);
+    }
+    public String getGrammarFileName() { return "/opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g"; }
+
+    // $ANTLR start "SpecialStreetNumber"
+    public final void mSpecialStreetNumber() throws RecognitionException {
+        try {
+            int _type = SpecialStreetNumber;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:21: ( ( INT ( 'bis' | 'ter' ) ) | ( INT '-' INT ) )
+            int alt2=2;
+            alt2 = dfa2.predict(input);
+            switch (alt2) {
+                case 1 :
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:24: ( INT ( 'bis' | 'ter' ) )
+                    {
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:24: ( INT ( 'bis' | 'ter' ) )
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:25: INT ( 'bis' | 'ter' )
+                    {
+                    gBasicLexer.mINT(); 
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:29: ( 'bis' | 'ter' )
+                    int alt1=2;
+                    int LA1_0 = input.LA(1);
+
+                    if ( (LA1_0=='b') ) {
+                        alt1=1;
+                    }
+                    else if ( (LA1_0=='t') ) {
+                        alt1=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 1, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt1) {
+                        case 1 :
+                            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:30: 'bis'
+                            {
+                            match("bis"); 
+
+
+                            }
+                            break;
+                        case 2 :
+                            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:36: 'ter'
+                            {
+                            match("ter"); 
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:46: ( INT '-' INT )
+                    {
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:46: ( INT '-' INT )
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:53:48: INT '-' INT
+                    {
+                    gBasicLexer.mINT(); 
+                    match('-'); 
+                    gBasicLexer.mINT(); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SpecialStreetNumber"
+
+    // $ANTLR start "City"
+    public final void mCity() throws RecognitionException {
+        try {
+            int _type = City;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:6: ( DIGIT DIGIT DIGIT DIGIT DIGIT ( LETTER | ( '\\u0100' .. '\\u024f' ) | ' ' | '-' | '\\'' | '/' | DIGIT )+ )
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:8: DIGIT DIGIT DIGIT DIGIT DIGIT ( LETTER | ( '\\u0100' .. '\\u024f' ) | ' ' | '-' | '\\'' | '/' | DIGIT )+
+            {
+            gBasicLexer.mDIGIT(); 
+            gBasicLexer.mDIGIT(); 
+            gBasicLexer.mDIGIT(); 
+            gBasicLexer.mDIGIT(); 
+            gBasicLexer.mDIGIT(); 
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:38: ( LETTER | ( '\\u0100' .. '\\u024f' ) | ' ' | '-' | '\\'' | '/' | DIGIT )+
+            int cnt3=0;
+            loop3:
+            do {
+                int alt3=8;
+                int LA3_0 = input.LA(1);
+
+                if ( ((LA3_0>='A' && LA3_0<='Z')||(LA3_0>='a' && LA3_0<='z')||(LA3_0>='\u00A0' && LA3_0<='\u00FF')) ) {
+                    alt3=1;
+                }
+                else if ( ((LA3_0>='\u0100' && LA3_0<='\u024F')) ) {
+                    alt3=2;
+                }
+                else if ( (LA3_0==' ') ) {
+                    alt3=3;
+                }
+                else if ( (LA3_0=='-') ) {
+                    alt3=4;
+                }
+                else if ( (LA3_0=='\'') ) {
+                    alt3=5;
+                }
+                else if ( (LA3_0=='/') ) {
+                    alt3=6;
+                }
+                else if ( ((LA3_0>='0' && LA3_0<='9')) ) {
+                    alt3=7;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:39: LETTER
+            	    {
+            	    gBasicLexer.mLETTER(); 
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:46: ( '\\u0100' .. '\\u024f' )
+            	    {
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:46: ( '\\u0100' .. '\\u024f' )
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:47: '\\u0100' .. '\\u024f'
+            	    {
+            	    matchRange('\u0100','\u024F'); 
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:67: ' '
+            	    {
+            	    match(' '); 
+
+            	    }
+            	    break;
+            	case 4 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:71: '-'
+            	    {
+            	    match('-'); 
+
+            	    }
+            	    break;
+            	case 5 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:75: '\\''
+            	    {
+            	    match('\''); 
+
+            	    }
+            	    break;
+            	case 6 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:80: '/'
+            	    {
+            	    match('/'); 
+
+            	    }
+            	    break;
+            	case 7 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:54:84: DIGIT
+            	    {
+            	    gBasicLexer.mDIGIT(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt3 >= 1 ) break loop3;
+                        EarlyExitException eee =
+                            new EarlyExitException(3, input);
+                        throw eee;
+                }
+                cnt3++;
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "City"
+
+    // $ANTLR start "WHITESPACE"
+    public final void mWHITESPACE() throws RecognitionException {
+        try {
+            int _type = WHITESPACE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:58:3: ( ( ' ' | '\\r' | '\\n' | '\\t' | '\\f' ) )
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:59:3: ( ' ' | '\\r' | '\\n' | '\\t' | '\\f' )
+            {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+             _channel=HIDDEN; 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "WHITESPACE"
+
+    // $ANTLR start "CHAR_IGNORED"
+    public final void mCHAR_IGNORED() throws RecognitionException {
+        try {
+            int _type = CHAR_IGNORED;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:64:3: ( ( '.' | ',' | ':' | ';' | '!' | '?' | '\"' | '\\'' | '(' | ')' ) )
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:65:3: ( '.' | ',' | ':' | ';' | '!' | '?' | '\"' | '\\'' | '(' | ')' )
+            {
+            if ( (input.LA(1)>='!' && input.LA(1)<='\"')||(input.LA(1)>='\'' && input.LA(1)<=')')||input.LA(1)==','||input.LA(1)=='.'||(input.LA(1)>=':' && input.LA(1)<=';')||input.LA(1)=='?' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+             _channel=HIDDEN; 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "CHAR_IGNORED"
+
+    public void mTokens() throws RecognitionException {
+        // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:1:8: ( SpecialStreetNumber | City | WHITESPACE | CHAR_IGNORED | BasicLexer. Tokens )
+        int alt4=5;
+        alt4 = dfa4.predict(input);
+        switch (alt4) {
+            case 1 :
+                // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:1:10: SpecialStreetNumber
+                {
+                mSpecialStreetNumber(); 
+
+                }
+                break;
+            case 2 :
+                // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:1:30: City
+                {
+                mCity(); 
+
+                }
+                break;
+            case 3 :
+                // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:1:35: WHITESPACE
+                {
+                mWHITESPACE(); 
+
+                }
+                break;
+            case 4 :
+                // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:1:46: CHAR_IGNORED
+                {
+                mCHAR_IGNORED(); 
+
+                }
+                break;
+            case 5 :
+                // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:1:59: BasicLexer. Tokens
+                {
+                gBasicLexer.mTokens(); 
+
+                }
+                break;
+
+        }
+
+    }
+
+
+    protected DFA2 dfa2 = new DFA2(this);
+    protected DFA4 dfa4 = new DFA4(this);
+    static final String DFA2_eotS =
+        "\5\uffff";
+    static final String DFA2_eofS =
+        "\5\uffff";
+    static final String DFA2_minS =
+        "\1\60\2\55\2\uffff";
+    static final String DFA2_maxS =
+        "\1\71\2\164\2\uffff";
+    static final String DFA2_acceptS =
+        "\3\uffff\1\1\1\2";
+    static final String DFA2_specialS =
+        "\5\uffff}>";
+    static final String[] DFA2_transitionS = {
+            "\12\1",
+            "\1\4\2\uffff\12\2\50\uffff\1\3\21\uffff\1\3",
+            "\1\4\2\uffff\12\2\50\uffff\1\3\21\uffff\1\3",
+            "",
+            ""
+    };
+
+    static final short[] DFA2_eot = DFA.unpackEncodedString(DFA2_eotS);
+    static final short[] DFA2_eof = DFA.unpackEncodedString(DFA2_eofS);
+    static final char[] DFA2_min = DFA.unpackEncodedStringToUnsignedChars(DFA2_minS);
+    static final char[] DFA2_max = DFA.unpackEncodedStringToUnsignedChars(DFA2_maxS);
+    static final short[] DFA2_accept = DFA.unpackEncodedString(DFA2_acceptS);
+    static final short[] DFA2_special = DFA.unpackEncodedString(DFA2_specialS);
+    static final short[][] DFA2_transition;
+
+    static {
+        int numStates = DFA2_transitionS.length;
+        DFA2_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA2_transition[i] = DFA.unpackEncodedString(DFA2_transitionS[i]);
+        }
+    }
+
+    class DFA2 extends DFA {
+
+        public DFA2(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 2;
+            this.eot = DFA2_eot;
+            this.eof = DFA2_eof;
+            this.min = DFA2_min;
+            this.max = DFA2_max;
+            this.accept = DFA2_accept;
+            this.special = DFA2_special;
+            this.transition = DFA2_transition;
+        }
+        public String getDescription() {
+            return "53:1: SpecialStreetNumber : ( ( INT ( 'bis' | 'ter' ) ) | ( INT '-' INT ) );";
+        }
+    }
+    static final String DFA4_eotS =
+        "\1\uffff\1\4\1\uffff\1\5\2\uffff\7\4\1\21\1\4\2\21\1\uffff\1\21"+
+        "\1\4\5\31\1\uffff\7\31\1\21\4\31\1\21\2\31\2\21\6\31";
+    static final String DFA4_eofS =
+        "\61\uffff";
+    static final String DFA4_minS =
+        "\1\11\1\55\1\uffff\1\60\2\uffff\1\55\1\151\1\145\1\60\1\55\1\163"+
+        "\1\162\1\45\1\55\2\45\1\uffff\1\45\1\40\3\45\1\53\1\45\1\uffff\1"+
+        "\53\2\45\2\53\2\45\1\40\4\53\1\40\2\53\2\40\5\53\1\45";
+    static final String DFA4_maxS =
+        "\1\u9faf\1\164\1\uffff\1\71\2\uffff\1\164\1\151\1\145\1\71\1\164"+
+        "\1\163\1\162\1\172\1\164\2\172\1\uffff\1\172\1\u024f\5\172\1\uffff"+
+        "\7\172\1\u024f\4\172\1\u024f\2\172\2\u024f\6\172";
+    static final String DFA4_acceptS =
+        "\2\uffff\1\3\1\uffff\1\5\1\4\13\uffff\1\1\7\uffff\1\2\27\uffff";
+    static final String DFA4_specialS =
+        "\61\uffff}>";
+    static final String[] DFA4_transitionS = {
+            "\2\2\1\uffff\2\2\22\uffff\1\2\2\5\4\4\3\5\2\4\1\5\1\4\1\3\1"+
+            "\4\12\1\2\5\3\4\1\5\77\4\41\uffff\140\4\u1fa0\uffff\60\4\u0083"+
+            "\uffff\60\4\u2c7d\uffff\u51b0\4",
+            "\1\11\2\uffff\12\6\50\uffff\1\7\21\uffff\1\10",
+            "",
+            "\12\4",
+            "",
+            "",
+            "\1\11\2\uffff\12\12\50\uffff\1\7\21\uffff\1\10",
+            "\1\13",
+            "\1\14",
+            "\12\15",
+            "\1\11\2\uffff\12\16\50\uffff\1\7\21\uffff\1\10",
+            "\1\17",
+            "\1\20",
+            "\1\4\5\uffff\1\4\1\uffff\3\4\12\22\1\4\5\uffff\33\4\4\uffff"+
+            "\1\4\1\uffff\32\4",
+            "\1\11\2\uffff\12\23\50\uffff\1\7\21\uffff\1\10",
+            "\1\4\5\uffff\1\4\1\uffff\16\4\5\uffff\33\4\4\uffff\1\4\1\uffff"+
+            "\32\4",
+            "\1\4\5\uffff\1\4\1\uffff\16\4\5\uffff\33\4\4\uffff\1\4\1\uffff"+
+            "\32\4",
+            "",
+            "\1\4\5\uffff\1\4\1\uffff\3\4\12\22\1\4\5\uffff\33\4\4\uffff"+
+            "\1\4\1\uffff\32\4",
+            "\1\31\6\uffff\1\31\5\uffff\1\27\1\uffff\1\32\12\26\7\uffff"+
+            "\32\30\6\uffff\1\30\1\24\21\30\1\25\6\30\45\uffff\u01b0\31",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\10\34\1\33\21\34",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\4\34\1\40\25\34",
+            "\1\4\5\uffff\1\4\1\uffff\1\27\1\4\1\32\12\26\1\4\5\uffff\1"+
+            "\4\32\30\4\uffff\1\4\1\uffff\1\30\1\24\21\30\1\25\6\30",
+            "\1\4\1\uffff\1\42\1\4\1\36\12\41\1\4\5\uffff\1\4\32\30\4\uffff"+
+            "\1\4\1\uffff\32\30",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\32\34",
+            "",
+            "\1\4\1\uffff\1\44\1\4\1\36\12\45\1\4\5\uffff\1\4\32\43\4\uffff"+
+            "\1\4\1\uffff\32\43",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\22\34\1\46\7\34",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\32\34",
+            "\1\4\1\uffff\1\47\1\4\1\36\12\37\1\4\5\uffff\1\4\32\34\4\uffff"+
+            "\1\4\1\uffff\32\34",
+            "\1\4\1\uffff\1\44\1\4\1\36\12\50\1\4\5\uffff\1\4\32\43\4\uffff"+
+            "\1\4\1\uffff\32\43",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\32\34",
+            "\1\4\5\uffff\1\4\1\uffff\1\35\1\4\1\36\12\37\1\4\5\uffff\1"+
+            "\4\32\34\4\uffff\1\4\1\uffff\21\34\1\51\10\34",
+            "\1\31\4\uffff\1\4\1\uffff\1\31\3\uffff\1\4\1\uffff\1\53\1\4"+
+            "\1\36\12\52\1\4\5\uffff\1\4\32\30\4\uffff\1\4\1\uffff\32\30"+
+            "\45\uffff\u01b0\31",
+            "\1\4\1\uffff\1\42\1\4\1\36\12\55\1\4\5\uffff\1\4\32\54\4\uffff"+
+            "\1\4\1\uffff\32\54",
+            "\1\4\1\uffff\1\44\1\4\1\36\12\50\1\4\5\uffff\1\4\32\43\4\uffff"+
+            "\1\4\1\uffff\32\43",
+            "\1\4\1\uffff\1\44\1\4\1\36\12\50\1\4\5\uffff\1\4\32\43\4\uffff"+
+            "\1\4\1\uffff\32\43",
+            "\1\4\1\uffff\1\44\1\4\1\36\12\45\1\4\5\uffff\1\4\32\43\4\uffff"+
+            "\1\4\1\uffff\32\43",
+            "\1\31\4\uffff\1\4\1\uffff\1\31\3\uffff\1\4\1\uffff\1\35\1\4"+
+            "\1\36\12\37\1\4\5\uffff\1\4\32\34\4\uffff\1\4\1\uffff\32\34"+
+            "\45\uffff\u01b0\31",
+            "\1\4\1\uffff\1\47\1\4\1\36\12\57\1\4\5\uffff\1\4\32\56\4\uffff"+
+            "\1\4\1\uffff\32\56",
+            "\1\4\1\uffff\1\44\1\4\1\36\12\50\1\4\5\uffff\1\4\32\43\4\uffff"+
+            "\1\4\1\uffff\32\43",
+            "\1\31\4\uffff\1\4\1\uffff\1\31\3\uffff\1\4\1\uffff\1\35\1\4"+
+            "\1\36\12\37\1\4\5\uffff\1\4\32\34\4\uffff\1\4\1\uffff\32\34"+
+            "\45\uffff\u01b0\31",
+            "\1\31\4\uffff\1\4\1\uffff\1\31\3\uffff\1\4\1\uffff\1\53\1\4"+
+            "\1\36\12\52\1\4\5\uffff\1\4\32\30\4\uffff\1\4\1\uffff\32\30"+
+            "\45\uffff\u01b0\31",
+            "\1\4\1\uffff\1\42\1\4\1\36\12\60\1\4\5\uffff\1\4\32\30\4\uffff"+
+            "\1\4\1\uffff\32\30",
+            "\1\4\1\uffff\1\47\1\4\1\36\12\57\1\4\5\uffff\1\4\32\56\4\uffff"+
+            "\1\4\1\uffff\32\56",
+            "\1\4\1\uffff\1\42\1\4\1\36\12\55\1\4\5\uffff\1\4\32\54\4\uffff"+
+            "\1\4\1\uffff\32\54",
+            "\1\4\1\uffff\1\47\1\4\1\36\12\57\1\4\5\uffff\1\4\32\56\4\uffff"+
+            "\1\4\1\uffff\32\56",
+            "\1\4\1\uffff\1\47\1\4\1\36\12\57\1\4\5\uffff\1\4\32\56\4\uffff"+
+            "\1\4\1\uffff\32\56",
+            "\1\4\5\uffff\1\4\1\uffff\1\53\1\4\1\36\12\60\1\4\5\uffff\1"+
+            "\4\32\30\4\uffff\1\4\1\uffff\32\30"
+    };
+
+    static final short[] DFA4_eot = DFA.unpackEncodedString(DFA4_eotS);
+    static final short[] DFA4_eof = DFA.unpackEncodedString(DFA4_eofS);
+    static final char[] DFA4_min = DFA.unpackEncodedStringToUnsignedChars(DFA4_minS);
+    static final char[] DFA4_max = DFA.unpackEncodedStringToUnsignedChars(DFA4_maxS);
+    static final short[] DFA4_accept = DFA.unpackEncodedString(DFA4_acceptS);
+    static final short[] DFA4_special = DFA.unpackEncodedString(DFA4_specialS);
+    static final short[][] DFA4_transition;
+
+    static {
+        int numStates = DFA4_transitionS.length;
+        DFA4_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA4_transition[i] = DFA.unpackEncodedString(DFA4_transitionS[i]);
+        }
+    }
+
+    class DFA4 extends DFA {
+
+        public DFA4(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 4;
+            this.eot = DFA4_eot;
+            this.eof = DFA4_eof;
+            this.min = DFA4_min;
+            this.max = DFA4_max;
+            this.accept = DFA4_accept;
+            this.special = DFA4_special;
+            this.transition = DFA4_transition;
+        }
+        public String getDescription() {
+            return "1:1: Tokens : ( SpecialStreetNumber | City | WHITESPACE | CHAR_IGNORED | BasicLexer. Tokens );";
+        }
+    }
+ 
+
+}
+
+static class Combined_BasicParser extends Parser {
+    public static final int EOF=-1;
+    public static final int WHITESPACE=4;
+    public static final int CHAR_IGNORED=5;
+    public static final int CURRENCY=6;
+    public static final int ROMAN_NUMERAL=7;
+    public static final int DECIMAL=8;
+    public static final int FRACTION=9;
+    public static final int CJK=10;
+    public static final int EMAIL=11;
+    public static final int INT=12;
+    public static final int CAPWORD=13;
+    public static final int WORD=14;
+    public static final int ALPHANUM=15;
+    public static final int UNDEFINED=16;
+    public static final int DIGIT=17;
+    public static final int UpperCasedLetter=18;
+    public static final int LETTER_ASCII=19;
+    public static final int LETTER=20;
+    public static final int SYMBOL_ASCII=21;
+    public static final int SpecialStreetNumber=22;
+    public static final int City=23;
+
+    // delegates
+    // delegators
+    public CombinedParser gCombined;
+    public CombinedParser gParent;
+
+
+        public Combined_BasicParser(TokenStream input, CombinedParser gCombined) {
+            this(input, new RecognizerSharedState(), gCombined);
+        }
+        public Combined_BasicParser(TokenStream input, RecognizerSharedState state, CombinedParser gCombined) {
+            super(input, state);
+            this.gCombined = gCombined;
+             
+            gParent = gCombined;
+        }
+        
+
+    public String[] getTokenNames() { return CombinedParser.tokenNames; }
+    public String getGrammarFileName() { return "BasicParser.g"; }
+
+
+    org.talend.dataquality.parser.util.Interpreter interp;
+
+    public void setInterpreter(org.talend.dataquality.parser.util.Interpreter interp) {
+    	this.interp = interp;
+    }
+
+
+
+    // $ANTLR start "separator"
+    // BasicParser.g:11:1: separator : ( WHITESPACE | CHAR_IGNORED );
+    public final void separator() throws RecognitionException {
+        try {
+            // BasicParser.g:12:3: ( WHITESPACE | CHAR_IGNORED )
+            // BasicParser.g:
+            {
+            if ( (input.LA(1)>=WHITESPACE && input.LA(1)<=CHAR_IGNORED) ) {
+                input.consume();
+                state.errorRecovery=false;
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                throw mse;
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "separator"
+
+
+    // $ANTLR start "extended"
+    // BasicParser.g:19:1: extended : ( currency | roman_numeral | decimal | fraction | cjk | email );
+    public final void extended() throws RecognitionException {
+        try {
+            // BasicParser.g:20:3: ( currency | roman_numeral | decimal | fraction | cjk | email )
+            int alt1=6;
+            switch ( input.LA(1) ) {
+            case CURRENCY:
+                {
+                alt1=1;
+                }
+                break;
+            case ROMAN_NUMERAL:
+                {
+                alt1=2;
+                }
+                break;
+            case DECIMAL:
+                {
+                alt1=3;
+                }
+                break;
+            case FRACTION:
+                {
+                alt1=4;
+                }
+                break;
+            case CJK:
+                {
+                alt1=5;
+                }
+                break;
+            case EMAIL:
+                {
+                alt1=6;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 1, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt1) {
+                case 1 :
+                    // BasicParser.g:21:3: currency
+                    {
+                    pushFollow(FOLLOW_currency_in_extended45);
+                    currency();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 2 :
+                    // BasicParser.g:22:5: roman_numeral
+                    {
+                    pushFollow(FOLLOW_roman_numeral_in_extended51);
+                    roman_numeral();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 3 :
+                    // BasicParser.g:23:5: decimal
+                    {
+                    pushFollow(FOLLOW_decimal_in_extended57);
+                    decimal();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 4 :
+                    // BasicParser.g:24:5: fraction
+                    {
+                    pushFollow(FOLLOW_fraction_in_extended63);
+                    fraction();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 5 :
+                    // BasicParser.g:25:5: cjk
+                    {
+                    pushFollow(FOLLOW_cjk_in_extended69);
+                    cjk();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 6 :
+                    // BasicParser.g:26:5: email
+                    {
+                    pushFollow(FOLLOW_email_in_extended75);
+                    email();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "extended"
+
+    public static class currency_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "currency"
+    // BasicParser.g:29:1: currency : CURRENCY ;
+    public final Combined_BasicParser.currency_return currency() throws RecognitionException {
+        Combined_BasicParser.currency_return retval = new Combined_BasicParser.currency_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:30:3: ( CURRENCY )
+            // BasicParser.g:31:3: CURRENCY
+            {
+            match(input,CURRENCY,FOLLOW_CURRENCY_in_currency90); 
+
+                        interp.store("CURRENCY", input.toString(retval.start,input.LT(-1)));
+                       
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "currency"
+
+    public static class roman_numeral_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "roman_numeral"
+    // BasicParser.g:37:1: roman_numeral : ROMAN_NUMERAL ;
+    public final Combined_BasicParser.roman_numeral_return roman_numeral() throws RecognitionException {
+        Combined_BasicParser.roman_numeral_return retval = new Combined_BasicParser.roman_numeral_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:38:3: ( ROMAN_NUMERAL )
+            // BasicParser.g:39:3: ROMAN_NUMERAL
+            {
+            match(input,ROMAN_NUMERAL,FOLLOW_ROMAN_NUMERAL_in_roman_numeral119); 
+
+                             interp.store("ROMAIN_NUMERAL", input.toString(retval.start,input.LT(-1)));
+                            
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "roman_numeral"
+
+    public static class decimal_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "decimal"
+    // BasicParser.g:45:1: decimal : DECIMAL ;
+    public final Combined_BasicParser.decimal_return decimal() throws RecognitionException {
+        Combined_BasicParser.decimal_return retval = new Combined_BasicParser.decimal_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:46:3: ( DECIMAL )
+            // BasicParser.g:47:3: DECIMAL
+            {
+            match(input,DECIMAL,FOLLOW_DECIMAL_in_decimal153); 
+
+                       interp.store("DECIMAL", input.toString(retval.start,input.LT(-1)));
+                      
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "decimal"
+
+    public static class fraction_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "fraction"
+    // BasicParser.g:53:1: fraction : FRACTION ;
+    public final Combined_BasicParser.fraction_return fraction() throws RecognitionException {
+        Combined_BasicParser.fraction_return retval = new Combined_BasicParser.fraction_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:54:3: ( FRACTION )
+            // BasicParser.g:55:3: FRACTION
+            {
+            match(input,FRACTION,FOLLOW_FRACTION_in_fraction181); 
+
+                        interp.store("FRACTION", input.toString(retval.start,input.LT(-1)));
+                       
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "fraction"
+
+    public static class cjk_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "cjk"
+    // BasicParser.g:61:1: cjk : CJK ;
+    public final Combined_BasicParser.cjk_return cjk() throws RecognitionException {
+        Combined_BasicParser.cjk_return retval = new Combined_BasicParser.cjk_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:62:3: ( CJK )
+            // BasicParser.g:63:3: CJK
+            {
+            match(input,CJK,FOLLOW_CJK_in_cjk210); 
+
+                        interp.store("CJK", input.toString(retval.start,input.LT(-1)));
+                       
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "cjk"
+
+    public static class email_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "email"
+    // BasicParser.g:69:1: email : EMAIL ;
+    public final Combined_BasicParser.email_return email() throws RecognitionException {
+        Combined_BasicParser.email_return retval = new Combined_BasicParser.email_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:70:3: ( EMAIL )
+            // BasicParser.g:71:3: EMAIL
+            {
+            match(input,EMAIL,FOLLOW_EMAIL_in_email239); 
+
+                        interp.store("EMAIL", input.toString(retval.start,input.LT(-1)));
+                       
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "email"
+
+
+    // $ANTLR start "basic"
+    // BasicParser.g:78:1: basic : ( integer | capword | word | alphanum );
+    public final void basic() throws RecognitionException {
+        try {
+            // BasicParser.g:79:3: ( integer | capword | word | alphanum )
+            int alt2=4;
+            switch ( input.LA(1) ) {
+            case INT:
+                {
+                alt2=1;
+                }
+                break;
+            case CAPWORD:
+                {
+                alt2=2;
+                }
+                break;
+            case WORD:
+                {
+                alt2=3;
+                }
+                break;
+            case ALPHANUM:
+                {
+                alt2=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt2) {
+                case 1 :
+                    // BasicParser.g:80:3: integer
+                    {
+                    pushFollow(FOLLOW_integer_in_basic268);
+                    integer();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 2 :
+                    // BasicParser.g:81:5: capword
+                    {
+                    pushFollow(FOLLOW_capword_in_basic274);
+                    capword();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 3 :
+                    // BasicParser.g:82:5: word
+                    {
+                    pushFollow(FOLLOW_word_in_basic280);
+                    word();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+                case 4 :
+                    // BasicParser.g:83:5: alphanum
+                    {
+                    pushFollow(FOLLOW_alphanum_in_basic286);
+                    alphanum();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "basic"
+
+    public static class integer_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "integer"
+    // BasicParser.g:86:1: integer : INT ;
+    public final Combined_BasicParser.integer_return integer() throws RecognitionException {
+        Combined_BasicParser.integer_return retval = new Combined_BasicParser.integer_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:87:3: ( INT )
+            // BasicParser.g:88:3: INT
+            {
+            match(input,INT,FOLLOW_INT_in_integer301); 
+
+                   interp.store("INT", input.toString(retval.start,input.LT(-1)));
+                  
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "integer"
+
+    public static class capword_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "capword"
+    // BasicParser.g:94:1: capword : CAPWORD ;
+    public final Combined_BasicParser.capword_return capword() throws RecognitionException {
+        Combined_BasicParser.capword_return retval = new Combined_BasicParser.capword_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:95:3: ( CAPWORD )
+            // BasicParser.g:96:3: CAPWORD
+            {
+            match(input,CAPWORD,FOLLOW_CAPWORD_in_capword325); 
+
+                       interp.store("CAPWORD", input.toString(retval.start,input.LT(-1)));
+                      
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "capword"
+
+    public static class word_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "word"
+    // BasicParser.g:102:1: word : WORD ;
+    public final Combined_BasicParser.word_return word() throws RecognitionException {
+        Combined_BasicParser.word_return retval = new Combined_BasicParser.word_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:103:3: ( WORD )
+            // BasicParser.g:104:3: WORD
+            {
+            match(input,WORD,FOLLOW_WORD_in_word353); 
+
+                    interp.store("WORD", input.toString(retval.start,input.LT(-1)));
+                   
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "word"
+
+    public static class alphanum_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "alphanum"
+    // BasicParser.g:110:1: alphanum : ALPHANUM ;
+    public final Combined_BasicParser.alphanum_return alphanum() throws RecognitionException {
+        Combined_BasicParser.alphanum_return retval = new Combined_BasicParser.alphanum_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:111:3: ( ALPHANUM )
+            // BasicParser.g:112:3: ALPHANUM
+            {
+            match(input,ALPHANUM,FOLLOW_ALPHANUM_in_alphanum378); 
+
+                        interp.store("ALPHANUM", input.toString(retval.start,input.LT(-1)));
+                       
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "alphanum"
+
+    public static class undefined_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "undefined"
+    // BasicParser.g:118:1: undefined : UNDEFINED ;
+    public final Combined_BasicParser.undefined_return undefined() throws RecognitionException {
+        Combined_BasicParser.undefined_return retval = new Combined_BasicParser.undefined_return();
+        retval.start = input.LT(1);
+
+        try {
+            // BasicParser.g:119:3: ( UNDEFINED )
+            // BasicParser.g:120:3: UNDEFINED
+            {
+            match(input,UNDEFINED,FOLLOW_UNDEFINED_in_undefined407); 
+
+                         interp.store("UNDEFINED", input.toString(retval.start,input.LT(-1)));
+                        
+
+            }
+
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "undefined"
+
+    // Delegated rules
+
+
+ 
+
+    public static final BitSet FOLLOW_set_in_separator0 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_currency_in_extended45 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_roman_numeral_in_extended51 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_decimal_in_extended57 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_fraction_in_extended63 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cjk_in_extended69 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_email_in_extended75 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CURRENCY_in_currency90 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ROMAN_NUMERAL_in_roman_numeral119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DECIMAL_in_decimal153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRACTION_in_fraction181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CJK_in_cjk210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EMAIL_in_email239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_integer_in_basic268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_capword_in_basic274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_word_in_basic280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_alphanum_in_basic286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_integer301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CAPWORD_in_capword325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WORD_in_word353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALPHANUM_in_alphanum378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNDEFINED_in_undefined407 = new BitSet(new long[]{0x0000000000000002L});
+
+}
+
+static class CombinedParser extends Parser {
+    public static final String[] tokenNames = new String[] {
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "WHITESPACE", "CHAR_IGNORED", "CURRENCY", "ROMAN_NUMERAL", "DECIMAL", "FRACTION", "CJK", "EMAIL", "INT", "CAPWORD", "WORD", "ALPHANUM", "UNDEFINED", "DIGIT", "UpperCasedLetter", "LETTER_ASCII", "LETTER", "SYMBOL_ASCII", "SpecialStreetNumber", "City"
+    };
+    public static final int EOF=-1;
+    public static final int WHITESPACE=4;
+    public static final int CHAR_IGNORED=5;
+    public static final int CURRENCY=6;
+    public static final int ROMAN_NUMERAL=7;
+    public static final int DECIMAL=8;
+    public static final int FRACTION=9;
+    public static final int CJK=10;
+    public static final int EMAIL=11;
+    public static final int INT=12;
+    public static final int CAPWORD=13;
+    public static final int WORD=14;
+    public static final int ALPHANUM=15;
+    public static final int UNDEFINED=16;
+    public static final int DIGIT=17;
+    public static final int UpperCasedLetter=18;
+    public static final int LETTER_ASCII=19;
+    public static final int LETTER=20;
+    public static final int SYMBOL_ASCII=21;
+    public static final int SpecialStreetNumber=22;
+    public static final int City=23;
+
+    // delegates
+    public Combined_BasicParser gBasicParser;
+    // delegators
+
+
+        public CombinedParser(TokenStream input) {
+            this(input, new RecognizerSharedState());
+        }
+        public CombinedParser(TokenStream input, RecognizerSharedState state) {
+            super(input, state);
+            gBasicParser = new Combined_BasicParser(input, state, this);         
+        }
+        
+
+    public String[] getTokenNames() { return CombinedParser.tokenNames; }
+    public String getGrammarFileName() { return "/opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g"; }
+
+
+    org.talend.dataquality.parser.util.Interpreter interp;
+
+    public CombinedParser(TokenStream tokenStream,
+            org.talend.dataquality.parser.util.Interpreter interp) {
+        this(tokenStream);
+        this.interp = interp;
+        gBasicParser.setInterpreter(interp);
+    }
+
+    /** Override this method to change where error messages go */
+    public void emitErrorMessage(String msg) {
+        org.talend.dataquality.parser.util.RecognitionError.set(false, msg);
+        // System.err.println(msg);
+    }
+
+
+
+    // $ANTLR start "text"
+    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:38:1: text : ( separator )* ( ( format | extended | basic | undefined ) ( separator )* )* ;
+    public final void text() throws RecognitionException {
+        try {
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:39:3: ( ( separator )* ( ( format | extended | basic | undefined ) ( separator )* )* )
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:40:3: ( separator )* ( ( format | extended | basic | undefined ) ( separator )* )*
+            {
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:40:3: ( separator )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( ((LA1_0>=WHITESPACE && LA1_0<=CHAR_IGNORED)) ) {
+                    alt1=1;
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:40:3: separator
+            	    {
+            	    pushFollow(FOLLOW_separator_in_text54);
+            	    separator();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
+
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:41:3: ( ( format | extended | basic | undefined ) ( separator )* )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( ((LA4_0>=CURRENCY && LA4_0<=UNDEFINED)||(LA4_0>=SpecialStreetNumber && LA4_0<=City)) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:42:5: ( format | extended | basic | undefined ) ( separator )*
+            	    {
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:42:5: ( format | extended | basic | undefined )
+            	    int alt2=4;
+            	    switch ( input.LA(1) ) {
+            	    case SpecialStreetNumber:
+            	    case City:
+            	        {
+            	        alt2=1;
+            	        }
+            	        break;
+            	    case CURRENCY:
+            	    case ROMAN_NUMERAL:
+            	    case DECIMAL:
+            	    case FRACTION:
+            	    case CJK:
+            	    case EMAIL:
+            	        {
+            	        alt2=2;
+            	        }
+            	        break;
+            	    case INT:
+            	    case CAPWORD:
+            	    case WORD:
+            	    case ALPHANUM:
+            	        {
+            	        alt2=3;
+            	        }
+            	        break;
+            	    case UNDEFINED:
+            	        {
+            	        alt2=4;
+            	        }
+            	        break;
+            	    default:
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 2, 0, input);
+
+            	        throw nvae;
+            	    }
+
+            	    switch (alt2) {
+            	        case 1 :
+            	            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:42:6: format
+            	            {
+            	            pushFollow(FOLLOW_format_in_text66);
+            	            format();
+
+            	            state._fsp--;
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:42:15: extended
+            	            {
+            	            pushFollow(FOLLOW_extended_in_text70);
+            	            extended();
+
+            	            state._fsp--;
+
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:42:26: basic
+            	            {
+            	            pushFollow(FOLLOW_basic_in_text74);
+            	            basic();
+
+            	            state._fsp--;
+
+
+            	            }
+            	            break;
+            	        case 4 :
+            	            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:42:34: undefined
+            	            {
+            	            pushFollow(FOLLOW_undefined_in_text78);
+            	            undefined();
+
+            	            state._fsp--;
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:43:5: ( separator )*
+            	    loop3:
+            	    do {
+            	        int alt3=2;
+            	        int LA3_0 = input.LA(1);
+
+            	        if ( ((LA3_0>=WHITESPACE && LA3_0<=CHAR_IGNORED)) ) {
+            	            alt3=1;
+            	        }
+
+
+            	        switch (alt3) {
+            	    	case 1 :
+            	    	    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:43:5: separator
+            	    	    {
+            	    	    pushFollow(FOLLOW_separator_in_text86);
+            	    	    separator();
+
+            	    	    state._fsp--;
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop3;
+            	        }
+            	    } while (true);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "text"
+
+    public static class format_return extends ParserRuleReturnScope {
+    };
+
+    // $ANTLR start "format"
+    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:47:1: format : ( specialstreetnumber | city );
+    public final CombinedParser.format_return format() throws RecognitionException {
+        CombinedParser.format_return retval = new CombinedParser.format_return();
+        retval.start = input.LT(1);
+
+        try {
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:48:3: ( specialstreetnumber | city )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==SpecialStreetNumber) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==City) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:48:5: specialstreetnumber
+                    {
+                    pushFollow(FOLLOW_specialstreetnumber_in_format106);
+                    specialstreetnumber();
+
+                    state._fsp--;
+
+                     interp.store("SpecialStreetNumber", input.toString(retval.start,input.LT(-1))); 
+
+                    }
+                    break;
+                case 2 :
+                    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:49:5: city
+                    {
+                    pushFollow(FOLLOW_city_in_format119);
+                    city();
+
+                    state._fsp--;
+
+                     interp.store("City", input.toString(retval.start,input.LT(-1))); 
+
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "format"
+
+
+    // $ANTLR start "specialstreetnumber"
+    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:50:4: specialstreetnumber : SpecialStreetNumber ;
+    public final void specialstreetnumber() throws RecognitionException {
+        try {
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:50:24: ( SpecialStreetNumber )
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:50:26: SpecialStreetNumber
+            {
+            match(input,SpecialStreetNumber,FOLLOW_SpecialStreetNumber_in_specialstreetnumber135); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "specialstreetnumber"
+
+
+    // $ANTLR start "city"
+    // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:51:1: city : City ;
+    public final void city() throws RecognitionException {
+        try {
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:51:6: ( City )
+            // /opt/Talend-Studio-20140904_1841-V5.6.0M4/workspace/.Java/grammar/tStandardizeRow_2_RULEFILES/grammar/Combined.g:51:8: City
+            {
+            match(input,City,FOLLOW_City_in_city143); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "city"
+
+    // Delegated rules
+    public Combined_BasicParser.alphanum_return alphanum() throws RecognitionException { return gBasicParser.alphanum(); }
+    public void separator() throws RecognitionException { gBasicParser.separator(); }
+    public Combined_BasicParser.cjk_return cjk() throws RecognitionException { return gBasicParser.cjk(); }
+    public Combined_BasicParser.currency_return currency() throws RecognitionException { return gBasicParser.currency(); }
+    public Combined_BasicParser.fraction_return fraction() throws RecognitionException { return gBasicParser.fraction(); }
+    public Combined_BasicParser.capword_return capword() throws RecognitionException { return gBasicParser.capword(); }
+    public Combined_BasicParser.email_return email() throws RecognitionException { return gBasicParser.email(); }
+    public Combined_BasicParser.undefined_return undefined() throws RecognitionException { return gBasicParser.undefined(); }
+    public Combined_BasicParser.integer_return integer() throws RecognitionException { return gBasicParser.integer(); }
+    public Combined_BasicParser.decimal_return decimal() throws RecognitionException { return gBasicParser.decimal(); }
+    public Combined_BasicParser.word_return word() throws RecognitionException { return gBasicParser.word(); }
+    public void basic() throws RecognitionException { gBasicParser.basic(); }
+    public void extended() throws RecognitionException { gBasicParser.extended(); }
+    public Combined_BasicParser.roman_numeral_return roman_numeral() throws RecognitionException { return gBasicParser.roman_numeral(); }
+
+
+ 
+
+    public static final BitSet FOLLOW_separator_in_text54 = new BitSet(new long[]{0x0000000000C1FFF2L});
+    public static final BitSet FOLLOW_format_in_text66 = new BitSet(new long[]{0x0000000000C1FFF0L});
+    public static final BitSet FOLLOW_extended_in_text70 = new BitSet(new long[]{0x0000000000C1FFF0L});
+    public static final BitSet FOLLOW_basic_in_text74 = new BitSet(new long[]{0x0000000000C1FFF0L});
+    public static final BitSet FOLLOW_undefined_in_text78 = new BitSet(new long[]{0x0000000000C1FFF0L});
+    public static final BitSet FOLLOW_separator_in_text86 = new BitSet(new long[]{0x0000000000C1FFF2L});
+    public static final BitSet FOLLOW_specialstreetnumber_in_format106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_city_in_format119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SpecialStreetNumber_in_specialstreetnumber135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_City_in_city143 = new BitSet(new long[]{0x0000000000000002L});
+
+}
+}
