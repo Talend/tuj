@@ -378,7 +378,7 @@
       <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
       <elementValue elementRef="VALUE" value="&quot;Basic YWRtaW5pc3RyYXRvcjphZG1pbmlzdHJhdG9y&quot;"/>
     </elementParameter>
-    <elementParameter field="MEMO" name="BODY" value="&quot;&lt;Product>&lt;Id>1&lt;/Id>&lt;Name>Product&lt;/Name>&lt;Description>Product Description&lt;/Description>&lt;Features>&lt;Sizes/>&lt;Colors/>&lt;/Features>&lt;Price>2.00&lt;/Price>&lt;Stores>&lt;Store>[2]&lt;/Store>&lt;/Stores>&lt;/Product>&quot;"/>
+    <elementParameter field="MEMO" name="BODY" value="&quot;&lt;Product>&lt;Id>1&lt;/Id>&lt;Name>Product&lt;/Name>&lt;Description>Product Description&lt;/Description>&lt;Features>&lt;Sizes/>&lt;Colors/>&lt;/Features>&lt;Price>1.00&lt;/Price>&lt;Stores>&lt;Store>[2]&lt;/Store>&lt;/Stores>&lt;/Product>&quot;"/>
     <elementParameter field="TEXT" name="LABEL" value="MASTER-FK"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tREST_2">
@@ -876,7 +876,7 @@
       <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
       <elementValue elementRef="VALUE" value="&quot;Basic YWRtaW5pc3RyYXRvcjphZG1pbmlzdHJhdG9y&quot;"/>
     </elementParameter>
-    <elementParameter field="MEMO" name="BODY" value="&quot;&lt;Product>&lt;Id>1&lt;/Id>&lt;Name>Product&lt;/Name>&lt;Description>Product Description&lt;/Description>&lt;Features>&lt;Sizes/>&lt;Colors/>&lt;/Features>&lt;Price>2.00&lt;/Price>&lt;Stores>&lt;Store>[2]&lt;/Store>&lt;/Stores>&lt;/Product>&quot;"/>
+    <elementParameter field="MEMO" name="BODY" value="&quot;&lt;Product>&lt;Id>1&lt;/Id>&lt;Name>Product&lt;/Name>&lt;Description>Product Description&lt;/Description>&lt;Features>&lt;Sizes/>&lt;Colors/>&lt;/Features>&lt;Price>1.00&lt;/Price>&lt;Stores>&lt;Store>[2]&lt;/Store>&lt;/Stores>&lt;/Product>&quot;"/>
     <elementParameter field="TEXT" name="LABEL" value="STAGING-FK"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tREST_8">
@@ -1337,6 +1337,78 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="992">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_10" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://localhost:8180/talendmdm/services/rest/data/Product/validate/record&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;application/xml&quot;"/>
+      <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;Basic YWRtaW5pc3RyYXRvcjphZG1pbmlzdHJhdG9y&quot;"/>
+    </elementParameter>
+    <elementParameter field="MEMO" name="BODY" value="&quot;&lt;Product>&lt;Id>1&lt;/Id>&lt;Name>Product&lt;/Name>&lt;Description>Product Description&lt;/Description>&lt;Features>&lt;Sizes/>&lt;Colors/>&lt;/Features>&lt;Price>2.00&lt;/Price>&lt;/Product>&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="MASTER-BeforeSaving"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tREST_10">
+      <column key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="992">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_11" show="false"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(restResponse_tREST_10);&#xA;globalMap.put(&quot;tREST_10_ASSERT&quot;, restResponse_tREST_10.contains(&quot;[EN:Price increase of 81.82% not allowed, max is 15%]&quot;));"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_11">
+      <column key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="992">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_10" show="false"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;MASTER-Price 2.0 FAIL&quot;"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Boolean)globalMap.get(&quot;tREST_10_ASSERT&quot;))"/>
+    <elementParameter field="TEXT" name="LABEL" value="MASTER-Price 2.0 FAIL"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAssert_10"/>
+  </node>
+  <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1312" posY="992">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_12" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://localhost:8180/talendmdm/services/rest/data/Product/validate/record?container=STAGING&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
+    <elementParameter field="TABLE" name="HEADERS">
+      <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;application/xml&quot;"/>
+      <elementValue elementRef="NAME" value="&quot;Authorization&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;Basic YWRtaW5pc3RyYXRvcjphZG1pbmlzdHJhdG9y&quot;"/>
+    </elementParameter>
+    <elementParameter field="MEMO" name="BODY" value="&quot;&lt;Product>&lt;Id>1&lt;/Id>&lt;Name>Product&lt;/Name>&lt;Description>Product Description&lt;/Description>&lt;Features>&lt;Sizes/>&lt;Colors/>&lt;/Features>&lt;Price>2.00&lt;/Price>&lt;/Product>&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="STAGING-BeforeSaving"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tREST_12">
+      <column key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1440" posY="992">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_13" show="false"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(restResponse_tREST_12);&#xA;globalMap.put(&quot;tREST_12_ASSERT&quot;, restResponse_tREST_12.contains(&quot;\&quot;isValid\&quot;:true&quot;));"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_13">
+      <column key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1600" posY="992">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_12" show="false"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;STAGING-Price 2.0 PASS&quot;"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Boolean)globalMap.get(&quot;tREST_12_ASSERT&quot;))"/>
+    <elementParameter field="TEXT" name="LABEL" value="STAGING-Price 2.0 PASS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAssert_12"/>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tREST_1" offsetLabelX="0" offsetLabelY="0" source="tREST_1" target="tJavaRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
@@ -1417,6 +1489,9 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSleep_1" offsetLabelX="0" offsetLabelY="0" outputId="6" source="tSleep_1" target="tREST_13">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk52" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSleep_1" offsetLabelX="0" offsetLabelY="0" outputId="7" source="tSleep_1" target="tREST_10">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk45" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tMDMOutput_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1690,6 +1765,23 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row26" show="false"/>
   </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tREST_10" offsetLabelX="0" offsetLabelY="0" source="tREST_10" target="tJavaRow_11">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_11" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_11" target="tAssert_10">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk42" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tAssert_10" offsetLabelX="0" offsetLabelY="0" source="tAssert_10" target="tREST_12">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk43" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row18" lineStyle="0" metaname="tREST_12" offsetLabelX="0" offsetLabelY="0" source="tREST_12" target="tJavaRow_13">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row18" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_13" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_13" target="tAssert_12">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk44" show="false"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
@@ -1863,6 +1955,26 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_3" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_10" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_10" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_12" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_12" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
