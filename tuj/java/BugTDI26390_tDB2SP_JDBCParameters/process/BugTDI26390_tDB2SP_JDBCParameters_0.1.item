@@ -70,7 +70,7 @@
     <elementParameter field="TEXT" name="TYPE" value="IBM DB2"/>
     <elementParameter field="TEXT" name="USER" value="context.db2_username"/>
     <elementParameter field="TEXT" name="PASS" value="context.db2_password"/>
-    <elementParameter field="TEXT" name="SP_NAME" value="&quot;change_name&quot;"/>
+    <elementParameter field="TEXT" name="SP_NAME" value="&quot;change_name&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="CHECK" name="IS_FUNCTION" value="false"/>
     <elementParameter field="COLUMN_LIST" name="RETURN" value="ID"/>
     <elementParameter field="TABLE" name="SP_ARGS"/>
@@ -348,7 +348,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#xD;&#xA;create procedure change_name()&#xD;&#xA;LANGUAGE SQL&#xD;&#xA;BEGIN&#xD;&#xA;DECLARE v_temp VARCHAR(30);&#xD;&#xA;set v_temp = 'atest';&#xD;&#xA;update &quot;+context.db2_schema2+&quot;.\&quot;ATEST&quot;+pid.toUpperCase()+&quot;\&quot; set NAME=v_temp ; &#xD;&#xA;commit;&#xD;&#xA;END&#xD;&#xA;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#xD;&#xA;create procedure change_name&quot;+pid.toUpperCase()+&quot;()&#xD;&#xA;LANGUAGE SQL&#xD;&#xA;BEGIN&#xD;&#xA;DECLARE v_temp VARCHAR(30);&#xD;&#xA;set v_temp = 'atest';&#xD;&#xA;update &quot;+context.db2_schema2+&quot;.\&quot;ATEST&quot;+pid.toUpperCase()+&quot;\&quot; set NAME=v_temp ; &#xD;&#xA;commit;&#xD;&#xA;END&#xD;&#xA;&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;driverType=4;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1;parameterName2=value2;&quot;"/>
@@ -383,7 +383,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#xD;&#xA;drop procedure change_name()&#xD;&#xA;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#xD;&#xA;drop procedure change_name&quot;+pid.toUpperCase()+&quot;()&#xD;&#xA;&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;driverType=4;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1;parameterName2=value2;&quot;"/>
