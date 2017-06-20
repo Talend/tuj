@@ -401,7 +401,7 @@
     <elementParameter field="CHECK" name="END_OF_FLOW" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/BugTDI28305/out.csv&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/BUGTDI28305&quot;+pid.toUpperCase()+&quot;/out.csv&quot;"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
@@ -510,7 +510,7 @@
     <elementParameter field="CHECK" name="END_OF_FLOW" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/BugTDI28305/out_ref.csv&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/BUGTDI28305&quot;+pid.toUpperCase()+&quot;/out_ref.csv&quot;"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
@@ -547,8 +547,8 @@
   <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCompare_1"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
-    <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/BugTDI28305/out.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_output_dir + &quot;/BugTDI28305/out_ref.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/BUGTDI28305&quot;+pid.toUpperCase()+&quot;/out.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_output_dir + &quot;/BUGTDI28305&quot;+pid.toUpperCase()+&quot;/out_ref.csv&quot;"/>
     <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot;] Files differ&quot;"/>
     <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot;] Files are identical&quot;"/>
     <elementParameter field="CHECK" name="PRINT" value="true"/>
@@ -774,8 +774,8 @@
   </node>
   <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="736">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/BugTDI28305/&quot;"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/BugTDI28305&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/BUGTDI28305&quot;+pid.toUpperCase()+&quot;/&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/BUGTDI28305&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="TEXT" name="PATH" value="&quot;/home/wyuan/products/Talend-Studio-r111298-V5.4.1NB/workspace/delete_folder or delete_file&quot;"/>
     <elementParameter field="CHECK" name="FAILON" value="true"/>
     <elementParameter field="CHECK" name="FOLDER" value="true"/>
