@@ -237,7 +237,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_src&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -433,12 +433,12 @@
   <node componentName="tELTTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_1"/>
     <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="/home/wyuan/Develop/Product/Talend-Studio-20150919_0333-V5.6.3SNAP/configuration/lib/java"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_src&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE"/>
-    <metadata connector="TABLE" label="bugtdi32594_src" name="tELTTeradataInput_1">
+    <metadata connector="TABLE" label="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" name="tELTTeradataInput_1">
       <column comment="" key="false" length="-1" name="register" nullable="true" pattern="" precision="-1" sourceType="DATE" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
@@ -466,12 +466,12 @@
       <column comment="" key="false" length="-1" name="register" nullable="true" pattern="" precision="-1" sourceType="DATE" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="bugtdi32594_src" tableName="bugtdi32594_src" joinType="NO_JOIN">
+      <InputTables name="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" tableName="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" joinType="NO_JOIN">
         <DBMapperTableEntries name="register"/>
       </InputTables>
       <OutputTables name="table2" tableName="bugtdi32594_dest">
         <DBMapperTableEntries name="register" expression="CURRENT_DATE as reg"/>
-        <FilterEntries name="newFilter8" expression="bugtdi32594_src.id=bugtdi32594_dest.id"/>
+        <FilterEntries name="newFilter8" expression="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;.id=bugtdi32594_dest.id"/>
       </OutputTables>
     </nodeData>
   </node>
@@ -479,7 +479,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataOutput_1"/>
     <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="/home/wyuan/Develop/Product/Talend-Studio-20150919_0333-V5.6.3SNAP/configuration/lib/java"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
-    <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;bugtdi32594_src.id=bugtdi32594_dest.id&quot;"/>
+    <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()+&quot;.id=bugtdi32594_dest.id&quot;"/>
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_dest&quot;"/>
     <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
     <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;"/>
@@ -946,7 +946,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi32594_src" lineStyle="9" metaname="tELTTeradataInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_1" target="tELTTeradataMap_1">
+  <connection connectorName="TABLE" label="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" lineStyle="9" metaname="tELTTeradataInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_1" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_1"/>
   </connection>
   <connection connectorName="TABLE" label="bugtdi32594_dest" lineStyle="9" metaname="table2" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tELTTeradataOutput_1">

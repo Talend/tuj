@@ -218,7 +218,7 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_src&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -702,11 +702,11 @@
   <node componentName="tELTSybaseInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTSybaseInput_1"/>
     <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="/home/wyuan/Develope/Master/.talend_lib"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_src&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="sybase_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" label="bugtdi32594_src" name="tELTSybaseInput_1">
+    <metadata connector="TABLE" label="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" name="tELTSybaseInput_1">
       <column comment="" key="false" length="30" name="register" nullable="true" pattern="" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
   </node>
@@ -732,12 +732,12 @@
       <column comment="" key="false" name="register" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="bugtdi32594_src" tableName="bugtdi32594_src" joinType="NO_JOIN">
+      <InputTables name="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" tableName="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" joinType="NO_JOIN">
         <DBMapperTableEntries name="register"/>
       </InputTables>
       <OutputTables name="table1" tableName="bugtdi32594_dest">
         <DBMapperTableEntries name="register" expression="GETDATE()"/>
-        <FilterEntries name="newFilter1" expression="bugtdi32594_src.id = bugtdi32594_dest.id"/>
+        <FilterEntries name="newFilter1" expression="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;.id = bugtdi32594_dest.id"/>
       </OutputTables>
     </nodeData>
   </node>
@@ -791,7 +791,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table bugtdi32594_dest, bugtdi32594_src&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table bugtdi32594_dest, bugtdi32594_src&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -823,7 +823,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table bugtdi32594_src&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table bugtdi32594_src&quot;+pid.toUpperCase()+&quot;&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1033,7 +1033,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi32594_src" lineStyle="9" metaname="tELTSybaseInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTSybaseInput_1" target="tELTSybaseMap_1">
+  <connection connectorName="TABLE" label="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" lineStyle="9" metaname="tELTSybaseInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTSybaseInput_1" target="tELTSybaseMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTSybaseInput_1"/>
   </connection>
   <connection connectorName="TABLE" label="bugtdi32594_dest" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTSybaseMap_1" target="tELTSybaseOutput_1">
