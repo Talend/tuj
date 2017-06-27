@@ -333,14 +333,14 @@
   </node>
   <node xmi:id="_aA_1mk2YEeKjXN5I1bmc5Q" componentName="tELTPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="192">
     <elementParameter xmi:id="_aA_1m02YEeKjXN5I1bmc5Q" field="TEXT" name="UNIQUE_NAME" value="tELTPostgresqlInput_1"/>
-    <elementParameter xmi:id="_aA_1nE2YEeKjXN5I1bmc5Q" field="TEXT" name="ELT_TABLE_NAME" value="&quot;eltinput&quot;"/>
+    <elementParameter xmi:id="_aA_1nE2YEeKjXN5I1bmc5Q" field="TEXT" name="ELT_TABLE_NAME" value="&quot;eltinputupdate&quot;"/>
     <elementParameter xmi:id="_aA_1nU2YEeKjXN5I1bmc5Q" field="TEXT" name="ELT_SCHEMA_NAME" value="context.postgresql_schema"/>
     <elementParameter xmi:id="_aA_1nk2YEeKjXN5I1bmc5Q" field="MAPPING_TYPE" name="MAPPING" value="postgres_id"/>
     <elementParameter xmi:id="_aA_1n02YEeKjXN5I1bmc5Q" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter xmi:id="_aA_1oE2YEeKjXN5I1bmc5Q" field="CHECK" name="INFORMATION" value="false"/>
     <elementParameter xmi:id="_aA_1oU2YEeKjXN5I1bmc5Q" field="MEMO" name="COMMENT" value=""/>
     <elementParameter xmi:id="_aA_1ok2YEeKjXN5I1bmc5Q" field="CHECK" name="VALIDATION_RULES" value="false"/>
-    <metadata xmi:id="_aA_1o02YEeKjXN5I1bmc5Q" connector="TABLE" label="context.postgresql_schema.eltinput" name="tELTPostgresqlInput_1">
+    <metadata xmi:id="_aA_1o02YEeKjXN5I1bmc5Q" connector="TABLE" label="context.postgresql_schema.eltinputupdate" name="tELTPostgresqlInput_1">
       <column xmi:id="_aA_1pE2YEeKjXN5I1bmc5Q" comment="" key="true" length="10" name="_String" nullable="false" originalDbColumnName="String" pattern="" sourceType="INT4" type="id_Integer"/>
       <column xmi:id="_aA_1pU2YEeKjXN5I1bmc5Q" comment="" key="false" length="10" name="_void" nullable="true" originalDbColumnName="void" pattern="" sourceType="VARCHAR" type="id_String"/>
     </metadata>
@@ -375,7 +375,7 @@
     <elementParameter xmi:id="_aA_1vk2YEeKjXN5I1bmc5Q" field="TEXT" name="SCHEMA_DB" value="context.postgresql_schema"/>
     <elementParameter xmi:id="_aA_1v02YEeKjXN5I1bmc5Q" field="TEXT" name="USER" value="context.postgresql_username"/>
     <elementParameter xmi:id="_aA_1wE2YEeKjXN5I1bmc5Q" field="TEXT" name="PASS" value="context.postgresql_password"/>
-    <elementParameter xmi:id="_aA_1wU2YEeKjXN5I1bmc5Q" field="DBTABLE" name="TABLE" value="&quot;eltoutput&quot;"/>
+    <elementParameter xmi:id="_aA_1wU2YEeKjXN5I1bmc5Q" field="DBTABLE" name="TABLE" value="&quot;eltoutputupdate&quot;"/>
     <elementParameter xmi:id="_aA_1wk2YEeKjXN5I1bmc5Q" field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter xmi:id="_aA_1w02YEeKjXN5I1bmc5Q" field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter xmi:id="_aA_1xE2YEeKjXN5I1bmc5Q" field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
@@ -439,25 +439,25 @@
     <elementParameter xmi:id="_aA_1-k2YEeKjXN5I1bmc5Q" field="CHECK" name="INFORMATION" value="false"/>
     <elementParameter xmi:id="_aA_1-02YEeKjXN5I1bmc5Q" field="MEMO" name="COMMENT" value=""/>
     <elementParameter xmi:id="_aA_1_E2YEeKjXN5I1bmc5Q" field="CHECK" name="VALIDATION_RULES" value="false"/>
-    <metadata xmi:id="_aA_1_U2YEeKjXN5I1bmc5Q" connector="TABLE" label="eltoutput" name="table1">
+    <metadata xmi:id="_aA_1_U2YEeKjXN5I1bmc5Q" connector="TABLE" label="eltoutputupdate" name="table1">
       <column xmi:id="_aA_1_k2YEeKjXN5I1bmc5Q" comment="" key="false" length="10" name="_void" nullable="true" originalDbColumnName="void" pattern="" sourceType="VARCHAR" type="id_String"/>
     </metadata>
     <nodeData xsi:type="DBMapData" xmi:id="_aA_1_02YEeKjXN5I1bmc5Q">
-      <InputTables xmi:id="_aA_2AE2YEeKjXN5I1bmc5Q" name="context.postgresql_schema.eltinput" tableName="context.postgresql_schema.eltinput" joinType="NO_JOIN">
+      <InputTables xmi:id="_aA_2AE2YEeKjXN5I1bmc5Q" name="context.postgresql_schema.eltinputupdate" tableName="context.postgresql_schema.eltinputupdate" joinType="NO_JOIN">
         <DBMapperTableEntries xmi:id="_aA_2AU2YEeKjXN5I1bmc5Q" name="_String"/>
         <DBMapperTableEntries xmi:id="_aA_2Ak2YEeKjXN5I1bmc5Q" name="_void"/>
       </InputTables>
-      <OutputTables xmi:id="_aA_2A02YEeKjXN5I1bmc5Q" name="table1" tableName="eltoutput">
-        <DBMapperTableEntries xmi:id="_aA_2BE2YEeKjXN5I1bmc5Q" name="_void" expression="context.postgresql_schema.eltinput._void"/>
-        <FilterEntries xmi:id="_aA_2BU2YEeKjXN5I1bmc5Q" name="newFilter13" expression="\&quot;eltinput\&quot;.\&quot;String\&quot; = \&quot;eltoutput\&quot;.\&quot;String\&quot; "/>
+      <OutputTables xmi:id="_aA_2A02YEeKjXN5I1bmc5Q" name="table1" tableName="eltoutputupdate">
+        <DBMapperTableEntries xmi:id="_aA_2BE2YEeKjXN5I1bmc5Q" name="_void" expression="context.postgresql_schema.eltinputupdate._void"/>
+        <FilterEntries xmi:id="_aA_2BU2YEeKjXN5I1bmc5Q" name="newFilter13" expression="\&quot;eltinputupdate\&quot;.\&quot;String\&quot; = \&quot;eltoutputupdate\&quot;.\&quot;String\&quot; "/>
       </OutputTables>
     </nodeData>
   </node>
   <node xmi:id="_aA_2Bk2YEeKjXN5I1bmc5Q" componentName="tELTPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="288">
     <elementParameter xmi:id="_aA_2B02YEeKjXN5I1bmc5Q" field="TEXT" name="UNIQUE_NAME" value="tELTPostgresqlOutput_1"/>
     <elementParameter xmi:id="_aA_2CE2YEeKjXN5I1bmc5Q" field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
-    <elementParameter xmi:id="_aA_2CU2YEeKjXN5I1bmc5Q" field="MEMO" name="WHERE_CLAUSE" value="&quot; \&quot;eltoutput\&quot;.\&quot;String\&quot;&lt;=20&quot;"/>
-    <elementParameter xmi:id="_aA_2Ck2YEeKjXN5I1bmc5Q" field="TEXT" name="ELT_TABLE_NAME" value="&quot;eltoutput&quot;"/>
+    <elementParameter xmi:id="_aA_2CU2YEeKjXN5I1bmc5Q" field="MEMO" name="WHERE_CLAUSE" value="&quot; \&quot;eltoutputupdate\&quot;.\&quot;String\&quot;&lt;=20&quot;"/>
+    <elementParameter xmi:id="_aA_2Ck2YEeKjXN5I1bmc5Q" field="TEXT" name="ELT_TABLE_NAME" value="&quot;eltoutputupdate&quot;"/>
     <elementParameter xmi:id="_aA_2C02YEeKjXN5I1bmc5Q" field="TEXT" name="ELT_SCHEMA_NAME" value="context.postgresql_schema"/>
     <elementParameter xmi:id="_aA_2DE2YEeKjXN5I1bmc5Q" field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
     <elementParameter xmi:id="_aA_2DU2YEeKjXN5I1bmc5Q" field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;"/>
@@ -501,7 +501,7 @@
     <elementParameter xmi:id="_aA_2Lk2YEeKjXN5I1bmc5Q" field="TEXT" name="SCHEMA_DB" value="context.postgresql_schema"/>
     <elementParameter xmi:id="_aA_2L02YEeKjXN5I1bmc5Q" field="TEXT" name="USER" value="context.postgresql_username"/>
     <elementParameter xmi:id="_aA_2ME2YEeKjXN5I1bmc5Q" field="TEXT" name="PASS" value="context.postgresql_password"/>
-    <elementParameter xmi:id="_aA_2MU2YEeKjXN5I1bmc5Q" field="DBTABLE" name="TABLE" value="&quot;eltinput&quot;"/>
+    <elementParameter xmi:id="_aA_2MU2YEeKjXN5I1bmc5Q" field="DBTABLE" name="TABLE" value="&quot;eltinputupdate&quot;"/>
     <elementParameter xmi:id="_aA_2Mk2YEeKjXN5I1bmc5Q" field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter xmi:id="_aA_2M02YEeKjXN5I1bmc5Q" field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter xmi:id="_aA_2NE2YEeKjXN5I1bmc5Q" field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
@@ -560,7 +560,7 @@
     <elementParameter xmi:id="_aA_2ZU2YEeKjXN5I1bmc5Q" field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter xmi:id="_aA_2Zk2YEeKjXN5I1bmc5Q" field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter xmi:id="_aA_2Z02YEeKjXN5I1bmc5Q" field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter xmi:id="_aA_2aE2YEeKjXN5I1bmc5Q" field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.postgresql_schema+&quot;.\&quot;eltoutput\&quot;&quot;"/>
+    <elementParameter xmi:id="_aA_2aE2YEeKjXN5I1bmc5Q" field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.postgresql_schema+&quot;.\&quot;eltoutputupdate\&quot;&quot;"/>
     <elementParameter xmi:id="_aA_2aU2YEeKjXN5I1bmc5Q" field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter xmi:id="_aA_2ak2YEeKjXN5I1bmc5Q" field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
     <elementParameter xmi:id="_aA_2a02YEeKjXN5I1bmc5Q" field="COLUMN_LIST" name="RECORD_SET_COLUMN" value=""/>
@@ -594,7 +594,7 @@
     <elementParameter xmi:id="_aA_2hU2YEeKjXN5I1bmc5Q" field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter xmi:id="_aA_2hk2YEeKjXN5I1bmc5Q" field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter xmi:id="_aA_2h02YEeKjXN5I1bmc5Q" field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter xmi:id="_aA_2iE2YEeKjXN5I1bmc5Q" field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.postgresql_schema+&quot;.\&quot;eltinput\&quot;&quot;"/>
+    <elementParameter xmi:id="_aA_2iE2YEeKjXN5I1bmc5Q" field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.postgresql_schema+&quot;.\&quot;eltinputupdate\&quot;&quot;"/>
     <elementParameter xmi:id="_aA_2iU2YEeKjXN5I1bmc5Q" field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter xmi:id="_aA_2ik2YEeKjXN5I1bmc5Q" field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
     <elementParameter xmi:id="_aA_2i02YEeKjXN5I1bmc5Q" field="COLUMN_LIST" name="RECORD_SET_COLUMN" value=""/>
@@ -720,7 +720,7 @@
     <elementParameter xmi:id="_aA_2-k2YEeKjXN5I1bmc5Q" field="CHECK" name="ACTIVATE" value="true"/>
     <elementParameter xmi:id="_aA_2-02YEeKjXN5I1bmc5Q" field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2"/>
   </connection>
-  <connection xmi:id="_aA_2_E2YEeKjXN5I1bmc5Q" connectorName="TABLE" label="context.postgresql_schema.eltinput" lineStyle="9" metaname="tELTPostgresqlInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTPostgresqlInput_1" target="tELTPostgresqlMap_1">
+  <connection xmi:id="_aA_2_E2YEeKjXN5I1bmc5Q" connectorName="TABLE" label="context.postgresql_schema.eltinputupdate" lineStyle="9" metaname="tELTPostgresqlInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTPostgresqlInput_1" target="tELTPostgresqlMap_1">
     <elementParameter xmi:id="_aA_2_U2YEeKjXN5I1bmc5Q" field="CHECK" name="ACTIVATE" value="true"/>
     <elementParameter xmi:id="_aA_2_k2YEeKjXN5I1bmc5Q" field="TEXT" name="UNIQUE_NAME" value="tELTPostgresqlInput_1"/>
   </connection>
@@ -747,7 +747,7 @@
     <elementParameter xmi:id="_aA_3EU2YEeKjXN5I1bmc5Q" field="CHECK" name="ACTIVATE" value="true"/>
     <elementParameter xmi:id="_aA_3Ek2YEeKjXN5I1bmc5Q" field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk6"/>
   </connection>
-  <connection xmi:id="_aA_3E02YEeKjXN5I1bmc5Q" connectorName="TABLE" label="eltoutput" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTPostgresqlMap_1" target="tELTPostgresqlOutput_1">
+  <connection xmi:id="_aA_3E02YEeKjXN5I1bmc5Q" connectorName="TABLE" label="eltoutputupdate" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTPostgresqlMap_1" target="tELTPostgresqlOutput_1">
     <elementParameter xmi:id="_aA_3FE2YEeKjXN5I1bmc5Q" field="CHECK" name="ACTIVATE" value="true"/>
     <elementParameter xmi:id="_aA_3FU2YEeKjXN5I1bmc5Q" field="TEXT" name="UNIQUE_NAME" value="table1"/>
   </connection>
