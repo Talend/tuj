@@ -113,7 +113,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="k3WNzwEJ9MTsQqCStv4d5g==" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="0RMsyjmybrE=" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -250,56 +250,6 @@
     <metadata connector="FLOW" name="tContextLoad_1">
       <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="value" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="-32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
-    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
-    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="false"/>
-    <elementParameter field="TABLE" name="VALUES" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
-      <elementValue elementRef="VALUE" value="&quot;tSOB_BulkExel&quot;+pid+&quot;_insert&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
-      <elementValue elementRef="VALUE" value="&quot;123456789&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Fax"/>
-      <elementValue elementRef="VALUE" value="&quot;987654321&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ShippingStreet"/>
-      <elementValue elementRef="VALUE" value=""/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ShippingCity"/>
-      <elementValue elementRef="VALUE" value=""/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Website"/>
-      <elementValue elementRef="VALUE" value=""/>
-    </elementParameter>
-    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
-    <elementParameter field="TABLE" name="INTABLE" show="false"/>
-    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="true"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="MEMO" name="INLINECONTENT" value="tSOB_BulkExel&quot;+pid+&quot;_insert1;123456789;987654321;;beijing;http://192.168.30.45/blog&#xD;&#xA;tSOB_BulkExel&quot;+pid+&quot;_insert2;123456789;987654321;chuhua;beijing;"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFixedFlowInput_1">
-      <column key="false" length="255" name="Name" nullable="false" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="40" name="Phone" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="40" name="Fax" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="ShippingStreet" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="40" name="ShippingCity" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="Website" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tSalesforceOutputBulk" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="-32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSalesforceOutputBulk_1" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir+context.current_dir+&quot;sforce_bulk2.csv&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="false"/>
-    <elementParameter field="CHECK" name="IGNORE_NULL" value="false"/>
-    <elementParameter field="TABLE" name="UPSERT_RELATION"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSalesforceOutputBulk_1">
-      <column key="false" length="255" name="Name" nullable="false" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="40" name="Phone" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="40" name="Fax" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="ShippingStreet" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="40" name="ShippingCity" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="Website" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tSalesforceBulkExec" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="64">
@@ -1550,6 +1500,69 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="false"/>
+    <elementParameter field="TABLE" name="VALUES" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
+      <elementValue elementRef="VALUE" value="&quot;tSFOB_BulkExel&quot;+pid+&quot;_insert&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
+      <elementValue elementRef="VALUE" value="&quot;123456789&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Fax"/>
+      <elementValue elementRef="VALUE" value="&quot;987654321&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ShippingStreet"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ShippingCity"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Website"/>
+      <elementValue elementRef="VALUE" value=""/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="true"/>
+    <elementParameter field="TABLE" name="INTABLE">
+      <elementValue elementRef="Name" value="&quot;tSOB_BulkExel&quot;+pid+&quot;_insert1&quot;"/>
+      <elementValue elementRef="Phone" value="&quot;123456789&quot;"/>
+      <elementValue elementRef="Fax" value="&quot;987654321&quot;"/>
+      <elementValue elementRef="ShippingStreet" value=""/>
+      <elementValue elementRef="ShippingCity" value="&quot;beijing&quot;"/>
+      <elementValue elementRef="Website" value="&quot;http://192.168.30.45/blog&quot;"/>
+      <elementValue elementRef="Name" value="&quot;tSOB_BulkExel&quot;+pid+&quot;_insert2&quot;"/>
+      <elementValue elementRef="Phone" value="&quot;123456789&quot;"/>
+      <elementValue elementRef="Fax" value="&quot;987654321&quot;"/>
+      <elementValue elementRef="ShippingStreet" value="&quot;chuhua&quot;"/>
+      <elementValue elementRef="ShippingCity" value="&quot;beijing&quot;"/>
+      <elementValue elementRef="Website" value=""/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;" show="false"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" value="tSFOB_BulkExel&quot;+pid+&quot;_insert1;123456789;987654321;;beijing;http://192.168.30.45/blog&#xD;&#xA;tSFOB_BulkExel&quot;+pid+&quot;_insert2;123456789;987654321;chuhua;beijing;" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFixedFlowInput_1">
+      <column key="false" length="255" name="Name" nullable="false" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="Phone" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="Fax" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ShippingStreet" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="ShippingCity" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="Website" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSalesforceOutputBulk" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSalesforceOutputBulk_1" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir+context.current_dir+&quot;sforce_bulk2.csv&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="IGNORE_NULL" value="false"/>
+    <elementParameter field="TABLE" name="UPSERT_RELATION"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSalesforceOutputBulk_1">
+      <column key="false" length="255" name="Name" nullable="false" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="Phone" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="Fax" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="ShippingStreet" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="40" name="ShippingCity" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="Website" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tContextLoad_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="key"/>
@@ -1564,36 +1577,6 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tJava_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tSalesforceOutputBulk_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="Name"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="Phone"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="Fax"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="Id"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="Website"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="ShippingStreet"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="ShippingCity"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tSalesforceBulkExec_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSalesforceBulkExec_1" offsetLabelX="0" offsetLabelY="0" source="tSalesforceBulkExec_1" target="tSalesforceInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
@@ -1962,16 +1945,16 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tSalesforceInput_5">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tSalesforceOutputBulk_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tSalesforceBulkExec_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
-    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Insert_NO_Append"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
   <subjob>
@@ -2082,5 +2065,10 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
 </talendfile:ProcessType>

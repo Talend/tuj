@@ -55,7 +55,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="k3WNzwEJ9MTsQqCStv4d5g==" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="0RMsyjmybrE=" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -930,8 +930,6 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="test__c" name="tSalesforceInput_2">
       <column comment="" key="false" length="18" name="Id" nullable="false" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="user_id__c" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="255" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="user_name__c" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="255" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tSalesforceOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="-608">
@@ -970,9 +968,14 @@
     <elementParameter field="TABLE" name="UPSERT_RELATION" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="tSalesforceOutput_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSalesforceOutput_1"/>
-    <metadata connector="MAIN" name="MAIN"/>
-    <metadata connector="REJECT" name="REJECT">
+    <metadata connector="FLOW" label="test__c" name="tSalesforceOutput_1">
+      <column comment="" key="false" length="18" name="Id" nullable="false" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="MAIN" label="test__c" name="MAIN">
+      <column comment="" key="false" length="18" name="Id" nullable="false" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="test__c" name="REJECT">
+      <column comment="" key="false" length="18" name="Id" nullable="false" precision="0" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorFields" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
