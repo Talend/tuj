@@ -226,7 +226,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.mysql_database"/>
     <elementParameter field="TEXT" name="USER" value="context.mysql_username"/>
     <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kueJqcVnKQSgcuDvnQRGSz0x"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_src&quot;+pid"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -346,7 +346,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.mysql_database"/>
     <elementParameter field="TEXT" name="USER" value="context.mysql_username"/>
     <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kueJqcVnKQSgcuDvnQRGSz0x"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_dest&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi32594_noparam&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -425,10 +425,10 @@
   <node componentName="tELTMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTMysqlInput_2"/>
     <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="D:\Myjob\Talend-Studio-20151212_0335-V5.6.3SNAP\configuration\lib\java"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_src&quot;+pid.toUpperCase()"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_src&quot;+pid"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" label="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" name="tELTMysqlInput_2">
+    <metadata connector="TABLE" label="bugtdi32594_src&quot;+pid+&quot;" name="tELTMysqlInput_2">
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
   </node>
@@ -450,18 +450,18 @@
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id"/>
     <elementParameter field="IMAGE" name="PREVIEW" value="_m6JuYABSEeW2asyNdVCEeQ-tELTMysqlMap_2-PREVIEW.bmp"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" label="bugtdi32594_dest" name="table3">
+    <metadata connector="TABLE" label="bugtdi32594_noparam" name="table3">
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="register" nullable="true" pattern="" precision="-1" sourceType="DATE" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" tableName="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" joinType="NO_JOIN">
+      <InputTables name="bugtdi32594_src&quot;+pid+&quot;" tableName="bugtdi32594_src&quot;+pid+&quot;" joinType="NO_JOIN">
         <DBMapperTableEntries name="name"/>
       </InputTables>
-      <OutputTables name="table3" tableName="bugtdi32594_dest">
-        <DBMapperTableEntries name="name" expression="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;.name"/>
+      <OutputTables name="table3" tableName="bugtdi32594_noparam">
+        <DBMapperTableEntries name="name" expression="bugtdi32594_src&quot;+pid+&quot;.name"/>
         <DBMapperTableEntries name="register" expression="CURRENT_DATE()"/>
-        <FilterEntries name="newFilter2" expression="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;.id=bugtdi32594_dest.id"/>
+        <FilterEntries name="newFilter2" expression="bugtdi32594_src&quot;+pid+&quot;.id=bugtdi32594_noparam.id"/>
       </OutputTables>
     </nodeData>
   </node>
@@ -470,12 +470,12 @@
     <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="D:\Myjob\Talend-Studio-20151212_0335-V5.6.3SNAP\configuration\lib\java"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
     <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_dest&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi32594_noparam&quot;"/>
     <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
     <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" label="bugtdi32594_dest" name="tELTMysqlOutput_2">
+    <metadata connector="TABLE" label="bugtdi32594_noparam" name="tELTMysqlOutput_2">
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="register" nullable="true" pattern="" precision="-1" sourceType="DATE" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -497,7 +497,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select * from bugtdi32594_dest order by id&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select * from bugtdi32594_noparam order by id&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;"/>
@@ -637,7 +637,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table bugtdi32594_src&quot;+pid.toUpperCase()+&quot;, bugtdi32594_dest&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table bugtdi32594_src&quot;+pid+&quot;, bugtdi32594_noparam&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;"/>
@@ -917,10 +917,10 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row10"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi32594_src&quot;+pid.toUpperCase()+&quot;" lineStyle="9" metaname="tELTMysqlInput_2" offsetLabelX="0" offsetLabelY="0" source="tELTMysqlInput_2" target="tELTMysqlMap_2">
+  <connection connectorName="TABLE" label="bugtdi32594_src&quot;+pid+&quot;" lineStyle="9" metaname="tELTMysqlInput_2" offsetLabelX="0" offsetLabelY="0" source="tELTMysqlInput_2" target="tELTMysqlMap_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTMysqlInput_2"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi32594_dest" lineStyle="9" metaname="table3" offsetLabelX="0" offsetLabelY="0" source="tELTMysqlMap_2" target="tELTMysqlOutput_2">
+  <connection connectorName="TABLE" label="bugtdi32594_noparam" lineStyle="9" metaname="table3" offsetLabelX="0" offsetLabelY="0" source="tELTMysqlMap_2" target="tELTMysqlOutput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="table3"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tELTMysqlMap_2" offsetLabelX="0" offsetLabelY="0" source="tELTMysqlMap_2" target="tMysqlInput_1">
