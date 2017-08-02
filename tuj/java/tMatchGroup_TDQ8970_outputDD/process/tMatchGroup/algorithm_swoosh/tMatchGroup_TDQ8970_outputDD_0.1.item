@@ -80,7 +80,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;/home/runtime/TDQ_EE_NEW2/.metadata&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/worspaceTest1/g5_master/tdq211/.metadata&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
@@ -134,6 +134,7 @@
     <routinesParameter id="_Lazx4H-NEeCx04HGvj8drw" name="MDM"/>
     <routinesParameter id="_06Ot4P-uEeWZZPLcVkYTAg" name="DataMasking"/>
     <routinesParameter id="_irlz0PWVEeW79q7UpPaXCg" name="DataQualityDependencies"/>
+    <routinesParameter id="_VH-U4DnpEee7ivOiOpQJcw" name="TalendStringUtil"/>
   </parameters>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-160" posY="0">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
@@ -247,6 +248,7 @@
     <elementParameter field="TABLE" name="SURVIVORSHIP" show="false"/>
     <elementParameter field="TABLE" name="BLOCKING_DEFINITION" show="false"/>
     <elementParameter field="CHECK" name="SHOW_BASIC_PARAMETER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="IS_SHADOW_JOB" value="false" show="false"/>
     <elementParameter field="TEXT" name="INTERVAL" value="0.85" show="false"/>
     <elementParameter field="CHECK" name="STORE_ON_DISK" value="false"/>
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="200000" show="false"/>
@@ -254,6 +256,7 @@
     <elementParameter field="CHECK" name="SEPARATE_OUTPUT" value="false"/>
     <elementParameter field="TEXT" name="CONFIDENCE_THRESHOLD" value="0.9" show="false"/>
     <elementParameter field="CHECK" name="LINK_WITH_PREVIOUS" value="false"/>
+    <elementParameter field="CHECK" name="PROPAGATE_ORIGINAL" value="false" show="false"/>
     <elementParameter field="CHECK" name="SORT_DATA" value="true"/>
     <elementParameter field="CHECK" name="OUTPUTDD" value="true"/>
     <elementParameter field="CHECK" name="DISPLAY_ATTR_LABELS" value="true"/>
@@ -344,6 +347,9 @@
       <elementValue elementRef="COLNAME" value="id"/>
       <elementValue elementRef="SORT" value="num"/>
       <elementValue elementRef="ORDER" value="asc"/>
+      <elementValue elementRef="COLNAME" value="GRP_SIZE"/>
+      <elementValue elementRef="SORT" value="num"/>
+      <elementValue elementRef="ORDER" value="desc"/>
     </elementParameter>
     <elementParameter field="CHECK" name="EXTERNAL" value="false"/>
     <elementParameter field="DIRECTORY" name="TEMPFILE" value="&quot;D:/worspace/g5_master/tdq1/temp&quot;" show="false"/>
@@ -389,6 +395,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="one group"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -480,6 +487,7 @@
     <elementParameter field="TABLE" name="SURVIVORSHIP" show="false"/>
     <elementParameter field="TABLE" name="BLOCKING_DEFINITION" show="false"/>
     <elementParameter field="CHECK" name="SHOW_BASIC_PARAMETER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="IS_SHADOW_JOB" value="false" show="false"/>
     <elementParameter field="TEXT" name="INTERVAL" value="0.85" show="false"/>
     <elementParameter field="CHECK" name="STORE_ON_DISK" value="false"/>
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="200000" show="false"/>
@@ -487,6 +495,7 @@
     <elementParameter field="CHECK" name="SEPARATE_OUTPUT" value="false"/>
     <elementParameter field="TEXT" name="CONFIDENCE_THRESHOLD" value="0.9" show="false"/>
     <elementParameter field="CHECK" name="LINK_WITH_PREVIOUS" value="false"/>
+    <elementParameter field="CHECK" name="PROPAGATE_ORIGINAL" value="false" show="false"/>
     <elementParameter field="CHECK" name="SORT_DATA" value="true"/>
     <elementParameter field="CHECK" name="OUTPUTDD" value="true"/>
     <elementParameter field="CHECK" name="DISPLAY_ATTR_LABELS" value="true"/>
@@ -568,6 +577,7 @@
     <elementParameter field="TABLE" name="SURVIVORSHIP" show="false"/>
     <elementParameter field="TABLE" name="BLOCKING_DEFINITION" show="false"/>
     <elementParameter field="CHECK" name="SHOW_BASIC_PARAMETER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="IS_SHADOW_JOB" value="false" show="false"/>
     <elementParameter field="TEXT" name="INTERVAL" value="0.85" show="false"/>
     <elementParameter field="CHECK" name="STORE_ON_DISK" value="false"/>
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="200000" show="false"/>
@@ -575,6 +585,7 @@
     <elementParameter field="CHECK" name="SEPARATE_OUTPUT" value="false"/>
     <elementParameter field="TEXT" name="CONFIDENCE_THRESHOLD" value="0.9" show="false"/>
     <elementParameter field="CHECK" name="LINK_WITH_PREVIOUS" value="true"/>
+    <elementParameter field="CHECK" name="PROPAGATE_ORIGINAL" value="false" show="false"/>
     <elementParameter field="CHECK" name="SORT_DATA" value="true"/>
     <elementParameter field="CHECK" name="OUTPUTDD" value="true"/>
     <elementParameter field="CHECK" name="DISPLAY_ATTR_LABELS" value="true"/>
@@ -662,6 +673,9 @@
       <elementValue elementRef="COLNAME" value="id"/>
       <elementValue elementRef="SORT" value="num"/>
       <elementValue elementRef="ORDER" value="asc"/>
+      <elementValue elementRef="COLNAME" value="GRP_SIZE"/>
+      <elementValue elementRef="SORT" value="num"/>
+      <elementValue elementRef="ORDER" value="desc"/>
     </elementParameter>
     <elementParameter field="CHECK" name="EXTERNAL" value="false"/>
     <elementParameter field="DIRECTORY" name="TEMPFILE" value="&quot;D:/worspace/g5_master/tdq1/temp&quot;" show="false"/>
@@ -706,6 +720,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="no merge on second"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
