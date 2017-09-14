@@ -247,7 +247,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
     <elementParameter field="MEMO_JAVA" name="CODE_START" value="// start part of your Java code&#xA;      "/>
-    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="row5.dynamic = row4.dynamic.clone();&#xA;java.util.Iterator&lt;DynamicMetadata> metadatas = row5.dynamic.metadatas.iterator();&#xA;&#xA;while (metadatas.hasNext())&#xA;{&#xA;&#x9;DynamicMetadata metadata = metadatas.next();&#xA;&#x9;System.out.println(metadata.getName() + &quot; = &quot; + metadata.getType());&#xA;}&#xA;&#xA;row5.dynamic.removeColumnsByType(&quot;id_Date&quot;);"/>
+    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="row5.dynamic = row4.dynamic;&#xA;java.util.Iterator&lt;DynamicMetadata> metadatas = row5.dynamic.metadatas.iterator();&#xA;&#xA;while (metadatas.hasNext())&#xA;{&#xA;&#x9;DynamicMetadata metadata = metadatas.next();&#xA;&#x9;System.out.println(metadata.getName() + &quot; = &quot; + metadata.getType());&#xA;}&#xA;&#xA;row5.dynamic = row5.dynamic.removeColumnsByType(&quot;id_Date&quot;);"/>
     <elementParameter field="MEMO_JAVA" name="CODE_END" value="// end of the component, outside/closing the loop&#xA;      "/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
