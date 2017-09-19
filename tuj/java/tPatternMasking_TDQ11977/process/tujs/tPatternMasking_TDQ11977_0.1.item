@@ -225,7 +225,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_2" show="false"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;French duplicate test&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;One column french SSN&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row9.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="SSN_FR"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -461,7 +461,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" show="false"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;French duplicate test&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;EnumFromFile and Format checker&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row5.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="SSN_FR"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -622,6 +622,153 @@
       <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="800">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_4" show="false"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="false"/>
+    <elementParameter field="TABLE" name="VALUES" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="FR_SSN"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="year"/>
+      <elementValue elementRef="VALUE" value=""/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
+    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="true"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" value="1820393007070;20160912&#xA;1900793123456;19800311&#xA;1900793123456;19800230&#xA;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFixedFlowInput_4">
+      <column comment="" key="false" length="-1" name="FR_SSN" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="year" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tPatternMasking" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="800">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPatternMasking_4" show="false"/>
+    <elementParameter field="TABLE" name="RULE_TABLE">
+      <elementValue elementRef="COLUMN_TO_MASK" value="FR_SSN"/>
+      <elementValue elementRef="FIELD_TYPE" value="INTERVAL"/>
+      <elementValue elementRef="VALUES" value="&quot;&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="1"/>
+      <elementValue elementRef="INTERVAL_MAX" value="2"/>
+      <elementValue elementRef="COLUMN_TO_MASK" value="FR_SSN"/>
+      <elementValue elementRef="FIELD_TYPE" value="INTERVAL"/>
+      <elementValue elementRef="VALUES" value="&quot;&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="0"/>
+      <elementValue elementRef="INTERVAL_MAX" value="99"/>
+      <elementValue elementRef="COLUMN_TO_MASK" value="FR_SSN"/>
+      <elementValue elementRef="FIELD_TYPE" value="INTERVAL"/>
+      <elementValue elementRef="VALUES" value="&quot;&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="1"/>
+      <elementValue elementRef="INTERVAL_MAX" value="12"/>
+      <elementValue elementRef="COLUMN_TO_MASK" value="FR_SSN"/>
+      <elementValue elementRef="FIELD_TYPE" value="ENUMERATION"/>
+      <elementValue elementRef="VALUES" value="&quot;01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,2A,2B,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="1900"/>
+      <elementValue elementRef="INTERVAL_MAX" value="2100"/>
+      <elementValue elementRef="COLUMN_TO_MASK" value="FR_SSN"/>
+      <elementValue elementRef="FIELD_TYPE" value="INTERVAL"/>
+      <elementValue elementRef="VALUES" value="&quot;&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="0"/>
+      <elementValue elementRef="INTERVAL_MAX" value="990"/>
+      <elementValue elementRef="COLUMN_TO_MASK" value="year"/>
+      <elementValue elementRef="FIELD_TYPE" value="DATEPATTERN"/>
+      <elementValue elementRef="VALUES" value="&quot;&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="1900"/>
+      <elementValue elementRef="INTERVAL_MAX" value="2100"/>
+      <elementValue elementRef="COLUMN_TO_MASK" value="FR_SSN"/>
+      <elementValue elementRef="FIELD_TYPE" value="INTERVAL"/>
+      <elementValue elementRef="VALUES" value="&quot;&quot;"/>
+      <elementValue elementRef="INTERVAL_MIN" value="0"/>
+      <elementValue elementRef="INTERVAL_MAX" value="990"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="RANDOM_SEED" value="12345678"/>
+    <elementParameter field="CHECK" name="OUTPUT_ORIGINAL" value="false"/>
+    <elementParameter field="CHECK" name="KEEP_NULL" value="true"/>
+    <elementParameter field="CHECK" name="KEEP_EMPTY" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="enumAndOtherOrder"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tPatternMasking_4">
+      <column comment="" key="false" length="-1" name="FR_SSN" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="year" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ORIGINAL_MARK" nullable="true" precision="0" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="800">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_4" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir +  &quot;/&quot; + jobName + &quot;/twoColumns.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="SSN_FR"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_4">
+      <column comment="" key="false" length="-1" name="FR_SSN" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="year" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ORIGINAL_MARK" nullable="true" precision="0" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="896">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCompare_4" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
+    <elementParameter field="FILE" name="FILE" value="context.data_output_dir +  &quot;/&quot; + jobName + &quot;/twoColumns.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot; + jobName + &quot;/ref/twoColumns.csv&quot;"/>
+    <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot;] Files differ&quot;"/>
+    <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot;] Files are identical&quot;"/>
+    <elementParameter field="CHECK" name="PRINT" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileCompare_4">
+      <column key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="896">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_4" show="false"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;Enumeration and order checker&quot;"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row12.differ == 0"/>
+    <elementParameter field="TEXT" name="LABEL" value="SSN_FR"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAssert_4">
+      <column defaultValue="" key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row13" lineStyle="0" metaname="tFileInputDelimited_5" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_5" target="tContextLoad_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="key"/>
@@ -772,6 +919,52 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row8" show="false"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileCompare_3" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_3" target="tFixedFlowInput_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk8" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tFixedFlowInput_4" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_4" target="tPatternMasking_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="year"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row10" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_4" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_4" target="tFileCompare_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk9" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tPatternMasking_4" offsetLabelX="0" offsetLabelY="0" source="tPatternMasking_4" target="tFileOutputDelimited_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row11" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tFileCompare_4" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_4" target="tAssert_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="file"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="file_ref"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="moment"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="job"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="component"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="differ"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="message"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row12" show="false"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_5" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
@@ -806,5 +999,15 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCompare_3" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_4" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCompare_4" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
 </talendfile:ProcessType>
