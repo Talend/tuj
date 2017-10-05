@@ -12,16 +12,15 @@
     <contextParameter comment="" name="result_username" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="vertica71_database" prompt="vertica71_database?" promptNeeded="false" type="id_String" value="&quot;docker&quot;"/>
     <contextParameter comment="" name="vertica71_host" prompt="vertica71_host?" promptNeeded="false" type="id_String" value="&quot;192.168.50.140&quot;"/>
-    <contextParameter comment="" name="vertica_input_file" prompt="vertica_input_file?" promptNeeded="false" type="id_String" value="&quot;data2.csv.bz2&quot;"/>
     <contextParameter comment="" name="vertica71_username" prompt="vertica71_username?" promptNeeded="false" type="id_String" value="&quot;talend&quot;"/>
-    <contextParameter comment="" name="vertica_output_select_file" prompt="vertica_output_select_file?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="vertica_output_select_file_ref" prompt="vertica_output_select_file_ref?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica_output_select_file" prompt="vertica_output_select_file?" promptNeeded="false" type="id_String" value="&quot;select_all.csv&quot;"/>
+    <contextParameter comment="" name="vertica_output_select_file_ref" prompt="vertica_output_select_file_ref?" promptNeeded="false" type="id_String" value="&quot;select_all_ref.csv&quot;"/>
     <contextParameter comment="" name="vertica71_password" prompt="vertica71_password?" promptNeeded="false" type="id_String" value="&quot;aze123#&quot;"/>
     <contextParameter comment="" name="vertica71_port" prompt="vertica71_port?" promptNeeded="false" type="id_String" value="&quot;5433&quot;"/>
     <contextParameter comment="" name="vertica71_schema" prompt="vertica71_schema?" promptNeeded="false" type="id_String" value="&quot;Public&quot;"/>
-    <contextParameter comment="" name="vertica_table" prompt="vertica_table?" promptNeeded="false" type="id_String" value="&quot;customers&quot;"/>
-    <contextParameter comment="" name="vertica_input_file_suffixe" prompt="vertica_input_file_suffixe?" promptNeeded="false" type="id_String" value="&quot;&quot;"/>
-    <contextParameter comment="" name="vertica_input_file_name" prompt="vertica_input_file_name?" promptNeeded="false" type="id_String" value="&quot;&quot;"/>
+    <contextParameter comment="" name="vertica_input_file_suffixe" prompt="vertica_input_file_suffixe?" promptNeeded="false" type="id_String" value="&quot;.csv.bz2&quot;"/>
+    <contextParameter comment="" name="vertica_input_file_name" prompt="vertica_input_file_name?" promptNeeded="false" type="id_String" value="&quot;datas_&quot;"/>
+    <contextParameter comment="" name="vertica_table" prompt="vertica_table?" promptNeeded="false" type="id_String" value="&quot;tuj_tdi39493_&quot;"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="64" show="false"/>
@@ -205,7 +204,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="context.setProperty(&quot;data_output_dir&quot;, context.get(&quot;data_dir&quot;)+&quot;/gen_&quot;+pid+&quot;/&quot;);&#xA;context.setProperty(&quot;vertica_table&quot;, context.get(&quot;vertica_table&quot;).toString()+pid);&#xA;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="context.setProperty(&quot;data_output_dir&quot;, context.get(&quot;data_dir&quot;)+&quot;/gen_&quot;+pid+&quot;/&quot;);&#xA;context.setProperty(&quot;vertica_table&quot;, context.vertica_table+pid);&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1">
