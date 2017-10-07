@@ -18,8 +18,7 @@
     <contextParameter comment="" name="vertica71_password" prompt="vertica71_password?" promptNeeded="false" type="id_String" value="&quot;aze123#&quot;"/>
     <contextParameter comment="" name="vertica71_port" prompt="vertica71_port?" promptNeeded="false" type="id_String" value="&quot;5433&quot;"/>
     <contextParameter comment="" name="vertica71_schema" prompt="vertica71_schema?" promptNeeded="false" type="id_String" value="&quot;Public&quot;"/>
-    <contextParameter comment="" name="vertica_input_file_suffixe" prompt="vertica_input_file_suffixe?" promptNeeded="false" type="id_String" value="&quot;.csv.bz2&quot;"/>
-    <contextParameter comment="" name="vertica_input_file_name" prompt="vertica_input_file_name?" promptNeeded="false" type="id_String" value="&quot;datas_&quot;"/>
+    <contextParameter comment="" name="vertica_input_file_name" prompt="vertica_input_file_name?" promptNeeded="false" type="id_String" value="&quot;datas_1.csv.bz2&quot;"/>
     <contextParameter comment="" name="vertica_table" prompt="vertica_table?" promptNeeded="false" type="id_String" value="&quot;tuj_tdi39493_&quot;"/>
   </context>
   <parameters>
@@ -204,7 +203,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="context.setProperty(&quot;data_output_dir&quot;, context.get(&quot;data_dir&quot;)+&quot;/gen_&quot;+pid+&quot;/&quot;);&#xA;context.setProperty(&quot;vertica_table&quot;, context.vertica_table+pid);&#xA;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// Define folder where will be generated files&#xA;context.setProperty(&quot;data_output_dir&quot;, context.get(&quot;data_dir&quot;)+&quot;/gen_&quot;+pid+&quot;/&quot;);&#xA;&#xA;// Define a temporary file name&#xA;context.setProperty(&quot;vertica_table&quot;, context.vertica_table+pid);&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1">
@@ -212,17 +211,7 @@
       <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileTouch" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="192">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileTouch_1" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.get(&quot;data_output_dir&quot;)+&quot;/empty.tmp&quot;"/>
-    <elementParameter field="CHECK" name="CREATEDIR" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileTouch_1">
-      <column key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tAssertCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="288">
+  <node componentName="tAssertCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_1" show="false"/>
     <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
     <elementParameter field="CHECK" name="GET_ORIGINAL_EXCEPTION" value="false"/>
@@ -240,7 +229,7 @@
       <column key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tReplicate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="288">
+  <node componentName="tReplicate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="512" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tReplicate_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tReplicate_1">
@@ -255,7 +244,7 @@
       <column key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="384">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" show="false"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -303,152 +292,7 @@
       <column key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="context.result_host"/>
-    <elementParameter field="TEXT" name="PORT" value="context.result_port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.result_database"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username"/>
-    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kudRjTZXsKM8sZf3CpAM1Su5"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="context.result_table"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
-    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100" show="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="pid"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="project"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="job"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="language"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="status"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="substatus"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="description"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
-    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tMysqlOutput_1">
-      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" name="REJECT">
-      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="&quot;&quot;" key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tContextDump" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tContextDump_1" show="false"/>
-    <elementParameter field="CHECK" name="HIDE_PASSWORD" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tContextDump_1">
-      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
-      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tVerticaConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="448">
+  <node componentName="tVerticaConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaConnection_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X"/>
     <elementParameter field="TEXT" name="HOST" value="context.vertica71_host"/>
@@ -645,19 +489,18 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="576">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
-    <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
-    <elementParameter field="MEMO_JAVA" name="CODE_START" value="// start part of your Java code&#xA;for(int tjf1=1; tjf1&lt;=4; tjf1++) {"/>
-    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="// here is the main part of the component,&#xA;// a piece of code executed in the row&#xA;// loop&#xA;java.io.FileInputStream tjf1_fis = new java.io.FileInputStream(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;new java.io.File(context.data_dir + context.vertica_input_file_name + tjf1 + context.vertica_input_file_suffixe)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;);&#xA;row7.content = tjf1_fis;"/>
-    <elementParameter field="MEMO_JAVA" name="CODE_END" value="// end of the component, outside/closing the loop&#xA;}"/>
-    <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
-    <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
-    <elementParameter field="CHECK" name="Version_V4.0" value="true" show="false"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+  <node componentName="tFileInputRaw" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputRaw_1" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_dir+&quot;/&quot;+context.vertica_input_file_name"/>
+    <elementParameter field="RADIO" name="AS_STRING" value="false"/>
+    <elementParameter field="RADIO" name="AS_BYTEARRAY" value="false"/>
+    <elementParameter field="RADIO" name="AS_INPUTSTREAM" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJavaFlex_1">
-      <column comment="" key="false" length="-1" name="content" nullable="true" pattern="" precision="-1" sourceType="" type="id_Object" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tFileInputRaw_1">
+      <column defaultValue="" key="false" length="0" name="content" nullable="true" precision="0" sourceType="" type="id_Object" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tVerticaBulkExec" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="576">
@@ -714,6 +557,126 @@
       <column comment="" key="false" length="50" name="comment" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="context.result_host"/>
+    <elementParameter field="TEXT" name="PORT" value="context.result_port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.result_database"/>
+    <elementParameter field="TEXT" name="USER" value="context.result_username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kudRjTZXsKM8sZf3CpAM1Su5"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="context.result_table"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100" show="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pid"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="project"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="language"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="status"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="substatus"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="description"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMysqlOutput_1">
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="&quot;&quot;" key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileTouch" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileTouch_1" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.get(&quot;data_output_dir&quot;)+&quot;/empty.tmp&quot;"/>
+    <elementParameter field="CHECK" name="CREATEDIR" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileTouch_1">
+      <column key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tFileInputDelimited_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
     <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
@@ -731,12 +694,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
     <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
   </connection>
-  <connection connectorName="FLOW" label="row26" lineStyle="0" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="tFileTouch_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row26" show="false"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="tContextDump_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tJava_1" target="tVerticaConnection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tJava_1" target="tFileTouch_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk8" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tAssertCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tAssertCatcher_1" target="tReplicate_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -837,18 +799,12 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
     <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
   </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tContextDump_1" offsetLabelX="0" offsetLabelY="0" source="tContextDump_1" target="tLogRow_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tContextDump_1" offsetLabelX="0" offsetLabelY="0" source="tContextDump_1" target="tVerticaConnection_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tVerticaConnection_1" offsetLabelX="0" offsetLabelY="0" source="tVerticaConnection_1" target="tFileInputRaw_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tVerticaConnection_1" offsetLabelX="0" offsetLabelY="0" source="tVerticaConnection_1" target="tJavaFlex_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tVerticaInput_1" offsetLabelX="0" offsetLabelY="0" source="tVerticaInput_1" target="tFileOutputDelimited_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -867,14 +823,20 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileDelete_1" offsetLabelX="0" offsetLabelY="0" source="tFileDelete_1" target="tVerticaRow_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk6" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tJavaFlex_1" offsetLabelX="0" offsetLabelY="0" source="tJavaFlex_1" target="tVerticaBulkExec_1">
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tFileInputRaw_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputRaw_1" target="tVerticaBulkExec_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJavaFlex_1" offsetLabelX="0" offsetLabelY="0" source="tJavaFlex_1" target="tVerticaInput_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk4" show="false"/>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputRaw_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputRaw_1" target="tVerticaInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
   </connection>
-  <note opaque="false" posX="-32" posY="1088" sizeHeight="97" sizeWidth="833" text="The tPostJob is used to remove all the temporary data or objects which have been used during the TUJ execution"/>
+  <note opaque="true" posX="-32" posY="1088" sizeHeight="97" sizeWidth="833" text="The tPostJob is used to remove all the temporary data or objects which have been used during the TUJ execution"/>
+  <note opaque="true" posX="192" posY="128" sizeHeight="65" sizeWidth="289" text="Create a folder where generated files will be copied.&#xD;&#xA;This folder will deleted at the end of the job.">
+    <elementParameter field="RADIO" name="NOTETXT_LEFT" value="true"/>
+    <elementParameter field="RADIO" name="NOTETXT_CENTER" value="false"/>
+    <elementParameter field="RADIO" name="NOTELABEL_CENTER" value="false"/>
+    <elementParameter field="RADIO" name="NOTETXT_TOP" value="true"/>
+  </note>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
@@ -893,11 +855,6 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tContextDump_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
@@ -933,7 +890,17 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputRaw_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileTouch_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
