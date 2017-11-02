@@ -1,276 +1,388 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" screenshot="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">
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="data_output_dir" prompt="data_output_dir?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="fs_command_path" prompt="fs_command_path?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="mysql_host" prompt="mysql_host?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="mysql_password" prompt="mysql_password?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="mysql_port" prompt="mysql_port?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="mysql_schema" prompt="mysql_schema?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value=""/>
-    <contextParameter comment="" name="mysql_username" prompt="mysql_username?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="&quot;F:/ytao/tujs/full_context.csv&quot;"/>
-    <contextParameter comment="" name="postgresql_database" prompt="postgresql_database?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="postgresql_host" prompt="postgresql_host?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="postgresql_password" prompt="postgresql_password?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="postgresql_port" prompt="postgresql_port?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="postgresql_schema" prompt="postgresql_schema?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="postgresql_username" prompt="postgresql_username?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_database" prompt="result_database?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_port" prompt="result_port?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" repositoryContextId="_9hfo4LfWEd6fyZNU825EIA" type="id_String" value="null"/>
+    <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="data_output_dir" prompt="data_output_dir?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="fs_command_path" prompt="fs_command_path?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_host" prompt="mysql_host?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_password" prompt="mysql_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_port" prompt="mysql_port?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_schema" prompt="mysql_schema?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="mysql_username" prompt="mysql_username?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="&quot;/misc/tuj/full_context.csv&quot;"/>
+    <contextParameter comment="" name="postgresql_database" prompt="postgresql_database?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="postgresql_host" prompt="postgresql_host?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="postgresql_password" prompt="postgresql_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="postgresql_port" prompt="postgresql_port?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="postgresql_schema" prompt="postgresql_schema?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="postgresql_username" prompt="postgresql_username?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_database" prompt="result_database?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_port" prompt="result_port?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
   </context>
   <parameters>
-    <elementParameter field="DIRECTORY" name="COMP_DEFAULT_FILE_DIR" value="F:/test" contextMode="false"/>
-    <elementParameter field="DIRECTORY" name="COMP_DEFAULT_PROJECT_DIR" value="E:/dev/rcp_wd/tos_trunk/workspace/debug_trunk" contextMode="false"/>
-    <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" value=" -Xms256M -Xmx1024M" contextMode="false"/>
-    <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="AUTHOR" value="a@b.com" contextMode="false"/>
-    <elementParameter field="TEXT" name="STATUS" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="NAME" value="tMultiPatternCheck_10269_tuj" contextMode="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.1" contextMode="false"/>
-    <elementParameter field="TEXT" name="PURPOSE" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" contextMode="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="32" contextMode="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPTIONS" value="none" contextMode="false"/>
-    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000" contextMode="false"/>
-    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" contextMode="false"/>
-    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:PROPERTY_TYPE" value="" contextMode="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:REPOSITORY_PROPERTY_TYPE" value="" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="DISABLE_INFO" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" contextMode="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;F:/dev/rcp_wd/tos_trunk/.metadata&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tDBOutput" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ojdbc14-10g.jar" contextMode="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" contextMode="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="64" show="false"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" value="" show="false"/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:PROPERTY_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:REPOSITORY_PROPERTY_TYPE" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="0RMsyjmybrE=" show="false"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/worspaceTest1/g6.5/tdq21/.metadata&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tJDBCOutput" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
+    <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
+    <routinesParameter id="_IRQwUL-wEeeRXoSWUUKFRg" name="DataMasking"/>
+    <routinesParameter id="_IZffQL-wEeeRXoSWUUKFRg" name="DataQuality"/>
+    <routinesParameter id="_IZrsgL-wEeeRXoSWUUKFRg" name="DataQualityDependencies"/>
+    <routinesParameter id="_IaJmkL-wEeeRXoSWUUKFRg" name="DqStringHandling"/>
+    <routinesParameter id="_IaPtML-wEeeRXoSWUUKFRg" name="DQTechnical"/>
+    <routinesParameter id="_IaUlsL-wEeeRXoSWUUKFRg" name="SQLike"/>
+    <routinesParameter id="_IahaAL-wEeeRXoSWUUKFRg" name="DataOperation"/>
+    <routinesParameter id="_IangoL-wEeeRXoSWUUKFRg" name="Mathematical"/>
+    <routinesParameter id="_IaryEL-wEeeRXoSWUUKFRg" name="Numeric"/>
+    <routinesParameter id="_IavccL-wEeeRXoSWUUKFRg" name="Relational"/>
+    <routinesParameter id="_IazG0L-wEeeRXoSWUUKFRg" name="StringHandling"/>
+    <routinesParameter id="_Ia3YQL-wEeeRXoSWUUKFRg" name="TalendDataGenerator"/>
+    <routinesParameter id="_Ia6bkL-wEeeRXoSWUUKFRg" name="TalendDate"/>
+    <routinesParameter id="_Ia-F8L-wEeeRXoSWUUKFRg" name="TalendString"/>
+    <routinesParameter id="_IbBJQL-wEeeRXoSWUUKFRg" name="TalendStringUtil"/>
   </parameters>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" contextMode="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.data_dir + &quot;/&quot; + jobName + &quot;/tMultiPatternCheck_10269_in.txt&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="HEADER" value="0" contextMode="false"/>
-    <elementParameter field="TEXT" name="FOOTER" value="0" contextMode="false"/>
-    <elementParameter field="TEXT" name="LIMIT" value="" contextMode="false"/>
-    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="RANDOM" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="NB_RANDOM" value="10" contextMode="false"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRIMSELECT" contextMode="false">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
+    <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_dir + &quot;/&quot; + jobName + &quot;/tMultiPatternCheck_10269_in.txt&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HEADER" value="0"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true"/>
+    <elementParameter field="CHECK" name="UNCOMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIR" value="&quot;D:/worspaceTest1/g6.5/tdq21&quot;" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="RANDOM" value="false"/>
+    <elementParameter field="TEXT" name="NB_RANDOM" value="10" show="false"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
       <elementValue elementRef="SCHEMA_COLUMN" value="a"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="b"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false" contextMode="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" contextMode="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" contextMode="false"/>
-    <elementParameter field="CHECK" name="SPLITRECORD" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="SPLITRECORD" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
+    <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="a"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="b"/>
+      <elementValue elementRef="DECODE" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="DESTINATION" value="" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileInputDelimited_1">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" contextMode="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true" contextMode="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" contextMode="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" contextMode="false">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="a"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="b"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="error" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="error"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMultiPatternCheck" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMultiPatternCheck_1" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="SCHEMA_LOGICAL_OP" value="OR" contextMode="false"/>
-    <elementParameter field="TABLE" name="SCHEMA_PATTERN_CHECK" contextMode="false">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMultiPatternCheck_1" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="SCHEMA_LOGICAL_OP" value="OR"/>
+    <elementParameter field="CHECK" name="NOTSHOW_P" value="false" show="false"/>
+    <elementParameter field="TABLE" name="SCHEMA_PATTERN_CHECK">
       <elementValue elementRef="SCHEMA_COLUMN" value="a"/>
-      <elementValue elementRef="DEFAULT_PATTERN" value=""/>
-      <elementValue elementRef="PATTERN" value="&quot;^[A-Z]{3}&quot;"/>
+      <elementValue elementRef="PATTERN_PROPERTY" value="BUILTIN"/>
+      <elementValue elementRef="PATTERN_NAME" value=""/>
+      <elementValue elementRef="PATTERN_SELECT" value=""/>
+      <elementValue elementRef="PATTERN_ID" value=""/>
+      <elementValue elementRef="PATTERN_REGEX" value="&quot;^[A-Z]{3}&quot;"/>
+      <elementValue elementRef="PATTERN_DB_TYPE" value="java"/>
       <elementValue elementRef="CASE_SENSITIVE" value="true"/>
       <elementValue elementRef="TOCHECK" value="true"/>
+      <elementValue elementRef="REGEX_INVALIDITY_MESSAGE" value=""/>
       <elementValue elementRef="SCHEMA_COLUMN" value="b"/>
-      <elementValue elementRef="DEFAULT_PATTERN" value="&quot;^[a-zA-Z0-9!#$%*+/=?_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%*+/=?_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$&quot;"/>
-      <elementValue elementRef="PATTERN" value="&quot;&quot;"/>
+      <elementValue elementRef="PATTERN_PROPERTY" value="BUILTIN"/>
+      <elementValue elementRef="PATTERN_NAME" value=""/>
+      <elementValue elementRef="PATTERN_SELECT" value=""/>
+      <elementValue elementRef="PATTERN_ID" value=""/>
+      <elementValue elementRef="PATTERN_REGEX" value="&quot;^[a-zA-Z0-9!#$%*+/=?_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%*+/=?_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$&quot;"/>
+      <elementValue elementRef="PATTERN_DB_TYPE" value="java"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
       <elementValue elementRef="TOCHECK" value="true"/>
+      <elementValue elementRef="REGEX_INVALIDITY_MESSAGE" value=""/>
     </elementParameter>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMultiPatternCheck_1">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="ROW_PATTERN_OK" name="ROW_PATTERN_OK">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="ROW_PATTERN_KO" name="ROW_PATTERN_KO">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="REGEX_INVALIDITY_MESSAGE" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="192">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" contextMode="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true" contextMode="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" contextMode="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" contextMode="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" contextMode="false">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" show="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="a"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="b"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="ok" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="ok"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_2">
-      <column comment="" key="false" name="a" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="b" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="a" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="b" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssertCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_1" contextMode="false"/>
-    <elementParameter field="CHECK" name="START" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="CATCH_TASSERT" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+  <node componentName="tAssertCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_1" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
+    <elementParameter field="CHECK" name="GET_ORIGINAL_EXCEPTION" value="false"/>
+    <elementParameter field="CHECK" name="CATCH_TASSERT" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssertCatcher_1">
-      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date"/>
-      <column defaultValue="" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String"/>
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" contextMode="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false" contextMode="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="MySQL" contextMode="false"/>
-    <elementParameter field="TEXT" name="HOST" value="context.result_host" contextMode="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.result_port" contextMode="false"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.result_database" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="context.result_password" contextMode="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="context.result_table" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT" contextMode="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false" contextMode="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" contextMode="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="EXTENDINSERT" value="true" contextMode="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)" contextMode="false"/>
-    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100" contextMode="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" contextMode="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" contextMode="false"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" contextMode="false"/>
-    <elementParameter field="TABLE" name="ADD_COLS" contextMode="false"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" contextMode="false">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="project"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="job"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="language"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="status"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="substatus"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="description"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_3">
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="20" name="pid" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="project" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="5" name="language" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="50" name="origin" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="status" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="description" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="MySQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="context.result_host"/>
+    <elementParameter field="TEXT" name="PORT" value="context.result_port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.result_database"/>
+    <elementParameter field="TEXT" name="USER" value="context.result_username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kudRjTZXsKM8sZf3CpAM1Su5"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="context.result_table"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="moment"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -317,113 +429,118 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" contextMode="false"/>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="DUPLICATED_KEYS" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMysqlOutput_1">
-      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATETIME" type="id_Date"/>
-      <column defaultValue="" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="project" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="5" name="language" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="10" name="status" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="description" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="5" name="language" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="10" name="status" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="description" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATETIME" type="id_Date"/>
-      <column defaultValue="" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="project" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="5" name="language" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="10" name="status" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="description" nullable="true" precision="0" sourceType="VARCHAR" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String"/>
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="5" name="language" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="origin" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="10" name="status" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="substatus" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="description" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" contextMode="false"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;feature 10269&quot;" contextMode="false"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="(Integer)globalMap.get(&quot;tMultiPatternCheck_1_NB_LINE_OK&quot;) == 5&#xA;&amp;&amp; &#xA;(Integer)globalMap.get(&quot;tMultiPatternCheck_1_NB_LINE_REJECT&quot;) == 1&#xA;" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" show="false"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;feature 10269&quot;"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="(Integer)globalMap.get(&quot;tMultiPatternCheck_1_NB_LINE_OK&quot;) == 5&#xA;&amp;&amp; &#xA;(Integer)globalMap.get(&quot;tMultiPatternCheck_1_NB_LINE_REJECT&quot;) == 1&#xA;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_1"/>
   </node>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="0">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_2" contextMode="false"/>
-    <elementParameter field="CHECK" name="START" value="true" contextMode="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.param_file_path" contextMode="false"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="HEADER" value="0" contextMode="false"/>
-    <elementParameter field="TEXT" name="FOOTER" value="0" contextMode="false"/>
-    <elementParameter field="TEXT" name="LIMIT" value="" contextMode="false"/>
-    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" contextMode="false"/>
-    <elementParameter field="CHECK" name="RANDOM" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="NB_RANDOM" value="10" contextMode="false"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="false" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRIMSELECT" contextMode="false">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_2" show="false"/>
+    <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.param_file_path"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HEADER" value="0"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true"/>
+    <elementParameter field="CHECK" name="UNCOMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIR" value="&quot;D:/worspaceTest1/g6.5/tdq21&quot;" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="RANDOM" value="false"/>
+    <elementParameter field="TEXT" name="NB_RANDOM" value="10" show="false"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
       <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false" contextMode="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" contextMode="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" contextMode="false"/>
-    <elementParameter field="CHECK" name="SPLITRECORD" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="read context" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="SPLITRECORD" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
+    <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
+      <elementValue elementRef="DECODE" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="DESTINATION" value="" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="read context"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileInputDelimited_2">
-      <column comment="" key="false" name="key" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="value" nullable="true" pattern="" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="key" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="value" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" name="key" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column comment="" key="false" name="value" nullable="true" pattern="" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String"/>
+      <column comment="" key="false" length="-1" name="key" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="value" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="0">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tContextLoad_1" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning" contextMode="false"/>
-    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="DISABLE_INFO" value="true" contextMode="false"/>
-    <elementParameter field="CHECK" name="DIEONERROR" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row" contextMode="false"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false" contextMode="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value="" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tContextLoad_1" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tContextLoad_1">
-      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String"/>
-      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String"/>
+      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMultiPatternCheck_1">
-    <elementParameter field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" contextMode="false">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="a"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
@@ -431,66 +548,32 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USEROWLABEL" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="METTERLABEL" value="&quot;MyLabel&quot;" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="ABSOLUTE" value="Absolute" contextMode="false"/>
-    <elementParameter field="CONNECTION_LIST" name="CONNECTIONS" value="" contextMode="false"/>
-    <elementParameter field="TABLE" name="THRESHLODS" contextMode="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tAssert_1">
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
   <connection connectorName="ROW_PATTERN_OK" label="row2" lineStyle="0" metaname="tMultiPatternCheck_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMultiPatternCheck_1" target="tLogRow_2">
-    <elementParameter field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" contextMode="false">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="email"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USEROWLABEL" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="METTERLABEL" value="&quot;MyLabel&quot;" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="ABSOLUTE" value="Absolute" contextMode="false"/>
-    <elementParameter field="CONNECTION_LIST" name="CONNECTIONS" value="" contextMode="false"/>
-    <elementParameter field="TABLE" name="THRESHLODS" contextMode="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
   <connection connectorName="ROW_PATTERN_KO" label="row3" lineStyle="0" metaname="tMultiPatternCheck_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMultiPatternCheck_1" target="tLogRow_1">
-    <elementParameter field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" contextMode="false">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="email"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USEROWLABEL" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="METTERLABEL" value="&quot;MyLabel&quot;" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="ABSOLUTE" value="Absolute" contextMode="false"/>
-    <elementParameter field="CONNECTION_LIST" name="CONNECTIONS" value="" contextMode="false"/>
-    <elementParameter field="TABLE" name="THRESHLODS" contextMode="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tAssertCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tAssertCatcher_1" target="tMysqlOutput_1">
-    <elementParameter field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" contextMode="false">
+  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tAssertCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tAssertCatcher_1" target="tLogRow_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="moment"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
@@ -519,21 +602,15 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USEROWLABEL" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="METTERLABEL" value="&quot;MyLabel&quot;" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="ABSOLUTE" value="Absolute" contextMode="false"/>
-    <elementParameter field="CONNECTION_LIST" name="CONNECTIONS" value="" contextMode="false"/>
-    <elementParameter field="TABLE" name="THRESHLODS" contextMode="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row12" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row12" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tLogRow_3" offsetLabelX="0" offsetLabelY="0" source="tLogRow_3" target="tMysqlOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tContextLoad_1">
-    <elementParameter field="CHECK" name="TRACES_CONNECTION_ENABLE" value="true" contextMode="false"/>
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" contextMode="false">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="value"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
@@ -541,43 +618,30 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false" contextMode="false"/>
-    <elementParameter field="CHECK" name="USEROWLABEL" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="METTERLABEL" value="&quot;MyLabel&quot;" contextMode="false"/>
-    <elementParameter field="CLOSED_LIST" name="ABSOLUTE" value="Absolute" contextMode="false"/>
-    <elementParameter field="CONNECTION_LIST" name="CONNECTIONS" value="" contextMode="false"/>
-    <elementParameter field="TABLE" name="THRESHLODS" contextMode="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tFileInputDelimited_1">
-    <elementParameter field="CHECK" name="ACTIVATE" value="true" contextMode="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" contextMode="false"/>
-    <elementParameter field="CHECK" name="RESUMING_CHECKPOINT" value="false" contextMode="false"/>
-    <elementParameter field="TEXT" name="RESUMLABEL" value="" contextMode="false"/>
-    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value="" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
   </connection>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_1" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssertCatcher_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_2" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" contextMode="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250" contextMode="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
 </talendfile:ProcessType>
