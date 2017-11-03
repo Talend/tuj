@@ -1,0 +1,14 @@
+package orignal_scenario6 
+
+rule "rule1"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "rule1Group"
+when
+    $input : RecordIn( dataset.isMostCommon( firstname, "Firstname", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "Firstname", drools.getRule().getName());
+
+end
+
+

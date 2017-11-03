@@ -1,0 +1,14 @@
+package orignal_scenario1 
+
+rule "rule4"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "rule4Group"
+when
+    $input : RecordIn( dataset.isMostCommon( contract_day, "contract_day", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "contract_day", drools.getRule().getName());
+
+end
+
+

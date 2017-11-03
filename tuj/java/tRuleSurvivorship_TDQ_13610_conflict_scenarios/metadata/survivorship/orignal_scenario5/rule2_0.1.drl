@@ -1,0 +1,14 @@
+package orignal_scenario5 
+
+rule "rule2"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "rule2Group"
+when
+    $input : RecordIn( city2 matches "\\w*"  )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "city2", drools.getRule().getName());
+
+end
+
+

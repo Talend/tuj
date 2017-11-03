@@ -1,0 +1,14 @@
+package orignal_scenario5 
+
+rule "rule1"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "rule1Group"
+when
+    $input : RecordIn( dataset.isLongest( city1, "city1", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "city1", drools.getRule().getName());
+
+end
+
+
