@@ -10,12 +10,12 @@
     <contextParameter comment="" name="result_port" prompt="result_port?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="vertica71_host" prompt="vertica71_host?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="vertica71_port" prompt="vertica71_port?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="vertica71_database" prompt="vertica71_database?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="vertica71_schema" prompt="vertica71_schema?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="vertica71_username" prompt="vertica71_username?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="vertica71_password" prompt="vertica71_password?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica9_host" prompt="vertica9_host?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica9_port" prompt="vertica9_port?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica9_database" prompt="vertica9_database?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica9_schema" prompt="vertica9_schema?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica9_username" prompt="vertica9_username?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="vertica9_password" prompt="vertica9_password?" promptNeeded="false" type="id_String" value=""/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -150,7 +150,7 @@
   </node>
   <node componentName="tVerticaOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaOutput_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tVerticaConnection_1"/>
     <elementParameter field="TEXT" name="TYPE" value="VERTICA" show="false"/>
@@ -314,7 +314,7 @@
   </node>
   <node componentName="tVerticaOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaOutput_2" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tVerticaConnection_1"/>
     <elementParameter field="TEXT" name="TYPE" value="VERTICA" show="false"/>
@@ -560,14 +560,14 @@
   </node>
   <node componentName="tVerticaConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaConnection_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X"/>
-    <elementParameter field="TEXT" name="HOST" value="context.vertica71_host"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0"/>
+    <elementParameter field="TEXT" name="HOST" value="context.vertica9_host"/>
     <elementParameter field="TEXT" name="TYPE" value="VERTICA" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.vertica71_port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.vertica71_database"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.vertica71_schema"/>
-    <elementParameter field="TEXT" name="USER" value="context.vertica71_username"/>
-    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kuc2bTK6MxcpNYB/0bNnU0hA9ZG+f1LWbLk="/>
+    <elementParameter field="TEXT" name="PORT" value="context.vertica9_port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.vertica9_database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.vertica9_schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.vertica9_username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kufDLhrC0+geXzOC0m7oEQV3aUZb5+vztUo="/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -588,10 +588,10 @@
   <node componentName="tELTVerticaInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTVerticaInput_1" show="false"/>
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;TDI38397_Input_verticadiff&quot;"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="context.vertica71_schema"/>
+    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="context.vertica9_schema"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="vertica_id" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" label="context.vertica71_schema.TDI38397_Input_verticadiff" name="tELTVerticaInput_1">
+    <metadata connector="TABLE" label="context.vertica9_schema.TDI38397_Input_verticadiff" name="tELTVerticaInput_1">
       <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="INTEGER" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="addr" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -599,7 +599,7 @@
   </node>
   <node componentName="tELTVerticaMap" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTVerticaMap_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_0_X" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tVerticaConnection_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -621,15 +621,15 @@
       <column comment="" key="false" length="-1" name="addr" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="context.vertica71_schema.TDI38397_Input_verticadiff" tableName="context.vertica71_schema.TDI38397_Input_verticadiff" joinType="NO_JOIN">
+      <InputTables name="context.vertica9_schema.TDI38397_Input_verticadiff" tableName="context.vertica9_schema.TDI38397_Input_verticadiff" joinType="NO_JOIN">
         <DBMapperTableEntries name="id"/>
         <DBMapperTableEntries name="name"/>
         <DBMapperTableEntries name="addr"/>
       </InputTables>
       <OutputTables name="table1" tableName="((String)globalMap.get(&quot;TableName_1&quot;))">
-        <DBMapperTableEntries name="id" expression="context.vertica71_schema.TDI38397_Input_verticadiff.id "/>
-        <DBMapperTableEntries name="name" expression="context.vertica71_schema.TDI38397_Input_verticadiff.name "/>
-        <DBMapperTableEntries name="addr" expression="context.vertica71_schema.TDI38397_Input_verticadiff.addr "/>
+        <DBMapperTableEntries name="id" expression="context.vertica9_schema.TDI38397_Input_verticadiff.id "/>
+        <DBMapperTableEntries name="name" expression="context.vertica9_schema.TDI38397_Input_verticadiff.name "/>
+        <DBMapperTableEntries name="addr" expression="context.vertica9_schema.TDI38397_Input_verticadiff.addr "/>
       </OutputTables>
     </nodeData>
   </node>
@@ -638,7 +638,7 @@
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="((String)globalMap.get(&quot;TableName_1&quot;))"/>
-    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="context.vertica71_schema"/>
+    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="context.vertica9_schema"/>
     <elementParameter field="CHECK" name="IS_TABLE_NAME_VARIABLE" value="true" show="false"/>
     <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="true"/>
     <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="((String)globalMap.get(&quot;TableName_1&quot;))"/>
@@ -655,7 +655,7 @@
   </node>
   <node componentName="tVerticaInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaInput_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tVerticaConnection_1"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
@@ -694,7 +694,7 @@
   </node>
   <node componentName="tVerticaRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="736">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaRow_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tVerticaConnection_1"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
@@ -708,7 +708,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.vertica71_schema+&quot;.TDI38397_Input_verticadiff &quot;+&quot;cascade&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.vertica9_schema+&quot;.TDI38397_Input_verticadiff &quot;+&quot;cascade&quot;"/>
     <elementParameter field="CLOSED_LIST" name="USE_NB_LINE" value="NONE"/>
     <elementParameter field="LABEL" name="USE_NB_LINE_NOTE" value="* Only used if the query is an insert, an update or a delete."/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
@@ -728,7 +728,7 @@
   </node>
   <node componentName="tVerticaRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="736">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tVerticaRow_2" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_7_1_X" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="VERTICA_9_0" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tVerticaConnection_1"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
@@ -742,7 +742,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.vertica71_schema+&quot;.&quot;+((String)globalMap.get(&quot;TableName_1&quot;))+&quot; cascade&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.vertica9_schema+&quot;.&quot;+((String)globalMap.get(&quot;TableName_1&quot;))+&quot; cascade&quot;"/>
     <elementParameter field="CLOSED_LIST" name="USE_NB_LINE" value="NONE"/>
     <elementParameter field="LABEL" name="USE_NB_LINE_NOTE" value="* Only used if the query is an insert, an update or a delete."/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
@@ -865,7 +865,7 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tELTVerticaMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk7" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="context.vertica71_schema.TDI38397_Input_verticadiff" lineStyle="9" metaname="tELTVerticaInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTVerticaInput_1" target="tELTVerticaMap_1">
+  <connection connectorName="TABLE" label="context.vertica9_schema.TDI38397_Input_verticadiff" lineStyle="9" metaname="tELTVerticaInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTVerticaInput_1" target="tELTVerticaMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTVerticaInput_1" show="false"/>
   </connection>
   <connection connectorName="TABLE" label="((String)globalMap.get(&quot;TableName_1&quot;))" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTVerticaMap_1" target="tELTVerticaOutput_1">
