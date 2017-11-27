@@ -15,7 +15,7 @@
     <contextParameter comment="" name="mysql_database" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mysql_username" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mysql_password" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="tFileFetch_cookie_minsize" prompt="tFileFetch_cookie_minsize?" promptNeeded="false" type="id_Integer" value="200"/>
+    <contextParameter comment="" name="tFileFetch_cookie_minsize" prompt="tFileFetch_cookie_minsize?" promptNeeded="false" type="id_String" value="&quot;200&quot;"/>
     <contextParameter comment="" name="tFileFetch_url_err" prompt="tFileFetch_url_err?" promptNeeded="false" type="id_String" value="&quot;http://tlnd-mscrm2016f.tlndmscrmf.com:5555/oumscrm2016/api/data/v8.1&quot;"/>
   </context>
   <parameters>
@@ -476,7 +476,7 @@
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" show="false"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;Cookie well saved and more than &quot;+context.tFileFetch_cookie_minsize+&quot; bytes&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row6.size > context.tFileFetch_cookie_minsize &amp;&amp; ((Boolean)globalMap.get(&quot;tFileExist_1_EXISTS&quot;)).booleanValue()"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row6.size > Long.parseLong(context.tFileFetch_cookie_minsize) &amp;&amp; ((Boolean)globalMap.get(&quot;tFileExist_1_EXISTS&quot;)).booleanValue()"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_1">
       <column defaultValue="" key="false" length="255" name="abs_path" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
