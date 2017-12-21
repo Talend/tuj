@@ -389,7 +389,7 @@
     <elementParameter field="TEXT" name="URI" value="context.tFileFetch_url_err"/>
     <elementParameter field="CHECK" name="USE_CACHE" value="false"/>
     <elementParameter field="TEXT" name="SMB_URI" value="&quot;smb://host/dir/remoteFileName.txt&quot;" show="false"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.get(&quot;data_output_dir&quot;).toString()"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir"/>
     <elementParameter field="CHECK" name="MAKEDIRS" value="false"/>
     <elementParameter field="TEXT" name="FILENAME" value="&quot;file_fetch_&quot; + pid + &quot;.txt&quot;"/>
     <elementParameter field="CHECK" name="ADD_HEADER" value="false"/>
@@ -401,7 +401,7 @@
     <elementParameter field="TABLE" name="COMMON_PARAMS"/>
     <elementParameter field="CHECK" name="READ_COOKIE" value="false"/>
     <elementParameter field="CHECK" name="SAVE_COOKIE" value="true"/>
-    <elementParameter field="FILE" name="COOKIE_DIR" value="context.get(&quot;data_output_dir&quot;)+&quot;/cookie.txt&quot;"/>
+    <elementParameter field="FILE" name="COOKIE_DIR" value="context.data_output_dir+&quot;/cookie.txt&quot;"/>
     <elementParameter field="CLOSED_LIST" name="COOKIE_POLICY" value="DEFAULT"/>
     <elementParameter field="CHECK" name="SINGLE_COOKIE" value="false"/>
     <elementParameter field="CHECK" name="ENCODE_URI" value="false"/>
@@ -420,7 +420,6 @@
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="PoLvNyVG2XWndNDdLn696A==" show="false"/>
     <elementParameter field="CHECK" name="REDIRECT" value="false"/>
-    <elementParameter field="CHECK" name="REDIRECT_302_AS_303" value="false" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileFetch_1"/>
   </node>
@@ -430,7 +429,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="-64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="context.setProperty(&quot;data_dir&quot;, context.data_dir+&quot;/&quot;+jobName+&quot;/&quot;);&#xA;context.setProperty(&quot;data_output_dir&quot;, context.get(&quot;data_dir&quot;)+&quot;/gen_&quot;+pid+&quot;/&quot;);&#xA;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="context.setProperty(&quot;data_dir&quot;, context.data_dir+&quot;/&quot;+jobName+&quot;/&quot;);&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1">
@@ -438,30 +437,18 @@
       <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="608">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.get(&quot;data_output_dir&quot;)" show="false"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.get(&quot;data_output_dir&quot;).toString()"/>
-    <elementParameter field="TEXT" name="PATH" value="&quot;C:/Dev/TDI-WS_RUNCONF2/delete_folder or delete_file&quot;" show="false"/>
-    <elementParameter field="CHECK" name="FAILON" value="true"/>
-    <elementParameter field="CHECK" name="FOLDER" value="true"/>
-    <elementParameter field="CHECK" name="FOLDER_FILE" value="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#xA;&quot;File (or path) deleted.&quot;&#xA;&quot;No file (or path) deleted.&quot;&#xA;&quot;File (or path) does not exist or is invalid.&quot;"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileDelete_1"/>
-  </node>
   <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
   <node componentName="tFileExist" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileExist_1" show="false"/>
-    <elementParameter field="FILE" name="FILE_NAME" value="context.get(&quot;data_output_dir&quot;)+&quot;/cookie.txt&quot;"/>
+    <elementParameter field="FILE" name="FILE_NAME" value="context.data_output_dir+&quot;/cookie.txt&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
   <node componentName="tFileProperties" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileProperties_1" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.get(&quot;data_output_dir&quot;)+&quot;/cookie.txt&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir+&quot;/cookie.txt&quot;"/>
     <elementParameter field="CHECK" name="MD5" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileProperties_1">
@@ -584,9 +571,6 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="tFileInputDelimited_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tFileDelete_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
-  </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileExist_1" offsetLabelX="0" offsetLabelY="0" source="tFileExist_1" target="tFileProperties_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
   </connection>
@@ -630,11 +614,6 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
