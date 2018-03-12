@@ -8,6 +8,12 @@
     <contextParameter comment="" name="result_port" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
     <contextParameter comment="" name="result_username" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_username" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_password" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_port" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_database" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
+    <contextParameter comment="" name="mysql_host" prompt="new1?" promptNeeded="false" repositoryContextId="_MTwSgJj6Ed6vbq9S54aApw" type="id_String" value="null"/>
+
   </context>
   <parameters>
     <elementParameter field="DIRECTORY" name="COMP_DEFAULT_FILE_DIR" value="D:/workspaces/runtime-org.talend.rcp.branding.tos.product" contextMode="false"/>
@@ -376,11 +382,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJDBCOutput_1" contextMode="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false" contextMode="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.result_host+&quot;:&quot;+context.result_port+&quot;/&quot;+context.result_database" contextMode="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.mysql_host+&quot;:&quot;+context.mysql_port+&quot;/&quot;+context.mysql_database" contextMode="false"/>
     <elementParameter field="MODULE_LIST" name="DRIVER_JAR" value="&quot;mysql-connector-java-5.1.0-bin.jar&quot;" contextMode="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;org.gjt.mm.mysql.Driver&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="context.result_password" contextMode="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.mysql_username" contextMode="false"/>
+    <elementParameter field="TEXT" name="PASS" value="context.mysql_password" contextMode="false"/>
     <elementParameter field="TEXT" name="TABLE" value="(String)globalMap.get(&quot;tableName&quot;)" contextMode="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT" contextMode="false"/>
     <elementParameter field="CHECK" name="CLEAR_TABLE" value="false" contextMode="false"/>
@@ -446,12 +452,12 @@
     <elementParameter field="CLOSED_LIST" name="TABLEACTION" value="DROP_IF_EXIST_CREATE" contextMode="false"/>
     <elementParameter field="CHECK" name="TEMPTABLE" value="false" contextMode="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_AS400_VERSION" value="jt400_V5R3.jar" contextMode="false"/>
-    <elementParameter field="TEXT" name="HOST" value="context.result_host" contextMode="false"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.result_database" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="context.result_password" contextMode="false"/>
+    <elementParameter field="TEXT" name="HOST" value="context.mysql_host" contextMode="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.mysql_database" contextMode="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.mysql_username" contextMode="false"/>
+    <elementParameter field="TEXT" name="PASS" value="context.mysql_password" contextMode="false"/>
     <elementParameter field="FILE" name="DBFILE_ACCESS" value="&quot;D:/workspaces/runtime-org.talend.rcp.branding.tos.product/in.mdb&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.result_port" contextMode="false"/>
+    <elementParameter field="TEXT" name="PORT" value="context.mysql_port" contextMode="false"/>
     <elementParameter field="FILE" name="DBFILE_FIREBIRD" value="&quot;D:/workspaces/runtime-org.talend.rcp.branding.tos.product/in.FDB&quot;" contextMode="false"/>
     <elementParameter field="CLOSED_LIST" name="RUNNING_MODE" value="HSQLDB_SERVER" contextMode="false"/>
     <elementParameter field="CHECK" name="TLS" value="false" contextMode="false"/>
@@ -522,11 +528,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJDBCOutput_2" contextMode="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false" contextMode="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.result_host+&quot;:&quot;+context.result_port+&quot;/&quot;+context.result_database" contextMode="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.mysql_host+&quot;:&quot;+context.mysql_port+&quot;/&quot;+context.mysql_database" contextMode="false"/>
     <elementParameter field="MODULE_LIST" name="DRIVER_JAR" value="&quot;mysql-connector-java-5.1.0-bin.jar&quot;" contextMode="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;org.gjt.mm.mysql.Driver&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="context.result_password" contextMode="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.mysql_username" contextMode="false"/>
+    <elementParameter field="TEXT" name="PASS" value="context.mysql_password" contextMode="false"/>
     <elementParameter field="TEXT" name="TABLE" value="(String)globalMap.get(&quot;tableName&quot;)" contextMode="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE" contextMode="false"/>
     <elementParameter field="CHECK" name="CLEAR_TABLE" value="false" contextMode="false"/>
@@ -617,11 +623,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJDBCOutput_3" contextMode="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false" contextMode="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.result_host+&quot;:&quot;+context.result_port+&quot;/&quot;+context.result_database" contextMode="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.mysql_host+&quot;:&quot;+context.mysql_port+&quot;/&quot;+context.mysql_database" contextMode="false"/>
     <elementParameter field="MODULE_LIST" name="DRIVER_JAR" value="&quot;mysql-connector-java-5.1.0-bin.jar&quot;" contextMode="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;org.gjt.mm.mysql.Driver&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="context.result_password" contextMode="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.mysql_username" contextMode="false"/>
+    <elementParameter field="TEXT" name="PASS" value="context.mysql_password" contextMode="false"/>
     <elementParameter field="TEXT" name="TABLE" value="(String)globalMap.get(&quot;tableName&quot;)" contextMode="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="DELETE" contextMode="false"/>
     <elementParameter field="CHECK" name="CLEAR_TABLE" value="false" contextMode="false"/>
@@ -685,12 +691,12 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJDBCInput_1" contextMode="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false" contextMode="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" contextMode="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.result_host+&quot;:&quot;+context.result_port+&quot;/&quot;+context.result_database" contextMode="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;jdbc:mysql://&quot;+context.mysql_host+&quot;:&quot;+context.mysql_port+&quot;/&quot;+context.mysql_database" contextMode="false"/>
     <elementParameter field="TEXT" name="TYPE" value="General JDBC" contextMode="false"/>
     <elementParameter field="MODULE_LIST" name="DRIVER_JAR" value="&quot;mysql-connector-java-5.1.0-bin.jar&quot;" contextMode="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;org.gjt.mm.mysql.Driver&quot;" contextMode="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.result_username" contextMode="false"/>
-    <elementParameter field="TEXT" name="PASS" value="context.result_password" contextMode="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.mysql_username" contextMode="false"/>
+    <elementParameter field="TEXT" name="PASS" value="context.mysql_password" contextMode="false"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;" contextMode="false"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;" contextMode="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" contextMode="false"/>
