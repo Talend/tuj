@@ -2,16 +2,16 @@
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="D:/QA/tuj/tuj_context.csv"/>
-    <contextParameter comment="" name="mdm_host" prompt="mdm_host?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_port" prompt="mdm_port?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_port" prompt="result_port?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_database" prompt="result_database?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_host_6x" prompt="mdm_host_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_port_6x" prompt="mdm_port_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_user_6x" prompt="mdm_user_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_password_6x" prompt="mdm_password_6x?" promptNeeded="false" type="id_String" value="null"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -69,7 +69,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;C:/Users/sliu/workspace/.metadata&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;/Users/ctoum/Talend/Talend-Studio-r80439-V5.1.0M2/workspace/.metadata&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
     <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tJDBCOutput" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ojdbc14-10g.jar" show="false"/>
     <elementParameter field="TEXT" name="URL" value="&quot;&quot;" show="false"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;&quot;" show="false"/>
@@ -127,7 +127,7 @@
   </parameters>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_1" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -157,9 +157,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMConnection_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" value="suggest to use 6.0 url" show="false"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/soap&quot;"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="true"/>
     <elementParameter field="CHECK" name="GEN_TRANSACTION_ID" value="false" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -371,7 +371,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_2" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -406,7 +406,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_3" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -608,7 +608,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="960">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_5" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate/record&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate/record&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -794,7 +794,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_6" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -829,7 +829,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1824" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_7" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -864,7 +864,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_8" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -899,7 +899,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_9" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -934,7 +934,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_11" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -969,7 +969,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_13" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1004,7 +1004,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1408" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_15" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1039,7 +1039,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1376" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_4" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1329,7 +1329,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="1088">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_10" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1364,7 +1364,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_12" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?returnSource=true&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?returnSource=true&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1384,7 +1384,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_13" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(restResponse_tREST_12);&#xA;globalMap.put(&quot;tREST_12_ASSERT&quot;, restResponse_tREST_12.contains(&quot;&lt;sourceXml>&lt;ProductFamily>&lt;Id>1&lt;/Id>&lt;Name>Product Family&lt;/Name>&lt;ChangeStatus>NotValid&lt;/ChangeStatus>&lt;/ProductFamily>&lt;/sourceXml>&quot;));"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;\n\n**************************&quot;);&#xA;System.out.println(restResponse_tREST_12);&#xA;System.out.println(&quot;\n\n**************************&quot;);&#xA;globalMap.put(&quot;tREST_12_ASSERT&quot;, restResponse_tREST_12.contains(&quot;&lt;sourceXml>&lt;ProductFamily>&lt;Id>1&lt;/Id>&lt;Name>Product Family&lt;/Name>&lt;ChangeStatus>NotValid&lt;/ChangeStatus>&lt;/ProductFamily>&lt;/sourceXml>&quot;));"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_13">
@@ -1401,7 +1401,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1408" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tREST_14" show="false"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product/validate?returnSource=true&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/rest/data/Product/validate?returnSource=true&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
