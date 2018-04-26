@@ -8,10 +8,10 @@
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_host" prompt="mdm_host?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_port" prompt="mdm_port?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_host_6x" prompt="mdm_host_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_port_6x" prompt="mdm_port_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_user_6x" prompt="mdm_user_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_password_6x" prompt="mdm_password_6x?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="E:/tuj/tuj_context/full_context.csv"/>
   </context>
   <context confirmationNeeded="false" name="test">
@@ -22,10 +22,10 @@
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_host" prompt="mdm_host?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_port" prompt="mdm_port?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_host_6x" prompt="mdm_host_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_port_6x" prompt="mdm_port_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_user_6x" prompt="mdm_user_6x?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_password_6x" prompt="mdm_password_6x?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="d:/tuj_context.csv"/>
   </context>
   <parameters>
@@ -84,7 +84,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/651/Talend-Studio-20180318_1033-V6.5.2SNAPSHOT/workspace/.metadata&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/642/Talend-Studio-20171122_1548-V6.4.2SNAPSHOT/workspace/.metadata&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
@@ -245,9 +245,9 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60" show="false"/>
     <elementParameter field="LABEL" name="NOTE" value="suggest to use 6.0 url" show="false"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
     <elementParameter field="TEXT" name="DATAMODEL" value="&quot;CONF&quot;"/>
     <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;CONF&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
@@ -367,16 +367,47 @@
       <column comment="" key="false" length="-1" name="family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWriteXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWriteXMLField_1" show="false"/>
-    <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="xmlRecord"/>
+  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMOutput_10" show="false"/>
+    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="true"/>
+    <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="xml"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="DOCUMENT" value="id" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
+    <elementParameter field="LABEL" name="NOTE" value="suggest to use 6.0 url" show="false"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x +&quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
+    <elementParameter field="TABLE" name="RETURN_IDS"/>
+    <elementParameter field="CHECK" name="ISUPDATE" value="false"/>
+    <elementParameter field="CHECK" name="WITHREPORT" value="false"/>
+    <elementParameter field="TEXT" name="SOURCE" value="&quot;TOS&quot;" show="false"/>
+    <elementParameter field="CHECK" name="ISINVOKE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ADD_TASKID" value="false"/>
+    <elementParameter field="RADIO" name="CUSTOM" value="true" show="false"/>
+    <elementParameter field="TEXT" name="TASKID" value="&quot;&quot;" show="false"/>
+    <elementParameter field="RADIO" name="PREV_COLUMN" value="false" show="false"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="PREV_COLUMN_TASK_ID" value="id" show="false"/>
+    <elementParameter field="CHECK" name="USE_PARTIAL_UPDATE" value="false"/>
+    <elementParameter field="TEXT" name="PIVOT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="OVERWRITE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PARTIAL_DELETE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="KEY" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="POSITION" value="" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
+    <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/ProductFamily"/>
+      <elementValue elementRef="PATH" value="/ProductFamily3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/ProductFamily/Name"/>
+      <elementValue elementRef="PATH" value="/ProductFamily3/Name"/>
       <elementValue elementRef="COLUMN" value="family"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
@@ -384,7 +415,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/ProductFamily/Id"/>
+      <elementValue elementRef="PATH" value="/ProductFamily3/Id"/>
       <elementValue elementRef="COLUMN" value="id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -392,53 +423,40 @@
     </elementParameter>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="TABLE" name="GROUPBYS"/>
-    <elementParameter field="CHECK" name="REMOVE_HEADER" value="true"/>
-    <elementParameter field="CHECK" name="CREATE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="REMOVE_HEADER" value="true" show="false"/>
     <elementParameter field="CHECK" name="CREATE_EMPTY_ELEMENT" value="true"/>
-    <elementParameter field="CHECK" name="EXPAND_EMPTY_ELM" value="false"/>
-    <elementParameter field="CHECK" name="OUTPUT_AS_XSD" value="false"/>
-    <elementParameter field="FILE" name="XSD_FILE" value="&quot;/home/ctoum/mdm/release/TMDMCE-Studio-All-r43696-V4.0.2/workspace/file.xsd&quot;" show="false"/>
     <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
     <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
     <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="Null"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="TEXT" name="LABEL" value="Encode"/>
+    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="Dom4j"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="STORE_FLOW" value="true" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tWriteXMLField_1">
-      <column comment="" key="false" length="-1" name="xmlRecord" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tMDMOutput_10">
+      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
-  </node>
-  <node componentName="tMDMBulkLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMBulkLoad_1" show="false"/>
-    <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="xmlRecord"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/bulkload&quot;"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACONCEPT" value="&quot;ProductFamily&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
-    <elementParameter field="CHECK" name="VALIDATE" value="true"/>
-    <elementParameter field="CHECK" name="GENERATE_ID" value="true"/>
-    <elementParameter field="CHECK" name="INSERT_ONLY" value="false"/>
-    <elementParameter field="TEXT" name="MASS_LEVEL" value="500"/>
-    <elementParameter field="CHECK" name="USE_TRANSACTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="TRANSACTION_PROVIDER" value="500" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="&lt;b>BulkLoadFamilies&lt;/b>&lt;br>WITH validation&lt;br>Generate Id"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tMDMBulkLoad_1">
-      <column comment="" key="false" length="-1" name="xmlRecord" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    <metadata connector="OUTPUT" name="OUTPUT">
+      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="xml" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="xml" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMDMConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMConnection_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" value="suggest to use 6.0 url" show="false"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/soap&quot;"/>
-    <elementParameter field="TEXT" name="USERNAME" value=" context.mdm_user"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value=" context.mdm_user_6x"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="true"/>
     <elementParameter field="CHECK" name="GEN_TRANSACTION_ID" value="false" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b>MDMConnection&lt;/b>"/>
@@ -486,11 +504,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item" show="false"/>
@@ -501,7 +519,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/ProductFamily&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/ProductFamily3&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;Id&quot;"/>
@@ -597,11 +615,11 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60" show="false"/>
     <elementParameter field="LABEL" name="NOTE" value="suggest to use 6.0 url" show="false"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="false"/>
@@ -623,42 +641,42 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Picture"/>
+      <elementValue elementRef="PATH" value="/Product3/Picture"/>
       <elementValue elementRef="COLUMN" value="Picture"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Name"/>
+      <elementValue elementRef="PATH" value="/Product3/Name"/>
       <elementValue elementRef="COLUMN" value="Name"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="4"/>
-      <elementValue elementRef="PATH" value="/Product/Description"/>
+      <elementValue elementRef="PATH" value="/Product3/Description"/>
       <elementValue elementRef="COLUMN" value="Description"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="5"/>
-      <elementValue elementRef="PATH" value="/Product/Availability"/>
+      <elementValue elementRef="PATH" value="/Product3/Availability"/>
       <elementValue elementRef="COLUMN" value="Availability"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="6"/>
-      <elementValue elementRef="PATH" value="/Product/Price"/>
+      <elementValue elementRef="PATH" value="/Product3/Price"/>
       <elementValue elementRef="COLUMN" value="Price"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="7"/>
-      <elementValue elementRef="PATH" value="/Product/Family"/>
+      <elementValue elementRef="PATH" value="/Product3/Family"/>
       <elementValue elementRef="COLUMN" value="Family"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="8"/>
-      <elementValue elementRef="PATH" value="/Product/OnlineStore"/>
+      <elementValue elementRef="PATH" value="/Product3/OnlineStore"/>
       <elementValue elementRef="COLUMN" value="URL"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
@@ -666,7 +684,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -814,8 +832,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -837,22 +855,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -860,7 +878,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -941,11 +959,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -963,7 +981,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -1090,11 +1108,11 @@
       <column comment="" key="false" length="-1" name="color" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2656">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="2496">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="2624">
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="2496">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1" show="false"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1/in.csv&quot;" show="false"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;"/>
@@ -1107,7 +1125,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileDelete_1"/>
   </node>
-  <node componentName="tMDMClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="2656">
+  <node componentName="tMDMClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="2496">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMClose_1" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b>Close Connection&lt;/b>"/>
@@ -1350,8 +1368,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -1373,22 +1391,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -1396,7 +1414,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -1505,11 +1523,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -1527,7 +1545,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -1676,8 +1694,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -1699,22 +1717,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -1722,7 +1740,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -1833,11 +1851,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -1855,7 +1873,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -2004,8 +2022,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -2027,22 +2045,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -2050,7 +2068,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -2161,11 +2179,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -2183,7 +2201,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -2332,8 +2350,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -2355,22 +2373,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -2378,7 +2396,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -2489,11 +2507,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -2511,7 +2529,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -2683,8 +2701,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -2706,22 +2724,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -2729,7 +2747,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -2772,11 +2790,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -2794,7 +2812,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -2853,7 +2871,7 @@
       <column comment="" key="false" length="-1" name="Color" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2496">
+  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="2464">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCompare_6" show="false"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;collection_out.csv&quot;"/>
@@ -2875,7 +2893,7 @@
       <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="2496">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="2464">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_6" show="false"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="jobName + &quot; - Remove all&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row39.differ == 0"/>
@@ -2954,8 +2972,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.host + &quot;:&quot; + context.port + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.user" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuczSBOgoJ7Ub24fQgd+SRSj" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -2977,22 +2995,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product3"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product3/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="2"/>
-      <elementValue elementRef="PATH" value="/Product/Features"/>
+      <elementValue elementRef="PATH" value="/Product3/Features"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Features/Colors"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -3000,7 +3018,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Features/Colors/Color"/>
+      <elementValue elementRef="PATH" value="/Product3/Features/Colors/Color"/>
       <elementValue elementRef="COLUMN" value="Color"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -3111,11 +3129,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item"/>
@@ -3133,7 +3151,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50" show="false"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Features/Colors/Color&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3/Features/Colors/Color&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;../../../Id&quot;"/>
@@ -3237,11 +3255,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item" show="false"/>
@@ -3252,7 +3270,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;Id&quot;"/>
@@ -3416,11 +3434,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item" show="false"/>
@@ -3431,7 +3449,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;Id&quot;"/>
@@ -3550,7 +3568,7 @@
       <column comment="" key="false" length="-1" name="URL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="2016">
+  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="2048">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCompare_9" show="false"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;products_out.csv&quot;"/>
@@ -3572,7 +3590,7 @@
       <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="2016">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="2048">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_9" show="false"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="jobName + &quot; - Check products BEFORE remove&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row51.differ == 0"/>
@@ -3595,11 +3613,11 @@
     <elementParameter field="LABEL" name="NOTE2" value="suggest to use 6.0 url" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;" show="false"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user" show="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item" show="false"/>
@@ -3610,7 +3628,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product3&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;Id&quot;"/>
@@ -3758,13 +3776,13 @@
     <elementParameter field="TEXT" name="LABEL" value="&lt;b>Assert&lt;/b>&lt;br>Identical"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_10">
-      <column key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMDMDelete" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="96">
@@ -3776,8 +3794,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://localhost:8080/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;userName&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="PoLvNyVG2XWndNDdLn696A==" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the keys in order below for the entity" show="false"/>
@@ -3802,8 +3820,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://localhost:8080/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;userName&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="PoLvNyVG2XWndNDdLn696A==" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily3&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product3&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the keys in order below for the entity" show="false"/>
@@ -3818,172 +3836,6 @@
     <elementParameter field="TEXT" name="LABEL" value="Delete all prod families"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMDMDelete_2"/>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="2208">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Availability"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Price"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Family"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Picture"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="URL"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_3">
-      <column comment="" key="true" length="-1" name="Id" nullable="false" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Name" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Description" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Availability" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Price" nullable="false" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Picture" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="URL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1184" posY="1920">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Availability"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Price"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Family"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Picture"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="URL"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_2">
-      <column comment="" key="true" length="-1" name="Id" nullable="false" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Name" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Description" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Availability" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Price" nullable="false" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Picture" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="URL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="1056">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_4" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="color"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_4">
-      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="color" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="512">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_5" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Availability"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Price"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Family"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Picture"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="URL"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_5">
-      <column comment="" key="true" length="-1" name="Id" nullable="false" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Name" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Description" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Availability" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Price" nullable="false" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Family" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Picture" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="URL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
   </node>
   <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tContextLoad_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -4018,28 +3870,11 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tFixedFlowInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tWriteXMLField_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="family"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="id"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tMDMOutput_10">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tWriteXMLField_1" offsetLabelX="0" offsetLabelY="0" source="tWriteXMLField_1" target="tMDMBulkLoad_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="xmlRecord"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
-  </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMDMBulkLoad_1" offsetLabelX="0" offsetLabelY="0" source="tMDMBulkLoad_1" target="tFixedFlowInput_3">
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMDMOutput_10" offsetLabelX="0" offsetLabelY="0" source="tMDMOutput_10" target="tFixedFlowInput_3">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMDMConnection_1" offsetLabelX="0" offsetLabelY="0" source="tMDMConnection_1" target="tMDMDelete_1">
@@ -4482,11 +4317,6 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_7" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_7" target="tMDMInput_3">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk9" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row58" lineStyle="0" metaname="tFileOutputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileOutputDelimited_3" target="tLogRow_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row58" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row17" lineStyle="0" metaname="tMDMInput_3" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_3" target="tFileOutputDelimited_4">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -5163,11 +4993,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row47" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row59" lineStyle="0" metaname="tFileOutputDelimited_16" offsetLabelX="0" offsetLabelY="0" source="tFileOutputDelimited_16" target="tLogRow_5">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row59" show="false"/>
-  </connection>
   <connection connectorName="FLOW" label="row48" lineStyle="0" metaname="tFileCompare_8" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_8" target="tAssert_8">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="file"/>
@@ -5260,11 +5085,6 @@
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row50" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row56" lineStyle="0" metaname="tFileOutputDelimited_17" offsetLabelX="0" offsetLabelY="0" source="tFileOutputDelimited_17" target="tLogRow_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row56" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row51" lineStyle="0" metaname="tFileCompare_9" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_9" target="tAssert_9">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -5359,11 +5179,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row53" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row57" lineStyle="0" metaname="tFileOutputDelimited_18" offsetLabelX="0" offsetLabelY="0" source="tFileOutputDelimited_18" target="tLogRow_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row57" show="false"/>
-  </connection>
   <connection connectorName="FLOW" label="row54" lineStyle="0" metaname="tFileCompare_10" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_10" target="tAssert_10">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="file"/>
@@ -5397,7 +5212,7 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMDMDelete_2" offsetLabelX="0" offsetLabelY="0" source="tMDMDelete_2" target="tFixedFlowInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk4" show="false"/>
   </connection>
-  <note opaque="false" posX="864" posY="2048" sizeHeight="97" sizeWidth="417" text="To remove all colors MDM requires that you send a collection&#xA;with one empty element per color to remove e.g. if you have&#xA;5 colors in the collection, you need to send 5 empty elements"/>
+  <note opaque="false" posX="992" posY="2240" sizeHeight="97" sizeWidth="417" text="To remove all colors MDM requires that you send a collection&#xA;with one empty element per color to remove e.g. if you have&#xA;5 colors in the collection, you need to send 5 empty elements"/>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
     <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Subjob:" show="false"/>
@@ -5652,25 +5467,5 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMDelete_2" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_4" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_5" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
 </talendfile:ProcessType>
