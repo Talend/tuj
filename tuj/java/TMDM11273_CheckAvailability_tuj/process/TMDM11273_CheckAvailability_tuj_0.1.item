@@ -125,7 +125,7 @@
     <routinesParameter id="_amoc0HDaEeewYMhDIXvCaA" name="DataQualityDependencies"/>
     <routinesParameter id="_axheMHDaEeewYMhDIXvCaA" name="TalendStringUtil"/>
   </parameters>
-  <node componentName="tMDMTriggerInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="288">
+  <node componentName="tMDMTriggerInput" componentVersion="0.102" offsetLabelX="43" offsetLabelY="32" posX="256" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMTriggerInput_1" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="MDMTriggerInput"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -133,10 +133,10 @@
       <column defaultValue="" key="false" length="0" name="MDM_Message" nullable="true" precision="0" sourceType="" type="id_Document" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="288">
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tXMLMap_1" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false" show="false"/>
     <elementParameter field="CHECK" name="KEEP_ORDER_FOR_DOCUMENT" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="CheckSupplies"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -149,23 +149,23 @@
         <nodes name="MDM_Message" expression="" type="id_Document" xpath="row2/MDM_Message">
           <children name="exchange" type="id_String" xpath="row2.MDM_Message:/exchange" main="true">
             <children name="item" type="id_String" xpath="row2.MDM_Message:/exchange/item" main="true">
-              <children name="Product" expression="" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product" main="true">
-                <children name="Id" expression="" type="id_String" outgoingConnections="//@node.1/@nodeData/@connections.0" xpath="row2.MDM_Message:/exchange/item/Product/Id" loop="true" main="true"/>
-                <children name="Name" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product/Name"/>
+              <children name="Product6" expression="" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product6" main="true">
+                <children name="Id" expression="" type="id_String" outgoingConnections="//@node.1/@nodeData/@connections.0" xpath="row2.MDM_Message:/exchange/item/Product6/Id" loop="true" main="true"/>
+                <children name="Name" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product6/Name"/>
               </children>
             </children>
           </children>
         </nodes>
       </inputTrees>
       <outputTrees name="out2">
-        <nodes name="Id" expression="[row2.MDM_Message:/exchange/item/Product/Id]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.0" xpath="out2/Id" pattern=""/>
+        <nodes name="Id" expression="[row2.MDM_Message:/exchange/item/Product6/Id]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.0" xpath="out2/Id" pattern=""/>
         <nodes name="Availability" expression="&quot;true&quot;" type="id_String" xpath="out2/Availability" pattern=""/>
       </outputTrees>
       <varTables name="Var" minimized="true"/>
       <connections xsi:type="TalendXMLMap:Connection" source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.0/@children.0/@children.0" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0"/>
     </nodeData>
   </node>
-  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="288">
+  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="13" offsetLabelY="32" posX="576" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMOutput_2" show="false"/>
     <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="true"/>
     <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="xml"/>
@@ -177,8 +177,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/soap&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -200,12 +200,12 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product6"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Availability"/>
+      <elementValue elementRef="PATH" value="/Product6/Availability"/>
       <elementValue elementRef="COLUMN" value="Availability"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
@@ -213,7 +213,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product6/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -248,12 +248,12 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="setMDMInputMessage(&quot;&lt;exchange>&lt;item>&lt;Product>&lt;Id>40&lt;/Id>&lt;Name>name&lt;/Name>&lt;/Product>&lt;/item>&lt;/exchange>&quot;);"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="setMDMInputMessage(&quot;&lt;exchange>&lt;item>&lt;Product6>&lt;Id>40&lt;/Id>&lt;Name>name&lt;/Name>&lt;/Product6>&lt;/item>&lt;/exchange>&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="288">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -281,7 +281,7 @@
       <column comment="" key="false" length="-1" name="Price" nullable="false" pattern="" precision="-1" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="288">
+  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMOutput_1" show="false"/>
     <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="true"/>
     <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="Id"/>
@@ -293,8 +293,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://localhost:8080/talendmdm/services/soap&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;administrator&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="fmyLBcXusWxdAhEGcREikA==" show="false"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="false"/>
@@ -316,22 +316,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" value="200" show="false"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product6"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Name"/>
+      <elementValue elementRef="PATH" value="/Product6/Name"/>
       <elementValue elementRef="COLUMN" value="Name"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Description"/>
+      <elementValue elementRef="PATH" value="/Product6/Description"/>
       <elementValue elementRef="COLUMN" value="Description"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="4"/>
-      <elementValue elementRef="PATH" value="/Product/Price"/>
+      <elementValue elementRef="PATH" value="/Product6/Price"/>
       <elementValue elementRef="COLUMN" value="Price"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
@@ -339,7 +339,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product6/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -400,8 +400,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talendmdm/services/soap&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the keys in order below for the entity" show="false"/>
@@ -426,8 +426,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_6x + &quot;:&quot; + context.mdm_port_6x + &quot;/talend/TalendPort&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_6x" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBOqU0Bj8yjHh" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the keys in order below for the entity" show="false"/>
@@ -443,7 +443,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMDMDelete_2"/>
   </node>
-  <node componentName="tMDMInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="416">
+  <node componentName="tMDMInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMDMInput_1" show="false"/>
     <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="Id" show="false"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60" show="false"/>
@@ -453,8 +453,8 @@
     <elementParameter field="TEXT" name="MDMURL" value="&quot;http://localhost:8180/talendmdm/services/soap&quot;" show="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;userName&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="PoLvNyVG2XWndNDdLn696A==" show="false"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="Add all the key values below for the item" show="false"/>
@@ -465,7 +465,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" value="&quot;/result&quot;" show="false"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Id&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product6/Id&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;.&quot;"/>
@@ -487,7 +487,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="416">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;Availability&quot;, input_row.Availability);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -497,7 +497,7 @@
       <column comment="" key="false" length="-1" name="Availability" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="544">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAssert_1" show="false"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;UpdateAvailabilityToTrue&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((String)globalMap.get(&quot;Availability&quot;)).equals(&quot;true&quot;)"/>
@@ -754,7 +754,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="512" posY="416">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
