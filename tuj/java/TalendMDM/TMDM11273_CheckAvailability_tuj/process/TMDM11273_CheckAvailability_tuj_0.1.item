@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="data_output_dir" prompt="data_output_dir?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="d:/QA/tuj/tuj_context.csv"/>
+    <contextParameter comment="" name="data_output_dir" prompt="data_output_dir?" promptNeeded="false" type="id_String" value="d:/tuj/output"/>
+    <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="D:/QA/tuj/tuj_context.csv"/>
     <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_port" prompt="result_port?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_database" prompt="result_database?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="tuj"/>
     <contextParameter comment="" name="mdm_host_7x" prompt="mdm_host_7x?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_port_7x" prompt="mdm_port_7x?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_user_7x" prompt="mdm_user_7x?" promptNeeded="false" type="id_String" value="null"/>
@@ -124,7 +124,7 @@
     <routinesParameter id="_amoc0HDaEeewYMhDIXvCaA" name="DataQualityDependencies"/>
     <routinesParameter id="_axheMHDaEeewYMhDIXvCaA" name="TalendStringUtil"/>
   </parameters>
-  <node componentName="tMDMTriggerInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="288">
+  <node componentName="tMDMTriggerInput" componentVersion="0.102" offsetLabelX="43" offsetLabelY="32" posX="256" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMTriggerInput_1"/>
     <elementParameter field="TEXT" name="LABEL" value="MDMTriggerInput"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -132,10 +132,10 @@
       <column defaultValue="" key="false" length="0" name="MDM_Message" nullable="true" precision="0" sourceType="" type="id_Document" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="288">
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="KEEP_ORDER_FOR_DOCUMENT" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="CheckSupplies"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -148,23 +148,23 @@
         <nodes expression="" name="MDM_Message" type="id_Document" xpath="row2/MDM_Message">
           <children main="true" name="exchange" type="id_String" xpath="row2.MDM_Message:/exchange">
             <children main="true" name="item" type="id_String" xpath="row2.MDM_Message:/exchange/item">
-              <children expression="" main="true" name="Product" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product">
-                <children expression="" loop="true" main="true" name="Id" outgoingConnections="//@node.1/@nodeData/@connections.0" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product/Id"/>
-                <children name="Name" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product/Name"/>
+              <children expression="" main="true" name="Product6" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product6">
+                <children expression="" loop="true" main="true" name="Id" outgoingConnections="//@node.1/@nodeData/@connections.0" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product6/Id"/>
+                <children name="Name" type="id_String" xpath="row2.MDM_Message:/exchange/item/Product6/Name"/>
               </children>
             </children>
           </children>
         </nodes>
       </inputTrees>
       <outputTrees name="out2">
-        <nodes expression="[row2.MDM_Message:/exchange/item/Product/Id]" incomingConnections="//@node.1/@nodeData/@connections.0" name="Id" pattern="" type="id_String" xpath="out2/Id"/>
+        <nodes expression="[row2.MDM_Message:/exchange/item/Product6/Id]" incomingConnections="//@node.1/@nodeData/@connections.0" name="Id" pattern="" type="id_String" xpath="out2/Id"/>
         <nodes expression="&quot;true&quot;" name="Availability" pattern="" type="id_String" xpath="out2/Availability"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
       <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.0/@children.0/@children.0" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
-  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="288">
+  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="13" offsetLabelY="32" posX="576" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMOutput_2"/>
     <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="true"/>
     <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="xml"/>
@@ -176,8 +176,8 @@
     <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_7x + &quot;:&quot; + context.mdm_port_7x + &quot;/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user_7x"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBERW2rXcaQLS"/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="true"/>
@@ -199,12 +199,12 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" show="false" value="200"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product6"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Availability"/>
+      <elementValue elementRef="PATH" value="/Product6/Availability"/>
       <elementValue elementRef="COLUMN" value="Availability"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
@@ -212,7 +212,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product6/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -247,12 +247,12 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="setMDMInputMessage(&quot;&lt;exchange&gt;&lt;item&gt;&lt;Product&gt;&lt;Id&gt;40&lt;/Id&gt;&lt;Name&gt;name&lt;/Name&gt;&lt;/Product&gt;&lt;/item&gt;&lt;/exchange&gt;&quot;);"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="setMDMInputMessage(&quot;&lt;exchange&gt;&lt;item&gt;&lt;Product6&gt;&lt;Id&gt;40&lt;/Id&gt;&lt;Name&gt;name&lt;/Name&gt;&lt;/Product6&gt;&lt;/item&gt;&lt;/exchange&gt;&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="288">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -280,7 +280,7 @@
       <column comment="" key="false" length="-1" name="Price" nullable="false" pattern="" precision="-1" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="288">
+  <node componentName="tMDMOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMOutput_1"/>
     <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="true"/>
     <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="Id"/>
@@ -292,8 +292,8 @@
     <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://localhost:8080/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;administrator&quot;"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="fmyLBcXusWxdAhEGcREikA=="/>
-    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TABLE" name="RETURN_IDS"/>
     <elementParameter field="CHECK" name="ISUPDATE" value="false"/>
@@ -315,22 +315,22 @@
     <elementParameter field="CHECK" name="EXTENDINSERT" value="false"/>
     <elementParameter field="TEXT" name="COMMIT_LEVEL" show="false" value="200"/>
     <elementParameter field="TABLE" name="ROOT" show="false">
-      <elementValue elementRef="PATH" value="/Product"/>
+      <elementValue elementRef="PATH" value="/Product6"/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
       <elementValue elementRef="ORDER" value="1"/>
-      <elementValue elementRef="PATH" value="/Product/Name"/>
+      <elementValue elementRef="PATH" value="/Product6/Name"/>
       <elementValue elementRef="COLUMN" value="Name"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="3"/>
-      <elementValue elementRef="PATH" value="/Product/Description"/>
+      <elementValue elementRef="PATH" value="/Product6/Description"/>
       <elementValue elementRef="COLUMN" value="Description"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
       <elementValue elementRef="ORDER" value="4"/>
-      <elementValue elementRef="PATH" value="/Product/Price"/>
+      <elementValue elementRef="PATH" value="/Product6/Price"/>
       <elementValue elementRef="COLUMN" value="Price"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="branch"/>
@@ -338,7 +338,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="GROUP" show="false"/>
     <elementParameter field="TABLE" name="LOOP" show="false">
-      <elementValue elementRef="PATH" value="/Product/Id"/>
+      <elementValue elementRef="PATH" value="/Product6/Id"/>
       <elementValue elementRef="COLUMN" value="Id"/>
       <elementValue elementRef="VALUE" value=""/>
       <elementValue elementRef="ATTRIBUTE" value="main"/>
@@ -399,8 +399,8 @@
     <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_7x + &quot;:&quot; + context.mdm_port_7x + &quot;/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user_7x"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBERW2rXcaQLS"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the keys in order below for the entity"/>
@@ -425,8 +425,8 @@
     <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_7x + &quot;:&quot; + context.mdm_port_7x + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user_7x"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBERW2rXcaQLS"/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the keys in order below for the entity"/>
@@ -442,7 +442,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMDMDelete_2"/>
   </node>
-  <node componentName="tMDMInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="416">
+  <node componentName="tMDMInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMInput_1"/>
     <elementParameter field="COLUMN_LIST" name="XMLFIELD" show="false" value="Id"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" show="false" value="s60"/>
@@ -452,8 +452,8 @@
     <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://localhost:8180/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;userName&quot;"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="PoLvNyVG2XWndNDdLn696A=="/>
-    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
-    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product6&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product6&quot;"/>
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the key values below for the item"/>
@@ -464,7 +464,7 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" show="false" value="&quot;/result&quot;"/>
-    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product/Id&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Product6/Id&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
       <elementValue elementRef="QUERY" value="&quot;.&quot;"/>
@@ -486,7 +486,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="416">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_2"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;Availability&quot;, input_row.Availability);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -496,7 +496,7 @@
       <column comment="" key="false" length="-1" name="Availability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="544">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_1"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;UpdateAvailabilityToTrue&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((String)globalMap.get(&quot;Availability&quot;)).equals(&quot;true&quot;)"/>
@@ -753,6 +753,34 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Availability"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column comment="" key="false" length="-1" name="Id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Availability" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tMDMTriggerInput_1" offsetLabelX="0" offsetLabelY="0" source="tMDMTriggerInput_1" target="tXMLMap_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="MDM_Message"/>
@@ -819,6 +847,11 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_1" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_1" target="tAssert_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tJavaRow_2" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_2" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tContextLoad_1">
     <elementParameter field="CHECK" name="TRACES_CONNECTION_ENABLE" show="false" value="false"/>
@@ -903,13 +936,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_542c6368-b815-4e60-99fe-7b512d0313e9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HBQ65MVuc5jVfSFeidIabZyKSV7NoyAFMHVqhAFLI2rH4xJC0EVruxvFK0WOJMtbfP3dwRloKj3S
-1hDkWy1UkA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_43dabaf6-44b1-4954-bd08-2b9f69a2f5ab"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5DYulY1JykZ1t/EshOU4t6dA0u6qF30Abs2hmvL0QMY8BK8ymEGpF1OudMST/SjkoTpaKFio73Dw
-ES7sY7gJQA==</DigestValue></Reference></SignedInfo><SignatureValue>jjnrrM838tKwJZRhgIsuaBdJGM+vQ7o6mrFMY1+ra1V1Ey2e56VIElQNy+GMuxFJAwQm+zD/f9gD
-CC5XOFt4mkJDj8M4+j+sv+A/66OqhGuOoSyCN2EQIn7xKlS06FNWuTVS02x6yf3t6Hw8ibgD4LgZ
-POjfwrOuwpIhCvQbR6NH3lGdXDCJnFaoScAXGQPaM6lktl887NSVGYTClH7jHWZCK/ZS+09EJicL
-X+2IjT7NySoZ6vvk06Q5XmjryfsQwZSo35P3mMyN3b91v9WLVp5oNdnpv1p+CyHxrJElCz2nkq/X
-ad8x80LcTMsShza/GdVMC0P9WWs/CUQ2cIwazw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_808091d4-0035-449a-bdeb-9cbf048d6a5e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZTSbAYQpRp++AwEsmwS2UccKr5NR7VBlXSY2EdTo1JscFXYoBjG4kiF6rDDBSuo56Oqb3sUt9ySt
+UR3oaE3rjg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_87960273-8cd9-4c59-9726-83b0e147d39b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e6kIXOtt+hhQpyB2kQ5XfwLwfe2V9taKFWew4GneOJ2GQ/OsRRhy6zH5m0z4drK2jmljUKBpwmqj
+gEzIHXMO4w==</DigestValue></Reference></SignedInfo><SignatureValue>RrU6Q+k1/AeyKhzHePvbX/nxUbZGlYvCSfZxlT8Gzxg2DxUuNUwOp0JBw+Bd927fK08j4cOQYot8
+hX+Lr4ZFccyWxFxQ1H2KH7uZutKKcATmAhH4zr++meZic6SP0x1Z1jmHAfuSEY0fZFfEF1gLnyvZ
+FeHip8F9nsFL66KFKNNoq7og1N0WSbCjHTLMBTQjUnaWUm1rkI3Nu2Sh8Lz/CeDqH3sbWBs8zUcX
+YCmAU4pq9ArYfEBqr9jTOpBkoREQFRjGp6fbpVazbTigHyvyDxqU3Ly4QpGsdJwhOh+YADhpOZVE
+c2iKNYQZHYHEFH7+yF7nWBHsy1kjjU/B30C1yA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -933,4 +971,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_43dabaf6-44b1-4954-bd08-2b9f69a2f5ab" Target="#_542c6368-b815-4e60-99fe-7b512d0313e9"><Timestamp>2018-04-26 05:49:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_87960273-8cd9-4c59-9726-83b0e147d39b" Target="#_808091d4-0035-449a-bdeb-9cbf048d6a5e"><Timestamp>2018-05-09 02:06:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
