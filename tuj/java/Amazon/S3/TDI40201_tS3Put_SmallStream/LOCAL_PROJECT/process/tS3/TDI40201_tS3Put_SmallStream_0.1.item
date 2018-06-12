@@ -6,7 +6,7 @@
     <contextParameter comment="" name="aws_secretkey" prompt="aws_secretkey?" promptNeeded="false" type="id_String" value=""/>
     <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" type="id_String" value=""/>
     <contextParameter comment="" name="data_output_dir" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="param_file_path" prompt="new1?" promptNeeded="false" type="id_String" value="/home/wyuan/Develop/Testing/Context/context_general_ttp.csv"/>
+    <contextParameter comment="" name="param_file_path" prompt="new1?" promptNeeded="false" type="id_String" value="D:\talend\mycontext.csv"/>
     <contextParameter comment="" name="result_database" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_host" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_password" prompt="new1?" promptNeeded="false" type="id_String" value="null"/>
@@ -70,7 +70,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;/home/wyuan/Develop/Product/Talend-Studio-20180606_1932-V7.1.1SNAPSHOT/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/talend-tools/builds/Talend-Studio-20180605_1932-V7.1.1SNAPSHOT/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
@@ -658,7 +658,7 @@
     <elementParameter field="TEXT" name="STS_ENDPOINT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="640">
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="768">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
     <elementParameter field="FILE" name="FILENAME" show="false" value="&quot;/home/wyuan/Develop/Product/Talend-Studio-20170904_0917-V6.5.0SNAPSHOT/workspace/in.csv&quot;"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/&quot; + jobName"/>
@@ -669,6 +669,13 @@
     <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#10;&quot;File (or path) deleted.&quot;&#10;&quot;No file (or path) deleted.&quot;&#10;&quot;File (or path) does not exist or is invalid.&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileDelete_1"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="672">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//java.io.FileInputStream stream = new java.io.FileInputStream(context.data_output_dir + &quot;/&quot; +  jobName + &quot;/out.csv&quot;);&#10;&#10;&#10;java.io.FileInputStream stream = (java.io.FileInputStream)globalMap.get(&quot;stream&quot;);&#10;stream.close();"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_2"/>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tS3Put_1" offsetLabelX="0" offsetLabelY="0" source="tS3Put_1" target="tS3List_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk7"/>
@@ -789,8 +796,11 @@
     <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate2"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tS3List_2" offsetLabelX="0" offsetLabelY="0" source="tS3List_2" target="tFileDelete_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tS3List_2" offsetLabelX="0" offsetLabelY="0" source="tS3List_2" target="tJava_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_2" offsetLabelX="0" offsetLabelY="0" source="tJava_2" target="tFileDelete_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk9"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3Put_1"/>
@@ -866,13 +876,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_48e271de-dbf7-4777-b059-e24705b65401"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>91w3VX3PYWojIJlND5IDmtMTTzd22wiyIm0fPXOvFWUngv3tttWUsfVGbo/y19O+U4wtYr8aXKkA
-e9bA0trJVQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_19a95543-dc1e-4ab1-93bf-3967c81c1e97"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BQUa5ea7QanQi1Qq4wUKpPy3DE6X1LKukzLYTkM//LmV087H2mgQ0LhWUnxTvk3KYnsInRoZepPK
-LLZYeSZ+4Q==</DigestValue></Reference></SignedInfo><SignatureValue>JL3Z/iRsP82vPsQJigz44vekcBMmpQPMQMT5Cg56znmEs/7Z4EuIq5sduAL0RI3p82+P/yMNJ6fd
-G7X5E842ZPGSS1YlSEjzNngYyInUjFSPlXnEyp3xAWt65ufSC9AQBkouoxIegsfmEO7u7zrGGQly
-QtnotB+XrTNKNR8pIsJlNTkSjK+Oa2wgz1mdeMiGdxd7hANGT6DyCdhdMkmVnn/5EEiKOODLbYta
-BmuHM1e2Ad5glQD3bIEaE0vjzG5cUYtHHiY0nZ590cc0XltgNBGU6L8bAREennWKGVrUgRAaVqUy
-C/IgkHSSgafKMeDzxezzkOnhbEpn1ozV/ddcVQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c572442e-12e3-4472-a770-3ae7ac7a0189"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DlBpVZwyaalPCjvWBbx5CHUiNJyYlQCRriJYGDX68AyKBwJCU8yPy52gAk1oT6h6xYadFMJa2gGM
+c4ikXkfh5Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_aa75e2e0-81c7-4fcc-baaa-89ab57b74193"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>470k0CtC48PYUHrRQ80b/YOPsV/kmUp86g11acTs9HtYHmlx5HF8iFq/47KOKUesSe8E3H0LnPK3
+hvo/Zt6BYA==</DigestValue></Reference></SignedInfo><SignatureValue>bmyKxruN4QZdi+v/HjKkfhuBLL/5oaDEyUo3k54xNYGDBGos8azsiZ+s9spqGQKbm02lv2AuO641
+CMzgq9b8DIuYuP2Zr3fTrCoGy3Ayrksj/h3PGz9ir09a5cp5OGzBTCLBeeSpeQMOnSi8kftbk1b/
+DUfTmXm3/7ugBucodXqDNiFcuRTKT1d8zB3FgfSYCJHh7aeu3dZCfKYx2hm09KXJ/t9X9FsAXJS6
+twjMGNOCgQZn6ZWOUh2yma4fyoCXU0Zn0/NdpBLA/kwiZfL+gxCn0a2ZECJekYPzE/jcuxJkktbW
+eYUh5ttO7ypW0/ROf/vWO69edperjT3zyPKH1Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -896,4 +911,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_19a95543-dc1e-4ab1-93bf-3967c81c1e97" Target="#_48e271de-dbf7-4777-b059-e24705b65401"><Timestamp>2018-06-08 02:10:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_aa75e2e0-81c7-4fcc-baaa-89ab57b74193" Target="#_c572442e-12e3-4472-a770-3ae7ac7a0189"><Timestamp>2018-06-12 03:45:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
