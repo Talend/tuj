@@ -7,7 +7,7 @@
     <contextParameter comment="" name="azure_key" prompt="azure_key?" promptNeeded="false" repositoryContextId="_oSu6oPmgEeak6ejxj0PNSg" type="id_String" value=""/>
     <contextParameter comment="" name="azure_queue_sig" prompt="azure_queue_sig?" promptNeeded="false" repositoryContextId="_oSu6oPmgEeak6ejxj0PNSg" type="id_String" value=""/>
     <contextParameter comment="" name="azure_table_sig" prompt="azure_table_sig?" promptNeeded="false" repositoryContextId="_oSu6oPmgEeak6ejxj0PNSg" type="id_String" value=""/>
-    <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" repositoryContextId="__-4m4PmgEeak6ejxj0PNSg" type="id_String" value=""/>
+    <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" repositoryContextId="__-4m4PmgEeak6ejxj0PNSg" type="id_String" value="/home/wyuan/Desktop/azure/TDI38150_tAzureStorageTableXX_DataType"/>
     <contextParameter comment="" name="data_output_dir" prompt="new1?" promptNeeded="false" repositoryContextId="__-4m4PmgEeak6ejxj0PNSg" type="id_String" value="null"/>
     <contextParameter comment="" name="param_file_path" prompt="new1?" promptNeeded="false" repositoryContextId="__-4m4PmgEeak6ejxj0PNSg" type="id_String" value="/home/wyuan/Develop/Testing/Context/context_general_ttp.csv"/>
     <contextParameter comment="" name="result_database" prompt="new1?" promptNeeded="false" repositoryContextId="__-4m4PmgEeak6ejxj0PNSg" type="id_String" value="null"/>
@@ -502,7 +502,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="576">
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1" show="false"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;/home/wyuan/Develop/Product/Talend-Studio-20160704_1411-V6.2.1/workspace/in.csv&quot;" show="false"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/&quot; + jobName"/>
@@ -543,7 +543,7 @@
       <elementValue elementRef="Team" value="&quot;Comp&quot;"/>
       <elementValue elementRef="Id" value="&quot;1&quot;"/>
       <elementValue elementRef="Leave_Total" value="10"/>
-      <elementValue elementRef="Register" value="&quot;2013-12-20T21:30:20.000Z&quot;"/>
+      <elementValue elementRef="Register" value="TalendDate.parseDateInUTC(&quot;yyyy-MM-dd'T'HH:mm:ss.SSS'Z'&quot;, &quot;2013-12-20T13:30:20.000Z&quot;)"/>
       <elementValue elementRef="Leave_Balance" value="new Double(&quot;5.75&quot;)"/>
       <elementValue elementRef="TenYearsMore" value="false"/>
       <elementValue elementRef="Name" value="&quot;wang&quot;"/>
@@ -557,7 +557,7 @@
       <column comment="" key="false" length="-1" name="Team" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Id" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Leave_Total" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Register" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Register" nullable="true" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSS'Z'&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Leave_Balance" nullable="true" pattern="" precision="-1" sourceType="" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="TenYearsMore" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Name" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -701,7 +701,7 @@
       <column comment="" key="false" length="255" name="errorMessage" nullable="false" pattern="" precision="-1" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="576">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="java.lang.StringBuilder connectionString = new java.lang.StringBuilder();&#xA;connectionString.append(&quot;DefaultEndpointsProtocol=&quot;).append(&quot;https&quot;).append(&quot;;AccountName=&quot;).append(context.azure_account).append(&quot;;AccountKey=&quot;).append(context.azure_key);&#xA;&#xA;com.microsoft.azure.storage.CloudStorageAccount account = com.microsoft.azure.storage.CloudStorageAccount.parse(connectionString.toString());&#xA;com.microsoft.azure.storage.table.CloudTable table = account.createCloudTableClient().getTableReference(&quot;tdi38150&quot; + pid);&#xA;&#xA;table.delete();"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -865,10 +865,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileDelete_1" offsetLabelX="0" offsetLabelY="0" source="tFileDelete_1" target="tJava_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk8" show="false"/>
-  </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tFileDelete_1">
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tJava_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tWriteDynamicFields_1">
@@ -895,6 +892,9 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tAzureStorageInputTable_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="tFileDelete_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk8" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
