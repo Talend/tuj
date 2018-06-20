@@ -8,10 +8,10 @@
     <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_host_7x" prompt="mdm_host_7x?" promptNeeded="false" type="id_String" value="192.168.11.188"/>
-    <contextParameter comment="" name="mdm_port_7x" prompt="mdm_port_7x?" promptNeeded="false" type="id_String" value="8180"/>
-    <contextParameter comment="" name="mdm_user_7x" prompt="mdm_user_7x?" promptNeeded="false" type="id_String" value="administrator"/>
-    <contextParameter comment="" name="mdm_password_7x" prompt="mdm_password_7x?" promptNeeded="false" type="id_String" value="administrator"/>
+    <contextParameter comment="" name="mdm_host_71" prompt="mdm_host_71?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_port_71" prompt="mdm_port_71?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_user_71" prompt="mdm_user_71?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_password_71" prompt="mdm_password_71?" promptNeeded="false" type="id_String" value="null"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -69,7 +69,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/Talend-Studio-20180411_1414-V7.0.1/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;/Users/ctoum/Talend/Talend-Studio-r80439-V5.1.0M2/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tJDBCOutput"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_11"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ojdbc14-10g.jar"/>
     <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
@@ -318,9 +318,9 @@
   <node componentName="tMDMBulkLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMBulkLoad_2"/>
     <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="xmlRecord"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://192.168.11.188:8180/talendmdm/services/bulkload&quot;"/>
-    <elementParameter field="TEXT" name="USERNAME" value="&quot;administrator&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="fmyLBcXusWxdAhEGcREikA=="/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/bulkload&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_71"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBC8c/ttfpnV0"/>
     <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product&quot;"/>
     <elementParameter field="TEXT" name="DATACONCEPT" value="&quot;Product&quot;"/>
     <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product&quot;"/>
@@ -391,9 +391,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://192.168.11.188:8180/talendmdm/services/soap&quot;"/>
-    <elementParameter field="TEXT" name="USERNAME" value="&quot;administrator&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="fmyLBcXusWxdAhEGcREikA=="/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_71"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBC8c/ttfpnV0"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
     <elementParameter field="CHECK" name="GEN_TRANSACTION_ID" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -525,13 +525,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_31f8217a-bff0-472d-8f95-41cc6d41ded8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4bvcTRlGMXyylthWnnBk3WlFKMqWfmTGOzSGqhqwfCQJA9yII0aaN4gW6DpTJRqOzd7q50lzUjN2
-Uxznqmms9Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_83ec0be9-902c-48c8-aa29-77d97dabfc5d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ygr2kUNRTQXgGi7TuenY0VRBV8ADIOZkBxI4HR/OMhMTV2rlj2EARfXE0X0fgKFvGtwzCl0376/q
-Ma0MTBfFeQ==</DigestValue></Reference></SignedInfo><SignatureValue>0vm7aU0h3vQbysFDu/trjv3mX3YBCmNkeLYg83OzC5RFUs4cX+V1pRALD9Mswws5tvIrkGyl4OzL
-UIp6PB5lVw3kqnkWeQcsN3h0XeLtTmUFZcpixHCf8kIanQSfD0VYM2hr6/29iIhiu3Qbs2Xr1FZJ
-ywcHNPqiTiNd9Y6tlK86D7e26JS+OTfWkFcKWt42JD05emQ43M+ZWlb8LuKk2pDV9keEWLrxxEFa
-ehDJ6EOnDWtGtJx+WFjBHWuVovqQrtSAIcd9PIfND/M8yfuJ1WUjMWRrnZX+vYFrT5puQ9ffF7S+
-xYK/DRhOCOThB5ep/fozkLemugY9l3SKKYN1zQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e1fd2046-73dc-45c3-a6f0-8b2707fdedd0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7Xw9aVQpCqgKXprQtLCceYR+baNn8u7kpCSpBP/W4MmCc3ZbLH6lM6UQsHxtNzwRZCSilHCAg14h
+6/8gWyhDzA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f1e10a4a-ca55-4ed3-ad71-5b07a90d599d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CShWLiIN5kGSVNSZmwwt1fK3qZrOy8rnHgBorIgjCB9Du5VlPJg2mQBOYV2lUhmZuuhC2gdMoPI9
+X00zG2XSdQ==</DigestValue></Reference></SignedInfo><SignatureValue>aT/kF7BJLvvbuGMZUyk1G8BFS94C3AOPTamQ/imRzeZ+Z7gZ/DBW04SOKGkoBdS9ZpO3AwSX5FAA
+hJ2UYvUQDMRrEmJW5ygDffCaFAoHva9+AnB1cd51IFhs0WJM6yk+x7H5Gcevksn+L8TEHytHyCRH
+rne2Lq7gfuVM5RQyU8Q1ckHtkDhWzdm54p2PkXwEI1ld1vCLt4b7GxBeQvaxgMf5v9dAa2OXyfid
+h76TF5lLPaKdJs/Sf9wojBDa0d4Wr4d3SfIgBW/4ujkpZyLrC1qmPVEXB+JdhvD6fdLPHCRPZKQR
+sjrY5Vw7lhGSESZ36vbGRM6NNJC5NbPTnpAFQw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -555,4 +555,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_83ec0be9-902c-48c8-aa29-77d97dabfc5d" Target="#_31f8217a-bff0-472d-8f95-41cc6d41ded8"><Timestamp>2018-04-26 06:09:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f1e10a4a-ca55-4ed3-ad71-5b07a90d599d" Target="#_e1fd2046-73dc-45c3-a6f0-8b2707fdedd0"><Timestamp>2018-06-19 07:24:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
