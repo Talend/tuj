@@ -440,7 +440,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;create table if not exists &quot; + (String)globalMap.get(&quot;table_name&quot;) + &quot; (&#13;&#10;ID INT PRIMARY KEY,&#13;&#10;AGE INT,&#13;&#10;C1 VARCHAR(255),&#13;&#10;C2 VARCHAR(255),&#13;&#10;C3 VARCHAR(255),&#13;&#10;FIRST_NAME VARCHAR(255)&#13;&#10;);&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;create table if not exists &quot; + (String)globalMap.get(&quot;table_name&quot;) + &quot; (&#13;&#10;ID INT,&#13;&#10;AGE INT,&#13;&#10;C1 VARCHAR(255),&#13;&#10;C2 VARCHAR(255),&#13;&#10;C3 VARCHAR(255),&#13;&#10;FIRST_NAME VARCHAR(255),&#13;&#10;UNIQUE(ID)&#13;&#10;);&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -486,24 +486,12 @@
       <elementValue elementRef="C2" value="TalendDataGenerator.getUsState()"/>
       <elementValue elementRef="C3" value="TalendDataGenerator.getUsCity()"/>
       <elementValue elementRef="FIRST_NAME" value="&quot;John&quot;"/>
-      <elementValue elementRef="ID" value="2"/>
-      <elementValue elementRef="AGE" value="Numeric.random(1,100)"/>
-      <elementValue elementRef="C1" value="TalendDataGenerator.getLastName()"/>
-      <elementValue elementRef="C2" value="TalendDataGenerator.getUsState()"/>
-      <elementValue elementRef="C3" value="TalendDataGenerator.getUsCity()"/>
-      <elementValue elementRef="FIRST_NAME" value="TalendDataGenerator.getFirstName()"/>
-      <elementValue elementRef="ID" value="3"/>
-      <elementValue elementRef="AGE" value="Numeric.random(1,100)"/>
-      <elementValue elementRef="C1" value="TalendDataGenerator.getLastName()"/>
-      <elementValue elementRef="C2" value="TalendDataGenerator.getUsState()"/>
-      <elementValue elementRef="C3" value="TalendDataGenerator.getUsCity()"/>
-      <elementValue elementRef="FIRST_NAME" value="TalendDataGenerator.getFirstName()"/>
-      <elementValue elementRef="ID" value="4"/>
-      <elementValue elementRef="AGE" value="Numeric.random(1,100)"/>
-      <elementValue elementRef="C1" value="TalendDataGenerator.getLastName()"/>
-      <elementValue elementRef="C2" value="TalendDataGenerator.getUsState()"/>
-      <elementValue elementRef="C3" value="TalendDataGenerator.getUsCity()"/>
-      <elementValue elementRef="FIRST_NAME" value="TalendDataGenerator.getFirstName()"/>
+      <elementValue elementRef="ID" value=""/>
+      <elementValue elementRef="AGE" value=""/>
+      <elementValue elementRef="C1" value=""/>
+      <elementValue elementRef="C2" value=""/>
+      <elementValue elementRef="C3" value=""/>
+      <elementValue elementRef="FIRST_NAME" value=""/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -649,15 +637,20 @@
   <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_2"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
-    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
-    <elementParameter field="TABLE" name="VALUES">
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="false"/>
+    <elementParameter field="TABLE" name="VALUES" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="VALUE" value="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="FIRST_NAME"/>
       <elementValue elementRef="VALUE" value="&quot;John&quot;"/>
     </elementParameter>
-    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
-    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="true"/>
+    <elementParameter field="TABLE" name="INTABLE">
+      <elementValue elementRef="ID" value="1"/>
+      <elementValue elementRef="FIRST_NAME" value="&quot;John&quot;"/>
+      <elementValue elementRef="ID" value=""/>
+      <elementValue elementRef="FIRST_NAME" value=""/>
+    </elementParameter>
     <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
@@ -668,7 +661,7 @@
       <column comment="" key="true" length="255" name="FIRST_NAME" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWriteDynamicFields" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="224">
+  <node componentName="tWriteDynamicFields" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWriteDynamicFields_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWriteDynamicFields_1">
@@ -676,7 +669,7 @@
       <column comment="" key="true" length="-1" name="ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="224">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -705,8 +698,8 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
     <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="true"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS">
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="DYNA"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -809,7 +802,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select *  from &quot; + (String)globalMap.get(&quot;table_name&quot;) + &quot; where `id`=1 and `first_name`='John';&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select *  from &quot; + (String)globalMap.get(&quot;table_name&quot;)"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -1162,7 +1155,7 @@
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_2"/>
-    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Delete record with id = 1 and first_name = 'John'"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Delete records with (id = 1 and first_name = 'John') | (id = null and first_name = null)"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;128;255"/>
   </subjob>
@@ -1194,13 +1187,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;128;255"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_dd5acb5f-a646-45a1-a8ec-e9c6168e719f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6j50EFWude0LRoyRjRsS5GHdMRcK22gtxXg7Jzvkf9ND/yyoV+fvgWcZXE2gWOGtO5PicGJeUHHT
-/s1J8zBBMQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ada65738-f3ec-44b3-a803-8967f03be641"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dkoRPmAn4spUwottWbvL3IW4ptr/lp6xOTFLH3y/pJSquNRlDwHnr0a5ToCtbMUoylcqp5hEfhYy
-1TK0UWetlg==</DigestValue></Reference></SignedInfo><SignatureValue>aOe8/6oEUu0dir/gjHartS+zU4QbnAdF0sVPGgx3T7ffSV6zPX1vI0wX2BSH2ajmfyChxs2+3CVM
-3Z7r2OkFnFYAfWpfKM12D5ni2t7rU3+D8DY+3dxH2mIlECqGDXI71a9RtGFCNwka9/SbK9gAQdhh
-n7bB8WY+rVs/f7EeZYhqRJuF+dNpFOL+AOxFZ0pvPhMUmSc7Rie9B3czIIgJKfod/i+C/2RtFKN1
-iemq6O7KsGjrTHHbMiP2EQ5TAZd0kQEvtTYgZeJTBiMSYtzUK0IwSwhTEZ9wnJmhJ4/hn1DPyWzm
-YoUpkTtqQ/4dAwOFTJeZVvM4ZI2Jm9q3F1Itpw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6450a2a5-6e93-4a9d-9cb3-9b62df0e0340"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tXjf4dQfypM3TQvzV19cIS7hrrUzobfCIJ1qxGL2Oip2L1rJGWnxQZ5lBg/b8Y3OCqI5+kO7fgga
+N7iys7gNtA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e81330c0-2e5c-4012-8bef-9ebed892ef4d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PMAwWSMhWr7boNBwkXU5VQf6w8OHkACJ1FlK4Ce3szotxlOGqmxZkoJTTWnUNtjF7j7UysdltIOl
+YUe5Cq94xQ==</DigestValue></Reference></SignedInfo><SignatureValue>DbJoaBzGZYzgAPgllzXY0iuFCSlw0Aa4e2rY/QTIq8cqkheOtYv5N099hmKYozVDsy7oRojaowZo
+ElATvSGyL2S2YmGNArtTITRopn1+g5/aqlkRhMJT0jKXuEAxucAE8CzZXHqDqlTUvzQLkW+eQPXu
+t/pZGfCtGDn2AwhPhG7ZUs6qhQ1uOPxp15uGYNAdjLAVPilLKjsX4YHYv5OoJ/i1lF5bjl48n+iF
+dI8lqf2+eqiwTXCBrpV9wXz49Sm9sps0ZpuevnFRAUwNQqmRsKxmrIh7vjnKA776kZivH0zEdIbA
+W65MkYvuWOOAs2h9hnEk+yLJ9YXf4hS4N6tgBw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1224,4 +1217,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ada65738-f3ec-44b3-a803-8967f03be641" Target="#_dd5acb5f-a646-45a1-a8ec-e9c6168e719f"><Timestamp>2018-06-20 14:57:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e81330c0-2e5c-4012-8bef-9ebed892ef4d" Target="#_6450a2a5-6e93-4a9d-9cb3-9b62df0e0340"><Timestamp>2018-06-21 10:49:59</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
