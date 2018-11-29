@@ -8,9 +8,9 @@
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_host_71" prompt="mdm_host_71?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_port_71" prompt="mdm_port_71?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_user_71" prompt="mdm_user_71?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_password_71" prompt="mdm_password_71?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_port" prompt="mdm_port?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value="null"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -39,8 +39,6 @@
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
     <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:PROPERTY_TYPE" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:REPOSITORY_PROPERTY_TYPE" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
     <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -68,7 +66,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;/Users/ctoum/Talend/Talend-Studio-r80439-V5.1.0M2/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/Develop/Products/servers/7.1.2_1118_0954/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
@@ -76,7 +74,7 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tJDBCOutput"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ojdbc14-10g.jar"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
     <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
@@ -126,7 +124,7 @@
   </parameters>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_1"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -156,9 +154,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/soap&quot;"/>
-    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user_71"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBC8c/ttfpnV0"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="true"/>
     <elementParameter field="CHECK" name="GEN_TRANSACTION_ID" show="false" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -370,7 +368,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_2"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -405,7 +403,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_3"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -607,7 +605,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="960">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_5"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate/record&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate/record&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -793,7 +791,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_6"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -828,7 +826,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1824" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_7"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -863,7 +861,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_8"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -898,7 +896,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_9"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -933,7 +931,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1344" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_11"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -968,7 +966,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_13"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1003,7 +1001,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1408" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_15"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?container=STAGING&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1038,7 +1036,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1376" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_4"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1328,7 +1326,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="1088">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_10"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1363,7 +1361,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_12"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?returnSource=true&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?returnSource=true&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1400,7 +1398,7 @@
   </node>
   <node componentName="tREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1408" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tREST_14"/>
-    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port_71 + &quot;/talendmdm/services/rest/data/Product5/validate?returnSource=true&quot;"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://&quot; + context.mdm_host_71 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/rest/data/Product5/validate?returnSource=true&quot;"/>
     <elementParameter field="CLOSED_LIST" name="METHOD" value="POST"/>
     <elementParameter field="TABLE" name="HEADERS">
       <elementValue elementRef="NAME" value="&quot;Content-Type&quot;"/>
@@ -1995,13 +1993,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f279eade-16e7-440f-b8aa-16af12025813"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wuGrR9rqRIpMYdYV+kjtI29NbMUMJEz4YK5fQdPKV+a6A0oF3qVZ0/xuGR071bKaw96YQvFlUey9
-zsCVP8iBWA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3a501e21-10ac-4626-9e65-d0921ea17f3d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FHiUb3p32e7s3YtqJactWMe+GPhGyPwKqkz08qxx10Yd+/NG0NaB2RvlGudBB+vFZfn+o4CI+K8H
-i4VSTuvZDw==</DigestValue></Reference></SignedInfo><SignatureValue>yNlka+NsU0IAocqCa21UPDiYlbW1pVzgyuV7ieC5S6L+gOmscSLziC0m8b2Md4m7e1Qxj+y2Q3fM
-pDFdDZH6JEln1W65bjANxRgkbKwp887kgJwVDtsGU+Yal/X7LdGfCbTH7UKJ4Na0/DD4/lDaEWeK
-SlEbKuLS9dXgEcpiP5RtQcVqIJxvYykMfiuyAooKG/De9YVxzo5UcN1cHIUJgEATlT7/3Z0N54KC
-ntqO9WCGI/62QksvJXR0OzQRXqfT5JNX/aEqq/E+qT05lRQn5uV7WkEkPAZ4AewqWDf5D9QR+8M8
-7hP4g639vDkWx3t3os7czNZ/AMs1P75Zwvd04Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_71f9cf28-114b-4890-9b56-f966550ac74c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2imRH2Z+8gib+PsujF1U4dk2pIdvHQBzabqlaS/umwiD2tfdiMemUBtIdsD1xSNCfIdXZjb75QEO
+uSbsCIkTWA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_aa8117c7-49b0-4cab-9ffe-fd387f6ff3e1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JFzlcUYZvpNTotPULQaYJS6JXEMcovTyPjxxuO7TKAVBsnzpHemPCQhvoAviKAsjYMfMRA1FcNFN
+Qm0ySIh5Gg==</DigestValue></Reference></SignedInfo><SignatureValue>L6jPlmPQFUil9RfI9h7tD/XplCzuQNZN1UhCccJ/sizZB05jBAapcxqlf/f1hvkKW2E+JEU2oj3F
+15RZoQnsPFSqbDVaRVUhqx+SQZLAEN5STqQbJ0easGG5HvDWsnYAqwrtR7PePTQbsxOehRSe5ha3
+PcffnKSlz2sHUocYSMhClcMyBKraZcGwnmAotdKfBZcBWTMRj8JBfOznspPlCvHHQT2oXefdz5Xf
+kO4xgM1KxLG9zGzIW+mP3SmJxWp19YIs6iur+b7nqXe0Fb61Alh/qrwo/HKNajwtTIrTf6E/jfis
+Ky2TkRIT0CVVBfPoUVOiNBHR9aQZ77GVJivDpg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2025,4 +2023,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3a501e21-10ac-4626-9e65-d0921ea17f3d" Target="#_f279eade-16e7-440f-b8aa-16af12025813"><Timestamp>2018-11-20 08:05:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_aa8117c7-49b0-4cab-9ffe-fd387f6ff3e1" Target="#_71f9cf28-114b-4890-9b56-f966550ac74c"><Timestamp>2018-11-29 06:53:04</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
