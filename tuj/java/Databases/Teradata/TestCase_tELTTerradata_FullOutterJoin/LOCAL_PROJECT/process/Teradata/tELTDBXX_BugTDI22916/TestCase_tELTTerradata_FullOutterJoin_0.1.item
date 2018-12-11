@@ -381,7 +381,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_dest&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_dest_FO&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -489,7 +489,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src1&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src1_FO&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -597,7 +597,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src2&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src2_FO&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -657,7 +657,7 @@
   </node>
   <node componentName="tELTTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_1" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src1&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src1_FO&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata" show="false"/>
@@ -671,7 +671,7 @@
   </node>
   <node componentName="tELTTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_2" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src2&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src2_FO&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata" show="false"/>
@@ -703,31 +703,31 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata" show="false"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE"/>
-    <metadata connector="TABLE" label="bugtdi22916_dest" name="table8">
+    <metadata connector="TABLE" label="bugtdi22916_dest_FO" name="table1">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="bugtdi22916_src1" tableName="bugtdi22916_src1" joinType="NO_JOIN">
+      <InputTables name="bugtdi22916_src1_FO" tableName="bugtdi22916_src1_FO" joinType="NO_JOIN">
         <DBMapperTableEntries name="id" join="true"/>
         <DBMapperTableEntries name="name"/>
         <DBMapperTableEntries name="address"/>
         <DBMapperTableEntries name="telephone"/>
       </InputTables>
-      <InputTables name="bugtdi22916_src2" tableName="bugtdi22916_src2" joinType="FULL_OUTER_JOIN">
-        <DBMapperTableEntries name="id" expression="bugtdi22916_src1.id " join="true" operator="EQ"/>
+      <InputTables name="bugtdi22916_src2_FO" tableName="bugtdi22916_src2_FO" joinType="FULL_OUTER_JOIN">
+        <DBMapperTableEntries name="id" expression="bugtdi22916_src1_FO.id " join="true" operator="EQ"/>
         <DBMapperTableEntries name="name" expression="" operator=""/>
         <DBMapperTableEntries name="address" expression="" operator=""/>
         <DBMapperTableEntries name="telephone" expression="" operator=""/>
       </InputTables>
-      <OutputTables name="table8" tableName="bugtdi22916_dest">
-        <DBMapperTableEntries name="id" expression="bugtdi22916_src2.id "/>
-        <DBMapperTableEntries name="name" expression="bugtdi22916_src2.name "/>
-        <DBMapperTableEntries name="address" expression="bugtdi22916_src2.address "/>
-        <DBMapperTableEntries name="telephone" expression="bugtdi22916_src2.telephone "/>
-        <FilterEntries name="newFilter5" expression="bugtdi22916_src2.id =bugtdi22916_dest.id"/>
+      <OutputTables name="table1" tableName="bugtdi22916_dest_FO">
+        <DBMapperTableEntries name="id" expression="bugtdi22916_src2_FO.id "/>
+        <DBMapperTableEntries name="name" expression="bugtdi22916_src2_FO.name "/>
+        <DBMapperTableEntries name="address" expression="bugtdi22916_src2_FO.address "/>
+        <DBMapperTableEntries name="telephone" expression="bugtdi22916_src2_FO.telephone "/>
+        <FilterEntries name="newFilter1" expression="bugtdi22916_src2_FO.id =bugtdi22916_dest_FO.id"/>
       </OutputTables>
     </nodeData>
   </node>
@@ -735,7 +735,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataOutput_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
     <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_dest&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_dest_FO&quot;"/>
     <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
     <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
@@ -761,7 +761,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select * from bugtdi22916_dest where id is not null&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select * from bugtdi22916_dest_FO where id is not null&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
@@ -1158,7 +1158,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src1&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src1_FO&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1190,7 +1190,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src2&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src2_FO&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1222,7 +1222,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_dest&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_dest_FO&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1322,14 +1322,14 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi22916_src1" lineStyle="9" metaname="tELTTeradataInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_1" target="tELTTeradataMap_1">
+  <connection connectorName="TABLE" label="bugtdi22916_src1_FO" lineStyle="9" metaname="tELTTeradataInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_1" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_1" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi22916_src2" lineStyle="9" metaname="tELTTeradataInput_2" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_2" target="tELTTeradataMap_1">
+  <connection connectorName="TABLE" label="bugtdi22916_src2_FO" lineStyle="9" metaname="tELTTeradataInput_2" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_2" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_2" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi22916_dest" lineStyle="9" metaname="table8" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tELTTeradataOutput_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table8" show="false"/>
+  <connection connectorName="TABLE" label="bugtdi22916_dest_FO" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tELTTeradataOutput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tELTTeradataMap_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tTeradataInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk4" show="false"/>

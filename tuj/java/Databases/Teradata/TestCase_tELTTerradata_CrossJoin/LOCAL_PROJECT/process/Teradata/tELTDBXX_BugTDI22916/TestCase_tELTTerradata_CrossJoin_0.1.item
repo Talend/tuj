@@ -389,7 +389,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src1&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src1_Cros&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -497,7 +497,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src2&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;bugtdi22916_src2_Cros&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -557,7 +557,7 @@
   </node>
   <node componentName="tELTTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_1" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src1&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src1_Cros&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata" show="false"/>
@@ -569,30 +569,14 @@
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tELTTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="544">
+  <node componentName="tELTTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_2" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src2&quot;"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_src2_Cros&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata" show="false"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE"/>
     <metadata connector="TABLE" label="bugtdi22916_src2" name="tELTTeradataInput_2">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tELTTeradataOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataOutput_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;bugtdi22916_src2.id  = bugtdi22916_dest.id&quot;" show="false"/>
-    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_dest&quot;"/>
-    <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
-    <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="TABLE" name="tELTTeradataOutput_1">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
@@ -619,32 +603,48 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="TEXT" name="SQLPATTERN_DB_NAME" value="Teradata" show="false"/>
     <elementParameter field="TABLE" name="SQLPATTERN_VALUE"/>
-    <metadata connector="TABLE" label="bugtdi22916_dest" name="table1">
+    <metadata connector="TABLE" label="bugtdi22916_dest_Cros" name="table2">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="bugtdi22916_src1" tableName="bugtdi22916_src1" joinType="NO_JOIN">
+      <InputTables name="bugtdi22916_src1_Cros" tableName="bugtdi22916_src1_Cros" joinType="NO_JOIN">
         <DBMapperTableEntries name="id" join="true"/>
         <DBMapperTableEntries name="name"/>
         <DBMapperTableEntries name="address"/>
         <DBMapperTableEntries name="telephone"/>
       </InputTables>
-      <InputTables name="bugtdi22916_src2" tableName="bugtdi22916_src2" joinType="CROSS_JOIN">
-        <DBMapperTableEntries name="id" expression="bugtdi22916_src1.id " join="true" operator="EQ"/>
-        <DBMapperTableEntries name="name"/>
-        <DBMapperTableEntries name="address"/>
-        <DBMapperTableEntries name="telephone"/>
+      <InputTables name="bugtdi22916_src2_Cros" tableName="bugtdi22916_src2_Cros" joinType="CROSS_JOIN">
+        <DBMapperTableEntries name="id" expression="bugtdi22916_src1_Cros.id " join="true" operator="EQ"/>
+        <DBMapperTableEntries name="name" expression="" operator=""/>
+        <DBMapperTableEntries name="address" expression="" operator=""/>
+        <DBMapperTableEntries name="telephone" expression="" operator=""/>
       </InputTables>
-      <OutputTables name="table1" tableName="bugtdi22916_dest">
-        <DBMapperTableEntries name="id" expression="bugtdi22916_src2.id "/>
-        <DBMapperTableEntries name="name" expression="bugtdi22916_src2.name "/>
-        <DBMapperTableEntries name="address" expression="bugtdi22916_src2.address "/>
-        <DBMapperTableEntries name="telephone" expression="bugtdi22916_src2.telephone "/>
+      <OutputTables name="table2" tableName="bugtdi22916_dest_Cros">
+        <DBMapperTableEntries name="id" expression="bugtdi22916_src2_Cros.id "/>
+        <DBMapperTableEntries name="name" expression="bugtdi22916_src2_Cros.name "/>
+        <DBMapperTableEntries name="address" expression="bugtdi22916_src2_Cros.address "/>
+        <DBMapperTableEntries name="telephone" expression="bugtdi22916_src2_Cros.telephone "/>
       </OutputTables>
     </nodeData>
+  </node>
+  <node componentName="tELTTeradataOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataOutput_1" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;bugtdi22916_src2.id  = bugtdi22916_dest.id&quot;" show="false"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;bugtdi22916_dest_Cros&quot;"/>
+    <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
+    <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="TABLE" label="bugtdi22916_dest_Cros" name="tELTTeradataOutput_1">
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
+    </metadata>
   </node>
   <node componentName="tTeradataInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tTeradataInput_1" show="false"/>
@@ -660,7 +660,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select * from bugtdi22916_dest order by id&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select * from bugtdi22916_dest_Cros order by id&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
@@ -681,7 +681,7 @@
     <elementParameter field="TABLE" name="QUERY_BAND_PARAMETERS" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tTeradataInput_1">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
@@ -714,7 +714,7 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
@@ -750,7 +750,7 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputDelimited_1">
-      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
@@ -988,7 +988,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src1&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src1_Cros&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1020,7 +1020,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src2&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_src2_Cros&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1052,7 +1052,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_dest&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;drop table &quot;+context.teradata16_database+&quot;.bugtdi22916_dest_Cros&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
@@ -1127,7 +1127,7 @@
     <elementParameter field="CHECK" name="VERTICA_USE_CASCADE" value="true" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERTICA_VERSION" value="vertica_3.0_jdk_5.jar" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_VERTICA" value="" show="false"/>
-    <elementParameter field="TEXT" name="TABLE" value="&quot;bugtdi22916_dest&quot;"/>
+    <elementParameter field="TEXT" name="TABLE" value="&quot;bugtdi22916_dest_Cros&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="teradata_id" show="false"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
@@ -1219,6 +1219,39 @@
       <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="736">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_3" show="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="address"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="telephone"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_3">
+      <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="name" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="address" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="telephone" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="30" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tFileInputDelimited_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
@@ -1279,14 +1312,14 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi22916_src1" lineStyle="9" metaname="tELTTeradataInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_1" target="tELTTeradataMap_1">
+  <connection connectorName="TABLE" label="bugtdi22916_src1_Cros" lineStyle="9" metaname="tELTTeradataInput_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_1" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_1" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi22916_src2" lineStyle="9" metaname="tELTTeradataInput_2" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_2" target="tELTTeradataMap_1">
+  <connection connectorName="TABLE" label="bugtdi22916_src2_Cros" lineStyle="9" metaname="tELTTeradataInput_2" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataInput_2" target="tELTTeradataMap_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTTeradataInput_2" show="false"/>
   </connection>
-  <connection connectorName="TABLE" label="bugtdi22916_dest" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tELTTeradataOutput_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
+  <connection connectorName="TABLE" label="bugtdi22916_dest_Cros" lineStyle="9" metaname="table2" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tELTTeradataOutput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table2" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tELTTeradataMap_1" offsetLabelX="0" offsetLabelY="0" source="tELTTeradataMap_1" target="tTeradataInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk4" show="false"/>
@@ -1434,6 +1467,10 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_4" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_4" target="tFileCompare_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk7" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tFileOutputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileOutputDelimited_2" target="tLogRow_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
