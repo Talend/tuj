@@ -4,17 +4,10 @@
     <contextParameter comment="" name="data_output_dir" prompt="data_output_dir?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="oracle18_database" prompt="oracle18_database?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="oracle18_host" prompt="oracle18_host?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle_oci_service" prompt="oracle_oci_service?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="oracle18_password" prompt="oracle18_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="oracle18_port" prompt="oracle18_port?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="oracle18_schema" prompt="oracle18_schema?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="oracle18_username" prompt="oracle18_username?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle10_database" prompt="oracle10_database?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle10_host" prompt="oracle10_host?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle10_password" prompt="oracle10_password?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle10_port" prompt="oracle10_port?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle10_schema" prompt="oracle10_schema?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="oracle10_username" prompt="oracle10_username?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="d:/tuj/tuj/full_context.csv"/>
     <contextParameter comment="" name="result_database" prompt="result_database?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
@@ -740,10 +733,10 @@
       <column comment="" key="false" length="-1" name="newColumn1" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="288">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_1"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tLogRow_2_NB_LINE&quot;)) == 5"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tLogRow_2_NB_LINE&quot;))==5 &amp;&amp;&#10;((Integer)globalMap.get(&quot;tLogRow_3_NB_LINE&quot;))==2"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_1"/>
   </node>
@@ -881,13 +874,6 @@
       <column comment="" key="false" length="-1" name="newColumn1" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="416">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_2"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tLogRow_3_NB_LINE&quot;)) == 2"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAssert_2"/>
-  </node>
   <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -1004,9 +990,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tAssert_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk7"/>
-  </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBBulkExec_1" offsetLabelX="0" offsetLabelY="0" source="tDBBulkExec_1" target="tDBInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
@@ -1022,8 +1005,8 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row6"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_3" offsetLabelX="0" offsetLabelY="0" source="tLogRow_3" target="tAssert_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk8"/>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_3" offsetLabelX="0" offsetLabelY="0" source="tLogRow_3" target="tAssert_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk7"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBRow_1" offsetLabelX="0" offsetLabelY="0" source="tDBRow_1" target="tDBClose_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
@@ -1099,11 +1082,6 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
@@ -1118,13 +1096,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f1980233-c866-432c-80a5-f217d02500b2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7xnAFphtNmeNXpAPp00ulAI732tTdhNfBs5/iXUcU6Lc5KgqFezo6oaMhYD+29plEVmBBoQIJ/0f
-z+bSWzAOUw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c5708786-7c92-45f7-9b2e-6b57af52b898"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WQ3bPKcwoxhWIp8U32WLj/dB2cS68XRC3NWwughEsZOR1QCr/8ZItxU4BHgDQlDpbZb8NApaa+K6
-06O6034c1A==</DigestValue></Reference></SignedInfo><SignatureValue>UY0tkmMespgbCYc+E7NfycFypWMD2LIRnTEYl1buvzJNV1IozevHKUH5eCOFQUhGZhW6kNh4vNuU
-HfPFOrd4KiWMF/uHwJFeHz4tEPHa6C0jm5DeN6VfXKFCJT1CTVd33crMv/qYxcd7AAkWb5kVo5EP
-fhHqxOQyc1mB57Se6/UKbbbrckY+E7MbG4KE7I1AkpFehTaggrVJMltEBTvcONP1HXtKvmlcaJct
-njWUxcAaCbFJ0LAb11+16Bx+/vTTnkO5Sf2WAp0IfLWICMhAQrRdK0Gc++DyBoaiPpJlEEqO6xvB
-YNMiS1niqcd8MWhtobfnlYeyf+luhQanbz+kCw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7579344b-c9f0-42c9-99b1-44c2138072e6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zvmkj6lWMfZZaGYnfD4JW7rHPUJw7MN3ZnWvVqcE2Pf8LV4rx6DCANpd/frWn87mXunhIEoeDZt7
+ThSAN2gUuw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0ee9bff8-da3c-495c-af82-c3753b79b848"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZoacVNYRF4aFfZnsO3LlUDj7Po6dnmoba2zDX7c/mDWaZcSh8VXOZqj7OOC/fLM34YXNFaMJFj+5
+4vDoX7/kmQ==</DigestValue></Reference></SignedInfo><SignatureValue>VjwDbQ8OSGGKLxMUOsuN1QT19VTIEO/BlqoeVI5JBf56/BgUITp+tZgJW1+s/QReZtlFeLAXiNiM
+1d6YgMW+uSzhua4+RFtekQBBfQGrauYh8hw+5+H5U5/+61sUgQLf3uycZmgUQJvPUCl2Izs8R9c2
+/FoxELxsEPC6OC714h5Hf4jdswrBNzKHyYnqhIEvGUyHuQya/xapFXnmlJlvi0S+LTA4rRaYCtD2
+sEnOO0A+IKGDSRgs4bpr7dNVrfsMoGQrgyOBx/0LHn5nAQWixrH9kNqKDRrVrqQR4U6Vg6u5MCui
+e+NrNsgcq9P7QHdrtCaiWcdB8bhDmmRMTMPHyg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1148,4 +1126,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c5708786-7c92-45f7-9b2e-6b57af52b898" Target="#_f1980233-c866-432c-80a5-f217d02500b2"><Timestamp>2018-12-07 13:10:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0ee9bff8-da3c-495c-af82-c3753b79b848" Target="#_7579344b-c9f0-42c9-99b1-44c2138072e6"><Timestamp>2018-12-19 12:25:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

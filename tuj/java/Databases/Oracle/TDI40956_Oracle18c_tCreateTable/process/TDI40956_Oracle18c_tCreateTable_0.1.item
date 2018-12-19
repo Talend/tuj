@@ -623,10 +623,10 @@
       <column comment="" key="false" length="-1" name="name" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="160">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_1"/>
     <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;))==3"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;))==3 &amp;&amp;&#10;((Integer)globalMap.get(&quot;tDBInput_2_NB_LINE&quot;))==5 &amp;&amp;&#10;((Integer)globalMap.get(&quot;tDBInput_3_NB_LINE&quot;))==4&#10;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_1"/>
   </node>
@@ -1027,13 +1027,6 @@
       <column comment="" key="false" length="-1" name="name" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="256">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_2"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tDBInput_2_NB_LINE&quot;))==5"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAssert_2"/>
-  </node>
   <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
@@ -1197,13 +1190,6 @@
       <column comment="" key="false" length="-1" name="name" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_3"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tDBInput_3_NB_LINE&quot;))==4"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAssert_3"/>
-  </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tFileInputDelimited_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
   </connection>
@@ -1250,9 +1236,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tAssert_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
-  </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tCreateTable_1" offsetLabelX="0" offsetLabelY="0" source="tCreateTable_1" target="tFixedFlowInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk6"/>
   </connection>
@@ -1276,9 +1259,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_3" offsetLabelX="0" offsetLabelY="0" source="tLogRow_3" target="tAssert_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk9"/>
-  </connection>
   <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tDBOutput_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row6"/>
@@ -1290,8 +1270,8 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_4" offsetLabelX="0" offsetLabelY="0" source="tLogRow_4" target="tAssert_3">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk12"/>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_4" offsetLabelX="0" offsetLabelY="0" source="tLogRow_4" target="tAssert_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
@@ -1371,11 +1351,6 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
@@ -1385,18 +1360,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_3"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0ea44c59-ea1f-46a5-bc8b-61092af207f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Bi717pfwz3i+VmvUfMEASN+hIoXCsGsqjRun5pAPc8hIFnIX5ct+6T5N04F8FoSD7SEXHyjom5Fc
-aJycpRYwFg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7ce5906c-715b-46d1-be60-78253fe42ee5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>S70pm9vhGq/OVOu4Tc4TOiYQz4ZvZsANAracaIP4DNGOA+aQxhiGKm+/W6NG3nx6u+0/xu3B/ZjL
-sE2PZFh9SA==</DigestValue></Reference></SignedInfo><SignatureValue>c+lherXnFgAlATcd+LWcdlNVmrjRO+j5+FLvIIvrcMzy8TvVIzgik9UU0Kq6sj/11wHQYWbgnMTo
-FBdEzpCiEAOB82eomOZJKrTKwehoplrYRbF2GGeq3L4f9DGBUruOjdQBH8qJWvrcqr/XaYnPOdDS
-35fWoULGliSSFSKGAtA62Yu2n1wwQi+5rI3v3ROT4QUPEOBz4j0zPhEDvm0hUAXzaHifTkBdCLUs
-t4k7lLZWDtWXedElDrkXRQkXq7ETIvf2VNIuWsjWf6lTtKX0zP9omfhJDY7X2OoWGclPFPFd/N9C
-edzjc3p7nnB6RwW4NW7m+MaXH/b3NTGqNVGPnA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_cac32489-f211-4ea1-add9-bc534d82a418"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pRjaSiA1HYRCsNjpRETOYOx2MO0pTscFJRQR5OB8Wd1ZfksyjzJv6mgeHkrn7b5ZV2x2VqqKuVrW
+n5ywLLEYQA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f7a08bd3-0916-4cec-83e0-22764891cba4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>H1zWtsgtIfZZ9VmHHTGhjeIJGp1zNbdHeABGK2YUPPvPhBFfwfhXeuEpihrkpXBGH4VCi5OFaT1i
+3iAE8JSyqA==</DigestValue></Reference></SignedInfo><SignatureValue>atlWoOwysng9Uhk2+yOsn7J6rW79HTBgdBVgJmOGrYh/LJC/hnA2zT208JEX3EXF6pzkcvZJa41v
+ixZhRwkTWtSnWx9+nN1SDOHBeFBCtkVQHZgUOJF9Q7lz35r6MzpbAKnm2SpSrZwDl2yITdLtVRnL
+4wlzLbsljTcf7DtCJ3QnOFJhx8cHh0gSAw6JoJmWwaDyWwSDvy4V8rvNcn8hVxlaH9DpyzSEhxNH
+4oTYi2MYz5YIacdlkGopEVxdL33Mv1Nouo4cMcrC8e4LjVF0TaEZU84CwctIN/7vXmWtqiku9B3y
+o1NMhZM1s39+/LiAXm9UXg2wm9ddXoDeGo54FQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1420,4 +1390,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7ce5906c-715b-46d1-be60-78253fe42ee5" Target="#_0ea44c59-ea1f-46a5-bc8b-61092af207f9"><Timestamp>2018-12-07 13:10:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f7a08bd3-0916-4cec-83e0-22764891cba4" Target="#_cac32489-f211-4ea1-add9-bc534d82a418"><Timestamp>2018-12-19 12:25:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
