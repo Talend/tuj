@@ -827,7 +827,12 @@
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the key values below for the item"/>
     <elementParameter field="TABLE" name="IDS" show="false"/>
-    <elementParameter field="TABLE" name="OPERATIONS"/>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="XPATH" value="&quot;ProductFamily/Name&quot;"/>
+      <elementValue elementRef="FUNCTION" value="STARTSWITH"/>
+      <elementValue elementRef="VALUE" value="&quot;BL_&quot;"/>
+      <elementValue elementRef="PREDICATE" value="NONE"/>
+    </elementParameter>
     <elementParameter field="TEXT" name="SKIP" value="0"/>
     <elementParameter field="TEXT" name="MAXVALUE" value="0"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
@@ -858,7 +863,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_1"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;Validate 4 ProductFamily records created and not Update Report records, actual ProductFamily  record count: &quot; + globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;) + &quot; , actual Update Report count: &quot; + globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;)"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;Validate 4 ProductFamily records created and no Update Report records, actual ProductFamily  record count: &quot; + globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;) + &quot; , actual Update Report count: &quot; + globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;)"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;))==4 &amp;&amp; ((Integer)globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;))==0"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_1"/>
@@ -978,7 +983,12 @@
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the key values below for the item"/>
     <elementParameter field="TABLE" name="IDS" show="false"/>
-    <elementParameter field="TABLE" name="OPERATIONS"/>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="XPATH" value="&quot;ProductFamily/Name&quot;"/>
+      <elementValue elementRef="FUNCTION" value="STARTSWITH"/>
+      <elementValue elementRef="VALUE" value="&quot;BL_&quot;"/>
+      <elementValue elementRef="PREDICATE" value="NONE"/>
+    </elementParameter>
     <elementParameter field="TEXT" name="SKIP" value="0"/>
     <elementParameter field="TEXT" name="MAXVALUE" value="0"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
@@ -1113,7 +1123,12 @@
     <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the key values below for the item"/>
     <elementParameter field="TABLE" name="IDS" show="false"/>
-    <elementParameter field="TABLE" name="OPERATIONS"/>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="XPATH" value="&quot;ProductFamily/Name&quot;"/>
+      <elementValue elementRef="FUNCTION" value="STARTSWITH"/>
+      <elementValue elementRef="VALUE" value="&quot;BL_&quot;"/>
+      <elementValue elementRef="PREDICATE" value="NONE"/>
+    </elementParameter>
     <elementParameter field="TEXT" name="SKIP" value="0"/>
     <elementParameter field="TEXT" name="MAXVALUE" value="0"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
@@ -1517,20 +1532,20 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_1" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_1" target="tMDMInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk11"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMDMInput_2" target="tAssert_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk16"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMDMInput_2" target="tMDMDelete_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMDMInput_2" target="tMDMDelete_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk17"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMDMInput_2" target="tAssert_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk16"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_3" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_3" target="tMDMInput_4">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk15"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_4" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMDMInput_4" target="tAssert_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk19"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_4" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMDMInput_4" target="tFixedFlowInput_5">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_4" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMDMInput_4" target="tFixedFlowInput_5">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk20"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_4" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMDMInput_4" target="tAssert_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk19"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_5" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_5" target="tMDMInput_6">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk21"/>
@@ -1677,13 +1692,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ca9e2aa1-092d-47a8-84bd-c6f4e6672c0d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VMIrEay8JSl7xa34XMa2/Le5JcEsbBXiCO3iqZhiLVJxo3kgQId3YR767FfK1LDsC0RI+KiZXFw3
-sEQS76GGAg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_71640f79-b121-43ec-8066-9f2a0a183599"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/8/YHhdNz0MZhSrS3B+eLYFhYZYjvboWrbrnaTQox0DOq6RPhiO8aLxrKv6RgysgkMslwqPltfFl
-y3bfmpotKQ==</DigestValue></Reference></SignedInfo><SignatureValue>RYkczhNfjNh0A3c6yS6RjU8yyZA4vYNQBCZTzh6a7SmXuPoN784yCRdvkX4h5mbEyOjuOybvNq8z
-Wr2Hu1uDSqMyNLnePVG/y/ZzreqH37Ekj2ktCyAdc2u3lO/AQTvtWvEMaChyRL1s/4lFfgJO6HqA
-6sJmSHkuuIRAEQDVI9NCKipuNJzN90BbbC0NLjvQk0sB6lqKn8IQ69MFrQZJ6yGRD1BTJW9+n5uY
-f5IPb9YM3qQmvobfYDDkNKEOmOwKDzOsr7nWT/U0kPjqc/xZl1F+v8LaVZwTB8WSjHiRFxU6KdzX
-v3qZyCARmOLZhxGBBobfZfyqe2ftFOlt8cJDHw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_89348b89-86b8-489f-9c59-a764ce2ba402"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+ph984MRWWTxnNZS9ZdT5nbfgVQ6diQR+lT3LHA7yvdG6gbXD7NmU3TKgTO3YfNjxENdqUDCF6eM
+LbreWiFQdw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_db0601a5-d5ad-4eaa-b46a-4867cfdae51d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gjWigmveIoMQmNqW0DXfVJ3tqcA751Vvmb61sjA0oOrbYHfajndfivK6342g7tcRH6v9rgAlrwOP
+yQXImcwrTQ==</DigestValue></Reference></SignedInfo><SignatureValue>C3H8qsrAmaoXEqd9cwS8RGPeZ/uFhrXk95Pf1zDeTOuvys5w1jKMOL1sESIWnEK+kkziB23WrLR7
+iJYZR+ItJ25UTavFR6Y622ry1Mnon1EhoAWu8aamQ0V+dr1vXyCTUMPunLGKcwu6vcgeMIxgIcGj
+AGSXZx4pS87pJ/KhTmYwBd5rOY6AkSjEg5ZgalWl0L+6fecBySJ8eVB07Dx0VaJE9f37Tz8o1XIX
+ypxQ2Q5ug90qUJWadMEoo0kiborJzWvd386+Myi4jNDL9FdNk7ylkQKQ2mpDr4JowHsggpMoNliu
+xXFxx/aid2NDqNy+HusEw/WMBHhmP0nof7RrMw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1707,4 +1722,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_71640f79-b121-43ec-8066-9f2a0a183599" Target="#_ca9e2aa1-092d-47a8-84bd-c6f4e6672c0d"><Timestamp>2019-01-25 03:57:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_db0601a5-d5ad-4eaa-b46a-4867cfdae51d" Target="#_89348b89-86b8-489f-9c59-a764ce2ba402"><Timestamp>2019-01-28 07:56:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
