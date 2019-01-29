@@ -861,10 +861,10 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="576">
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_1"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;Validate 4 ProductFamily records created and no Update Report records, actual ProductFamily  record count: &quot; + globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;) + &quot; , actual Update Report count: &quot; + globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;)"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;))==4 &amp;&amp; ((Integer)globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;))==0"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;Validate 4 ProductFamily records created and no Update Report records, actual ProductFamily  record count: &quot; + globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;) + &quot; , actual Update Report count: &quot; + globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;) + &quot;, &quot; + globalMap.get(&quot;tMDMInput_7_NB_LINE&quot;)"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="((Integer)globalMap.get(&quot;tMDMInput_1_NB_LINE&quot;))==4 &amp;&amp; ((Integer)globalMap.get(&quot;tMDMInput_2_NB_LINE&quot;))==0 &amp;&amp; ((Integer)globalMap.get(&quot;tMDMInput_7_NB_LINE&quot;))==0"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAssert_1"/>
   </node>
@@ -1289,6 +1289,98 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMDMDelete_3"/>
   </node>
+  <node componentName="tMDMInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMInput_7"/>
+    <elementParameter field="COLUMN_LIST" name="XMLFIELD" show="false" value="Key"/>
+    <elementParameter field="CLOSED_LIST" name="SERVERVERSION" show="false" value="s60"/>
+    <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://localhost:8180/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;userName&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="PoLvNyVG2XWndNDdLn696A=="/>
+    <elementParameter field="TEXT" name="CONCEPT" value="&quot;Update&quot;"/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;UpdateReport&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
+    <elementParameter field="CHECK" name="USE_ITEMS" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="Add all the key values below for the item"/>
+    <elementParameter field="TABLE" name="IDS" show="false"/>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="XPATH" value="&quot;Update/UserName&quot;"/>
+      <elementValue elementRef="FUNCTION" value="EQUALS"/>
+      <elementValue elementRef="VALUE" value="&quot;administrator@company.com&quot;"/>
+      <elementValue elementRef="PREDICATE" value="AND"/>
+      <elementValue elementRef="XPATH" value="&quot;Update/Source&quot;"/>
+      <elementValue elementRef="FUNCTION" value="EQUALS"/>
+      <elementValue elementRef="VALUE" value="&quot;TOS&quot;"/>
+      <elementValue elementRef="PREDICATE" value="AND"/>
+      <elementValue elementRef="XPATH" value="&quot;Update/Concept&quot;"/>
+      <elementValue elementRef="FUNCTION" value="EQUALS"/>
+      <elementValue elementRef="VALUE" value="&quot;ProductFamily&quot;"/>
+      <elementValue elementRef="PREDICATE" value="AND"/>
+      <elementValue elementRef="XPATH" value="&quot;Update/OperationType&quot;"/>
+      <elementValue elementRef="FUNCTION" value="EQUALS"/>
+      <elementValue elementRef="VALUE" value="&quot;UPDATE&quot;"/>
+      <elementValue elementRef="PREDICATE" value="NONE"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="SKIP" value="0"/>
+    <elementParameter field="TEXT" name="MAXVALUE" value="0"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="FETCHSIZE" value="50"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY_BASE" show="false" value="&quot;/result&quot;"/>
+    <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/Update&quot;"/>
+    <elementParameter field="TABLE" name="MAPPING">
+      <elementValue elementRef="SCHEMA_COLUMN" value="UserName"/>
+      <elementValue elementRef="QUERY" value="&quot;UserName&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source"/>
+      <elementValue elementRef="QUERY" value="&quot;Source&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TimeInMillis"/>
+      <elementValue elementRef="QUERY" value="&quot;TimeInMillis&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OperationType"/>
+      <elementValue elementRef="QUERY" value="&quot;OperationType&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataCluster"/>
+      <elementValue elementRef="QUERY" value="&quot;DataCluster&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataModel"/>
+      <elementValue elementRef="QUERY" value="&quot;DataModel&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Concept"/>
+      <elementValue elementRef="QUERY" value="&quot;Concept&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Key"/>
+      <elementValue elementRef="QUERY" value="&quot;Key&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="UpdateReport Data"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMDMInput_7">
+      <column comment="" key="false" length="-1" name="UserName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Source" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TimeInMillis" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OperationType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataCluster" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataModel" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Concept" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="UserName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Source" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TimeInMillis" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OperationType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataCluster" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataModel" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Concept" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorXMLField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tAssertCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tAssertCatcher_1" target="tReplicate_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="moment"/>
@@ -1532,11 +1624,8 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_1" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_1" target="tMDMInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk11"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMDMInput_2" target="tMDMDelete_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk17"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMDMInput_2" target="tAssert_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk16"/>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_2" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_2" target="tMDMInput_7">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk28"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_3" offsetLabelX="0" offsetLabelY="0" source="tMDMInput_3" target="tMDMInput_4">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk15"/>
@@ -1555,6 +1644,12 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMDelete_3" offsetLabelX="0" offsetLabelY="0" source="tMDMDelete_3" target="tFixedFlowInput_3">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_7" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMDMInput_7" target="tMDMDelete_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk17"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMInput_7" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMDMInput_7" target="tAssert_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk16"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssertCatcher_1"/>
@@ -1692,13 +1787,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f8b7c3ab-eef5-4859-b1f2-bba646c1c1bb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oyUXhVnJQ7RJvfIuvhaj1ETGYtvMJk2Yw1GxO5uBULIfC6SC+02R36W9idtIAGa0okKQ3MjKDqwE
-g6S5h6MZwQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9af962eb-ab99-4af4-a256-476a2bc94055"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dSrjel2vF6Ett+xIV07Zy7OeHQEjOQCU3GQKtUPItIyqw/hzMXnX8WceEp5AzUTqQtlfIay46h7Y
-f7hyRRC5uA==</DigestValue></Reference></SignedInfo><SignatureValue>awRWPtBBLqGnqi9bh+AM5hPVgJGeVUKsm/L1yC3K5kim0ir5izX8vqWJuq4VK8EObQK/rjx9CI4a
-4c/odvyem2AAREI4S7gj4aSOgwaTp8i+g8RiRzhjUBCh71q1ZPWEFWzaIRf9Ry7GHghhspVfnSe+
-p7l/fyL7K43lMtqShI6i8HgGWWN00JFvc/6pDCXCnQvYrtIrQFaePnTqDDE15xty6++wIa+Ddr18
-RsyrQk2reorXlq68ga5sRkDhXGaUDJCZ+7D+RYXIL/yCYxWxyhfKrh2xA5sSiknsm/dqkyg5Ku1r
-b32A/kqsfL8R+60eEhJiamLS879wHFCgMdy1EA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMInput_7"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8cf25b9e-0d98-4d01-8902-d233960be98c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FNuAXIRkYMKnK+B+UaFRXDGwQH8B/KnGIGm3oYef60krXvdIjKEktZOezF5TiiIPisAYi7g3WiYI
+7tJX1GmMJg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5c3fa41d-33fa-433c-bdd8-7a33cb2ef969"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FznYXhHj6mrQ2VCTWpUvgAozfilkwg8QBLXUOdeEd3xXpgyum/gI4yvSPf3CyWvFCvlJh4R3wGli
+z4ZSeUNDMg==</DigestValue></Reference></SignedInfo><SignatureValue>pOR1p9ksuqXAnVmBioe4CxyGsm1D5mkVKQb3d6HtKuReqi68D0UHmwaXY3wvxZiQaAMc9Y5sM0v8
+4x1Hzbpgds2RZ4Lt0KnNkejhnVjSmkR4+OqhurToJuvXkDpmUgJUeX9Z7ryEt9zl8jasRKN1E9ea
+tlSRc+JzbH/+fr87xjp+Dxd2iQ0yzt84YqBprldr1SRJ4Qs68rmQSp8ErJgJX2hh3SbTX8fDRTJp
+/TxkaNbzHYsZ87UP9jck4GCPtxnYoEl8qCtEjKYDxCy4tjxwZ0r6DMuQo+9ZtT3ROhERbi4Ih8Bt
+JBoFZsT5KXFvgy4mF9bx8rGrQ3qiBCwag+F4cw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1722,4 +1822,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9af962eb-ab99-4af4-a256-476a2bc94055" Target="#_f8b7c3ab-eef5-4859-b1f2-bba646c1c1bb"><Timestamp>2019-01-29 03:41:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5c3fa41d-33fa-433c-bdd8-7a33cb2ef969" Target="#_8cf25b9e-0d98-4d01-8902-d233960be98c"><Timestamp>2019-01-29 08:44:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
