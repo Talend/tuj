@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default">
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="netezza_host" prompt="netezza_host?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="netezza_port" prompt="netezza_port?" promptNeeded="false" type="id_String" value="null"/>
@@ -7,7 +7,7 @@
     <contextParameter comment="" name="netezza_password" prompt="netezza_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="netezza_database" prompt="netezza_database?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="data_output_dir" prompt="data_output_dir?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="D:/Studio Builds/6.1.1/Talend-Studio-20151214_1327-V6.1.1/workspace/full_context_dev.csv"/>
+    <contextParameter comment="" name="param_file_path" prompt="param_file_path?" promptNeeded="false" type="id_String" value="D:/Studio Builds/full_context_dev.csv"/>
     <contextParameter comment="" name="job_dir" prompt="job_dir?" promptNeeded="false" type="id_String" value="/tNetezzaBulkExec_BugTDI26176/"/>
     <contextParameter comment="" name="result_host" prompt="result_host?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_port" prompt="result_port?" promptNeeded="false" type="id_String" value="null"/>
@@ -61,8 +61,8 @@
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning" show="false"/>
     <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" show="false"/>
     <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" show="false"/>
     <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false" show="false"/>
@@ -72,7 +72,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/Studio/Talend-Studio-20151214_1327-V6.1.1/workspace/.metadata&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/Studio Builds/6.5/Talend-Studio-20190126_1540-V6.5.2SNAPSHOT/workspace/.metadata&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
@@ -125,6 +125,8 @@
     <routinesParameter id="_t-RHYAWiEeWfFaRBDGDuaw" name="MDM"/>
     <routinesParameter id="_t-PSMAWiEeWfFaRBDGDuaw" name="SQLike"/>
     <routinesParameter id="_VieasO2bEeiD5NUGy61jGw" name="DataQualityDependencies"/>
+    <routinesParameter id="_K9WuUCPOEempt8S4DPj8PA" name="DataMasking"/>
+    <routinesParameter id="_LBVPYCPOEempt8S4DPj8PA" name="TalendStringUtil"/>
   </parameters>
   <node componentName="tNetezzaBulkExec" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tNetezzaBulkExec_1" show="false"/>
@@ -204,6 +206,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputDelimited_1">
@@ -583,6 +586,7 @@
     <elementParameter field="TEXT" name="DBNAME_JAVADB" value="&quot;&quot;" show="false"/>
     <elementParameter field="DIRECTORY" name="DBROOTPATH" value="&quot;&quot;" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_MSSQL" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="MSSQL_DRIVER" value="JTDS" show="false"/>
     <elementParameter field="CHECK" name="TEMPTABLE" value="false" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_MYSQL" value="" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_MYSQL_VERSION" value="MYSQL_5" show="false"/>
@@ -597,12 +601,15 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_SQLITE" value="" show="false"/>
     <elementParameter field="FILE" name="DBFILE_SQLITE" value="&quot;D:/TOS_DI-r103877-V5.2.3NB/workspace/talend.db&quot;" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_SYBASE" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_SYBASE_VERSION" value="SYBSEIQ_16" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_TERADATA" value="" show="false"/>
     <elementParameter field="TEXT" name="ODBCNAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_GREENPLUM" value="" show="false"/>
     <elementParameter field="CHECK" name="VERTICA_USE_CASCADE" value="true" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERTICA_VERSION" value="vertica_3.0_jdk_5.jar" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION_VERTICA" value="" show="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_EXASOL" value="" show="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_REDSHIFT" value="" show="false"/>
     <elementParameter field="TEXT" name="TABLE" value="&quot;TDI26176_out&quot;+pid"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="netezza_id" show="false"/>
     <elementParameter field="CLOSED_LIST" name="CREATE_TABLE_TYPE" value="SET" show="false"/>
@@ -777,7 +784,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tNetezzaRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="515">
+  <node componentName="tNetezzaRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tNetezzaRow_3" show="false"/>
     <elementParameter field="LABEL" name="NOTE" value="(To use this component, you need first to add nzjdbc.jar in the Modules view)"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
