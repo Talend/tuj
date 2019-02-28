@@ -125,6 +125,10 @@ The Jenkins of TTP for developers is available on https://tal-rd209.talend.lan/j
 
 ![To remember](./images/Jenkins_conf.png) 
 
+4.How to build developer branch
+  When you want to build developer branch to see if there is regression,a same name tuj branch is needed and fill it to TALEND_PARTIAL_GIT_BRANCH.
+  TALEND_GIT_BRANCH is origin/master.
+
 ### Check execution on Colibri
 Once the talend job is terminated, you can access its result into Colibri: https://192.168.11.145/colibri/overview.php
 
