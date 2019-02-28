@@ -116,12 +116,18 @@ The Jenkins of TTP for developers is available on https://tal-rd209.talend.lan/j
 1. Select the `launch-tuj` job and then `Build with parameters`
 1. Full fill properties:
     1. TALEND_GIT_BRANCH: the branch use to build the studio which execute the TUJs.
+       Usually, let `origin/master` since you want to test your development on the latest studio version.
     1. TALEND_REPO: the jenkins tuj repository (_let default value `tuj`_).
     1. JVM_PATH: The path to the TTP jvm  (_let default value `/usr/java/default/bin/java`_).
     1. TALEND_PARTIAL_GIT_BRANCH: the branch that will be checkouted in `TALEND_REPO` (_if not empty_). This branch should contain the TUJs you want to test.
+       This is the branch name where your development has been done. The same branch name should be used in all impacted repositories. So, if you have created a new TUJ to test your development, you must have a branch with this given name in `tuj` repository.
     1. JOBS_FILTER: Filter jobs to run by families
         1. Families are folders where are stored TUJs : https://github.com/Talend/tuj/tree/master/tuj/java
 1. Click on `build` button
+
+**More explanations about `TALEND_PARTIAL_GIT_BRANCH`:**
+*The TTP plateform will try to checkout TALEND_PARTIAL_GIT_BRANCH on all repositories (tuj, tdi-studio-se, tcommon-studio-se, etc...). It will not fail if it doesn't exist. So, if you have a fix on `tdi-studio-se` repo on a branch `someone/TDI-xxx_my_fix`, set `TALEND_PARTIAL_GIT_BRANCH=someone/TDI-xxx_my_fix`. Then TTP will first checkout master on all repositories, then try to checkout `someone/TDI-xxx_my_fix` on all repositories too. This second checkout will succeed on `tdi-studio-se`. So `tuj` repo will stay on master, and the studio will be built with your fix. So, existing TUJ will test your new fix. If you have created a new TUJ to test your development, create a branch named `someone/TDI-xxx_my_fix` in `tuj` repository, and it will be checkouted and then executed.*
+
 
 ![To remember](./images/Jenkins_conf.png) 
 
