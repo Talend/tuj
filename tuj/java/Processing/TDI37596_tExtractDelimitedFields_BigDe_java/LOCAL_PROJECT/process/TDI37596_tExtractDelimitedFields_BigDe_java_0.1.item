@@ -243,7 +243,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="String error_log = (String)globalMap.get(&quot;error_log&quot;);&#xA;&#xA;String pre_log = &quot;Incorrect input \&quot;12345.67891234567a\&quot; for BigDecimal&quot;;&#xA;&#xA;if(error_log.contains(pre_log)){&#xA;&#x9;context.flag = true;&#xA;}&#xA;&#xA;&#xA;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="String input = &quot;12345.67891234567a&quot;;&#xA;String errMsg = null;&#xA;&#xA;try&#xA;{&#xA;&#x9;BigDecimal a = new BigDecimal(input);&#xA;}&#xA;catch (java.lang.NumberFormatException exp)&#xA;{&#xA;&#x9;errMsg = exp.getMessage();&#xA;&#x9;if (errMsg == null)&#xA;&#x9;&#x9;errMsg = &quot;Incorrect input \&quot;&quot; + input + &quot;\&quot; for BigDecimal.&quot;;&#xA;}&#xA;&#xA;String error_log = (String)globalMap.get(&quot;error_log&quot;);&#xA;if(error_log.contains(errMsg)){&#xA;&#x9;context.flag = true;&#xA;}&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
