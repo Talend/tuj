@@ -1,0 +1,14 @@
+package org.talend.survivorship.sample.gbk.regex 
+
+rule "chinese case 1"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "chinese case 1Group"
+when
+    $input : RecordIn( name matches "我"  )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "name", drools.getRule().getName());
+
+end
+
+

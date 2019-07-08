@@ -1,0 +1,14 @@
+package org.talend.survivorship.sample.gbk.expression 
+
+rule "number case"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "number caseGroup"
+when
+    $input : RecordIn( id matches "6"  )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "id", drools.getRule().getName());
+
+end
+
+
