@@ -1,0 +1,531 @@
+Return-Path: <35dsic-bssu-admin02@rescom.interieur.gouv.fr>
+Received: from icasso1.mel35.si.mi (localhost [127.0.0.1])
+	 by icasso1 (Cyrus v2.4.16-Debian-2.4.16-4+deb7u2) with LMTPA;
+	 Fri, 28 Jun 2019 09:27:12 +0200
+X-Sieve: CMU Sieve 2.4
+Received: from /127.0.0.1 (LHLO icasso1.mel35.si.mi) by unknown with LMTP;
+ 6/28/19 7:27 AM
+Received: from icasso1.mel35.si.mi (unknown [127.0.0.1])
+	by icasso1.mel35.si.mi (Postfix) with ESMTP id 01BD572006F;
+	Fri, 28 Jun 2019 09:27:12 +0200 (CEST)
+Received: by icasso1.mel35.si.mi (Postfix, from userid 112)
+	id E8C88720076; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from icasso1.mel35.si.mi (localhost [127.0.0.1])
+	 by icasso1 (Cyrus v2.4.16-Debian-2.4.16-4+deb7u2) with LMTPA;
+	 Fri, 28 Jun 2019 09:27:11 +0200
+X-Sieve: CMU Sieve 2.4
+Received: from /127.0.0.1 (LHLO icasso1.mel35.si.mi) by unknown with LMTP;
+ 6/28/19 7:27 AM
+Received: from icasso1.mel35.si.mi (unknown [127.0.0.1])
+	by icasso1.mel35.si.mi (Postfix) with ESMTP id CA0F7720071
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from smtp-hub.messagerie.si.mi (unknown [10.253.19.215])
+	by icasso1.mel35.si.mi (Postfix) with ESMTPS id BE58972006F
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from av2-hub.dtct-cer.minint.fr (unknown [10.253.19.217])
+	by smtp-hub.messagerie.si.mi (Postfix) with ESMTPS id B8F82E87483
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from av2-hub.dtct-cer.minint.fr (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 972655804E
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from av2-hub.dtct-cer.minint.fr (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 780555803B
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from smtp-hub.messagerie.si.mi (unknown [10.253.19.214])
+	by av2-hub.dtct-cer.minint.fr (Postfix) with ESMTPS
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from rescom4g.interieur.gouv.fr (unknown [10.235.120.67])
+	by smtp-hub.messagerie.si.mi (Postfix) with ESMTPS id 5532F1A8D47F
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+	by rescom4g.interieur.gouv.fr (Postfix) with ESMTP id 42960E0004
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+X-Virus-Scanned: R4G  amavisd-new at rescom4g.interieur.gouv.fr
+Received: from rescom4g.interieur.gouv.fr ([127.0.0.1])
+	by localhost (1sxe00011.si.minint.fr [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id tKgG5rV9LflC for <support-rescom3g@interieur.gouv.fr>;
+	Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from 1sse00400.dtct.minint.fr (core.r4g.si.minint.fr [10.235.120.129])
+	by rescom4g.interieur.gouv.fr (Postfix) with ESMTPS id 2A003E0002
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from 1sge00001.dtct.minint.fr (cyrus.r4g.si.minint.fr [10.235.120.130])
+	(Authenticated sender: admin0)
+	by 1sse00400.dtct.minint.fr (Postfix) with ESMTPSA id 217ADE0002
+	for <support-rescom3g@interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: by 1sge00001.dtct.minint.fr (Postfix, from userid 112)
+	id 172A13240064; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from 1sse00400.dtct.minint.fr (localhost [127.0.0.1])
+	 by 1sge00001 with LMTPA;
+	 Fri, 28 Jun 2019 09:27:11 +0200
+X-Cyrus-Session-Id: cyrus-14349-1561706831-2-18362104022550939097
+X-Sieve: CMU Sieve 3.0
+Received: from /10.235.120.129 (LHLO 1sse00400.dtct.minint.fr) by unknown
+ with LMTP; 6/28/19 7:27 AM
+Received: from rescom4g.interieur.gouv.fr (edge1.r4g.si.minint.fr [10.235.120.67])
+	by 1sse00400.dtct.minint.fr (Postfix) with ESMTPS id 0ED89E0002
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:11 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+	by rescom4g.interieur.gouv.fr (Postfix) with ESMTP id F23C3E0003
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+X-Virus-Scanned: R4G  amavisd-new at rescom4g.interieur.gouv.fr
+Received: from rescom4g.interieur.gouv.fr ([127.0.0.1])
+	by localhost (1sxe00011.si.minint.fr [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id CMZG0HWPaXbc
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>;
+	Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from smtp-hub.messagerie.si.mi (unknown [10.235.108.247])
+	by rescom4g.interieur.gouv.fr (Postfix) with ESMTPS id CCD63E0002
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from av1-hub.dtct-cer.minint.fr (unknown [10.253.19.216])
+	by smtp-hub.messagerie.si.mi (Postfix) with ESMTPS id AA7CAE87483
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from av1-hub.dtct-cer.minint.fr (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 92CF258053
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from av1-hub.dtct-cer.minint.fr (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 73C7558057
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from smtp-hub.messagerie.si.mi (unknown [10.253.19.213])
+	by av1-hub.dtct-cer.minint.fr (Postfix) with ESMTPS
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from proxy.messagerie.si.mi (unknown [10.253.150.31])
+	by smtp-hub.messagerie.si.mi (Postfix) with ESMTPS id 5B5E01A8D483
+	for <35dsic-cer-annuaire@rescom4g.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+Received: from r3g-infra31 (localhost [127.0.0.1])
+	by proxy.messagerie.si.mi (Postfix) with ESMTP id 3F44390069C;
+	Fri, 28 Jun 2019 09:27:10 +0200 (CEST)
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha1"; boundary="----F5E47F8F980C475EB1DC1B42E3D00C19"
+Received: from [] (HELO proxy.messagerie.si.mi) (127.0.0.1)
+    by r3g-infra31 (qpsmtpd/0.84) with ESMTP; ven., 28 06 2019 09:27:09 +0200
+Received: by proxy.messagerie.si.mi (Postfix, from userid 108)
+	id 76B0C90B2BB; Fri, 28 Jun 2019 09:27:09 +0200 (CEST)
+Received: from proxy.messagerie.si.mi ([unix socket])
+	 by r3g-infra31 (Cyrus v2.4.16-Debian-2.4.16-4+deb7u1) with LMTPA;
+	 Fri, 28 Jun 2019 09:27:09 +0200
+Received: from r3g-infra31 (localhost [RESCOM])
+	by proxy.messagerie.si.mi (Postfix) with ESMTP id 601CF9084F8
+	for <35dsic-bssu-annuaire@rescom.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:09 +0200 (CEST)
+Received: from [] (HELO proxy.messagerie.si.mi) (127.0.0.1)
+    by r3g-infra31 (qpsmtpd/0.84) with ESMTP; ven., 28 06 2019 09:27:08 +0200
+Received: from [RESCOM] (unknown [RESCOM])
+	by proxy.messagerie.si.mi (Postfix) with ESMTPSA
+	for <35dsic-bssu-annuaire@rescom.interieur.gouv.fr>; Fri, 28 Jun 2019 09:27:08 +0200 (CEST)
+User-Agent: Thunderbird 2.0.0.23 (Windows/20100107)
+Subject: [TEST] : test avec ldif et p7s pour TALEND
+X-Sieve: CMU Sieve 2.4
+Date: Fri, 28 Jun 2019 09:27:09 +0200
+X-Priority-TTL: 1440
+Message-ID: <5D15C14C.9010607@rescom.interieur.gouv.fr>
+To: 35DSIC BSSU ANNUAIRE <35dsic-bssu-annuaire@rescom.interieur.gouv.fr>
+From: 35dsic-bssu-admin02 <35dsic-bssu-admin02@rescom.interieur.gouv.fr>
+X-Priority-Label: normal
+X-TM-AS-GCONF: 00
+X-Bm-Milter-Handled: 467fd013-9d9f-4440-a5d7-79e99cea309a
+X-Bm-Transport-Timestamp: 1561706831065
+
+This is an S/MIME signed message
+
+------F5E47F8F980C475EB1DC1B42E3D00C19
+Content-type: multipart/mixed; boundary="----------=_1561706829-24299-0"
+
+This is a multi-part message in MIME format...
+
+------------=_1561706829-24299-0
+Content-type: multipart/mixed; boundary="----------=_1561706829-24253-0"
+
+This is a multi-part message in MIME format...
+
+------------=_1561706829-24253-0
+Content-Type: multipart/mixed;
+ boundary="------------090205010104070203020004"
+
+This is a multi-part message in MIME format.
+--------------090205010104070203020004
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+De 35dsic-bssu-admin02@rescom.interieur.gouv.fr num.: 11
+
+Bonjour,
+
+ci-joint un annuaire au format LDIF pour ticket TALEND
+
+
+Pascal
+
+--------------090205010104070203020004
+Content-Type: text/plain;
+ name="test.ldif"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="test.ldif"
+
+dn: dc=local
+description: BlueMind LDAP directory
+objectClass: organization
+objectClass: dcObject
+o: BlueMind
+dc: local
+structuralObjectClass: organization
+entryUUID: d9aaa9e6-c939-1038-933e-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090127Z
+entryCSN: 20190220090127.295600Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090127Z
+contextCSN: 20190319145303.207464Z#000000#000#000000
+
+dn: dc=bm35-deb9.intra,dc=local
+description: bm35-deb9.intra
+objectClass: organization
+objectClass: dcObject
+objectClass: bmDomain
+o: bm35-deb9.intra
+dc: bm35-deb9.intra
+structuralObjectClass: organization
+entryUUID: e79faaec-c939-1038-933f-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+bmVersion: 185
+entryCSN: 20190220090347.434214Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090347Z
+
+dn: ou=users,dc=bm35-deb9.intra,dc=local
+ou: users
+description: bm35-deb9.intra domain users
+objectClass: organizationalUnit
+structuralObjectClass: organizationalUnit
+entryUUID: e7a06694-c939-1038-9340-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.716446Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: ou=groups,dc=bm35-deb9.intra,dc=local
+ou: groups
+description: bm35-deb9.intra domain groups
+objectClass: organizationalUnit
+structuralObjectClass: organizationalUnit
+entryUUID: e7a23ba4-c939-1038-9341-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.728453Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: uid=admin,ou=users,dc=bm35-deb9.intra,dc=local
+mail: admin@bm35-deb9.intra
+givenName: admin
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+cn: admin admin
+sn: admin
+objectClass: inetOrgPerson
+objectClass: bmUser
+bmUid: 21EADF97-6125-4CF7-B8BD-CB2AF20EF5A0
+userPassword:: e1NBU0x9YWRtaW5AYm0zNS1kZWI5LmludHJh
+structuralObjectClass: inetOrgPerson
+uid: admin
+entryUUID: e7a66210-c939-1038-9342-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.755650Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: uid=admin-zdo,ou=users,dc=bm35-deb9.intra,dc=local
+mail: admin-zdo@bm35-deb9.intra
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+cn: admin-zdo
+sn: admin-zdo
+objectClass: inetOrgPerson
+objectClass: bmUser
+bmUid: C09950C7-32FE-4376-B7B4-54C813CC8FF5
+userPassword:: e1NBU0x9YWRtaW4temRvQGJtMzUtZGViOS5pbnRyYQ==
+structuralObjectClass: inetOrgPerson
+uid: admin-zdo
+entryUUID: e7b18bfe-c939-1038-9343-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.828814Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: uid=albert.einstein,ou=users,dc=bm35-deb9.intra,dc=local
+mail: albert.einstein@bm35-deb9.intra
+givenName: Albert
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+cn: Albert EINSTEIN
+sn: EINSTEIN
+objectClass: inetOrgPerson
+objectClass: bmUser
+bmUid: DB3CEF55-A71F-49E8-91D9-DC621FBF147C
+userPassword:: e1NBU0x9YWxiZXJ0LmVpbnN0ZWluQGJtMzUtZGViOS5pbnRyYQ==
+structuralObjectClass: inetOrgPerson
+uid: albert.einstein
+entryUUID: e7b4041a-c939-1038-9344-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+carLicense: ma-liste-nr-1
+carLicense: 00bcfpaf
+entryCSN: 20190404082855.597469Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190404082855Z
+
+dn: uid=marie.curie,ou=users,dc=bm35-deb9.intra,dc=local
+mail: marie.curie@bm35-deb9.intra
+givenName: Marie
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+cn: Marie CURIE
+sn: CURIE
+objectClass: inetOrgPerson
+objectClass: bmUser
+bmUid: 3FFA8392-16EB-4011-97FD-7812012653B3
+userPassword:: e1NBU0x9bWFyaWUuY3VyaWVAYm0zNS1kZWI5LmludHJh
+structuralObjectClass: inetOrgPerson
+uid: marie.curie
+entryUUID: e7b799ea-c939-1038-9345-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.868493Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: uid=ada.lovelace,ou=users,dc=bm35-deb9.intra,dc=local
+mail: ada.lovelace@bm35-deb9.intra
+givenName: Ada
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+cn: Ada LOVELACE
+sn: LOVELACE
+objectClass: inetOrgPerson
+objectClass: bmUser
+bmUid: EA5EFE2A-90B5-40FC-800D-0311B7F7E9C4
+userPassword:: e1NBU0x9YWRhLmxvdmVsYWNlQGJtMzUtZGViOS5pbnRyYQ==
+structuralObjectClass: inetOrgPerson
+uid: ada.lovelace
+entryUUID: e7b9bac2-c939-1038-9346-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.882439Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: uid=ambroise.pare,ou=users,dc=bm35-deb9.intra,dc=local
+mail: ambroise.pare@bm35-deb9.intra
+givenName: Ambroise
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+cn: Ambroise PARE
+sn: PARE
+objectClass: inetOrgPerson
+objectClass: bmUser
+bmUid: 3077C746-177E-415E-92BA-B6BF8B017025
+userPassword:: e1NBU0x9YW1icm9pc2UucGFyZUBibTM1LWRlYjkuaW50cmE=
+structuralObjectClass: inetOrgPerson
+uid: ambroise.pare
+entryUUID: e7bfa90a-c939-1038-9347-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.921301Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+dn: uid=pascal.salaun,ou=users,dc=bm35-deb9.intra,dc=local
+mail: pascal.salaun@bm35-deb9.intra
+telephoneNumber: +33 1 23 45 67 89
+jpegPhoto:: iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhk
+ iAAAAAlwSFlzAAAHzAAAB8wBK+h4IgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5v
+ uPBoAAAKMSURBVEiJtVXBShtRFD33vfvuZKItY9WEQBEtuEgWIoWi6N6VH+BX+BFu3fQD1K0rdx
+ ZciSio0FVdzEaCoaAm0TSQtE2N8b0ujGIkMxFCzm7uveedd+69M0NbW1tflVLfMQBYa7+wMebH8
+ vLyt0EI7O7uChtjxPO8oUEIeJ5n2BgjrVarp8Dm5ub48fFxxjlHs7OzpdXV1WIvjlJKWCklSqlk
+ XOHa2tqn/f39z0/PhUIBl5eX4fr6ethTgJnFWhvrIAzDnO/78jKWz+ezzWbzJzO7KJ6IGGZmUUp
+ FCpydnQ01m81x3/dfp7yDg4OPS0tLv2IdEFGsg9vb2w+JREK65Wq12oi19i6Kq7UWZmYTNwMR8U
+ Wkq0AikfDjuFprw1prcc5FOkin0ywiXrfc2NgYx3GVUsIAPCKKLJqensbk5OTd1dXVu5fxIAj+z
+ c/P3wOI5BLRY4ucc7FrOjU11by5uelo08TERK0Xj5kNE1Gsg3ahb4zpaJOI+L14RCQMIHYGAKCU
+ ShpjOhwQkf8GnrDW2kTdJJ/P+0dHR6OFQmHYGNORu7i4SG1sbAwvLi5WcrncnwiNx0/F616GYZg
+ 8OTkZub6+9gFAa92VXSwWZWdnJzg8PLybm5urzszM/FZKvXRgmIgE7U1oNBpqe3s7XS6XPQBg5r
+ gOPKNarXp7e3vvT09P71dWVkpBELSeBZRSBgABwPn5ebJSqQxH3bgX6vW6CcNwdGFhod4OERORB
+ 8ADAGutz8xdX6q3wlqbBGDbDlpPLTIAQEQJrXVfAlrrBwCufd5fBiAAkgCQzWYplUrd9yMQBIFG
+ e6ZE1GKl1LOAiCCTyfRzfgeIqNGxRQNAnUul0oNzLvKn0Q/K5bL7D9ddzgDKtkW0AAAAAElFTkS
+ uQmCC
+postalAddress: 1 le DANE
+cn: Pascal SALAUN
+l: BAIN DE BRETAGNE
+objectClass: inetOrgPerson
+objectClass: bmUser
+userPassword:: e1NBU0x9cGFzY2FsLnNhbGF1bkBibTM1LWRlYjkuaW50cmE=
+registeredAddress: 1 le DANE$BAIN DE BRETAGNE, 35470
+givenName: Pascal
+postalCode: 35470
+street: 1 le DANE
+sn: SALAUN
+bmUid: D393C849-B86B-4EFE-8B46-41EC82C8632A
+structuralObjectClass: inetOrgPerson
+uid: pascal.salaun
+entryUUID: e7c6771c-c939-1038-9349-1752330c225f
+creatorsName: uid=admin,dc=local
+createTimestamp: 20190220090150Z
+entryCSN: 20190220090150.965906Z#000000#000#000000
+modifiersName: uid=admin,dc=local
+modifyTimestamp: 20190220090150Z
+
+
+--------------090205010104070203020004--
+
+------------=_1561706829-24253-0
+Content-Type: text/plain
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+X-Mailer: MIME-tools 5.420 (Entity 5.420)
+
+Date et heure garanties :28/06/2019 09:27:09 
+
+------------=_1561706829-24253-0--
+
+------------=_1561706829-24299-0
+Content-Type: text/plain
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+X-Mailer: MIME-tools 5.420 (Entity 5.420)
+
+Date et heure garanties :28/06/2019 09:27:09 
+
+------------=_1561706829-24299-0--
+
+------F5E47F8F980C475EB1DC1B42E3D00C19
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIHMwYJKoZIhvcNAQcCoIIHJDCCByACAQExCzAJBgUrDgMCGgUAMAsGCSqG
+SIb3DQEHAaCCBIEwggR9MIIDZaADAgECAgh9kAO9mVvPIDANBgkqhkiG9w0B
+AQUFADBsMTYwNAYJKoZIhvcNAQkBFidzdXBwb3J0LWlnY21lc3NhZ2VyaWVA
+aW50ZXJpZXVyLmdvdXYuZnIxFDASBgNVBAMMC0FDUHJveHkyMDEzMQ8wDQYD
+VQQKDAZyZXNjb20xCzAJBgNVBAYTAmZyMB4XDTE5MDYxOTEwNTAyN1oXDTIw
+MTIxODExMDAyN1owgd4xOzA5BgkqhkiG9w0BCQEWLDM1ZHNpYy1ic3N1LWFk
+bWluMDJAcmVzY29tLmludGVyaWV1ci5nb3V2LmZyMSMwIQYKCZImiZPyLGQB
+AQwTMzVkc2ljLWJzc3UtYWRtaW4wMjEcMBoGA1UEAwwTMzVkc2ljLWJzc3Ut
+YWRtaW4wMjEcMBoGA1UEBAwTMzVkc2ljLWJzc3UtYWRtaW4wMjETMBEGA1UE
+CwwKTWVzc2FnZXJpZTELMAkGA1UECgwCTUkxDzANBgNVBAgMBkZyYW5jZTEL
+MAkGA1UEBhMCRlIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCH
+fG8PC0MJD6Nlslv8jVF5OXzSOzY/TmgAfE/lPHAjB5uADcj8XH24XxhfD3IS
+psLmzhJlma5nz+JuLTH6uBRsVSwUn/s5cQ2c26NF8z+vhT/eAw+dwsYw5MZ7
+PdDLrFkJYoqipuxMgXOD2EVm2iEGlrrbm9xOJ7ertjtaiYp860+oVRh7UE/1
+AMGzQc1wf/Tr6xfkRQoYALWxdmVNeNahaONDfY8Ac/+b0E1v2/1Uq6D/W5aM
+6x3cwEStgJIKOyjf+QtGA+v5ViYI6bGnMToX27x9NutWbbq49lwFQHMtpFeq
++XpECz4I1QLgo26/Ov9pT6hQQE5+B7xXbJZ2ag3nAgMBAAGjga8wgawwDAYD
+VR0TAQH/BAIwADAOBgNVHQ8BAf8EBAMCA6gwEwYDVR0lBAwwCgYIKwYBBQUH
+AwQwHQYDVR0OBBYEFCnsp7cl/d+eziIrwp1ctEqHbox3MB8GA1UdIwQYMBaA
+FGM/NKTRwOPRpo2PlXn0ql5tvYBJMDcGA1UdEQQwMC6BLDM1ZHNpYy1ic3N1
+LWFkbWluMDJAcmVzY29tLmludGVyaWV1ci5nb3V2LmZyMA0GCSqGSIb3DQEB
+BQUAA4IBAQBHAZVWJ61CFGBW2KamQB5I0U5LHo67Uc5S8+Pqhv2fF+kpDsay
+QE99ezR0fQjCSQX7KfrTDRU6418us/Hrx0k62+jOTCdF0BGzFvWEgg5G3f4l
+ov5lndTLjJcgSKbWMYvh+3m8E+aaWTV5LdqlqGkaJDy1v1UDY//Lvxr+P3Uz
+GHbudFfa8jYU5pm01VlXwq1HVveQvNzMHSnOlWprEBpmW2YzdStttn5HrNyA
+YNuSdvQ8KMe80rb/nZUUK/VkYjK5/swh3JeTctlwApfvgZJq30ljjb+9Z05d
+fXWIioVa7nTE3DDMav66NZtJposFqZBChSX4THOgCEo+rkjhpe2NMYICejCC
+AnYCAQEweDBsMTYwNAYJKoZIhvcNAQkBFidzdXBwb3J0LWlnY21lc3NhZ2Vy
+aWVAaW50ZXJpZXVyLmdvdXYuZnIxFDASBgNVBAMMC0FDUHJveHkyMDEzMQ8w
+DQYDVQQKDAZyZXNjb20xCzAJBgNVBAYTAmZyAgh9kAO9mVvPIDAJBgUrDgMC
+GgUAoIHYMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkF
+MQ8XDTE5MDYyODA3MjcxMFowIwYJKoZIhvcNAQkEMRYEFI+TB7VbsXKf3vwq
+KajacDAPLnDnMHkGCSqGSIb3DQEJDzFsMGowCwYJYIZIAWUDBAEqMAsGCWCG
+SAFlAwQBFjALBglghkgBZQMEAQIwCgYIKoZIhvcNAwcwDgYIKoZIhvcNAwIC
+AgCAMA0GCCqGSIb3DQMCAgFAMAcGBSsOAwIHMA0GCCqGSIb3DQMCAgEoMA0G
+CSqGSIb3DQEBAQUABIIBADq7uAtokdZb6xGCMHyGJ+rMl7l9C/9tQfY1cqPw
+Sh3KcpS4OyU1wkcnpoN5fGL5m6iQ3AFgGaGVR4QZ6G7NmlqhvBoe1qMzp6en
+e8Y6qCvP4x9wR203e/nfsq/waJlgyEhTdXuVdv8HzD+Dzx3b5DzwZMCzVJ0r
+1shQXXtXO/LPBpYWPJTQ+CZFnmVkHHzGA3ykRnD4llShvw2IzaqG9+hVGxVi
+Fwe+7zXiqwXsP3NVKgvs4SpYV9c4q3zq+AWAf2UDHP9mSrsNeVDkHtTbUYKH
+5yco9Ax8EEBqoHh5M1FZD8Qd9C5A680c1Szdxr8U1FghkgRVCnJuTVYh9NFP
+biw=
+
+------F5E47F8F980C475EB1DC1B42E3D00C19--
+
