@@ -13,9 +13,9 @@
     <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value=""/>
     <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value=""/>
     <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" type="id_String" value="d:/tuj"/>
-    <contextParameter comment="" name="mdm_viewsearch_true" prompt="mdm_viewsearch_true?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="mdm_viewsearch_false" prompt="mdm_viewsearch_false?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" name="mdm_viewsearch_others" prompt="mdm_viewsearch_others?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="mdm_viewsearch_true" prompt="mdm_viewsearch_true?" promptNeeded="false" type="id_String" value="true"/>
+    <contextParameter comment="" name="mdm_viewsearch_false" prompt="mdm_viewsearch_false?" promptNeeded="false" type="id_String" value="false"/>
+    <contextParameter comment="" name="mdm_viewsearch_others" prompt="mdm_viewsearch_others?" promptNeeded="false" type="id_String" value="others"/>
     <contextParameter comment="" name="mdm_viewsearch_empty" prompt="mdm_viewsearch_empty?" promptNeeded="false" type="id_String" value=""/>
   </context>
   <parameters>
@@ -866,14 +866,12 @@
       <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="32">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
   <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="FILE" name="FILENAME" show="false" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1/in.csv&quot;"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;"/>
     <elementParameter field="TEXT" name="PATH" show="false" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1/delete_folder or delete_file&quot;"/>
@@ -887,7 +885,6 @@
   </node>
   <node componentName="tMDMClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1184" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMClose_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Close Connection&lt;/b&gt;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -2146,7 +2143,7 @@
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
     <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Condition1 True or, Condition 2 False and, Condition3 Custom active True&lt;/b&gt;"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Condition1 True or, Condition 2 False or, Condition3 Custom active True and&lt;/b&gt;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputDelimited_10">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -2279,7 +2276,7 @@
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
     <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Condition1 True or, Condition 2 False and, Condition3 Custom active True&lt;/b&gt;"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Condition1 True or, Condition 2 Custom active True and, Condition3 False and&lt;/b&gt;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputDelimited_11">
       <column comment="" key="true" length="-1" name="id" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -2504,11 +2501,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk8"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tFileDelete_1">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFileDelete_1" offsetLabelX="0" offsetLabelY="0" source="tFileDelete_1" target="tMDMClose_1">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk6"/>
   </connection>
   <connection connectorName="FLOW" label="row9" lineStyle="0" metaname="tAssertCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tAssertCatcher_1" target="tReplicate_1">
@@ -3230,13 +3225,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8967ff9e-eb36-4a1b-a8fa-5f88b5ff19ce"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PzTF03YVN0uGOKoDbUhfkpIedfm5p+nZXk4lTrfHa8LKzoNKAsS/MeN4PC5rJ5UZnNaSlSQmgNcR
-13Z3xPY0Dw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7b5b1819-9a20-4c9a-b723-07e11bd11576"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Pw4uNVSojQLw3DNnEO0aDatRRNNM8RJw37jqN6eS2ItWHv6DFeYsTNT4XDZW/idL6bP2j/5Xp+B1
-dCH/Ds/XQg==</DigestValue></Reference></SignedInfo><SignatureValue>KmbjjpxQHXIhKBevhfcaXsv3OgQHShLMFQmIeN8E75CCcrqKwQUon6cw9RAinkN8PwiTg6WIogkX
-kt1YoZzT/EgJfMT/3l4ctOvwAkjp7cPingWT1WEF67Y2Nx7y3gSstkEJghM+qWETSn5tIBgEIXnr
-sKm1CSNmHAxs2uWmLuhyBGZXBxz0VaDa5AYdmvwPMBRgw2cmBNOpK40Ylunb+pr/Hg54HkUcFoYv
-fpLnMec7wClCxt+dXJgH92FvB9j9m+ANSYpehaUqG99K5pOmTYQfqIaC5Q0td8S3XRfVBdHwNMjT
-QTiLGqpeRb3UawksfamPHrENb36C/4VWbtdxZw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_954c4fd0-56fa-4a4e-932b-23dc18f27a69"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>kwu8u5s2pAz6FvBxzyHZ23IqtoEyaOsyh7TDn91Zz4eKvQECemZcJSQeTiDZEjLUkopRruEi/FES
+YcZJqAOwCA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_68febb3c-c9c1-4143-9a5a-d574197d7c62"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fZ2TTwf24knIfmsT5RHO6fSkmKdcITZfU/X5u2OlW3lzmZKas2yrvcl3fkyk3wgO8zr9SmoSaqGG
+1Q02nZxxCA==</DigestValue></Reference></SignedInfo><SignatureValue>b/MlO1T4uttaM0fAHwb50U70u927pQbjtypdgyIt9EWcERoJiTnnTpQYAjdSMvKjQZIxiBp5E3io
+n4N7AgrQ5hUGkHgBt9A2xwpaeIYzZhEF6f8EOryAcbXsF/6BGaBXNP/XB2NzXv3YpFZb9upmbYQD
+uG5gNJj4ljSaENOTcT48AZpiXoKrBGX+o5NW2vzXCHyK4r21+U0ZjdUYb2b/NHIn8tuOvR6+2hIp
+wm41I103oCe3wc3DjATsqToB9KAEt7ihHDUbDQgEG4B2OYPRuB1q6waOfs3fBigKZKxs5YokdTSh
+fLm5x9viDbxmdNua7Oai8tQsxX8PItK+3F1Nvg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -3258,4 +3253,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7b5b1819-9a20-4c9a-b723-07e11bd11576" Target="#_8967ff9e-eb36-4a1b-a8fa-5f88b5ff19ce"><Timestamp>2019-08-06 08:10:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_68febb3c-c9c1-4143-9a5a-d574197d7c62" Target="#_954c4fd0-56fa-4a4e-932b-23dc18f27a69"><Timestamp>2019-08-06 10:03:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
