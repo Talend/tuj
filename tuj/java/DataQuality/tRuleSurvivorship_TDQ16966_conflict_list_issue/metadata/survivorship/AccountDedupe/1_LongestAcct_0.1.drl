@@ -1,0 +1,14 @@
+package AccountDedupe 
+
+rule "1_LongestAcct"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "1_LongestAcctGroup"
+when
+    $input : RecordIn( dataset.isLongest( acctname, "acctName", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "acctName", drools.getRule().getName());
+
+end
+
+

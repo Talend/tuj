@@ -1,0 +1,14 @@
+package AccountDedupe 
+
+rule "5_MostCommonPhone"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "5_MostCommonPhoneGroup"
+when
+    $input : RecordIn( dataset.isMostCommon( phone, "phone", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "phone", drools.getRule().getName());
+
+end
+
+

@@ -1,0 +1,14 @@
+package AccountDedupe 
+
+rule "3_MostCommonCity"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "3_MostCommonCityGroup"
+when
+    $input : RecordIn( dataset.isMostCommon( city, "city", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "city", drools.getRule().getName());
+
+end
+
+

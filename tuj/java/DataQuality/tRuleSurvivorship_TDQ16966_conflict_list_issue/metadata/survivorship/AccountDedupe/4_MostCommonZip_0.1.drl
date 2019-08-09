@@ -1,0 +1,16 @@
+package AccountDedupe 
+
+rule "4_MostCommonZip"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "4_MostCommonZipGroup"
+when
+    $input : RecordIn( dataset.isMostCommon( zip, "zip", false), zip matches "\\d{5}(-\\d{4})?"  )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "zip", drools.getRule().getName());
+    dataset.survive( $input.TALEND_INTERNAL_ID, "state", drools.getRule().getName());
+    dataset.survive( $input.TALEND_INTERNAL_ID, "country", drools.getRule().getName());
+
+end
+
+

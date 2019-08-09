@@ -1,0 +1,14 @@
+package AccountDedupe 
+
+rule "2_LongestAddr"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "2_LongestAddrGroup"
+when
+    $input : RecordIn( dataset.isLongest( addr, "addr", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "addr", drools.getRule().getName());
+
+end
+
+
