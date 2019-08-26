@@ -597,7 +597,7 @@
       <column comment="" key="false" length="-1" name="URL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Id " name="Id" nullable="true" type="id_String"/>
@@ -751,7 +751,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_1"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_1.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_1_reference.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_11_reference.csv&quot;"/>
     <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_1] Files differ&quot;"/>
     <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_1]  Files are identical&quot;"/>
     <elementParameter field="CHECK" name="PRINT" value="true"/>
@@ -771,7 +771,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_1"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;1 Active True ok.&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_1 OK&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row15.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 1&lt;/b&gt;&lt;br&gt;Identical"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -792,7 +792,7 @@
   <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
     <elementParameter field="FILE" name="FILENAME" show="false" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1/in.csv&quot;"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out1/&quot;"/>
     <elementParameter field="TEXT" name="PATH" show="false" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1/delete_folder or delete_file&quot;"/>
     <elementParameter field="CHECK" name="FAILON" value="false"/>
     <elementParameter field="CHECK" name="FOLDER" value="true"/>
@@ -993,49 +993,11 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="640">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_2"/>
-    <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
-    <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_2.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_2_reference.csv&quot;"/>
-    <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_2] Files differ&quot;"/>
-    <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_2]  Files are identical&quot;"/>
-    <elementParameter field="CHECK" name="PRINT" value="true"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Compare&lt;/b&gt;&lt;br&gt;Output and reference"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileCompare_2">
-      <column key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="640">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_2"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;2 Active False ok.&quot;"/>
-    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row8.differ == 0"/>
-    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 2&lt;/b&gt;&lt;br&gt;Identical"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAssert_2">
-      <column defaultValue="" key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
   <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="768">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_3"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_3.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_3_reference.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_11_reference.csv&quot;"/>
     <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_3] Files differ&quot;"/>
     <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_3]  Files are identical&quot;"/>
     <elementParameter field="CHECK" name="PRINT" value="true"/>
@@ -1055,7 +1017,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="768">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_3"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;3 Custom Active True ok.&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_3 OK.&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row16.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 3&lt;/b&gt;&lt;br&gt;Identical"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -1073,7 +1035,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_4"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_4.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_4_reference.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_11_reference.csv&quot;"/>
     <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_4] Files differ&quot;"/>
     <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_4]  Files are identical&quot;"/>
     <elementParameter field="CHECK" name="PRINT" value="true"/>
@@ -1093,7 +1055,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="928">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_4"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;4. Custom Active False ok.&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_4 OK&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row19.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 4&lt;/b&gt;&lt;br&gt;Identical"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -1111,7 +1073,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_5"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_5.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_5_reference.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_all_reference.csv&quot;"/>
     <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_5] Files differ&quot;"/>
     <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_5]  Files are identical&quot;"/>
     <elementParameter field="CHECK" name="PRINT" value="true"/>
@@ -1131,7 +1093,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_5"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;5 Custom Active empty ok.&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_5 OK&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row22.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 5&lt;/b&gt;&lt;br&gt;Identical"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -1149,7 +1111,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_6"/>
     <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
     <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_6.csv&quot;"/>
-    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_6_reference.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_231035936_reference.csv&quot;"/>
     <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_6] Files differ&quot;"/>
     <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_6]  Files are identical&quot;"/>
     <elementParameter field="CHECK" name="PRINT" value="true"/>
@@ -1169,7 +1131,7 @@
   </node>
   <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="1216">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_6"/>
-    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;6. Custom Active others ok.&quot;"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_6 OK&quot;"/>
     <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row27.differ == 0"/>
     <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 6&lt;/b&gt;&lt;br&gt;Identical"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -1702,28 +1664,28 @@
     <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
     <elementParameter field="TEXT" name="VIEWNAME" value="&quot;Browse_items_Product10&quot;"/>
     <elementParameter field="TABLE" name="OPERATIONS">
-      <elementValue elementRef="XPATH" value="&quot;Product10/Id&quot;"/>
-      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
-      <elementValue elementRef="VALUE" value="&quot;1&quot;"/>
-      <elementValue elementRef="PREDICATE" value="OR"/>
-      <elementValue elementRef="ACTIVE" value="TRUE"/>
-      <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
       <elementValue elementRef="XPATH" value="&quot;Product10/Name&quot;"/>
       <elementValue elementRef="FUNCTION" value="CONTAINS"/>
-      <elementValue elementRef="VALUE" value="&quot;test&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;Talend&quot;"/>
       <elementValue elementRef="PREDICATE" value="OR"/>
       <elementValue elementRef="ACTIVE" value="TRUE"/>
       <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
       <elementValue elementRef="XPATH" value="&quot;Product10/Family&quot;"/>
       <elementValue elementRef="FUNCTION" value="CONTAINS"/>
       <elementValue elementRef="VALUE" value="&quot;1&quot;"/>
+      <elementValue elementRef="PREDICATE" value="OR"/>
+      <elementValue elementRef="ACTIVE" value="TRUE"/>
+      <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
+      <elementValue elementRef="XPATH" value="&quot;Product10/Id&quot;"/>
+      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
+      <elementValue elementRef="VALUE" value="&quot;231035934&quot;"/>
       <elementValue elementRef="PREDICATE" value="NOT"/>
       <elementValue elementRef="ACTIVE" value="TRUE"/>
       <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
       <elementValue elementRef="XPATH" value="&quot;Product10/Price&quot;"/>
-      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
-      <elementValue elementRef="VALUE" value="&quot;1&quot;"/>
-      <elementValue elementRef="PREDICATE" value="AND"/>
+      <elementValue elementRef="FUNCTION" value="GREATER_THAN"/>
+      <elementValue elementRef="VALUE" value="&quot;13&quot;"/>
+      <elementValue elementRef="PREDICATE" value="NONE"/>
       <elementValue elementRef="ACTIVE" value="TRUE"/>
       <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
     </elementParameter>
@@ -1787,6 +1749,183 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputDelimited_6">
       <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMDMViewSearch" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="1344">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMViewSearch_7"/>
+    <elementParameter field="COLUMN_LIST" name="XMLFIELD" value="id"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="SERVERVERSION" show="false" value="s60"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://localhost:8180/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;administrator@company.com&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="fmyLBcXusWxdAhEGcREikA=="/>
+    <elementParameter field="TEXT" name="DATACLUSTER" value="&quot;Product10&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="CONTAINER_TYPE" value="MASTER"/>
+    <elementParameter field="TEXT" name="VIEWNAME" value="&quot;Browse_items_Product10&quot;"/>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="XPATH" value="&quot;Product10/Id&quot;"/>
+      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
+      <elementValue elementRef="VALUE" value="&quot;1&quot;"/>
+      <elementValue elementRef="PREDICATE" value="NONE"/>
+      <elementValue elementRef="ACTIVE" value="TRUE"/>
+      <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
+      <elementValue elementRef="XPATH" value="&quot;Product10/Name&quot;"/>
+      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
+      <elementValue elementRef="VALUE" value="&quot;test&quot;"/>
+      <elementValue elementRef="PREDICATE" value="OR"/>
+      <elementValue elementRef="ACTIVE" value="TRUE"/>
+      <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
+      <elementValue elementRef="XPATH" value="&quot;Product10/Family&quot;"/>
+      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
+      <elementValue elementRef="VALUE" value="&quot;1&quot;"/>
+      <elementValue elementRef="PREDICATE" value="OR"/>
+      <elementValue elementRef="ACTIVE" value="TRUE"/>
+      <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
+      <elementValue elementRef="XPATH" value="&quot;Product10/Price&quot;"/>
+      <elementValue elementRef="FUNCTION" value="CONTAINS"/>
+      <elementValue elementRef="VALUE" value="&quot;1&quot;"/>
+      <elementValue elementRef="PREDICATE" value="AND"/>
+      <elementValue elementRef="ACTIVE" value="TRUE"/>
+      <elementValue elementRef="CUSTOM_ACTIVE" value=""/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="ORDER_TABLE"/>
+    <elementParameter field="TEXT" name="SPELLTHREHOLD" value="-1"/>
+    <elementParameter field="TEXT" name="SKIP" value="0"/>
+    <elementParameter field="TEXT" name="MAXVALUE" value="-1"/>
+    <elementParameter field="TEXT" name="FETCHSIZE" value="-1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMDMViewSearch_7">
+      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="1344">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSortRow_7"/>
+    <elementParameter field="TABLE" name="CRITERIA">
+      <elementValue elementRef="COLNAME" value="id"/>
+      <elementValue elementRef="SORT" value="alpha"/>
+      <elementValue elementRef="ORDER" value="asc"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="EXTERNAL" value="false"/>
+    <elementParameter field="DIRECTORY" name="TEMPFILE" show="false" value="&quot;/Users/ctoum/Talend/Talend-5.2.1-final/studio/Talend-Studio-r95165-V5.2.1/workspace/temp&quot;"/>
+    <elementParameter field="CHECK" name="CREATEDIR" show="false" value="true"/>
+    <elementParameter field="TEXT" name="EXTERNAL_SORT_BUFFERSIZE" show="false" value="1000000"/>
+    <elementParameter field="TEXT" name="LABEL" value="SortOnIds"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSortRow_7">
+      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="-43" offsetLabelY="37" posX="576" posY="1344">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_7"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_7.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;ViewSearch_7_results&lt;/b&gt;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_7">
+      <column comment="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="1344">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_7"/>
+    <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
+    <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_7.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_11_reference.csv&quot;"/>
+    <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_7] Files differ&quot;"/>
+    <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_7]  Files are identical&quot;"/>
+    <elementParameter field="CHECK" name="PRINT" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Compare&lt;/b&gt;&lt;br&gt;Output and reference"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileCompare_7">
+      <column key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="1344">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_7"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_7 OK&quot;"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row30.differ == 0"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 7&lt;/b&gt;&lt;br&gt;Identical"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAssert_7">
+      <column defaultValue="" key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileCompare" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="640">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_2"/>
+    <elementParameter field="CLOSED_LIST" name="COMPARISON_MODE" value="TEXT_CMP"/>
+    <elementParameter field="FILE" name="FILE" value="context.data_output_dir + &quot;/&quot; + jobName + &quot;/out/&quot;+ &quot;ViewSearchMultipleOperations_1.csv&quot;"/>
+    <elementParameter field="FILE" name="FILE_REF" value="context.data_dir + &quot;/&quot;+ jobName + &quot;/ViewSearchMultipleOperations_results_11_reference.csv&quot;"/>
+    <elementParameter field="TEXT" name="DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_1] Files differ&quot;"/>
+    <elementParameter field="TEXT" name="NO_DIFFER_MESSAGE" value="&quot;[job &quot; + jobName + &quot; sub job ViewSearch_1]  Files are identical&quot;"/>
+    <elementParameter field="CHECK" name="PRINT" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Compare&lt;/b&gt;&lt;br&gt;Output and reference"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileCompare_2">
+      <column key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAssert" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="640">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAssert_2"/>
+    <elementParameter field="TEXT" name="DESCRIPTION" value="&quot;tMDMViewSearch_2 OK&quot;"/>
+    <elementParameter field="MEMO_JAVA" name="EXPRESSION" value="row8.differ == 0"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b&gt;Assert 2&lt;/b&gt;&lt;br&gt;Identical"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAssert_2">
+      <column defaultValue="" key="false" length="255" name="file" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="file_ref" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="job" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="component" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="differ" nullable="true" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tContextLoad_1">
@@ -1890,6 +2029,9 @@
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" outputId="6" source="tFixedFlowInput_3" target="tMDMViewSearch_6">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk10"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" outputId="7" source="tFixedFlowInput_3" target="tMDMViewSearch_7">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk17"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="8" metaname="tMDMRestInput_1" offsetLabelX="0" offsetLabelY="0" source="tMDMRestInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -2096,33 +2238,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row12"/>
   </connection>
-  <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tFileCompare_2" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_2" target="tAssert_2">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="file"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="file_ref"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="moment"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="job"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="component"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="differ"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="message"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
-  </connection>
   <connection connectorName="FLOW" label="row16" lineStyle="0" metaname="tFileCompare_3" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_3" target="tAssert_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="file"/>
@@ -2297,6 +2412,25 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row26"/>
   </connection>
+  <connection connectorName="FLOW" label="row28" lineStyle="0" metaname="tMDMViewSearch_7" offsetLabelX="0" offsetLabelY="0" source="tMDMViewSearch_7" target="tSortRow_7">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row28"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMDMViewSearch_7" offsetLabelX="0" offsetLabelY="0" source="tMDMViewSearch_7" target="tFileCompare_7">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk18"/>
+  </connection>
+  <connection connectorName="FLOW" label="row29" lineStyle="0" metaname="tSortRow_7" offsetLabelX="0" offsetLabelY="0" source="tSortRow_7" target="tFileOutputDelimited_7">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row29"/>
+  </connection>
+  <connection connectorName="FLOW" label="row30" lineStyle="0" metaname="tFileCompare_7" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_7" target="tAssert_7">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row30"/>
+  </connection>
+  <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tFileCompare_2" offsetLabelX="0" offsetLabelY="0" source="tFileCompare_2" target="tAssert_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
@@ -2366,11 +2500,6 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_3"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
@@ -2432,13 +2561,30 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fa1ae70e-b559-4538-bba3-40175d861e67"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jScCvlYuw9uFOH13+GWl22PWeKpNvcp5khDlq0Zhcp4tvoKdBR0qdHs5DtMrHF8RxouSgrhdYtli
-HFiL2m40rA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_baa17dba-251e-463f-850a-48207a958238"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vuNrXElwIRONJV8nD7qj8PTftnMVfJ1C6Lh34Sd+qYQq6dZTTyguq3L77mKtoPJVaX2jP2VjkPns
-bsEJYm2iiw==</DigestValue></Reference></SignedInfo><SignatureValue>T4GpAnUS/vzDGT0zUGN0wpVsGQbswxMnO2QEkBWDCKLSgc+X0Rz1Vye1TLZ6DW4U7gf9piprssrz
-2XPuUNziFsdiMXmz/8GJHE6vr2FnD0KHggYDYt42Y5XFe0AqoJCaARYU2eovYLOpShBNgPPao0Ft
-P9e88F62ihyLMctKziVufL0TmZd0lb5qJCXp690MmsIuRX4OheJx1t6LDB/jc4LK43zgOh0BdlcF
-NSvuO3v4x2Hps34H9+FvkKNhjrewQV2O2+1W9KsKrScWr5mAMStM7Rxtz6//G42pzqHQsVlaejLR
-k34izAMymGMMxuA35eg7j5IDfa0azpJqMlDtAg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMViewSearch_7"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="A None b Or c Or d And"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_7"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileCompare_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_05c7d3c4-6c78-4973-a193-ddb2019b8e2a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WWpVWRpZq6sM2CUP4qyl2yfcPxDenwmJafDpfonnRmal6T3Up2+JnOtlUNQjA9JagVZIOR1I7xAB
+DnXfXrJxMg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_aba52f18-b887-429a-b00b-e78025df8c5e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eXlVTUr8lzZC85bM82dF+54RPza5yXf62bWIpt6k9pDyMHyb8Me7hNTyjkxBenjw09cgvu5dGIBA
+IDK4GZD2SQ==</DigestValue></Reference></SignedInfo><SignatureValue>Tz2nQFbtT/83oEr6lyTz2f2PKiLiYPai9gS52fRIE3eT9MHwJNg15J4AB1a3hP0/0kFTjJo4nJqq
+Yj4ABZFx/ncZSvphpJXTTVdqvMag0VFJjvCNUAYmTcOQAqJRUG7syiD0mENMIWcIWkaZBayYWQz9
+FvxumHb31Neov+TPliI/2jrrRfPOdlbLc5f7kWLJPC6Yza+HoY59ogX6hVusJkB2SH9u47qVs2C7
+HFNfy73/tsTtiHx8cnBEDOV+wOEYP23LAKy7HDMEufeJRRohLWdxZW1NlkBUAYTCVeWXNhY0Jc2O
+6qx7MRaRd5DRWqAoWW5TR1Wgl27WHgwMNMt+4Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -2460,4 +2606,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_baa17dba-251e-463f-850a-48207a958238" Target="#_fa1ae70e-b559-4538-bba3-40175d861e67"><Timestamp>2019-08-23 08:37:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_aba52f18-b887-429a-b00b-e78025df8c5e" Target="#_05c7d3c4-6c78-4973-a193-ddb2019b8e2a"><Timestamp>2019-08-26 08:05:00</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
