@@ -132,7 +132,7 @@ The Jenkins of TTP for developers is available on https://tal-rd209.talend.lan/j
 ![To remember](./images/Jenkins_conf.png) 
 
 ### Check execution on Colibri
-Once the talend job is terminated, you can access its result into Colibri: https://192.168.11.145/colibri/overview.php
+Once the talend job is terminated, you can access its result into Colibri: https://tal-rd209.talend.lan/colibri/overview.php
 
 1. Go into `jobs` menu
 1. Select the desired studio version in `branch` drop-down list (_in the top/right of the page_)
