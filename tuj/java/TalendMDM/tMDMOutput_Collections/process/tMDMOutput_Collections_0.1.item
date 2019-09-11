@@ -8,10 +8,12 @@
     <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_host_73" prompt="mdm_host_73?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_port" prompt="mdm_port?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_server_host" prompt="mdm_server_host?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_server_port" prompt="mdm_server_port?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="data_dir" prompt="data_dir?" promptNeeded="false" type="id_String" value="E:/MDMTUJ/tuj/tuj/java/TalendMDM"/>
+    <contextParameter comment="" name="mdm_server_protocol" prompt="mdm_server_protocol?" promptNeeded="false" type="id_String" value=""/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -67,7 +69,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;E:/Talend-Studio-20190820_1938-V7.3.1SNAPSHOT/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;E:/731/Talend-Studio-20190830_2106-V7.3.1SNAPSHOT/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
@@ -123,76 +125,6 @@
     <routinesParameter id="_xAqWgOrDEeec1qmqLR8GQA" name="DataMasking"/>
     <routinesParameter id="_xEu-MOrDEeec1qmqLR8GQA" name="TalendStringUtil"/>
   </parameters>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
-    <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
-    <elementParameter field="FILE" name="FILENAME" value="(String)((String)context.getProperty(&quot;param_file_path&quot;))"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="HEADER" value="0"/>
-    <elementParameter field="TEXT" name="FOOTER" value="0"/>
-    <elementParameter field="TEXT" name="LIMIT" value=""/>
-    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true"/>
-    <elementParameter field="CHECK" name="UNCOMPRESS" value="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
-    <elementParameter field="DIRECTORY" name="TEMP_DIR" show="false" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1&quot;"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="','"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="'.'"/>
-    <elementParameter field="CHECK" name="RANDOM" show="false" value="false"/>
-    <elementParameter field="TEXT" name="NB_RANDOM" show="false" value="10"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="true"/>
-    <elementParameter field="TABLE" name="TRIMSELECT" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
-    <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="SPLITRECORD" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
-    <elementParameter field="TABLE" name="DECODE_COLS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
-      <elementValue elementRef="DECODE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
-      <elementValue elementRef="DECODE" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileInputDelimited_1">
-      <column key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" name="REJECT">
-      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="-32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_1"/>
-    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
-    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
-    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
-    <elementParameter field="CHECK" name="DISABLE_ERROR" value="true"/>
-    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
-    <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
-    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tContextLoad_1">
-      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
   <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
@@ -228,7 +160,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" show="false" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="DATAMODEL" value="&quot;CONF&quot;"/>
@@ -359,7 +291,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port +&quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port +&quot;/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
@@ -437,7 +369,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" value=" context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="true"/>
@@ -487,7 +419,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;ProductFamily3&quot;"/>
@@ -600,7 +532,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" show="false" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="DATAMODEL" value="&quot;Product3&quot;"/>
@@ -944,7 +876,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -1508,7 +1440,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -1836,7 +1768,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -2164,7 +2096,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -2492,7 +2424,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -2775,7 +2707,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -3114,7 +3046,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -3240,7 +3172,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -3419,7 +3351,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -3598,7 +3530,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talend/TalendPort&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talend/TalendPort&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product3&quot;"/>
@@ -3822,21 +3754,190 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMDMDelete_2"/>
   </node>
-  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tContextLoad_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="key"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="value"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_2"/>
+    <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="(String)((String)context.getProperty(&quot;param_file_path&quot;))"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HEADER" value="0"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true"/>
+    <elementParameter field="CHECK" name="UNCOMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIR" show="false" value="&quot;E:/product/Talend-Studio-r87956-V5.2.0NB/workspace_1&quot;"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="','"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="'.'"/>
+    <elementParameter field="CHECK" name="RANDOM" show="false" value="false"/>
+    <elementParameter field="TEXT" name="NB_RANDOM" show="false" value="10"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="true"/>
+    <elementParameter field="TABLE" name="TRIMSELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row10"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMDMConnection_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
-  </connection>
+    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="SPLITRECORD" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
+    <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
+      <elementValue elementRef="DECODE" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="LABEL" value="globalContextFile"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileInputDelimited_2">
+      <column key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_2"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tContextLoad_2">
+      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_3"/>
+    <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.data_dir+&quot;/tuj_mdm_context.csv&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HEADER" value="0"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true"/>
+    <elementParameter field="CHECK" name="UNCOMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIR" show="false" value="&quot;D:/Job_workspace&quot;"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="','"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="'.'"/>
+    <elementParameter field="CHECK" name="RANDOM" value="false"/>
+    <elementParameter field="TEXT" name="NB_RANDOM" show="false" value="10"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="SPLITRECORD" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
+    <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
+      <elementValue elementRef="DECODE" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="LABEL" value="MDMContextFile"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileInputDelimited_3">
+      <column comment="" defaultValue="" key="false" length="255" name="key" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="255" name="value" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" defaultValue="" key="false" length="255" name="key" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="255" name="value" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_3"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="loadMDMContext"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tContextLoad_3">
+      <column defaultValue="" key="false" length="255" name="key" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="value" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_15"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
+    <elementParameter field="TABLE" name="VALUES">
+      <elementValue elementRef="SCHEMA_COLUMN" value="key"/>
+      <elementValue elementRef="VALUE" value="&quot;data_dir&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="value"/>
+      <elementValue elementRef="VALUE" value="context.data_dir+&quot;/&quot;+jobName+&quot;/&quot;"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
+    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFixedFlowInput_15">
+      <column comment="" key="false" length="255" name="key" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="value" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1408" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_4"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tContextLoad_4">
+      <column defaultValue="" key="false" length="255" name="key" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="value" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tMDMOutput_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="value"/>
@@ -5197,13 +5298,48 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMDMDelete_2" offsetLabelX="0" offsetLabelY="0" source="tMDMDelete_2" target="tFixedFlowInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk4"/>
   </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tFileInputDelimited_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk9"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tContextLoad_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="key"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="value"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tFileInputDelimited_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk43"/>
+  </connection>
+  <connection connectorName="FLOW" label="row61" lineStyle="0" metaname="tFileInputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_3" target="tContextLoad_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="key"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="value"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row61"/>
+    <elementParameter field="MEMO" name="FAILURE_INSTRUCTIONS" value=""/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_3" target="tFixedFlowInput_15">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk44"/>
+  </connection>
+  <connection connectorName="FLOW" label="row62" lineStyle="0" metaname="tFixedFlowInput_15" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_15" target="tContextLoad_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row62"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_15" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_15" target="tMDMConnection_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
   <note opaque="false" posX="992" posY="2240" sizeHeight="97" sizeWidth="417" text="To remove all colors MDM requires that you send a collection&#10;with one empty element per color to remove e.g. if you have&#10;5 colors in the collection, you need to send 5 empty elements"/>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
-    <elementParameter field="TEXT" name="SUBJOB_TITLE" show="false" value="Subjob:"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="160;190;240"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
-  </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
@@ -5453,13 +5589,40 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="160;190;240"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ea200af0-a133-4201-bc4d-6106dc3f7c7d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vobOg53qPX8IX1HRJVdjGez4boUnvtQzxNQT1WXGniNuJcO9Z5qZTeikuBYDBZx4vOc5itC1zBmI
-+p1VGwOlEA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_601868f7-5e24-4a1d-bc4c-200d4e051ab2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6MDCJ7aPcNw5Kwp8eFOy87YxvS73RqAuI84swi69z42csntZcekcQHDvtYHTXo2UhmoQ54EtdFoi
-lL7+83MOKw==</DigestValue></Reference></SignedInfo><SignatureValue>K4WhbOOvWE0ng53pFkDKF3cLkr7ddFtX4YUvpRUiePQCujhlEsUHl3DCNJTfHhS+vT4i5l+/C/5/
-QABmxxfZsx6QamoMIKe3OuX7HLDSxkMmWbYpaZLiuhs3UsF0P3w6t8gSobP2SS+sCFobTt+hsqKQ
-REF4zKNyWVkawB78brO7SRpD94OcO1Fsbr3TZzOkVG5ujauAkUFvnKArQBIkRizsghjOWarI4Tk5
-t5ahIGRDMr4E4sSkxtPNpmmwFStS4YDskERtYcgiZz0jO/+Iz3IBFoG44gQ9oi/g6qNGweaGMJVo
-WFJWDusMZh/HEVji9J86fA7rkhXAzPOxodbzsA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Load globalContext file"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_3"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Load MDMcontext file"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_15"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Append JobName to context.data_dir."/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9e7139b7-83e5-42b6-b9b1-3822e37f1bf6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TEi0aFxRMAvUnHtoJbcWXcyNq6y8352cKGTdXTOyTDyE3JL87TV5No+zsMglZ2w2N6xI8SsVMJom
+wa2C7XmR+Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2de04dfb-eb88-4fb7-a7ac-03253df1d59e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rS+9BqT7xDXcjIsaKqJhRuTMozmUOvC4PPjvzU1nVFN682Shc5y4WfaDtHA7V25Jd28/x03L34Tn
+zu3HGkIYWg==</DigestValue></Reference></SignedInfo><SignatureValue>SSv01PfSe9jGW5aGpuvNFYQMzFlL3mZCdJQlWGqR+Bf2kiFm/yAldNWJ6BIApBShqVLk+zyWu/kH
+jBGz27Z6gdGhczaNhGLniWaQANuhOjx9Dlqj8bibbxZBXP17FZyT+rcK8k/JEP14mSCECwR/YMen
+jJNXOMNjzwdDcnTyFpIoX+CMLJSKlt1jqaYNKwU/xYsLDz78bpqUGu0bwFUCfSaTjxK5Alg/XC7o
+8DhYPIuem+2WQSucz+TfZIL4V7knRVcdCqyqKDTBCYG7H8fG9eSCm9sw5f54fDjP1l+7JBNEv3a9
+68QxZ3pIUSiX3rXpLvaDxBICoSaZYqveqfaz4w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -5481,4 +5644,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_601868f7-5e24-4a1d-bc4c-200d4e051ab2" Target="#_ea200af0-a133-4201-bc4d-6106dc3f7c7d"><Timestamp>2019-09-03 02:11:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2de04dfb-eb88-4fb7-a7ac-03253df1d59e" Target="#_9e7139b7-83e5-42b6-b9b1-3822e37f1bf6"><Timestamp>2019-09-11 08:26:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

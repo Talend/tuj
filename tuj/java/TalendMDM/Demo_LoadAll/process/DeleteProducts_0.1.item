@@ -8,10 +8,11 @@
     <contextParameter comment="" name="result_password" prompt="result_password?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_username" prompt="result_username?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="result_table" prompt="result_table?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_host_73" prompt="mdm_host_73?" promptNeeded="false" type="id_String" value="null"/>
-    <contextParameter comment="" name="mdm_port" prompt="mdm_port?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_server_host" prompt="mdm_server_host?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_server_port" prompt="mdm_server_port?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_user" prompt="mdm_user?" promptNeeded="false" type="id_String" value="null"/>
     <contextParameter comment="" name="mdm_password" prompt="mdm_password?" promptNeeded="false" type="id_String" value="null"/>
+    <contextParameter comment="" name="mdm_server_protocol" prompt="mdm_server_protocol?" promptNeeded="false" type="id_String" value=""/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -131,7 +132,7 @@
     <elementParameter field="LABEL" name="NOTE2" show="false" value="suggest to use 6.0 url"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMDMConnection_1"/>
-    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" show="false" value="&quot;http://&quot; + context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="TEXT" name="CONCEPT" value="&quot;Product&quot;"/>
@@ -229,7 +230,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMDMConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="SERVERVERSION" value="s60"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="suggest to use 6.0 url"/>
-    <elementParameter field="TEXT" name="MDMURL" value="&quot;http://&quot; + context.mdm_host_73 + &quot;:&quot; + context.mdm_port + &quot;/talendmdm/services/soap&quot;"/>
+    <elementParameter field="TEXT" name="MDMURL" value="context.mdm_server_protocol+&quot;://&quot;+ context.mdm_server_host + &quot;:&quot; + context.mdm_server_port + &quot;/talendmdm/services/soap&quot;"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.mdm_user"/>
     <elementParameter field="PASSWORD" name="PASSWORD" value="8pW6Nmy2kuePR0YK68gjBHf36T76edZq"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
@@ -318,13 +319,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="160;190;240"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_24e3f608-fa43-43de-9d0b-5ba829de5f9e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TMhUf8fBKVMjxRdZSirLIk/06Z22KQexZbDdEvpGn18MjQuniAhKquzYDFpVDkbg6Z93uVjilC7J
-+y2DOx4NnQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a18506f0-8352-4675-b7ed-076a4d28e68e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>15HkuR58m03/XR4pV5oRRYS5D5eUZd4hwM/g7HBVT/CgdgHVfIPwm8I0dHP0E3zTk+NKHLp4rJSF
-atR9khrEtg==</DigestValue></Reference></SignedInfo><SignatureValue>DN/gyK5ScG7VjKfkp0VbTZhlpQ40Dg1SiteCyJv6H1EV3/Kg/56Ppg8rRXUuGma5xyZwui9+MUJG
-NwJu8iX+ihVCA4B1vDXaKOju3bC97OjqI4eeK3F+hOwdQTuQ+eOOYP2pbm5SGsAip5WETkUpePcE
-6wc5qz86/XIV0sXk9fGfsH+Iugtrn08Oavvtnq9OTgKCEGlpRwGg7gpgNAfxtUGFCvYqeY2GkWQX
-lntHDDGfeut2m+9lIAUA8dJDVJegeZ+KJv3J+ZI9w19AwjYwI/WURG8rYBZa8eqKHrT1zPzXJBZD
-HoEMjyVXAz1+l/Said4/BWsY2qmj9yeU+ub0bA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d1e5f416-47a6-4140-8978-e32e23aef8bd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HdYoWfZshkQ/EkUEZVyZCvd5mmPrD9MuNQIOBxCpoLT3I3jlWJcS4tUSVGwV4FuNzT5XJPY34eYd
+QsXwippNkQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bd9102d1-6dea-4839-b309-0706d7eaa77c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>y36+MmJSdFCOYz93eb27SFnUoGilGeo46pRaPGU98av4Pm+6M4VNg5YmXlJXHUbaProbHDd1TDBH
+nmLUc5POqA==</DigestValue></Reference></SignedInfo><SignatureValue>cgTLsjpxiuS0rpDHi2JJzxUuF17diOCO20yW/oUJpC7RStZf2JsGR7+0fZ0Uo7M2KuGw/pcJ3w9u
+hG7ySR3nhEi3Tx2CEcEbKXYMmusJGxxJe/pyt8Lvex8eQa9uLZr75fa4EaGZ15Yq+L3vdHH2OxL8
+uyYSwIzceuMCEC1YppZOMwYBsoqdHabinOc/qn3+Yl0N5xEPYOnMjWpPvAUsgKzwCOfxq3vIgCE7
+ZMVY253iewpFjrAOOEcX2XZjFpKoQrL7udi5YesR5g+4DtU8urFBne/JraLkHrp6fw5AEjsd8K+U
+0ftHWlpobEb8pqaIRtzLOIucqrxFkvwNLtoBXA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -346,4 +347,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a18506f0-8352-4675-b7ed-076a4d28e68e" Target="#_24e3f608-fa43-43de-9d0b-5ba829de5f9e"><Timestamp>2019-09-02 09:24:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bd9102d1-6dea-4839-b309-0706d7eaa77c" Target="#_d1e5f416-47a6-4140-8978-e32e23aef8bd"><Timestamp>2019-09-11 02:59:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
