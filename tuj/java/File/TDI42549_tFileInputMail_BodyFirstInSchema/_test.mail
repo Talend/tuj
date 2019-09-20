@@ -1,0 +1,81 @@
+Delivered-To: minyailo.inna@gmail.com
+Received: by 2002:a5d:8b42:0:0:0:0:0 with SMTP id c2csp2156480iot;
+        Mon, 16 Sep 2019 05:45:29 -0700 (PDT)
+X-Received: by 2002:adf:a350:: with SMTP id d16mr47937763wrb.326.1568637929521;
+        Mon, 16 Sep 2019 05:45:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1568637929; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lyvzVQNvc0rome67uw77UN6fIRDjJNikDuFynw19MAqTU4lieIHIJmrww5DQj0rMAd
+         kyTs38RTfjFWIuucPWFkMz8kXjhlgiy8DlNKAcVK6EEi6etrIguyThbUAdgc93P+7LMp
+         UZmqRMmPyGwx3XL838Gm0lsL3O5ylyknUPT40GsICwDA6FXz/c6F707gLjuIYab9MFTu
+         hPJ+8kFsDPlBPTsKf8JtTq3RXAej/+smni/QzacCm7I49YjtANEhehVZz/2U6duv+N/c
+         SRyRIFiAsDPmF5z7xs4V1Ps2FLTSMeLp1UvkH2xRs9fDRF9D1A5B/GGrJNMfsvlgNzPh
+         tS7A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=FoDbV4NTOhXpbU/2z5P72ge15smkz3vbd8papGpAwr0=;
+        b=woINjq5c3Lzol61VoV9TxSMJlTkKI3WnZ+qeuj9BMtaXKSFaCquX7D3oN2xUaJvN0s
+         X5y8rsvf+crkedXMIBCgzYwqSIZaLuf3M7MKKRWgSN1kOoa8DFx/Z5lgVabk9SyxNcik
+         Ckm1rknqs9Tk30A0pJr8Zwb1AwlTZQNQzshUygbdXCl7XMho00glACe5M8lVhGqkvm39
+         THvTu2ABVF28DmmBgLtI6EialBrZv6pcFn0dyrnrRsWuCKqElgyl2I3wHHtmU5yyHXLT
+         iHqa/gWD51HkOad7Bd0fwS5CQdfl9n4mH/lC5KkpKnTtFJu6mavNS6sD56dmKqKWKkmI
+         auQw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@globallogic.com header.s=google header.b=ZcZmtXX2;
+       spf=pass (google.com: domain of inna.danylenko@globallogic.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=inna.danylenko@globallogic.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=globallogic.com
+Return-Path: <inna.danylenko@globallogic.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id c16sor6519402wmb.26.2019.09.16.05.45.29
+        for <minyailo.inna@gmail.com>
+        (Google Transport Security);
+        Mon, 16 Sep 2019 05:45:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of inna.danylenko@globallogic.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@globallogic.com header.s=google header.b=ZcZmtXX2;
+       spf=pass (google.com: domain of inna.danylenko@globallogic.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=inna.danylenko@globallogic.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=globallogic.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=globallogic.com; s=google;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=FoDbV4NTOhXpbU/2z5P72ge15smkz3vbd8papGpAwr0=;
+        b=ZcZmtXX2V5yRpLTi4F30+qvSpp2U9g5HCLWye1FfusLuIlq7MJfhRoVqtll+kytMbx
+         bR3YVi578rprk4OTVlaGVjH1V6wCZwAUWRgkuGgtgpq478bz4xBUOe2sFLUYUOs8xypy
+         Y083k3wvJ/RaSMljkUntrH6kFYaVOU2RXsaPNcKwhA9/3VhAy4ULKpn2SmI3LK1h8XbL
+         NOMR+Kkr2jJOsHp1YJka8rhrCHXe0xzcKKGOtfGkV2HOWaCd92sbE148tReEk7IGhlDG
+         JTXgpjZYipEU8e8OKk7ZlpGhtq/GanG8VfmT/X70lZt1DmqecwUD+AbSe9M4DrkeICz8
+         /N4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=FoDbV4NTOhXpbU/2z5P72ge15smkz3vbd8papGpAwr0=;
+        b=JhaW1WLZswfx3WMRrcKuAvYUlHmK2McgTc/hNMoPboG3W+DdC0Rm8/IIeRtVzSWU4r
+         FquPGbSeWwop9MhQnRB62O35pb9LNcOsUK2gJSbFLLEhsGDGrxcEfbItjLkIYse5j+gm
+         xxYzBF+1VWpb9u2yeZ4xg02uHqN+b7HoCYDh4dd0tLSUDS2RJfgo9L9Yrmt76DwSabp2
+         klUBMnSkI/VTrUfPlAcybsJ4f9YCQtCFm41/WGGfmflglwNl1lLRdUhoKWglhhsnFLZt
+         PnwE68aFA9vyQYUEl3DiCA58Vg84Qijrx6/QHwlmcDRuM7MXjlZnbJf4hB9wyGVmaCW/
+         HuDA==
+X-Gm-Message-State: APjAAAWQtg588/YcdFgZKfXnae+U77KWyiWeRfH73oPdMoE7nCWDET1m
+	RYLvQIuoDJ3v5nva+u+ZQGqmc+OKXEqe4WDvBocIBoAT
+X-Google-Smtp-Source: APXvYqzmHQ8vqnZbuhScYFM9quQ4j2TjsdtJfWaDoiH+f675yidR44nH52ypNFYII+3G1UDrZhk1rYRc/78ppfOpr/s=
+X-Received: by 2002:a1c:4945:: with SMTP id w66mr8426939wma.40.1568637928847;
+ Mon, 16 Sep 2019 05:45:28 -0700 (PDT)
+MIME-Version: 1.0
+From: Inna Danylenko <inna.danylenko@globallogic.com>
+Date: Mon, 16 Sep 2019 15:45:18 +0300
+Message-ID: <CALRBcQ7=BSS1HBwuDUUECcCqgRHJuEEGvWgBa=H2pHK16QW9KQ@mail.gmail.com>
+Subject: Test
+To: minyailo.inna@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000087dff00592aafaa3"
+
+--00000000000087dff00592aafaa3
+Content-Type: text/plain; charset="UTF-8"
+
+This is a test message!
+
+--00000000000087dff00592aafaa3
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">This is a test message!</div>
+
+--00000000000087dff00592aafaa3--
