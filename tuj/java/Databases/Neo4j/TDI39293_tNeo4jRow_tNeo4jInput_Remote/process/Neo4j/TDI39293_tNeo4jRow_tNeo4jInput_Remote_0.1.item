@@ -389,7 +389,25 @@
       <column comment="" key="false" length="-1" name="tagline" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="480">
+  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSortRow_1" show="false"/>
+    <elementParameter field="TABLE" name="CRITERIA">
+      <elementValue elementRef="COLNAME" value="released"/>
+      <elementValue elementRef="SORT" value="num"/>
+      <elementValue elementRef="ORDER" value="desc"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="EXTERNAL" value="false"/>
+    <elementParameter field="DIRECTORY" name="TEMPFILE" value="&quot;D:/release/Newfolder/Talend-Studio-20180116_1512-V6.5.1/workspace/temp&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATEDIR" value="true" show="false"/>
+    <elementParameter field="TEXT" name="EXTERNAL_SORT_BUFFERSIZE" value="1000000" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSortRow_1">
+      <column comment="" key="false" length="-1" name="title" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="released" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="tagline" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_1" show="false"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
@@ -872,7 +890,11 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tNeo4jInput_2" offsetLabelX="0" offsetLabelY="0" source="tNeo4jInput_2" target="tFixedFlowInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk6" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tFileOutputDelimited_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tSortRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tSortRow_1" offsetLabelX="0" offsetLabelY="0" source="tSortRow_1" target="tFileOutputDelimited_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
