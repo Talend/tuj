@@ -1,0 +1,14 @@
+package org.talend.survivorship.test 
+
+rule "18"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "18Group"
+when
+    $input : RecordIn( dataset.isLongest( containertype, "CONTAINERTYPE", true) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "CONTAINERTYPE", drools.getRule().getName());
+
+end
+
+

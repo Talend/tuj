@@ -1,0 +1,14 @@
+package org.talend.survivorship.test 
+
+rule "11"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "11Group"
+when
+    $input : RecordIn( dataset.isMostCommon( supplier_name, "Supplier_Name", true) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "Supplier_Name", drools.getRule().getName());
+
+end
+
+
