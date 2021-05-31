@@ -1,0 +1,14 @@
+package org.talend.survivorship.test 
+
+rule "8"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "8Group"
+when
+    $input : RecordIn( dataset.isMostCommon( upc_modified, "UPC_Modified", true) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "UPC_Modified", drools.getRule().getName());
+
+end
+
+

@@ -1,0 +1,14 @@
+package org.talend.survivorship.test 
+
+rule "9"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "9Group"
+when
+    $input : RecordIn( dataset.isLongest( unspsc_code, "UNSPSC_Code", true) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "UNSPSC_Code", drools.getRule().getName());
+
+end
+
+

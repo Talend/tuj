@@ -1,0 +1,14 @@
+package org.talend.survivorship.test 
+
+rule "5"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "5Group"
+when
+    $input : RecordIn( dataset.isLongest( prxduct_descriptixn, "PrXduct_DescriptiXn", true) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "PrXduct_DescriptiXn", drools.getRule().getName());
+
+end
+
+
