@@ -1,0 +1,14 @@
+package org.talend.survivorship.sample2 
+
+rule "mm"
+    no-loop true
+    dialect "mvel"
+    ruleflow-group "mmGroup"
+when
+    $input : RecordIn( dataset.isMostCommon( provinceid, "provinceID", false) )  
+then
+    dataset.survive( $input.TALEND_INTERNAL_ID, "provinceID", drools.getRule().getName());
+
+end
+
+
